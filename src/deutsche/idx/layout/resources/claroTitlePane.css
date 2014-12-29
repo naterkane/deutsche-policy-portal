@@ -1,0 +1,146 @@
+.claro .idxTitlePane_idxDefaults {
+
+}
+
+.claro .idxTitlePane {
+
+}
+
+.claro .idxTitlePane .dijitTitlePaneTitle {
+  vertical-align: middle;
+  position: relative;
+}
+
+.claro .idxTitlePane .dijitTitlePaneTitleTitleFocus {
+  vertical-align: middle;
+}
+
+.claro .idxTitlePane .dijitTitlePaneTextNode {
+  vertical-align: middle;
+  display: inline;
+}
+
+.claro .idxTitlePane .dijitTitlePaneTitleFocus {
+  vertical-align: middle;
+  position: relative;
+}
+
+.claro .dijitRtl .idxTitlePane .dijitTitlePaneTitleFocus {
+
+}
+
+.claro .idxTitlePaneActions {
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+  height: auto;
+  display: inline;
+  float: right;
+}
+
+.claro .dijitRtl .idxTitlePaneActions {
+  float: left;
+}
+
+.dj_ie7 .claro .idxTitlePaneActions {
+  float: none;
+  position: absolute;
+  right: 0px;
+}
+
+.dj_ie7 .claro .dijitRtl .idxTitlePaneActions {
+  float: none;
+  position: absolute;
+  left: 0px;
+  right: auto;
+}
+
+.claro .idxTitlePaneAutoHide.dijitTitlePaneFocused .idxTitlePaneActions,
+.claro .idxTitlePaneAutoHide .dijitTitlePaneTitleHover .idxTitlePaneActions {
+  display: inline;
+  visibility: visible;
+}
+
+.claro .idxTitlePaneAutoHide .idxTitlePaneActions {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxTitlePaneNoCollapse .dijitArrowNode {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxTitlePaneNoCollapse .dijitArrowNodeInner {
+  display: none;
+  visibility: hidden;
+}
+
+/* A11y */
+.idxTitlePane .idxTitlePaneA11yText {
+	display: none;
+}
+
+.dijit_a11y .idxTitlePane .idxTitlePaneA11yText {
+	display: inline;
+}
+
+.claro .idxTitlePane .dijitTitlePaneContentInner.dijitTitlePaneSingleChild,
+.claro .idxTitlePane.idxStackedContainer .dijitTitlePaneContentInner.idxStackedContainer {
+  /* this class is used when only a single child is in the ocntent area */
+  /* we give the child full-bleed to the edges and defer to the child   */
+  /* provide the scroll bars                                            */
+  padding: 0px 0px 0px 0px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.claro .idxTitlePane .dijitTitlePaneContentInner.dijitTitlePaneSingleChild .dijitTitlePane-child,
+.claro .idxTitlePane.idxStackedContainer .dijitTitlePaneContentInner.idxStackedContainer .dijitTitlePane-child {
+  /* this class is used when only a single child is in the ocntent area */
+  /* we give the child full-bleed to the edges and defer to the child   */
+  /* provide the scroll bars                                            */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*----- stacked container inside of title pane-------*/
+.claro .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild  {
+	border: 0px none transparent;
+	border-top: 1px solid #B0BECF;
+}
+
+.claro .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild.dijitClosed  {
+	border-bottom: 0px none transparent;
+}
+
+.claro .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild.dijitOpen  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+.claro .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxFirstChild  {
+	border-top: 0px none transparent;
+}
+
+.claro .dijitTitlePaneContentOuter.dijitTitlePane-idxStackedContainer-idxChild  {
+	border: 0px none transparent;
+}
+
+/*----- stacked container inside of content pane-------*/
+.claro .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild  {
+	border-top: 1px solid #B0BECF;
+}
+
+.claro .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild.dijitClosed  {
+	border-bottom: 0px none transparent;
+}
+
+.claro .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild.dijitOpen  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+.claro .dijitTitlePaneContentOuter.dijitContentPane-idxStackedContainer-idxLastChild  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+

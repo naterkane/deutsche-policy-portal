@@ -1,0 +1,101 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxLoginBox {
+	width:480px;
+
+    padding:20px 25px;
+
+    border: solid 1px #ccc;
+
+	-webkit-box-shadow: 0px 2px 10px 0px #eee;
+	-moz-box-shadow: 0px 2px 10px 0px #eee;
+	box-shadow: 0px 2px 10px 0px #eee;
+	
+	border-radius: 3px;
+
+	background:#fff;
+
+	margin: 100px auto 0;
+}
+
+.oneui .idxLoginSubTitle,
+.oneui .idxLoginBox .idxFieldLabel,
+.oneui .idxLoginBox .idxInactivityMessage,
+.oneui .idxLoginBox .idxLoginFrameButtonBar
+{
+	margin-top: 10px;
+}
+
+.oneui .idxLoginSubTitle,
+.oneui .idxLoginBox .idxInactivityMessage {
+	color: #333;
+}
+
+.oneui .idxLoginBox .idxLoginCopyright
+{
+	margin-top: 20px;
+}
+
+/* Firefox and IE7 only */
+html>body .idxLoginBox
+{
+    padding: 12px;
+}
+
+.oneui .idxLoginBoxInner
+{
+
+
+}
+
+/* IE6 only */
+* html body .idxLoginBoxInner
+{
+	padding:12px;
+	background:#fff;
+}
+    
+/* IE6 only */
+* .idxLoginBoxInner input
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* IE6 only */
+* .idxLoginBoxInner a
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* IE6 only */
+* .idxLoginBoxInner button
+{
+    position: relative;
+    z-index: 1;
+}
+
+.oneui .idxLoginCopyright
+{
+    font-family: Georgia, serif;
+    font-size: .92em;
+    color: #444;
+}
+
+.oneui .idxLoginTitle
+{
+    font-size: 22px;
+}
+
+.oneui .loginInput
+{
+    border: 1px solid #9FABBB;
+    float: none;
+    text-align:left;
+}

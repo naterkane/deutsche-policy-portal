@@ -1,0 +1,13 @@
+.vienna .idxAppMarquee .idxLinkDerived {
+  color: #ffffff;
+}
+
+.vienna .idxLink {
+
+}
+
+.vienna .idxLinkDerived.dijitDisabled,
+.vienna .idxAppMarquee .idxLinkDerived.dijitDisabled {
+	color: #696969;
+	text-decoration: none;
+}

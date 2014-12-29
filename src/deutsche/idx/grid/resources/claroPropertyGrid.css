@@ -1,0 +1,176 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.claro .idxPropertyGrid {
+
+}
+
+.claro .idxPropertyGridHidden {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxPropertyGridTable {
+  border-style: none;
+  border-width: 0px;
+  border-collapse: collapse;
+  border-top-style: solid;
+  border-top-color: #d8dfe7;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #d8dfe7;
+  border-bottom-width: 1px;
+
+}
+
+.claro tr.idxPropertyRow {
+
+}
+
+.claro th.idxPropertyRowLabel {
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-color: #f1f4f6;
+  border-style: none;
+  border-width: 0px;
+  border-bottom-style: solid;
+  border-bottom-color: #d8dfe7;
+  border-bottom-width: 1px;
+  white-space: nowrap;
+}
+
+.dijitRtl .claro th.idxPropertyRowLabel {
+ 	text-align: right;
+ }
+ 
+.claro th.idxPropertyRowLabelSolo {
+
+}
+
+.claro th.idxPropertyRowLabelFirst {
+
+}
+
+.claro th.idxPropertyRowLabelLast {
+
+}
+
+.claro th.idxPropertyRowLabelMiddle {
+
+}
+
+.claro th.idxPropertyRowLabelEven {
+
+}
+
+.claro th.idxPropertyRowLabelOdd {
+
+}
+
+.claro td.idxPropertyRowValue {
+  width: 100%;
+  text-align: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-style: none;
+  border-width: 0px;
+  border-bottom-style: solid;
+  border-bottom-color: #d8dfe7;
+  border-bottom-width: 1px;
+}
+
+.dijitRtl .claro td.idxPropertyRowValue {
+	text-align: right;
+}
+
+.claro td.idxPropertyRowValueSolo {
+
+}
+
+.claro td.idxPropertyRowValueFirst {
+
+}
+
+.claro td.idxPropertyRowValueLast {
+
+}
+
+.claro td.idxPropertyRowValueMiddle {
+
+}
+
+.claro td.idxPropertyRowValueEven {
+
+}
+
+.claro td.idxPropertyRowValueOdd {
+
+}
+
+.claro span.idxPropertyRowLabel {
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+.claro span.idxPropertyRowLabelSolo {
+
+}
+
+.claro span.idxPropertyRowLabelFirst {
+
+}
+
+.claro span.idxPropertyRowLabelLast {
+
+}
+
+.claro span.idxPropertyRowLabelMiddle {
+
+}
+
+.claro span.idxPropertyRowLabelEven {
+
+}
+
+.claro span.idxPropertyRowLabelOdd {
+
+}
+
+.claro span.idxPropertyRowSep {
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+.claro span.idxPropertyRowSepSolo {
+
+}
+
+.claro span.idxPropertyRowSepFirst {
+
+}
+
+.claro span.idxPropertyRowSepLast {
+
+}
+
+.claro span.idxPropertyRowSepMiddle {
+
+}
+
+.claro span.idxPropertyRowSepEven {
+
+}
+
+.claro span.idxPropertyRowSepOdd {
+
+}

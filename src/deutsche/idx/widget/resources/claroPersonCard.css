@@ -1,0 +1,44 @@
+.claro .idxPersonCard {
+	padding: 5px;
+}
+
+.claro .idxPersonCardContainer > div {
+	padding: 2px;
+	margin-left: 80px;
+}
+.dijitRtl .claro .idxPersonCardContainer > div {
+	margin-left: 0px;
+	margin-right: 80px;
+}
+
+.claro .idxPersonCardPhoto {
+	width: 60px;
+	height: 60px;
+	margin: 5px;
+	padding: 2px;
+	border: 1px solid #ACACAC;
+	float: left;
+}
+.dijitRtl .claro .idxPersonCardPhoto {
+	float: right;
+}
+
+.claro .idxPersonCardFn {
+	font-size: 1.364em;
+	font-weight: bold;
+}
+
+.claro .idxPersonCardTitle {
+}
+
+.claro .idxPersonCardOrg {
+}
+
+.claro .idxPersonCardAdr {
+}
+
+.claro .idxPersonCardTel {
+}
+
+.claro .idxPersonCardEmail {
+}

@@ -1,0 +1,17 @@
+@import url("viennaIconPicker.css");
+
+/* popup */
+.vienna .idxDatePickerYearLabel .dijitCalendarNextYear,
+.vienna .idxDatePickerYearLabel .dijitCalendarPreviousYear {
+	margin:none;
+	padding: 0px 1px;
+}
+
+.vienna .idxCalendarIcon {
+	background-image: url('vienna/ws_calendar.png');
+}
+
+.vienna .dijitDateTextBoxDisabled .idxCalendarIcon {
+	background-image: url('vienna/ws_calendar_disabled.png');
+	background-color:none;
+}

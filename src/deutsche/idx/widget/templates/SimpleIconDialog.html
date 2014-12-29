@@ -1,0 +1,12 @@
+	<div class="dijitDialogPaneContentArea">
+		<table class="idxSimpleIconContainer"><tbody>
+			<tr><td valign="top"><div style="display: inline-block;" dojoAttachPoint="iconNode" class="idxSignIcon"></div></td>
+				<td dojoAttachPoint="textNode" class="idxSimpleIconText"></td>
+			</tr>
+		</tbody></table>
+		<div dojoAttachPoint="contentNode"></div>
+	</div>
+	<div dojoAttachPoint="actionBar" class="dijitDialogPaneActionBar">
+		<div dojoType="dijit.form.Button" dojoAttachPoint="okButton" dojoAttachEvent="onClick: onExecute">${res.buttonOk}</div>
+		<div dojoType="dijit.form.Button" dojoAttachPoint="cancelButton" dojoAttachEvent="onClick: onCancel">${res.buttonCancel}</div>
+	</div>

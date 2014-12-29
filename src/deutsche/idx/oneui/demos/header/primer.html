@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Primer</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+		@import "../demo.css";
+	</style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.Menu",
+			"idx.oneui.MenuBar",
+			"dijit.MenuItem",
+			"dijit.MenuBarItem",
+			"idx.oneui.Header"];
+			
+		dojoRequireModules(modules, null, currentDojoVersion.async);
+		
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+
+<body class="oneui">
+<div class="demoContent">
+	<p>
+		The One UI 
+		<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y30&vsub=*&hsub=*&openpanes=10100000">header</a>
+		comprises a dark-grey banner which can contain identifying titles, settings
+		and navigation options, together with a blue banner which is either a thin blue "lip"
+		or may optionally be wider and incorporate further contextual titles and actions.
+		The header is provided by a single widget, idx.oneui.Header, which can be configured
+		with various properties in order to select the desired features.
+	</p>
+	<p>
+		Because of the many optional components, there is a great variety of header presentations
+		that can be produced, and some of those are shown in the <b>Detailed examples</b> tab,
+		grouped into five main "templates". This page divides the components into the main
+		functional features and explains how each can be used.
+	<p>
+		These examples use declarative HTML because it is more compact and 
+		easier to read. However, they could equally well have been coded
+		in JavaScript using the APIs for the various widgets.
+	</p>
+	
+	<h2>Creating a simple header</h2>
+	<p>
+		The header should normally be the first item in the content area of a page. It will
+		automatically fill the available area. A simple header can be created by supplying
+		just a page, site or application title with
+		the <span class="codeSnippet">primaryTitle</span> property.
+	</p>
+		
+	<div class="demoBox">
+		<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="<span class="highlitCode">idx.oneui.Header</span>" data-dojo-props="<span class="highlitCode">primaryTitle</span>: 'A simple header example'"&gt;&lt;/div&gt;
+  ...</pre>
+		
+		<div class="demoSampleWide"><div class="demoSampleNotice">This code produces the following header:</div>
+<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'A simple header example'"></div>
+		</div>
+	</div>
+	
+	<h3>Alternative display styles</h3>
+	<p>
+		By default, the header uses a "fluid" layout that fills the entire available width,
+		with the title at the left edge and the IBM logo at the right edge. By setting
+		<span class="codeSnippet">layoutType:'fixed'</span> the header will work to a fixed
+		width: the header bar will still extend across all the available area, but the
+		header contents will fit to the fixed width. 
+	</p>
+	
+	<p>
+		By default, the header shows a narrow black bar as the primary banner. By setting
+		<span class="codeSnippet">primaryBannerType:'thick'</span> the header will use
+		a thicker black banner.
+	</p>
+
+	<h2>Including site actions in a header</h2>
+	
+	<h3>Settings or Help menus</h3>
+	<p>
+		'Settings' actions and 'Help' actions can be included by using the
+		<span class="codeSnippet">settings</span> and
+		<span class="codeSnippet">help</span> properties. An
+		<span class="codeSnippet">idx.oneui.Menu</span> may be supplied, in
+		which case it will be shown as a drop-down menu from the appropriate
+		affordance. Alternatively, a single
+		<span class="codeSnippet">dijit.MenuItem</span> may be supplied, in
+		which case it will be presented as a single clickable action.
+	</p>
+
+	<h3>User identification</h3>
+	<p>
+		User identification (name and/or picture) and associated
+		actions (sign in, sign out, profile settings) can be included
+		by using the
+		<span class="codeSnippet">user</span> property. This contains
+		several fields, all optional:
+		<ul>
+			<li><span class="codeSnippet">actions</span>: this specifies a
+		<span class="codeSnippet">idx.oneui.Menu</span>
+		which case it will be shown as a drop-down menu from the user identification
+		area in the header.</li>
+		</ul>
+	</p>
+
+	<h3>Navigation links and menus</h3>
+	
+	<div class="demoBox">
+		<pre class="code"></pre>
+		
+		<div class="demoSampleWide"><div class="demoSampleNotice">This code produces the following header:</div>
+<div data-dojo-type="idx.oneui.Menu" id="helpmenu" style="display: none;">
+	<div data-dojo-type="dijit.MenuItem">Help item 1</div>
+	<div data-dojo-type="dijit.MenuItem">Help item 2</div>
+</div>
+		
+<div data-dojo-type="idx.oneui.Menu" id="settingsmenu" style="display: none;">
+	<div data-dojo-type="dijit.MenuItem">Settings item 1</div>
+	<div data-dojo-type="dijit.MenuItem">Settings item 2</div>
+</div>
+		
+<div data-dojo-type="idx.oneui.Header" data-dojo-props="
+  primaryTitle: 'A header example with site actions',
+  help: 'helpmenu',
+  settings: 'settingsmenu'
+"></div>
+		</div>
+	</div>
+	
+	<h2>Adding a secondary banner to a header</h2>
+	<p>
+		A secondary banner will be included in the header if a secondary title
+		is supplied, or if any context-level features are requested (see next
+		section). The secondary banner can be blue, grey or white, and sits
+		just below the primary black banner.
+	</p>
+	
+	<p>
+		A simple secondary title can be supplied with
+		the <span class="codeSnippet">secondaryTitle</span> property.
+		Further context may optionally be added with
+		the <span class="codeSnippet">secondarySubtitle</span> property
+		or with 
+		the <span class="codeSnippet">additionalContext</span> property,
+		which add further details (in a smaller font size and less bold
+		presentation) after the main secondary title.
+	</p>
+		
+	<div class="demoBox">
+		<pre class="code">&lt;body class="oneui"&gt;
+  ...</pre>
+		
+		<div class="demoSampleWide"><div class="demoSampleNotice">This code produces the following header:</div>
+<div data-dojo-type="idx.oneui.Header" data-dojo-props="
+  primaryTitle: 'A simple header example',
+  secondaryTitle: 'Secondary title',
+  secondarySubtitle: 'subtitle',
+  additionalContext: 'additional context details'
+"></div>
+		</div>
+	</div>
+	
+	<h3>Alternative display styles</h3>
+	<p>
+		By default, the header uses a "fluid" layout that fills the entire available width,
+		with the title at the left edge and the IBM logo at the right edge. By setting
+		<span class="codeSnippet">layoutType:'fixed'</span> the header will work to a fixed
+		width: the header bar will still extend across all the available area, but the
+		header contents will fit to the fixed width. 
+	</p>
+	
+	<p>
+		By default, the header shows a narrow black bar as the primary banner. By setting
+		<span class="codeSnippet">primaryBannerType:'thick'</span> the header will use
+		a thicker black banner.
+	</p>
+
+	<h2>Adding context-level links, tabs and menus to a header</h2>
+	
+	<h3>Content tabs</h3>
+	
+	<h3>Context actions</h3>
+	
+	<h2>Incorporating search into a header</h2>
+	
+</div>
+</body>
+</html>

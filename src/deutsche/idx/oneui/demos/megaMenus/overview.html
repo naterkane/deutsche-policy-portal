@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Overview</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+		@import "../demo.css";
+        @import "../../tests/_pagefooter/_PageFooter.css";
+	</style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.MenuBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.MenuItem",
+			"dijit.form.TextBox",
+			"dijit.form.Button",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.Menu",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.Header",
+			"idx.oneui.tests._pagefooter._PageFooter"];
+
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+				 
+		function fire(itemName){
+			alert((itemName ? itemName : "Item") + " selected");
+		}
+		
+	</script>
+	
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>	
+</head>
+
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+
+	<div class="demoContent">
+		<div dir='ltr'>
+			<p>
+				Mega menus are an extension of conventional dijit menus that provide 
+				extra functionality such as:
+				<ul>
+					<li>Triggering on mouse hover</li>
+					<li>Allowing arbitrary dialog content in menus</li>
+					<li>Supporting multiple columns of menu items</li>
+					<li>Supporting headings between menu items</li>
+				</ul>
+			</p>
+			<p>
+				Mega menus are commonly used as sophisticated navigation drop-down menus 
+				from a <a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y30&vsub=*&hsub=*&openpanes=10100000">Header</a>. 
+			</p>
+			<p>
+				In particular, they can be used to provide a designated message area in 
+				a header. See: <a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y11&vsub=*&hsub=*&openpanes=10101000#index__10">Messaging</a>
+			</p>
+			<p>
+				They can also be used for pop-up, drop-down, and tooltip-style menus that 
+				are associated with arbitrary page elements. 
+			</p>
+			<p>
+				Here's an example of a hover-triggered, multi-column mega menu with extra content working
+				as a drop-down menu from a header:
+			</p>
+		</div>
+		
+		<style>
+			.communities-header { margin-bottom: 8px; padding: 15px; border-bottom: 1px solid #ededed; background-color: #fafafa; }
+			
+			.communities-filter-item { cursor: pointer; }
+			.communities-filter-item:hover { text-decoration: underline }
+			.communities-filter-separator { padding: 0px 8px; }
+			
+			.communities-search { margin: 15px 0px 0px 0px }
+			.communities-search .dijitTextBox { border: 1px solid #e3e3e3; width: 100%; -moz-border-radius: 12px; border-radius: 12px; }
+			.communities-search .dijitTextBox .dijitInputContainer { background: transparent; }
+			.communities-search .dijitButton { position: relative; width: 0px; }
+			.oneui .communities-search .dijitButton .dijitButtonNode {position: relative; left: -32px; top: -1px; background-image: url('images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+			.dijitRtl .oneui .communities-search .dijitButton .dijitButtonNode {position: relative; right: -32px; top: -1px; background-image: url('images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+			.communities-search .dijitButton.dijitIcon { height: 14px; width: 14px; border: 0px; }
+
+
+			.menu-communities {  }
+			.mi-communities-name { font-weight: bold; }
+			.mi-communities-note {  }
+			.menu-communities .dijitMenuItem .dijitMenuArrowCell { padding-right: 0px;}
+					
+			.mi-communities-icon { margin-left: 0px; margin-right: 0px; width: 32px; height: 32px; background-image: url(images/megaMenuIcon32px.png); }
+			.menu-communities td.dijitMenuItemIconCell { padding-left: 5px; padding-right: 1px; }
+			.dijitRtl .menu-communities td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 5px; }
+			.menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 14px;}
+			.dijitRtl .menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 14px; }
+			
+			.communities-footer { margin-top: 8px; padding: 10px 15px 10px 15px; border-top: 1px solid #ededed; background-color: #fafafa;}
+		</style>
+	
+		<div data-dojo-type="idx.oneui.MenuBar" id="overview_menu">
+			<div data-dojo-type="dijit.PopupMenuBarItem">
+				<span>Communities</span>
+				<div data-dojo-type="idx.oneui.MenuDialog" aria-label="Communities">
+					<div class="communities-header">
+						<div class="messagesContrast" role="toolbar"
+							><span><b>Communities</b></span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Member filter');">I'm a Member</span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Owner filter');">I'm an Owner</span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Following filter');">I'm Following</span
+							>&#x200f;&#x200e;
+						</div>
+						
+						<div class="communities-search" role="search">
+							<table style="width: 100%; *width: 442px; border-spacing: 0px">
+								<tr>
+									<td style="width: 100%; white-space: nowrap">
+										<input data-dojo-type="dijit.form.TextBox" />
+										<input data-dojo-type="dijit.form.Button" data-dojo-props="iconClass: 'idxSearchButton', showLabel: false" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div data-dojo-type="idx.oneui.Menu" class="menu-communities" tabIndex="1">
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 1</span><br /><span class="mi-communities-note">Updated by John Doe 10:27 AM</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 2</span><br /><span class="mi-communities-note">Updated by Jane Doe 7/10/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 3</span><br /><span class="mi-communities-note">Updated by Jeff Doe 7/20/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 4</span><br /><span class="mi-communities-note">Updated by Pam Doe 6/06/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 5</span><br /><span class="mi-communities-note">Updated by Sue Doe 5/09/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 6</span><br /><span class="mi-communities-note">Updated by Sam Doe 11/13/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 7</span><br /><span class="mi-communities-note">Updated by Mark Doe 8/31/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 8</span><br /><span class="mi-communities-note">Updated by Tom Doe 6/26/11</span></div>
+					</div>
+					<div class="communities-footer messagesContrast"
+						><span aria-live="polite">Showing 8 most recently updated of 57&#x200f;&#x200e;</span
+						><a href="javascript:" onclick="fire('View All');" style="margin-left: 2.0em; margin-right: 2.0em; font-size: 11px;">View All</a
+					></div>			
+				</div>
+			</div>
+		</div>
+		
+		<div class="demoBox">
+			<div class="demoSampleWide"><div class="demoSampleNotice">Working sample</div>
+				<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'Mega-menu example', primaryBannerType: 'thin', navigation: 'overview_menu' ">
+				</div>
+			</div>
+		</div>
+		
+		<!-- reserve space for the drop-down from the Header -->
+		<div style="height: 320px"></div>
+		<div dir="ltr" data-dojo-type="idx.oneui.tests._pagefooter._PageFooter"></div>
+	</div>
+</body>
+</html>

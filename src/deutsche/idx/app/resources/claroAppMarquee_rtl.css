@@ -1,0 +1,48 @@
+.dijitRtl .claro div.idxAppMarqueeBody {
+  text-align: left;
+}
+
+.dijitRtl .claro .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+  right: 4px;
+  left: auto;
+}
+
+.dijitRtl .claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+  right: 0px;
+}
+
+.dijitRtl .claro .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName,
+.dijitRtl .claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+  right: 0px;
+  left: auto;
+  padding-left: 0px;
+  padding-right: 4px;
+}
+
+.dijitRtl .claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.dijitRtl .claro .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorLogo {
+	right: auto;
+	left: 4px;
+}
+
+.dijitRtl .claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorLogo {
+	right: auto;
+	left: 0px;
+}
+
+.dijitRtl .claro .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeVendorName,
+.dijitRtl .claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorName {
+  left: 0px;
+  right: auto;
+  padding-left: 4px;
+  padding-right: 0px;	
+}
+
+.dijitRtl .claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeVendorName {
+  padding-left: 0px;
+  padding-right: 0px;
+}

@@ -1,0 +1,16 @@
+<div class="${baseClass}" dojoattachevent="onfocus:_onFocus">
+<!--
+ * IBM Confidential
+ * OCO Source Materials
+ * (C) Copyright IBM Corp. 2010, 2011
+ * The source code for this program is not published 
+ * or otherwise divested of its trade secrets, irrespective
+ * of what has been deposited with the U.S. Copyright Office.
+-->
+<div dojoType="dijit.form.DropDownButton" dojoAttachPoint="_button" dojoAttachEvent="onMouseEnter:_onHoverMouseOver,onMouseLeave:_onHoverMouseOut"
+><div tabindex="0" dojoType="dijit.TooltipDialog" idxBaseClass="${baseClass}_TooltipDialog" dojoAttachPoint="_dialog" 
+><div tabindex="0" id="${id}_wrapper" aria-labelledby="${id}_message" class="${baseClass}InfoWrapper" dojoAttachPoint="_wrapper"
+><div id="${id}_message" class="${baseClass}Message" dojoAttachPoint="_messageNode,containerNode"
+></div><div class="${baseClass}Link" dojoAttachPoint="_linkNode"
+><a tabindex="0" class="${baseClass}Link" target="_blank" dojoAttachPoint="_anchorNode"
+></a></div></div></div></div></div>

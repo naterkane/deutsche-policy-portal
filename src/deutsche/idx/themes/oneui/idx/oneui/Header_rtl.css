@@ -1,0 +1,252 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/** idxHeaderSecondary **/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSecondaryTitleContainer {
+    float: right;
+    margin-right: 25px;
+    direction: ltr;
+}
+.dj_ie6.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSecondaryTitleContainer {
+    margin-right: 20px;
+}
+
+
+/** idxHeaderPrimary **/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary li > span {
+    float: right;
+    margin: 10px 7px 0 6px;
+    padding: 0 10px 0 9px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderPrimaryTitle {
+    margin: 0 9px 0 8px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimaryThick .idxHeaderPrimary .idxHeaderPrimaryTitle {
+    margin: 10px 9px 13px 8px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary li.idxHeaderPrimaryAction > span {
+    float : left;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary li.idxHeaderPrimaryAction.idxHeaderUserName > span {
+    margin: 0 0 0 10px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderUserText {
+    margin: 0 10px 0 0;	
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderLogo {
+    float: left;
+    background: url('images/headerLogo.png') no-repeat 65% 23%;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderDropDown .idxHeaderDropDownArrow {
+    margin: 0 5px 0 0;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary li.idxHeaderPrimaryAction.idxHeaderHelp > span {
+    margin: 0 12px 0 25px;
+}
+
+/** Menu **/
+.dijitRtl .oneui .idxHeaderContainer .dijitMenuItem {
+    text-align: right;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .dijitMenuBar .dijitMenuItem:first-child {
+    margin: 0 8px 0 0;
+}
+
+/** Search Box Start **/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer {
+    float: left;
+    right: 0px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitTextBox .dijitInputField {
+    margin: 3px 10px 3px 29px;
+}
+.dj_ie8.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitTextBox .dijitInputField {
+    margin: 5px 10px 3px 29px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitPlaceHolder {
+    right: -10px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitTextBoxFocused .dijitInputContainer {
+    margin: 3px 10px 3px 0;
+}
+/** Search Box End **/
+
+
+/** Nav Search Box Start **/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderSearchContainer .dijitTextBox {
+    float: left;
+    right: -24px;
+}
+/** Nav Search Box End **/
+
+
+/** Seach button**/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitDropDownButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitComboButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSearchContainer .dijitToggleButton .dijitButtonNode {
+    text-align: left;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderSearchContainer .dijitButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderSearchContainer .dijitDropDownButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderSearchContainer .dijitComboButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderPrimary .idxHeaderSearchContainer .dijitToggleButton .dijitButtonNode {
+    left: -220px;
+}
+
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitDropDownButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitComboButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitToggleButton .dijitButtonNode {
+    left: 28px;
+}
+.dj_ie7.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitButton .dijitButtonNode, 
+.dj_ie7.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitDropDownButton .dijitButtonNode, 
+.dj_ie7.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitComboButton .dijitButtonNode, 
+.dj_ie7.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondary .idxHeaderSearchContainer .dijitToggleButton .dijitButtonNode {
+	position: absolute;
+	top: 8px;
+	left: 17px;
+}
+
+/** Edit button **/
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondaryActions {
+    float: left;  
+    left: 7px;
+}
+/*
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondaryActions .dijitButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondaryActions .dijitDropDownButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondaryActions .dijitComboButton .dijitButtonNode, 
+.dijitRtl .oneui .idxHeaderContainer .idxHeaderSecondaryActions .dijitToggleButton .dijitButtonNode {
+    padding: 5px 5px 6px 4px;
+}
+*/
+
+
+/** TabContainer **/
+.dijitRtl .oneui .oneuiContentContainer .dijitTab .tabLabel {
+    left: 1px; /* adjust position for font-weight bold in rtl - text 1px shift to the left in bold */
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    padding: 0px 16px 14px 11px;
+}
+.dj_ie7.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabContent,
+.dj_ie6.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    padding: 0px 16px 15px 11px;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    padding: 0px 16px 14px 11px;
+    -webkit-box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87, 0px 1px #065b87 inset;
+    -moz-box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87, 0px 1px #065b87 inset;
+    box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87, 0px 1px #065b87 inset;
+}
+.dj_ie6.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    padding: 0px 16px 15px 11px;
+}
+
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    -webkit-box-shadow: -1px 0px #d2d2d2 inset, -1px 0px #d2d2d2, 0px 1px #d2d2d2 inset;
+    -moz-box-shadow: -1px 0px #d2d2d2 inset, -1px 0px #d2d2d2, 0px 1px #d2d2d2 inset;
+    box-shadow: -1px 0px #d2d2d2 inset, -1px 0px #d2d2d2, 0px 1px #d2d2d2 inset;
+}
+
+.dijitRtl .oneui .idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    padding: 0 16px 31px 11px;
+}
+.dj_ie7.dijitRtl .oneui .idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    padding: 0 16px 32px 11px;
+}
+
+.dijitRtl .oneui .idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    padding: 0 16px 31px 11px;
+    -webkit-box-shadow: -1px 0px #065b87, -1px 0px #065b87 inset;
+    -moz-box-shadow: -1px 0px #065b87, -1px 0px #065b87 inset;
+    box-shadow: -1px 0px #065b87, -1px 0px #065b87 inset;
+}
+.dj_ie7.dijitRtl .oneui .idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    padding: 0px 16px 32px 11px;
+}
+
+.dijitRtl .oneui .idxHeaderSecondaryGray.idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+    -webkit-box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+    -moz-box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+    box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabHover .dijitTabInnerDiv {
+    -webkit-box-shadow: -1px 0px #065b87 inset, 0px 1px #065b87 inset, -1px 0px #065b87;
+    -moz-box-shadow: -1px 0px #065b87 inset, 0px 1px #065b87 inset, -1px 0px #065b87;
+    box-shadow: -1px 0px #065b87 inset, 0px 1px #065b87 inset, -1px 0px #065b87;
+}
+
+.dijitRtl .oneui .idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabHover .dijitTabInnerDiv {
+    -webkit-box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87;
+    -moz-box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87;
+    box-shadow: -1px 0px #065b87 inset, -1px 0px #065b87;
+}
+
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabHover .dijitTabInnerDiv {
+    -webkit-box-shadow: -1px 0px #d2d2d2 inset, 0px 1px #d2d2d2 inset, -1px 0px #d2d2d2;
+    -moz-box-shadow: -1px 0px #d2d2d2 inset, 0px 1px #d2d2d2 inset, -1px 0px #d2d2d2;
+    box-shadow: -1px 0px #d2d2d2 inset, 0px 1px #d2d2d2 inset, -1px 0px #d2d2d2;
+}
+
+.dijitRtl .oneui .idxHeaderSecondaryGray.idxHeaderSecondarySingleRow .oneuiContentContainer .dijitTabContainerTop-tabs .dijitTabHover .dijitTabInnerDiv {
+    -webkit-box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+    -moz-box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+    box-shadow: -1px 0px #d2d2d2, -1px 0px #d2d2d2 inset;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabPaneWrapper, 
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerTop-tabs, 
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerBottom-tabs, 
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerLeft-tabs, 
+.dijitRtl .oneui .oneuiContentContainer .dijitTabContainerRight-tabs {
+    margin: 0 11px 0 0;
+}
+
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabPaneWrapper,
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerTop-tabs, 
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerBottom-tabs, 
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerLeft-tabs, 
+.dijitRtl .oneui .idxHeaderSecondaryGray .oneuiContentContainer .dijitTabContainerRight-tabs {
+    margin: 0 12px 0 0;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabCloseButton {
+    margin: 0 6px 0 -2px;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabChecked .dijitTabCloseButton {
+    margin: 0 6px 0 -2px;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .dijitTabArrowButton {
+    margin: 0 5px 0 -3px;
+}
+
+.dijitRtl .oneui .oneuiContentContainer .idxTabSeparator {
+    right: 13px;
+}
+
+

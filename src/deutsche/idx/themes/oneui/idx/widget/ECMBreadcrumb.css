@@ -1,0 +1,20 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxECMBreadcrumb {
+	
+}
+
+.oneui .idxECMBreadcrumb .idxECMBreadcrumbItem {
+	color: black;
+	text-decoration: none;
+}
+
+.oneui .idxECMBreadcrumb .idxECMBreadcrumbItem.idxECMBreadcrumbItemClickable {
+	color: blue;
+	text-decoration: underline;
+}

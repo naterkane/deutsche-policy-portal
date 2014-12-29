@@ -1,0 +1,92 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.vienna .idxBanner {
+	background-image: url('vienna/banner.png');
+	padding: 5px;
+}
+
+.vienna .idxBanner .idxBannerBottomBar {
+	display: none;
+}
+
+.vienna .idxBanner .idxBannerTrailer {
+	float: right;
+	padding: 0px 15px 6px 0px;
+}
+
+.dijitRtl .vienna .idxBanner .idxBannerTrailer {
+	float: left;
+	padding: 0px 0px 6px 15px;
+}
+
+.vienna .idxBanner .idxBannerContainer {
+	padding: 5px;
+}
+
+.vienna .idxBanner .idxBannerHelpButtonIcon {
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 16px;
+	height: 16px;
+	background-image: url(claro/help.png);
+	border-left: 1px solid #fff;
+	padding: 0px 0px 0px 15px;
+}
+
+.dijitRtl .vienna .idxBanner .idxBannerHelpButtonIcon {
+	background-position: left;
+	border-left: 0px;
+	border-right: 1px solid #fff;
+	padding: 0px 15px 0px 0px;
+}
+
+.vienna .idxBanner .dijitButton,
+.vienna .idxBanner .dijitDropDownButton,
+.vienna .idxBanner .dijitButtonNode,
+.vienna .idxBanner .dijitButtonActive .dijitButtonNodeHover,
+.vienna .idxBanner .dijitDropDownButton .dijitButtonNodeHover,
+.vienna .idxBanner .dijitDropDownButton .dijitDownArrowButtonHover {
+	border: none !important;
+	background: none !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
+    border-radius: 0px 0px 0px 0px !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.vienna .idxBanner .dijitButton .dijitButtonNode,
+.vienna .idxBanner .dijitDropDownButton .dijitButtonNode {
+	min-width: 0px;
+	padding-right: 0;
+	filter: none;
+}
+
+.vienna .idxBanner .dijitArrowButtonInner {
+	background-image: url(claro/bannerArrow.png);
+	background-position: center;
+}
+
+.dijitRtl .vienna .idxBanner .dijitArrowButtonInner {
+	margin-right: 2px;
+}
+
+.vienna .idxBanner .dijitButtonContents {
+    border: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+.vienna .idxBanner .dijitButtonContents .dijitButtonText {
+    color: #dddddd;
+    font-weight: bold;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.vienna .idxBanner .dijitButtonContents .dijitButtonText:hover {
+	color: #fff;
+}

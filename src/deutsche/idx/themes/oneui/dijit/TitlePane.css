@@ -1,0 +1,99 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* TitlePane 
+ * 
+ * Styling TitlePane means styling the TitlePane title and its content container  (dijitTitlePane)
+ * 
+ * TitlePane title:
+ * 1. TitlePane title (default styling): 
+ * 		.dijitTitlePaneTitle - TitlePane's title div style: background-image, border
+ *
+ * 2. hovered TitlePane title (ie, mouse hover on a title bar)
+ * 		.dijitTitlePaneTitleHover - styles when mouse hover on the title div
+ * 
+ * 3. active TitlePane title (ie, mouse down on a title bar)
+ * 		.dijitTitlePaneTitleActive - styles when mouse down on the title div
+ * 
+ * 
+ * TitlePane Content Container:
+ * 1. outer/inner container: 
+ * 		.dijitTitlePaneContentOuter / dijitTitlePaneContentInner - styles for the content outer div
+ */
+ 
+.oneui .dijitTitlePane{
+  background: #ffffff;
+}
+.oneui .dijitTitlePaneTitle {
+  border: 1px solid #ddd;
+  padding:5px 6px 6px 7px;
+}
+.oneui .dijitTitlePaneTitleHover {
+  background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#ededed 100%); /* IE10+ */
+background: linear-gradient(top, #ffffff 0%,#ededed 100%); /* W3C */
+}
+.oneui .dijitTitlePaneTitleActive {
+  background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ededed 0%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ededed 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ededed 0%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ededed 0%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top, #ededed 0%,#ffffff 100%); /* W3C */
+}
+.oneui .dijitTitlePaneTitleFocus {
+	xmargin:0px -10px;
+	xheight:17px;
+}
+x.oneui .dijitTitlePaneFocus {
+  margin-top: 3px;
+  padding-bottom: 2px;
+}
+.oneui .dijitTitlePane .dijitArrowNode {
+  background-image: url("images/spriteArrows.png");
+  background-repeat: no-repeat;
+  height: 8px;
+  width: 7px;
+}
+.oneui .dijitTitlePane .dijitOpen .dijitArrowNode {
+  background-position: 0 0;
+}
+.oneui .dijitTitlePaneActive .dijitOpen .dijitArrowNode {
+  background-position: 0 0;
+}
+.oneui .dijitTitlePane .dijitClosed .dijitArrowNode {
+  background-position: -42px 0;
+}
+.oneui .dijitTitlePaneHover .dijitClosed .dijitArrowNode {
+  background-position: -14px 0;
+}
+.oneui .dijitTitlePaneActive .dijitClosed .dijitArrowNode {
+  background-position: -14px 0;
+}
+.oneui .dijitTitlePaneContentOuter {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+.oneui .dijitTitlePaneContentInner {
+  padding: 9px;
+}
+.oneui .dijitTitlePaneTextNode {
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: text-top;
+}
+.dj_ie .oneui .dijitTitlePaneTitleHover {
+	background-color:#e5e5e5;
+}
+.dj_ie .oneui .dijitTitlePaneTitleActive {
+	background-color:#cccccc;
+}

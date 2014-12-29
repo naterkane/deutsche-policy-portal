@@ -1,0 +1,178 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.oneui .idxBanner {
+	height: 41px;
+	width: 100%;
+	background: rgb(62,62,62);
+	background: -moz-linear-gradient(top,  rgb(62,62,62) 0%, rgb(19,19,19) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(62,62,62)), color-stop(100%,rgb(19,19,19)));
+	background: -webkit-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+	background: -o-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+	background: -ms-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+	background: linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e3e3e', endColorstr='#131313',GradientType=0 );
+	padding: 0px;
+}
+
+.dj_ie .oneui .idxBanner {
+	height: 42px;
+}
+
+.oneui .idxBanner .idxBannerLogoArea .idxBannerLogo {
+	display: inline;
+    float: right;
+    width: 80px;
+    height : 38px;
+	background: transparent url(images/bannerLogo.png) left top no-repeat;
+	margin-bottom: 5px;
+}
+
+.dj_ie .oneui .idxBanner .idxBannerLogoArea .idxBannerLogo {
+	margin-bottom: 0px;
+}
+
+.dijitRtl .oneui .idxBanner .idxBannerLogoArea .idxBannerLogo {
+	float: left;
+}
+
+.oneui .idxBanner .idxBannerInnerContainer,
+.oneui .idxBanner .idxBannerTrailer {
+	height: 38px;
+}
+
+.oneui .idxBanner .idxBannerBottomBar {
+	background: rgb(26,150,198);
+	background: -moz-linear-gradient(top,  rgb(26,150,198) 0%, rgb(0,117,163) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(26,150,198)), color-stop(100%,rgb(0,117,163)));
+	background: -webkit-linear-gradient(top,  rgb(26,150,198) 0%,rgb(0,117,163) 100%);
+	background: -o-linear-gradient(top,  rgb(26,150,198) 0%,rgb(0,117,163) 100%);
+	background: -ms-linear-gradient(top,  rgb(26,150,198) 0%,rgb(0,117,163) 100%);
+	background: linear-gradient(top,  rgb(26,150,198) 0%,rgb(0,117,163) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a96c6', endColorstr='#0075a3',GradientType=0 );
+	height: 4px;
+	width: 100%;
+	margin: 0px -1px 0px -1px;
+}
+
+.oneui .idxBanner .idxBannerTrailer {
+	float: right;
+	padding: 6px 15px 0px 0px;
+}
+
+.dj_ie .oneui .idxBanner .idxBannerTrailer {
+	margin-bottom: -5px;
+}
+
+.dijitRtl .oneui .idxBanner .idxBannerTrailer {
+	float: left;
+	padding: 6px 0px 0px 15px;
+}
+
+.oneui .idxBanner .idxBannerContainer {
+	font-size: 1.08em;
+	font-weight: bold;
+	color: #fff;
+	padding-top: 11px;
+	margin: 0px 0px 0px 30px;
+	float: left;
+}
+
+.dijitRtl .oneui .idxBanner .idxBannerContainer {
+	float: right;
+	margin: 0px 30px 0px 0px;
+}
+
+.oneui .idxBanner .idxBannerHelpButtonIcon {
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 16px;
+	height: 16px;
+	background-image: url(images/help.png);
+	border-left: 1px solid #3d3d3d;
+	padding: 0px 0px 0px 15px;
+	margin-top: 4px;
+}
+
+.dijitRtl .oneui .idxBanner .idxBannerHelpButtonIcon {
+	background-position: left;
+	border-left: 0px;
+	border-right: 1px solid #3d3d3d;
+	padding: 0px 15px 0px 0px;
+}
+
+.oneui .idxBanner .dijitButton,
+.oneui .idxBanner .dijitDropDownButton,
+.oneui .idxBanner .dijitButtonNode,
+.oneui .idxBanner .dijitButtonActive .dijitButtonNodeHover,
+.oneui .idxBanner .dijitDropDownButton .dijitButtonNodeHover,
+.oneui .idxBanner .dijitDropDownButton .dijitDownArrowButtonHover {
+	border: none !important;
+	background: none !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
+    border-radius: 0px 0px 0px 0px !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.oneui .idxBanner .dijitButton .dijitButtonNode,
+.oneui .idxBanner .dijitDropDownButton .dijitButtonNode {
+	min-width: 0px;
+	padding: 0;
+}
+
+.oneui .idxBanner .dijitArrowButtonInner {
+	background-image: url(images/bannerArrow.png);
+	background-position: center;
+}
+
+.dijitRtl .oneui .idxBanner .dijitArrowButtonInner {
+	margin-right: 2px;
+}
+
+.oneui .idxBanner .dijitButtonContents {
+    border: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+.oneui .idxBanner .dijitButtonContents .dijitButtonText,
+.oneui .idxBanner a,
+.oneui .idxBanner A:link,
+.oneui .idxBanner a:visited {
+    color: #dddddd;
+    font-weight: bold;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    padding-right: 10px;
+}
+
+.oneui .idxBanner a,
+.oneui .idxBanner A:link,
+.oneui .idxBanner a:visited {
+	padding-left: 15px;
+	padding-right: 15px;
+	}
+
+.oneui .idxBanner .dijitButtonContents .dijitButtonText:hover,
+.oneui .idxBanner a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.oneui .idxBanner a.idxLinkSelected,
+.oneui .idxBanner a.idxLinkSelected:hover {
+	color: #fff;
+	text-decoration: underline;
+	cursor: auto;
+}

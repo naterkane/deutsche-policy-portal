@@ -1,0 +1,126 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/*************************************************/
+/* TriStateCheckBox								 */
+/*************************************************/
+.oneui .idxTriStateCheckBoxOptions {
+  background-image: url("../images/blank.gif?theme=oneui");
+}
+
+.oneui .idxTriStateCheckBox,
+.oneui .dojoxTriStateCheckBox {
+	border: 1px solid #bbb;
+  -moz-border-radius: 2px;
+	border-radius: 2px;
+  
+  background: #fbfbfb;
+  
+  width: 12px;
+  height: 12px;
+  margin: 0 2px 0 0;
+  padding: 0;
+	box-shadow: inset 0px 1px 3px 0px #d6d6d6;
+        
+  
+}
+
+.oneui .idxTriStateCheckBox .idxHCImage {
+	display: none;
+}
+
+.oneui .dijit_a11y .idxTriStateCheckBox .idxHCImage {
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+
+.oneui .idxTriStateCheckBoxunchecked,
+.oneui .dojoxTriStateCheckBox {
+	background: #fbfbfb;
+	border-color: #888;
+}
+
+.oneui .idxTriStateCheckBoxunchecked:hover,
+.oneui .dojoxTriStateCheckBox:hover {
+	background: #e5e5e5;
+	border-color: #7b7b7b;
+}
+
+.oneui .idxTriStateCheckBoxchecked,
+.oneui .dojoxTriStateCheckBoxChecked {
+	background: #fbfbfb url("images/checkmark.png") center no-repeat;
+	border-color: #bbb;
+}
+
+.oneui .idxTriStateCheckBoxchecked:hover,
+.oneui .dojoxTriStateCheckBoxChecked:hover {
+	background: #e5e5e5 url("images/checkmark.png") center no-repeat;
+	border-color: #a7a7a7;
+}
+
+.oneui .idxTriStateCheckBoxmixed,
+.oneui .dojoxTriStateCheckBoxMixed {
+	background: #fbfbfb url("images/trimark.png") center no-repeat;
+	border-color: #bbb;
+}
+
+.oneui .idxTriStateCheckBoxmixed:hover,
+.oneui .dojoxTriStateCheckBoxMixed:hover {
+	background: #e5e5e5 url("images/trimark.png") center no-repeat;
+	border-color: #a7a7a7;
+}
+
+.oneui .idxTriStateCheckBoxuncheckedDisabled,
+.oneui .dojoxTriStateCheckBoxDisabled {
+	background: #eee;
+	opacity: .5;
+}
+
+.oneui .idxTriStateCheckBoxcheckedDisabled,
+.oneui .dojoxTriStateCheckBoxCheckedDisabled {
+	background: #eee url("images/checkmark.png") center no-repeat;
+	opacity: .5;
+}
+
+.oneui .idxTriStateCheckBoxmixedDisabled,
+.oneui .dojoxTriStateCheckBoxMixedDisabled {
+	background: #eee url("images/trimark.png") center no-repeat;
+	opacity: .5;
+}
+
+.oneui .idxTriStateCheckBox .dijitCheckedFocused, .dijitCheckBoxFocused {
+	outline: 1px dotted #666666;
+}
+
+/* temporarily sub-classing idx.oneui.form.TriStateCheckBox for 1.2 */
+.oneui .idxOneuiTriStateCheckBoxInner {
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	text-align: center;
+}
+
+.dijit_a11y .oneui .idxOneuiTriStateCheckBoxInner {
+	visibility: visible;
+	display: block;
+}
+
+.oneui .idxOneuiTriStateCheckBoxInput {
+	opacity: 0.01;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 14px;
+	height: 14px;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.dj_ie .oneui .idxOneuiTriStateCheckBoxInput {
+	filter: alpha(opacity=0);
+}

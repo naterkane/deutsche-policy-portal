@@ -1,0 +1,94 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* Common styles for oneui demo pages */
+.oneui .dijitStackContainer .dijitContentPane {
+	padding: 0;
+}
+
+.dijitStackContainer {
+	overflow: visible;
+}
+
+.dijitStackContainer-dijitContentPane.dijitVisible {
+	overflow: visible;
+}
+
+.demoContent {
+	margin: 1em 30px;
+	min-width: 980px;
+}
+
+/* A constraining box that prevents code and samples stretching too wide
+   but is wide enough to demonstrate full-width (980px) samples */
+.demoBox {
+	max-width: 1180px;
+	overflow-x: auto;
+	float: left;
+	*float: none;  /*IE7 renders Header badly inside left floated div. */
+	margin-bottom: 2.5em;
+}
+.demoBox + * {
+	clear: both;
+}
+
+/* A surround frame for working samples in-page */
+.demoSample, .demoSampleWide {
+	border: 1px dotted #1792C2;
+	padding: 0px 6px 4px 6px;
+}
+
+.demoSample {
+	display: inline-block;
+}
+
+.demoSampleWide {
+	display: block;
+}
+
+.demoSampleNotice {
+	font-size: 0.85em;
+	font-style: italic;
+	color: #1792C2;
+	margin-top: 1px;
+	margin-bottom: 3px;
+	direction: ltr;
+}
+
+/* Code mark-up styles */
+pre.codePage {
+	font-size: 0.9em;
+	background: white;
+	padding: 1em 30px;
+	border-top: none;
+}
+
+pre.code {
+	font-size: 0.9em;
+	background: #efefef;
+	padding: 0.4em 0.6em;
+	border: 1px solid #cccccc;
+}
+
+pre.code .highlitCode {
+	color: fireBrick;
+	font-weight: normal;;
+}
+
+.codeSnippet {
+	font-family: "Courier New", Courier, monospace;
+	color: fireBrick;
+	font-weight: 400;
+	white-space: pre;
+}
+
+
+/* API mark-up styles */
+.api-fieldname {
+	font-weight: bold;
+	color: darkRed;
+}

@@ -1,0 +1,24 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dijitRtl .oneui .idxComposite .idxLabel{
+	text-align: right;
+}
+
+.dijitRtl .oneui .idxLabel{
+	vertical-align: top;
+	padding:0 0 0 10px;
+	margin: 3px 0 2px 0;
+}
+.dijitRtl .oneui .idxComposite .idxUnit{
+	padding-left: 0px;
+	padding-right: 5px;
+}
+.dijitRtl .oneui .idxComposite .dijitValidationContainer{
+    vertical-align: top;
+    margin: 0 4px 0 0;
+}

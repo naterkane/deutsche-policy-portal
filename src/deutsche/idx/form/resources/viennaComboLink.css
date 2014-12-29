@@ -1,0 +1,50 @@
+.vienna .idxComboLink.idxLinkDerived {
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+  vertical-align: top;
+  white-space: no-wrap;
+} 
+
+.vienna .idxComboLinkArrowButton {
+	white-space: no-wrap;
+	display: inline;
+}
+
+.vienna .idxComboLinkAnchor {
+  margin-top: -2px;
+  vertical-align: top;
+}
+
+.vienna .idxAppMarquee .idxComboLinkAnchor {
+  color: #ffffff;
+}
+
+.vienna .idxComboLinkDisabled .idxComboLinkAnchor,
+.vienna .idxAppMarquee .idxComboLinkDisabled .idxComboLinkAnchor {
+  color: #696969;
+  text-decoration: none;
+}
+
+.vienna .idxComboLink .dijitArrowButtonInner {
+  height: 11px;
+  width: 13px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -5px;
+  margin-left: -2px;
+  background-image: url("vienna/buttonArrowsSecondary.png");
+}
+
+.vienna .idxAppMarquee .idxComboLink .dijitArrowButtonInner {
+  background-image: url("../../themes/vienna/form/images/buttonArrows.png");
+}
+
+.dj_ie7 .vienna .idxComboLink .dijitArrowButtonInner,
+.dj_ie7 .vienna .idxAppMarquee .idxComboLink .dijitArrowButtonInner {
+  margin: 0px;
+  padding: 0px 2px;
+  top: -2px;
+  vertical-align: top;
+}
+

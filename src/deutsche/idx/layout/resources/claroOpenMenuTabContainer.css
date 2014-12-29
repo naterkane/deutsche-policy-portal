@@ -1,0 +1,120 @@
+
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.vienna .idxTabMenu .dijitTabStripMenuIcon
+{
+	background: url('claro/arrow_white.gif') no-repeat;
+	width: 9px;
+	float: right;
+	margin-top: 3px;
+	margin-right: 2px;
+}
+
+.claro .idxTabMenu .tabStripButtonHover .dijitTabStripIcon,
+.claro .idxTabMenu .dijitHasDropDownOpen .dijitTabStripIcon
+{
+	background: url('claro/arrow_blue.gif') no-repeat;
+}
+
+.claro .idxTabMenu .dijitTabListContainer-top .tabStripButton
+{
+	background: none;
+	border: none;
+	padding: 0px;
+	margin-top: 0px;
+	margin-left: 8px;
+	margin-right: 4px;
+}
+
+.claro  .idxTabMenu .tabStripButton .dijitButtonText
+{
+	color: #ffffff;
+	font-family: Tahoma;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.claro .idxTabMenu .tabStripButtonHover .dijitTabContent
+{
+	padding: 0px;
+}
+
+.claro  .idxTabMenu .tabStripButtonHover .dijitButtonText,
+.claro  .idxTabMenu .dijitHasDropDownOpen .dijitButtonText
+{
+	color: #3a5c86;
+}
+
+.claro .idxTabMenu .dijitTabListContainer-top .tabStripButton .dijitTabInnerDiv
+{
+	background-color: #4ea825;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4ea825', endColorstr='#98d879'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#4ea825), to(#98d879)); /* for webkit browsers */ 
+    background: -moz-linear-gradient(top,  #4ea825,  #98d879); /* for firefox 3.6+ */
+	
+	height: 18px;
+	
+	border: 1px #2f7f0a solid;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+.claro .idxTabMenu .dijitTabListContainer-top .tabStripButtonHover .dijitTabInnerDiv,
+.claro .idxTabMenu .dijitTabListContainer-top .dijitHasDropDownOpen.dijitTabInnerDiv
+{
+	background-color: #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d9e2e9'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d9e2e9)); /* for webkit browsers */ 
+    background: -moz-linear-gradient(top,  #ffffff,  #d9e2e9); /* for firefox 3.6+ */
+
+	height: 18px;
+	border: none;
+}
+
+.claro .dijitMenuPopup[dijitpopupparent=suiteadmin_tablist_menuBtn]
+{
+	/* hardcode top/left to avoid the need for
+	 custom code to adjust placement in order to match UX specs*/
+	/* top: 61px !important;
+	left: 13px !important; */
+
+	padding: 4px;
+	background-color: #e6edf3;
+	
+  	border-radius: 2px;
+  		-moz-border-radius: 2px;
+  		-webkit-border-radius: 2px;
+  	box-shadow:0px 1px 1px rgba(0,0,0,0.25);
+		-webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.25);
+	
+}
+
+/* TODO generalize from #suiteadmin */
+.claro .dijitMenuPopup #suiteadmin_menu
+{
+	border: solid #c4ceda 1px;
+  	border-radius: 2px;
+  		-moz-border-radius: 2px;
+  		-webkit-border-radius: 2px;
+}
+
+.claro .dijitMenuPopup #suiteadmin_menu .dijitMenuItemLabel
+{
+	padding-left: 6px;
+}
+
+.claro .dijitMenuPopup #suiteadmin_menu .dijitMenuSeparatorIconCell .dijitMenuSeparatorTop
+{
+	border: none;
+}
+.claro .dijitMenuPopup #suiteadmin_menu .dijitMenuSeparatorLabelCell .dijitMenuSeparatorTop
+{
+	margin-right: 4px;
+	border-color: #d9e3ed;
+}

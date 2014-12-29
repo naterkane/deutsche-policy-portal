@@ -1,0 +1,64 @@
+<div class="LoginFrame">
+<!--
+ * IBM Confidential
+ * OCO Source Materials
+ * (C) Copyright IBM Corp. 2010, 2011
+ * The source code for this program is not published 
+ * or otherwise divested of its trade secrets, irrespective
+ * of what has been deposited with the U.S. Copyright Office.
+-->
+
+    <div class="idxLoginBoxWithShadow" cellpadding="0" cellspacing="0" border="0">
+      <div class="idxLoginBox">
+
+       <div class="idxLoginBoxInner">
+   
+          <div dojoAttachPoint="loginTitleNode" class="idxLoginTitle">${loginTitle}</div>
+          
+          <div>
+            <div dojoAttachPoint="loginSubtitleNode" class="idxLoginSubTitle">${loginSubTitle}</div>
+
+            <div class="idxFieldLabel"><label dojoAttachPoint="userNameLabelNode" id="${id}UserNameLabel" for="${id}UserName">${labelUserName}</label><span class="idxLoginSeparator">${labelSeparator}</span></div>
+            <input id="${id}UserName" aria-labelledby="${id}UserNameLabel" type="text" dojoType="dijit.form.ValidationTextBox" name="username" required="true" value="" dojoAttachPoint="loginUserName" class="field" missingMessage="${invalidMessage}" invalidMessage="${invalidMessage}" regExp="${regExp}">
+            
+            <div class="idxFieldLabel"><label dojoAttachPoint="passwordLabelNode" id="${id}PasswordLabel" for="${id}Password">${labelPassword}</label><span class="idxLoginSeparator">${labelSeparator}</span></div>
+            <input id="${id}Password" aria-labelledby="${id}PasswordLabel" type="password" dojoType="dijit.form.ValidationTextBox" name="password" required="true" value="" dojoAttachPoint="loginPassword" class="field" missingMessage="${invalidMessage}" invalidMessage="${invalidMessage}" regExp="${regExp}">
+
+			<div dojoAttachPoint="containerNode"></div>
+
+            <div dojoAttachPoint="inactivityMessageNode" class="idxInactivityMessage">${inactivityMessage}</div>
+            
+
+            <div class="idxLoginFrameButtonBar">
+              <button dojoType="dijit.form.Button" dojoAttachPoint="loginButton" dojoAttachEvent="onClick:_onSubmitClick"
+              	name="login">${labelSubmitButton}</button>
+              <button dojoType="dijit.form.Button" dojoAttachPoint="cancelButton" dojoAttachEvent="onClick:_onCancelClick"
+              	name="cancel" style="visibility:hidden;display:none;">${labelCancelButton}</button>
+            </div>
+            
+            <div dojoAttachPoint="copyrightNode" class="idxLoginCopyright">${loginCopyright}</div>
+          </div>
+
+       </div>
+       
+      </div>
+      <div class="loginShadowTop"><div class="loginShadowInner"></div></div>
+      <div class="loginShadowMiddle"><div class="loginShadowInner"></div></div>
+      <div class="loginShadowBottom"><div class="loginShadowInner"></div></div>
+    </div>
+    
+	<div dojoAttachPoint="invalidLoginDialog" dojoType="dijit.Dialog" title="${invalidMessageTitle}" style="display:none;">
+		<div class="dijitDialogPaneContentArea" style="width: 350px; height: 90px; overflow: auto;">
+			<table>
+				<tr>
+					<td><div class="idxDialogIconError" /></td>
+					<td><span dojoAttachPoint="invalidMessageNode" class='idxDialogIconText'>${invalidMessage}</span></td>
+				</tr>
+			</table>		
+		</div>			
+		<div class="dijitDialogPaneActionBar">
+			<button dojoAttachPoint="dialogOKButton" dojoType="dijit.form.Button" type="submit" label="${labelOkButton}" ></button>	
+		</div>
+	</div>
+	
+</div>

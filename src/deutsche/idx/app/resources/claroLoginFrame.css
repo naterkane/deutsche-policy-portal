@@ -1,0 +1,200 @@
+
+.claro .idxLoginFrame
+{
+	width: 100%;
+  	height: 100%;
+  	min-width: 275px;
+  	min-height: 390px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(claro/swoosh.png);
+}
+
+.claro div.idxLoginBoxWithShadow
+{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:275px;
+    height:390px;
+    z-index:1;
+    margin-left:-138px;
+    margin-top: -195px;
+    
+    
+}
+
+.claro .idxLoginBox {
+    font-size: 11px;
+    FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: black;
+    padding:12px;
+    border: solid 1px #808080;
+
+    text-align:left;
+    position: absolute; left: 0; right: 16px; top: 0; bottom: 0;
+	background:#fff;
+	-moz-opacity:0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
+	filter:alpha(opacity=85);
+}
+
+.dijitRtl .claro .idxLoginBox {
+	text-align: right;
+}
+
+/*Fix for defect 3013*/
+.claro .idxLoginBox .dijitButton *
+{
+	-moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.claro .idxLoginSubTitle,
+.claro .idxLoginBox .idxFieldLabel,
+.claro .idxLoginBox .idxInactivityMessage,
+.claro .idxLoginBox .idxLoginFrameButtonBar
+{
+	margin-top: 8px;
+}
+
+.claro .idxLoginBox .idxLoginCopyright
+{
+	margin-top: 20px;
+}
+
+/* Firefox and IE7 only */
+html>body .idxLoginBox
+{
+    padding: 12px;
+}
+
+.claro .idxLoginBoxInner
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+}
+
+/* IE6 only */
+* html body .idxLoginBoxInner
+{
+	padding:12px;
+	background:#fff;
+}
+    
+/* IE6 only */
+* .idxLoginBoxInner input
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* IE6 only */
+* .idxLoginBoxInner a
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* IE6 only */
+* .idxLoginBoxInner button
+{
+    position: relative;
+    z-index: 1;
+}
+
+/* Firefox and IE7 only */
+html>body .idxLoginBox
+{
+    /*background-image:url(./claro/loginpanel3.png);*/
+}
+
+.claro .idxLoginBox a
+{
+    color:blue;
+}
+
+.claro .idxLoginCopyright
+{
+    font-size: 9px;
+}
+
+.claro .idxLoginTitle
+{
+    font-family:Tahoma; 
+    font-size:13px;
+    font-weight:bold;
+    text-align:left;
+}
+
+.dijitRtl .claro .idxLoginTitle {
+	text-align: right;
+}
+
+.claro .loginInput
+{
+    border: 1px solid #9FABBB;
+    FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    float: none;
+    text-align:left;
+}
+
+.dijitRtl .claro .loginInput
+{
+    text-align:right;
+}
+
+.claro .loginShadowTop
+{
+    position: absolute; right: 0; top: 0; width: 16px; height: 30px;
+    overflow: hidden;
+}
+
+/* Firefox and IE7 only */
+html>body .loginShadowTop
+{
+    background-image:url(claro/login_shadow_right_top.png);
+}
+
+.claro .loginShadowMiddle
+{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 16px;
+    bottom: 30px;
+    overflow: hidden;
+}
+
+/* Firefox and IE7 only */
+html>body .loginShadowMiddle
+{
+    background-image:url(claro/login_shadow_right_side.png);
+    background-repeat:repeat-y;
+}
+
+.claro .loginShadowBottom
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* Firefox and IE7 only */
+html>body .loginShadowBottom
+{
+    background-image:url(claro/login_shadow_right_bottom.png);
+}
+
+.claro .loginShadowInner
+{
+    width: 16px;
+}

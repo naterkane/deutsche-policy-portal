@@ -1,0 +1,18 @@
+<div id="widget_${id}" class="dijitReset dijitInline dijitLeft oneuiComposite"
+	><div class="oneuiLabel"><span class="oneuiRequiredIcon">*&nbsp</span><label for="${id}" dojoAttachPoint="compLabelNode"></label></div
+	><div class="dijitInline"
+		><div class="dijitFileInput dijitInline" dojoAttachPoint="stateNode,oneuiBaseNode"
+			><input id="${id}" class="dijitFileInputReal" type="file" dojoAttachPoint="fileInput" name="${name}" dojoAttachEvent="onfocus: _fakeFocus, onblur: _fakeBlur"/
+			><div class="dijitFakeInput"
+				><input class="dijitFileInputVisible" type="text" dojoAttachPoint="focusNode, inputNode" dojoAttachEvent="onfocus: _fakeInputFocus, onblur: _fakeInputBlur" tabindex="-1"/
+				><span dojoAttachPoint="placeholder" class="dijitPlaceHolder dijitInputField"></span
+				><div class='dijitReset dijitValidationContainer dijitInline' dojoAttachPoint="iconNode"
+				><input class="dijitReset dijitInputField dijitValidationIcon dijitValidationInner" value="&#935;" type="text" tabIndex="-1" readonly="readonly" role="presentation"/
+				></div
+				><div class="dijitInline dijitFileInputText" dojoAttachPoint="titleNode">${browseText}</div
+				><div class="dijitInline dijitFileInputButton" tabIndex="0" dojoAttachPoint="cancelNode" dojoAttachEvent="ondijitclick:reset,onfocus: _focusButton, onblur: _blurButton">${cancelText}</div
+			></div
+		></div
+		><div class="oneuiHint" dojoAttachPoint="compHintNode"
+	></div
+></div>

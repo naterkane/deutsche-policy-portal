@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Demo</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+		@import "../demo.css";
+		@import "../../tests/_pagefooter/_PageFooter.css";
+	</style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo.ready",
+			"dojo.date.locale",
+			"idx.oneui.Menu",
+			"dijit.registry",
+			"dijit.MenuItem",
+			"idx.oneui.MenuBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.form.TextBox",
+			"dijit.form.Button",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.Header",
+			"idx.oneui.tests._pagefooter._PageFooter"],
+			locale,
+			Menu,
+			registry;
+			
+		var msgs = [
+			"hello, world\u200e", "You have a message.\u200e", "You've got mail.\u200e", "Dive! Dive! Dive!\u200e", "Elvis has left the building.\u200e", "Goonhilly, come in Goonhilly.\u200e", "Here's Johnny!\u200e",
+			"Houston, we have a problem.\u200e", "England expects that every man will do his duty.\u200e", "And now for something completely different.\u200e", "Nobody expected the Spanish Inquisition.\u200e",
+			"This parrot is dead.\u200e", "Are we nearly there yet?\u200e", "Beep, beep.\u200e", "Today's message is brought to you by the letters 'S' and 'D'.\u200e", "I Can Has Cheezburger?\u200e",
+			"Eh, what’s up, doc?\u200e", "Make it so.\u200e", "Gentlemen, we can rebuild him. We have the technology.\u200e", "There... are... FOUR LIGHTS!\u200e", "I tawt I taw a puddy tat!\u200e",
+			"This message will self-destruct in five seconds.\u200e", "Keep Calm and Carry On\u200e", "I have nothing to offer but blood, toil, tears and sweat\u200e", "Mission Accomplished\u200e",
+			"Read my lips: no new taxes.\u200e", "Ask not what your country can do for you&mdash;ask what you can do for your country\u200e", "The only thing we have to fear is fear itself.\u200e",
+			"The buck stops here.\u200e", "Think\u200e", "Alea iacta est\u200e", "Λεφτα υπαρχουν.\u200e", "Freedom is the right to be wrong, not the right to do wrong.\u200e", "Vive le Québec libre!\u200e",
+			"Too much of a good thing can be wonderful\u200e", "I am Spartacus\u200e", "Infamy! Infamy! They've all got it in for me.\u200e", "Gentlemen, you can't fight in here! This is the War Room.\u200e",
+			"Open the pod bay doors, HAL\u200e", "I'm sorry, Dave. I'm afraid I can't do that.\u200e", "This mission is too important for me to allow you to jeopardize it.\u200e",
+			"Just what do you think you're doing, Dave?\u200e", "Do, or do not. There is no 'try'.\u200e", "There are no facts, only interpretations.\u200e", "I've had a wonderful time, but this wasn't it.\u200e"];
+
+		var additem = function(menu, args){
+			var item = Menu.createMessageMenuItem(args);
+			menu.addChild(item);
+			return item;
+		}
+		
+		var addrandom = function(menu){
+			return additem(menu, {
+				type: ["error", "warning", "confirmation", "information", "success", "attention", "compliance"][Math.floor(Math.random() * 7)],
+				content: msgs[Math.floor(Math.random() * msgs.length)],
+				timestamp: locale.format(new Date(), { formatLength: "medium", locale: this.lang }),
+				messageId: ["CAT", "DOG", "YAK"][Math.floor(Math.random() * 3)] + (100000 + Math.floor(Math.random() * 3000000))
+			});
+		}
+		
+		function preParse(modules){
+			locale =   modules["dojo/date/locale"];
+			Menu =	 modules["idx/oneui/Menu"];
+			registry = modules["dijit/registry"];
+		}
+
+		function postParse(){		
+		 	var mm = registry.byId("message_menu_1");
+				
+			addrandom(mm);
+			addrandom(mm);
+			addrandom(mm);
+			addrandom(mm);
+			addrandom(mm);
+			
+			function addRemoveMessage(){
+				var msgItem = mm.getChildren()[0];
+				if(msgItem == mm.focusedChild)
+					mm.focusNext();
+				mm.removeChild(msgItem);
+				msgItem.destroy();
+				addrandom(mm);
+				setTimeout(addRemoveMessage, 2500);
+			};
+			addRemoveMessage();
+		}
+						 
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+
+		function fire(){
+			alert("message selected");
+		}
+		
+		function fireFilter(){
+			alert("filter selected");
+		}
+		
+	</script>
+		
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+
+	<div data-dojo-type="idx.oneui.MenuBar" id="menus">
+
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Messages<span class="idxBadgeWarning"><a>5</a></span></span>
+			<div data-dojo-type="idx.oneui.MenuDialog">
+				<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu">
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">2:03 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiErrorMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">1:30 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur rhonc...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiInformationMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">11:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">9:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiSuccessMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">8:13 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur vehic...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+				</div>
+				
+				<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"><a href="javascript:">View all (10)&#x200e;</a></div>
+			</div>
+		</div>
+
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Filtered messages<span class="idxBadgeError"><a>7</a></span></span>
+			<div data-dojo-type="idx.oneui.MenuDialog">
+				<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;">
+					<strong>All</strong>&#x200f;
+					&#x200f;<span style="padding:0px 10px">|&#x200e;&#x200f;</span>&#x200e;<a href="javascript: fireFilter();">&#x200f;<span class="oneuiErrorMenuItemIcon" style="vertical-align:middle">&#x200e;&#x200f;</span>&#x200e;<span style="padding:0px 5px">Errors</span>&#x200f;<span>(&#x200e;4&#x200f;)</span>&#x200e;</a>
+					&#x200f;<span style="padding:0px 10px">|&#x200e;&#x200f;</span>&#x200e;<a href="javascript: fireFilter();">&#x200f;<span class="oneuiWarningMenuItemIcon" style="vertical-align:middle">&#x200e;&#x200f;</span>&#x200e;<span style="padding:0px 5px">Warnings</span>&#x200f;<span>(&#x200e;1&#x200f;)</span>&#x200e;</a>
+					&#x200f;<span style="padding:0px 10px">|&#x200e;&#x200f;</span>&#x200e;<a href="javascript: fireFilter();">&#x200f;<span class="oneuiSuccessMenuItemIcon" style="vertical-align:middle">&#x200e;&#x200f;</span>&#x200e;<span style="padding:0px 5px">Successes</span>&#x200f;<span>(&#x200e;1&#x200f;)</span>&#x200e;</a>
+					&#x200f;<span style="padding:0px 10px">|&#x200e;&#x200f;</span>&#x200e;<a href="javascript: fireFilter();">&#x200f;<span class="oneuiInformationMenuItemIcon" style="vertical-align:middle">&#x200e;&#x200f;</span>&#x200e;<span style="padding:0px 5px">Information</span>&#x200f;<span>(&#x200e;1&#x200f;)</span>&#x200e;</a>
+				</div>
+
+				<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu" style="width:100%">
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">2:03 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiErrorMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">1:30 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur rhonc...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiInformationMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">11:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">9:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiSuccessMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">8:13 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur vehic...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+				</div>
+				
+				<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"><a href="javascript:">View all (10)&#x200e;</a></div>
+			</div>
+		</div>
+	
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Dynamic messages<span class="idxBadgeWarning"><a>5</a></span></span>
+			<div data-dojo-type="idx.oneui.MenuDialog">
+				<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu" id="message_menu_1"></div>
+				<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"><a href="javascript:">View all (10)&#x200e;</a></div>
+			</div>
+		</div>
+			
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Alert messages<span class="idxBadgeInformation"><a>5</a></span></span>
+			<div data-dojo-type="idx.oneui.MenuDialog">
+				<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu">
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">2:03 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiErrorMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">1:30 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur rhonc...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiComplianceMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">11:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiAttentionMenuItemIcon'">
+						<span class="messageMenuTimestamp messagesContrast">9:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div data-dojo-type="idx.oneui.Menu" id="help" style="display: none;">
+		<div data-dojo-type="dijit.MenuItem" onClick='alert("Item \"Help Center\" clicked")'>Help Center</div>
+		<div data-dojo-type="dijit.MenuItem" onClick='alert("Item \"About\" clicked")'>About</div>
+	</div>
+
+<div class="demoContent">
+	
+	<div class="demoBox">
+		<div class="demoSampleWide">
+			<div class="demoSampleNotice">Working sample</div>
+			<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'Mega-menu examples', primaryBannerType: 'thick', navigation: 'menus', help: 'help'">
+			</div>
+		</div>
+	</div>
+	
+	<!-- reserve space for the drop-down from the Header -->
+	<div style="height: 360px"></div>
+	
+</div>	
+
+	<div dir="ltr" data-dojo-type="idx.oneui.tests._pagefooter._PageFooter"></div>
+</body>
+</html>

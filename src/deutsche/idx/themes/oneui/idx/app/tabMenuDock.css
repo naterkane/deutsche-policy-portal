@@ -1,0 +1,34 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxTabMenuDockOptions {
+  background-image: url(../images/blank.gif?tabWidget=idx.app.WorkspaceTab&autoHeight=false);
+}
+
+.oneui div.idxTabMenuDock {
+  height: 48px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background: #0075a3;
+  background-image: -moz-linear-gradient(#1a96c6, #0075a3);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a96c6), to(#0075a3));
+  background-image: -webkit-linear-gradient(#1a96c6, #0075a3);
+  background-image: -o-linear-gradient(#1a96c6, #0075a3);
+  filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#1a96c6', EndColorStr='#0075a3');
+}
+
+.oneui div.idxTabMenuDockTabs {
+  position: absolute; 
+  left: 15px;
+  right: 25px;
+  top: 0px;
+  bottom: 0px;
+}
+
+

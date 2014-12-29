@@ -1,0 +1,50 @@
+.claro .idxAccordionTabContainer {
+	position: relative;
+}
+
+.claro .idxAccordionTabContainerHeader {
+	min-width: 2px;
+}
+
+.claro .idxAccordionTabContainerTabOuter {
+	text-align: right;
+	vertical-align: bottom;
+}
+.dijitRtl .claro .idxAccordionTabContainerTabOuter {
+	text-align: left;
+}
+
+.claro .idxAccordionTabContainerToolbarOuter {
+	vertical-align: bottom;
+}
+
+.claro .idxAccordionTabContainerToolbar {
+	border: none !important;
+	text-align: right;
+	padding: 2px 5px !important;
+}
+.dijitRtl .claro .idxAccordionTabContainerToolbar {
+	text-align: left;
+}
+
+.claro .idxAccordionTabContainerToolbar .dijitButton {
+	margin: 0px 2px 2px;
+}
+
+.claro .idxAccordionTabContainerTabList {
+	border-collapse: collapse;
+	border: solid 1px #B5BCC7;
+	background-image: url("claro/commonHighlight.png");
+	background-repeat: repeat-x;
+	background-color: #F1F1F1;
+	background-position: 0 0;
+}
+
+.claro .idxAccordionTabContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    min-width: 25px;
+}
+
+.claro .idxAccordionTabContainer .dijitToolbar {
+	background-color: transparent;
+	background-image: none;
+}

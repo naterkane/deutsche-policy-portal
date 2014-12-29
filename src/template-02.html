@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: One Column Layout with Dijit</title>
+
+	<link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui-dojo.css">
+	<link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui.css">
+	<link rel="stylesheet" href="lib/dijit/themes/claro/claro.css" media="screen">
+	<link rel="stylesheet" href="deutsche/resources/css/db-styles.css" media="screen">
+	<!-- load dojo and provide config via data attribute -->
+	<script src="lib/dojo/dojo.js" data-dojo-config="async:true, parseOnLoad:true, isDebug: true"></script>
+	<script>
+		require([
+			"dojo/parser",
+			"dijit/layout/BorderContainer",
+			"dijit/layout/TabContainer",
+			"dijit/layout/ContentPane",
+			"dijit/TooltipDialog",
+			"dijit/form/DropDownButton",
+			"dijit/form/TextBox",
+			"dijit/form/Button"
+		]);
+	</script>
+</head>
+<!-- one column layout -->
+<body class="oneui claro">
+<div id="db-banner">
+	<div class="db-branding-right"></div>
+	<div class="db-branding-left">
+		<div class="db-name">Deutsche Bank</div>
+		<div class="db-portalTitle">Policy Portal</div>
+	</div>
+	<div class="db-bannerLinks">
+		<a href="#">GPAG Contacts</a>|<a href="#">Policy template</a>|<a href="#">Policy principles</a>|<a href="#">Support</a>
+	</div>
+</div>
+<div class="db-topNav">
+	<div class="profileMenu" style="float: right;">
+		<div data-dojo-type="dijit/form/DropDownButton">
+			<span class="name">User Name</span>
+
+			<div data-dojo-type="dijit/TooltipDialog">
+				<dl class="profileDialog">
+					<dt>Location:</dt>
+					<dd>Frankfurt, Germany</dd>
+					<dt>Language:</dt>
+					<dd>English</dd>
+					<dt>Functional Applicability:</dt>
+					<dd>DB Group</dd>
+					<dt>Geographical Applicability:</dt>
+					<dd>Global</dd>
+					<dt>Policy Producing Function:</dt>
+					<dd class="last">Compliance</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<!-- end profile menu -->
+	<!-- navLinks -->
+	<div class="db-navLinks">
+		<a href="#" class="navLink">Policies</a>
+		<a href="#" class="navLink">Favourites</a>
+		<a href="#" class="navLink">Tasks</a>
+		<a href="#" class="navLink">Add New Document</a>
+		<a href="#" class="navLink">Access Control</a>
+		<a href="#" class="navLink active">Data Admin</a>
+	</div>
+</div>
+
+<div data-dojo-type="dijit/layout/BorderContainer" class="dbLayout-oneCol">
+	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top',splitter:false" class="dbLayout-oneCol">
+		Please select a Data Dictionary to review or edit
+	</div>
+	<div id="appLayout" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center'" tabStrip="true">
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="PPF"
+		     selected="true">
+			<div>
+				Policy Producing Function
+			</div>
+			<div>
+				<a href="#">back</a>
+				<a href="#">forward</a>
+				<a href="#">lock</a>
+			</div>
+			<div>
+				New Item
+			</div>
+		</div>
+
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Languages">
+			Lorem ipsum and all around - second...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
+		     title="Key Policy Designation">
+			Lorem ipsum and all around - last...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Compliance">
+			Lorem ipsum and all around - last...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Decommissioning">
+			Lorem ipsum and all around - last...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Key Policy Removal">
+			Lorem ipsum and all around - last...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
+		     title="Functional Applicability">
+			Lorem ipsum and all around - last...
+		</div>
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
+		     title="Geographical Applicability">
+			Lorem ipsum and all around - last...
+		</div>
+	</div>
+
+</div>
+
+
+</div>
+<!-- end appLayout -->
+</body>
+
+
+</html>

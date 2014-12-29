@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Overview</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+		@import "../demo.css";
+        @import "../../tests/_pagefooter/_PageFooter.css";
+	</style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.Menu",
+			"dijit.MenuItem",
+			"idx.oneui.MenuBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.form.TextBox",
+			"dijit.form.Button",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.Menu",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.Header",
+			"idx.oneui.tests._pagefooter._PageFooter"];
+
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+				 
+		function fire(){
+			alert("message selected");
+		}
+		
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+
+	<div class="demoContent">
+		<div dir='ltr'>
+			<p>
+				A designated message area can be included into the 
+				<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y30&vsub=*&hsub=*&openpanes=10100000">header</a>
+				by using the applicable 
+				<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y51&vsub=*&hsub=*&openpanes=10100001">mega menu</a> widgets. 
+			</p>
+			<p>
+				Here's an example of message menu, including a "badge" on the menu item to show the number of unread messages,
+				working as a drop-down menu from a header:
+			</p>
+		</div>
+		
+		<div data-dojo-type="idx.oneui.MenuBar" id="menus">
+		
+			<div data-dojo-type="dijit.PopupMenuBarItem">
+				<span>Messages<span class="idxBadgeWarning"><a>5</a></span></span>
+				<div data-dojo-type="idx.oneui.MenuDialog">
+					<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu">
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+							<span class="messageMenuTimestamp messagesContrast">2:03 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+						</div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiErrorMenuItemIcon'">
+							<span class="messageMenuTimestamp messagesContrast">1:30 PM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur rhonc...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+						</div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiInformationMenuItemIcon'">
+							<span class="messageMenuTimestamp messagesContrast">11:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+						</div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+							<span class="messageMenuTimestamp messagesContrast">9:03 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+						</div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'oneuiSuccessMenuItemIcon'">
+							<span class="messageMenuTimestamp messagesContrast">8:13 AM</span>&#x200f;<span class="messageTitles">Lorem ipsum dolor sit amet, consectetur vehic...&#x200e;</span>&#x200f; &#x200e;<span class="messagesContrast">(CAT123456)&#x200e;</span>
+						</div>
+					</div>
+					
+					<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"><a href="javascript:">View all (10)&#x200e;</a></div>
+				</div>
+			</div>
+		</div>
+		
+		<div data-dojo-type="idx.oneui.Menu" id="help" style="display: none;">
+			<div data-dojo-type="dijit.MenuItem" onClick='alert("Item \"Help Center\" clicked")'>Help Center</div>
+			<div data-dojo-type="dijit.MenuItem" onClick='alert("Item \"About\" clicked")'>About</div>
+		</div>
+		
+		<div class="demoBox">
+			<div class="demoSampleWide">
+				<div class="demoSampleNotice">Working sample</div>
+				<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'Mega-menu examples', primaryBannerType: 'thick', navigation: 'menus', help: 'help'">
+				</div>
+			</div>
+		</div>
+		
+		<!-- reserve space for the drop-down from the Header -->
+		<div style="height: 250px"></div>
+	
+		<div dir="ltr" data-dojo-type="idx.oneui.tests._pagefooter._PageFooter"></div>
+	</div>
+</body>
+</html>

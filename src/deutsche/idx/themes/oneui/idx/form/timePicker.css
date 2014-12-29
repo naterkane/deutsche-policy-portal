@@ -1,0 +1,25 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxTimePicker .idxPickerIcon  {
+	width: 16px;
+	height: 16px;
+}
+
+.oneui .idxTimeIcon {
+	background-image: url('images/time_picker16.png');
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.oneui .dijitComboBoxReadOnly .idxTimeIcon {
+	opacity: .5;
+	}
+
+.oneui .dijitTimeTextBoxDisabled .idxTimeIcon {
+	opacity: .35;
+}

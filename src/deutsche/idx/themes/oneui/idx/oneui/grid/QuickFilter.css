@@ -1,0 +1,75 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dojoxGridQuickFilter {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
+
+.dojoxGridQuickFilter .dijitTextBox {
+	position: relative;
+	float: right;
+	margin: 4px 0;
+	background-color: #F7FCFF;
+}
+
+.dojoxGridQuickFilter .dijitTextBoxHover {
+	background-color: #E9F4FE
+}
+
+.dojoxGridQuickFilterClearBtn {
+	display: none;
+	position: absolute;
+	right: 2px;
+	top: 1px;
+	cursor: pointer;
+	width: 12px;
+	height: 16px;
+	background-image: url(images/clearBtn.png);
+	background-repeat: no-repeat;
+	background-position: 0 center;
+}
+
+.dojoxGridQuickFilter .dijitTextBoxHover .dojoxGridQuickFilterClearBtn {
+	background-position: -12px center;
+}
+
+.dojoxGridQuickFilter .dijitTextBoxActive .dojoxGridQuickFilterClearBtn {
+	background-position: -24px center;
+}
+
+.dojoxGridQuickFilterCanClear .dojoxGridQuickFilterClearBtn {
+	display: block;
+}
+.dojoxGridQuickFilterCanClear .dijitTextBox .dijitInputContainer {
+	padding-right: 14px;
+}
+
+.dojoxGridQuickFilterIcon {
+	background-image: url(images/filter.png);
+	width: 22px;
+	height: 22px;
+}
+
+.dojoxGridQuickFilter .dojoxGridQuickFilterSingleBtn {
+	float: right;
+}
+
+.dojoxGridQuickFilter .dojoxGridQuickFilterComboBtn {
+	float: right;
+	display: none;
+}
+
+.dojoxGridQuickFilterAdvanced .dojoxGridQuickFilterSingleBtn {
+	display: none;
+}
+
+.dojoxGridQuickFilterAdvanced .dojoxGridQuickFilterComboBtn {
+	display: inline-block;
+}
+

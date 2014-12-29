@@ -1,0 +1,338 @@
+.claro .dijitSplitterV.idxSplitterV {
+	width: 6px;
+}
+
+.claro .dijitSplitterH.idxSplitterH {
+	height: 6px;
+}
+
+.claro .idxSplitterH .dijitSplitterThumb {
+	height: 6px;
+	width: 55px;
+	left: 106px;
+	top: 0px;
+}
+
+.claro .idxSplitterV .dijitSplitterThumb {
+	height: 55px;
+	width: 6px;
+	top: 106px;
+	left: 0px;
+}
+
+.claro .idxSplitterNoResize {
+	cursor: default !important;
+}
+
+.claro .idxBorderContainer .idxSplitter {
+	background-image: none;
+	position: absolute;
+}
+
+.claro .idxBorderContainerToggle .dijitSplitContainer-dijitContentPane,
+.claro .idxBorderContainerToggle .dijitBorderContainer-dijitContentPane,
+.claro .idxBorderContainerToggle .dijitSplitContainerNoGutter-dijitContentPane,
+.claro .idxBorderContainerToggle .dijitBorderContainerNoGutter-dijitContentPane {
+    padding: 0px;
+}
+
+.claro .idxSplitter .dijitSplitterThumb {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	position: absolute;
+}
+
+.dj_ie .claro .idxSplitter {
+	border: none;
+}
+
+.claro .idxSplitter .idxSplitterThumbOuter {
+	position: relative;
+}
+
+.claro .idxSplitterH .idxSplitterThumbOuter {
+	width: 268px;
+	height: 6px;
+}
+.claro .idxSplitterV .idxSplitterThumbOuter {
+	height: 268px;
+	width: 6px;
+}
+
+.claro .idxSplitter .idxSplitterBarTop,
+.claro .idxSplitter .idxSplitterBarBottom {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: -5px;
+}
+
+.claro .idxSplitterH .idxSplitterBarTop {
+	left: 0px;
+	top: 0px;
+	height: 6px;
+	width: 79px;
+	background-image: url("claro/splitterh-thmb-area.png");
+}
+.claro .idxSplitterH .idxSplitterBarBottom {
+	top: 0px;
+	right: 0px;
+	height: 6px;
+	width: 79px;
+	background-image: url("claro/splitterh-thmb-area.png");
+}
+.claro .idxSplitterV .idxSplitterBarTop {
+	top: 0px;
+	left: 0px;
+	height: 79px;
+	width: 6px;
+	background-image: url("claro/splitterv-thmb-area.png");
+	background-position: -4;
+}
+.claro .idxSplitterV .idxSplitterBarBottom {
+	bottom: 0px;
+	left: 0px;
+	height: 79px;
+	width: 6px;
+	background-image: url("claro/splitterv-thmb-area.png");
+	background-position: -4;
+}
+
+.dijit_a11y .idxSplitterThumbCollapse,
+.dijit_a11y .idxSplitterThumbExpand {
+	border: double 3px black !important;
+}
+
+/* down arrow */
+.claro .idxSplitterBottomNormal .idxSplitterThumbCollapse,
+.claro .idxSplitterTopNormal .idxSplitterThumbExpand,
+.claro .idxSplitterTopCollapsed .idxSplitterThumbCollapse,
+.claro .idxSplitterBottomExpanded .idxSplitterThumbExpand {
+		background-image: url("claro/splitterh-open.png");
+}
+
+/* down arrow locked/hover */
+.claro .idxBorderContainerLocked .idxSplitterBottomNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterTopNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterTopCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomExpanded .idxSplitterThumbExpandHover {
+		background-image: url("claro/splitterh-open.png");
+}
+
+/* down arrow hover */
+.claro .idxSplitterBottomNormal .idxSplitterThumbCollapseHover,
+.claro .idxSplitterTopNormal .idxSplitterThumbExpandHover,
+.claro .idxSplitterTopCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxSplitterBottomExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterh-open-hover.png");
+}
+
+/* up arrow */
+.claro .idxSplitterTopNormal .idxSplitterThumbCollapse,
+.claro .idxSplitterBottomNormal .idxSplitterThumbExpand,
+.claro .idxSplitterBottomCollapsed .idxSplitterThumbCollapse,
+.claro .idxSplitterTopExpanded .idxSplitterThumbExpand {
+	background-image: url("claro/splitterh-close.png");
+}
+
+/* up arrow locked/hover */
+.claro .idxBorderContainerLocked .idxSplitterTopNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterTopExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterh-close.png");
+}
+
+/* up arrow hover */
+.claro .idxSplitterTopNormal .idxSplitterThumbCollapseHover,
+.claro .idxSplitterBottomNormal .idxSplitterThumbExpandHover,
+.claro .idxSplitterBottomCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxSplitterTopExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterh-close-hover.png");
+}
+
+/* left arrow */
+.claro .idxSplitterLeftNormal .idxSplitterThumbCollapse,
+.claro .idxSplitterRightNormal .idxSplitterThumbExpand,
+.claro .idxSplitterRightCollapsed .idxSplitterThumbCollapse,
+.claro .idxSplitterLeftExpanded .idxSplitterThumbExpand {
+	background-image: url("claro/splitterv-open.png");
+}
+
+/* left arrow locked/hover */
+.claro .idxBorderContainerLocked .idxSplitterLeftNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterRightNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterRightCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterv-open.png");
+}
+
+/* left arrow hover */
+.claro .idxSplitterLeftNormal .idxSplitterThumbCollapseHover,
+.claro .idxSplitterRightNormal .idxSplitterThumbExpandHover,
+.claro .idxSplitterRightCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxSplitterLeftExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterv-open-hover.png");
+}
+
+/* right arrow */
+.claro .idxSplitterRightNormal .idxSplitterThumbCollapse,
+.claro .idxSplitterLeftNormal .idxSplitterThumbExpand,
+.claro .idxSplitterLeftCollapsed .idxSplitterThumbCollapse,
+.claro .idxSplitterRightExpanded .idxSplitterThumbExpand {
+	background-image: url("claro/splitterv-close.png");
+}
+
+/* right arrow locked/hover */
+.claro .idxBorderContainerLocked .idxSplitterRightNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterRightExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterv-close.png");
+}
+
+/* right arrow hover */
+.claro .idxSplitterRightNormal .idxSplitterThumbCollapseHover,
+.claro .idxSplitterLeftNormal .idxSplitterThumbExpandHover,
+.claro .idxSplitterLeftCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxSplitterRightExpanded .idxSplitterThumbExpandHover {
+	background-image: url("claro/splitterv-close-hover.png");
+}
+
+/* double arrows */
+.claro .idxSplitterBottomExpanded .idxSplitterThumbCollapse,
+.claro .idxSplitterTopCollapsed .idxSplitterThumbExpand {
+	background-image: url('claro/splitterh-open2.png');
+}
+.claro .idxSplitterBottomCollapsed .idxSplitterThumbExpand,
+.claro .idxSplitterTopExpanded .idxSplitterThumbCollapse {
+	background-image: url('claro/splitterh-close2.png');
+}
+.claro .idxSplitterRightCollapsed .idxSplitterThumbExpand,
+.claro .idxSplitterLeftExpanded .idxSplitterThumbCollapse {
+	background-image: url('claro/splitterv-open2.png');
+}
+.claro .idxSplitterLeftCollapsed .idxSplitterThumbExpand,
+.claro .idxSplitterRightExpanded .idxSplitterThumbCollapse {
+	background-image: url('claro/splitterv-close2.png');
+}
+
+.claro .idxBorderContainerLocked .idxSplitterTopCollapsed .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterh-open2.png');
+}
+.claro .idxBorderContainerLocked .idxSplitterBottomCollapsed .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterTopExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterh-close2.png');
+}
+.claro .idxBorderContainerLocked .idxSplitterRightCollapsed .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterv-open2.png');
+}
+.claro .idxBorderContainerLocked .idxSplitterLeftCollapsed .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterRightExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterv-close2.png');
+}
+
+
+.claro .idxSplitterTopCollapsed .idxSplitterThumbExpandHover,
+.claro .idxSplitterBottomExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterh-open2-hover.png');
+}
+.claro .idxSplitterBottomCollapsed .idxSplitterThumbExpandHover,
+.claro .idxSplitterTopExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterh-close2-hover.png');
+}
+.claro .idxSplitterRightCollapsed .idxSplitterThumbExpandHover,
+.claro .idxSplitterLeftExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterv-open2-hover.png');
+}
+.claro .idxSplitterLeftCollapsed .idxSplitterThumbExpandHover,
+.claro .idxSplitterRightExpanded .idxSplitterThumbCollapseHover {
+	background-image: url('claro/splitterv-close2-hover.png');
+}
+
+
+/* bidirectional styles */
+.claro .idxSplitterThumbExpand {
+	display: none;
+}
+
+.claro .idxSplitterBidiToggleH .idxSplitterThumbCollapse {
+	left: 79px;
+}
+.claro .idxSplitterBidiToggleH .idxSplitterThumbExpand {
+	display: block;
+	left: 134px;
+}
+
+.claro .idxSplitterBidiToggleV .idxSplitterThumbCollapse {
+	top: 79px;
+}
+.claro .idxSplitterBidiToggleV .idxSplitterThumbExpand {
+	display: block;
+	top: 134px;
+}
+
+/* locked style */
+.claro .idxBorderContainerLocked .idxSplitter {
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.claro .idxBorderContainerLocked .dijitSplitterThumb {
+	cursor: default;
+}
+
+.claro .idxBorderContainerLocked .idxSplitter .idxSplitterBarTop,
+.claro .idxBorderContainerLocked .idxSplitter .idxSplitterBarBottom,
+.claro .idxSplitterNoResize .idxSplitterBarTop,
+.claro .idxSplitterNoResize .idxSplitterBarBottom {
+	display: none;
+}
+
+/*--------split container inside of a border container--------*/
+.claro .dijitSplitContainer.dijitBorderContainer-child {
+	border: 0px none transparent;
+}
+ 
+/*-------split container inside of a split container---------*/
+.claro .dijitBorderContainer-child.dijitSplitContainer .dijitSplitContainer-child.dijitSplitContainer {
+	border:0px;
+}
+
+/*--------border container inside of a header-------------*/
+.claro .idxHeaderPaneContent.idxHeaderPaneSingleChild .idxHeaderPane-child.dijitBorderContainer {
+	border: 0px;
+}
+
+/*------- nested border container -----------------------------*/
+.claro .dijitBorderContainer.dijitBorderContainer-child,
+.claro .dijitBorderContainerNoGutter.dijitBorderContainer-child {
+
+	border: 0px;
+}
+
+/* no gutter splitter borders */
+.claro .dijitBorderContainerNoGutter > .idxSplitterH {
+	border: 1px solid #B5BCC7;
+	border-left: none;
+	border-right: none;
+} 
+
+.claro .dijitBorderContainerNoGutter > .idxSplitterV{
+	border: 1px solid #B5BCC7;
+	border-top: none;
+	border-bottom: none;
+}
+
+.claro .dijitBorderContainer.dijitBorderContainer-child > .idxSplitterH,
+.claro .dijitBorderContainer.dijitBorderContainer-child > .idxSplitterV,
+.claro .dijitBorderContainerNoGutter.dijitBorderContainer-child > .idxSplitterH,
+.claro .dijitBorderContainerNoGutter.dijitBorderContainer-child > .idxSplitterV {
+	border: 0px none transparent;
+} 
+

@@ -1,0 +1,8 @@
+/* TitlePane */
+
+.dijitRtl .vienna .dijitTitlePane .dijitOpen .dijitArrowNode {
+	background-position: 0px 0px;
+}
+.dijitRtl .vienna .dijitTitlePane .dijitClosed .dijitArrowNode {
+	background-position: -11px 0px;
+}

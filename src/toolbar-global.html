@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <title>Document List/View/History</title>
+     
+     <link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui-dojo.css">
+     <link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui.css">
+     <link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+     <link rel="stylesheet" href="deutsche/resources/css/db-styles.css" media="screen">
+      <!-- load dojo and provide config via data attribute -->
+      <script src="dojo/dojo.js" data-dojo-config="async:true, parseOnLoad:true"></script>
+      <script>
+          require(["../node_modules/intern-geezer/node_modules/dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer",
+              "dijit/layout/ContentPane"]);
+          require(["../node_modules/intern-geezer/node_modules/dojo/parser", "dijit/TooltipDialog", "dijit/form/DropDownButton", "dijit/form/TextBox", "dijit/form/Button"]);
+          require(["dijit/Dialog"]);
+			 require(["../lib/dijit/Toolbar", "dijit/form/ToggleButton", "dijit/ToolbarSeparator"]);
+       </script>
+</head>
+<!-- two column layout, fixed left col -->
+<body class="oneui claro">
+	<div id="db-banner">
+   	<div class="db-branding-right"></div>
+      <div class="db-branding-left">
+      	<div class="db-name">Deutsche Bank</div>
+         <div class="db-portalTitle">Policy Portal</div>
+      </div>
+      <div class="db-bannerLinks">
+      	<a href="#">GPAG Contacts</a>|<a href="#">Policy template</a>|<a href="#">Policy principles</a>|<a href="#">Support</a>
+      </div>  
+   </div>
+   <div class="db-topNav">
+   	<div class="profileMenu" style="float: right;">
+          <div data-dojo-type="dijit/form/DropDownButton">
+             <span>User Name</span>
+             <div data-dojo-type="dijit/TooltipDialog">
+					<dl class="profileDialog">
+               	<dt>Location:</dt>
+                  <dd>Frankfurt, Germany</dd>
+               	<dt>Language:</dt>
+                  <dd>English</dd>
+               	<dt>Functional Applicability:</dt>
+                  <dd>DB Group</dd>
+               	<dt>Geographical Applicability:</dt>
+                  <dd>Global</dd>
+               	<dt>Policy Producing Function:</dt>
+                  <dd class="last">Compliance</dd>
+               </dl>
+             </div>
+         </div>    
+      </div> <!-- end profile menu -->
+      <!-- navLinks -->
+      <div class="db-navLinks">
+      	<a href="#" class="navLink active">Policies</a><a href="#" class="navLink">Add new doc</a>
+      </div>
+   </div>
+
+	<div id="appLayout" class="dbLayout-left" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+		<div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+
+      <div id="toolbar_globalTest" data-dojo-type="dijit/Toolbar" class="db-toolbar bottomMargin">
+         <div data-dojo-type="dijit/form/Button" id="toolbar_globalTest.read" data-dojo-props="iconClass:'db-toolbar-icon icon-read', showLabel:false" disabled="disabled">Read</div>
+         <div data-dojo-type="dijit/form/Button" id="toolbar_globalTest.info" data-dojo-props="iconClass:'db-toolbar-icon icon-info', showLabel:false">Info</div>
+         <div data-dojo-type="dijit/form/Button" id="toolbar_globalTest.download" data-dojo-props="iconClass:'db-toolbar-icon icon-download', showLabel:false">Download</div>
+         <div data-dojo-type="dijit/form/Button" id="toolbar_globalTest.edit" data-dojo-props="iconClass:'db-toolbar-icon icon-edit', showLabel:false">Edit</div> 
+         <div data-dojo-type="dijit/form/Button" id="toolbar_globalTest.favorite" data-dojo-props="iconClass:'db-toolbar-icon icon-favorite', showLabel:false">Favorite</div>
+      </div>   
+
+
+		</div>
+
+	</div><!-- end appLayout -->
+
+
+
+
+
+
+</body> 
+ 
+
+
+</html>

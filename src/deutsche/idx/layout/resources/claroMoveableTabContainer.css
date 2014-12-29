@@ -1,0 +1,10 @@
+.claro .idxMoveableTabIndicator {
+	position: absolute;
+	background-image: url('claro/arrow_down_blue8.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 16px;
+	height: 16px;
+	display: none;
+	z-index: 50;
+}

@@ -1,0 +1,18 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.oneui .oneuiToasterRtl .status {
+    background: url('images/msgIcons_24bit_rtl.png') no-repeat;
+}
+.dj_ie6 .oneui .oneuiToasterRtl .status {
+    background: url('images/msgIcons_8bit_rtl.png') no-repeat;
+}
+.oneui.idx_i18n_il .oneuiToasterRtl .status {
+    background: url('images/msgIcons_24bit_rtl_il.png') no-repeat;
+}
+.dj_ie6 .idx_i18n_il .oneuiToasterRtl .status {
+    background: url('images/msgIcons_8bit_rtl_il.png') no-repeat;
+}

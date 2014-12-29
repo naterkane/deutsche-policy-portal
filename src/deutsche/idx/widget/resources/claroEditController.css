@@ -1,0 +1,58 @@
+.claro .idxEditController {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.dj_ie7 .claro .idxEditController {
+  display: inline;
+}
+
+.dj_webkit .claro .idxEditController {
+  top: 0px;
+}
+
+.dj_ie7 .claro .idxEditController {
+  top: 0px;
+}
+
+.dj_ie8 .claro .idxEditController {
+  top: 0px;
+}
+
+.dj_ie9 .claro .idxEditController {
+  top: 0px;
+}
+
+.claro .idxButtonBar.idxEditControllerButtonBar {
+  display: none;
+  visibility: hidden;
+  vertical-align: middle;
+}
+
+.claro .idxEditControllerEditLink {
+  display: inline;
+  visibility: visible;
+  vertical-align: middle;
+}
+
+.claro .idxEditControllerReadOnly .idxEditControllerEditLink,
+.claro .idxEditControllerReadOnly .idxEditControllerEditLink.idxLink,
+.claro .idxEditControllerEditMode .idxEditControllerEditLink,
+.claro .idxEditControllerEditMode .idxEditControllerEditLink.idxLink {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxEditControllerEditMode .idxEditControllerButtonBar,
+.claro .idxEditControllerEditMode .idxButtonBar.idxEditControllerButtonBar {
+  display: inline-block;
+  visibility: visible;
+}
+
+.dj_ie7 .claro .idxEditControllerEditMode .idxEditControllerButtonBar,
+.dj_ie7 .claro .idxEditControllerEditMode .idxButtonBar.idxEditControllerButtonBar {
+	display: inline;
+}
+	

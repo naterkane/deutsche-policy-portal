@@ -1,0 +1,30 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dijitRtl .oneui .idxOneuiHoverHelpTooltipLearnLink span{
+	
+	background:url("images/hoverLearnMoreArrow_rtl.png") no-repeat left center;
+	padding-left: 13px;
+	padding-top: 1px;	
+}
+
+.dijitRtl .oneui .idxOneuiHoverHelpTooltipRight .idxOneuiHoverHelpTooltipCloseIcon {
+	right:-13px; 
+	top:-13px; 
+}
+.dijitRtl .oneui .idxOneuiHoverHelpTooltipLeft .idxOneuiHoverHelpTooltipCloseIcon {
+	right:-3px; 
+	top:-13px; 
+}
+.dijitRtl .oneui .idxOneuiHoverHelpTooltipAbove .idxOneuiHoverHelpTooltipCloseIcon {
+	right:-13px; 
+	top:-13px; 
+}
+.dijitRtl .oneui .idxOneuiHoverHelpTooltipBelow .idxOneuiHoverHelpTooltipCloseIcon {
+	right:-10px; 
+	top:-4px; 
+}

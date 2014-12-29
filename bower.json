@@ -1,0 +1,28 @@
+{
+  "name": "Deutsche Bank Policy Portal",
+  "version": "0.0.0",
+  "authors": [
+    "Nater Kane <nater@naterkane.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dojo": "1.8.9",
+    "dijit": "1.8.9",
+    "dojox": "1.8.9",
+    "dgrid": "0.3.15",
+    "gridx": "git://github.com/oria/gridx.git#b39f09cc1c",
+    "util": "dojo-util#1.8.9",
+    "put-selector": "~0.3.5",
+    "xstyle": "~0.1.3",
+    "dstore": "1.0.0"
+  }
+}

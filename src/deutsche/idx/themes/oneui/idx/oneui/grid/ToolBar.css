@@ -1,0 +1,17 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dojoxGrid .dojoxGridToolBar {
+	position: relative;
+	height: 28px;
+}
+
+.dojoxGridToolBarRefreshBtnIcon {
+	background-image: url('images/refresh.png');
+	width: 22px;
+	height: 22px;
+}

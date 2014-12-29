@@ -1,0 +1,797 @@
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props="">
+
+	<div id="buttonsTab" class="testButtonTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Buttons', style:'padding:15px 15px 15px 10px;'">
+		<!-- Add dijit.form.Button/dijit.form.ToggleButton/dijit.form.ComboButton/dijit.form.DropdownButton here -->
+		<h2>dijit.form.Button</h2>
+		<button data-dojo-type="dijit.form.Button" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Primary"'>
+			Primary
+		</button>
+		<button disabled data-dojo-type="dijit.form.Button" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Primary"'>
+			Primary Disabled
+		</button>
+		<button data-dojo-type="dijit.form.Button" class="idxButtonCompact" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Primary"'>
+			Compact
+		</button>
+		<br/><br/>
+		<button data-dojo-type="dijit.form.Button" class="idxButtonSecondary" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Secondary"'>
+			Secondary 
+		</button>
+		<button disabled data-dojo-type="dijit.form.Button" class="idxButtonSecondary" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Secondary"'>
+			Secondary Disabled
+		</button>
+		<button data-dojo-type="dijit.form.Button" class="idxButtonCompact idxButtonSecondary" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Secondary"'>
+			Compact
+		</button>
+		<br/><br/>
+		<button data-dojo-type="dijit.form.Button" class="idxButtonSpecial" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Special"'>
+			Special
+		</button>
+		<button disabled data-dojo-type="dijit.form.Button" class="idxButtonSpecial" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Special"'>
+			Special Disabled
+		</button>
+		<button data-dojo-type="dijit.form.Button" class="idxButtonCompact idxButtonSpecial" data-dojo-props='onClick:function(){ console.log("clicked simple"); }, value:"Special"'>
+			Compact
+		</button>
+		<h2>dijit.form.ToggleButton</h2>
+		<button checked data-dojo-type="dijit.form.ToggleButton" data-dojo-props='
+			onChange:function(val){
+				console.log("toggled button checked="+val);
+				this.set("label", val ? "toggle on state" : "toggle off state");
+			}, iconClass:"dijitCheckBoxIcon"'>
+			Toggle on state
+		</button>
+		<button disabled data-dojo-type="dijit.form.ToggleButton"
+			data-dojo-props='onChange:function(val){ console.log("toggled button checked="+val); }, iconClass:"dijitCheckBoxIcon"'>
+			Toggle me
+		</button>
+		<button data-dojo-type="dijit.form.ToggleButton"
+			data-dojo-props='onChange:function(val){ console.log("toggled button checked="+val); }, iconClass:"dijitRadioIcon"'>
+			Toggle me
+		</button>
+		<br/>
+		<button checked data-dojo-type="dijit.form.ToggleButton" class="idxButtonCompact"
+		        data-dojo-props='
+			onChange:function(val){
+				console.log("toggled button checked="+val);
+				this.set("label", val ? "Compact on" : "Compact off");
+			}, iconClass:"dijitCheckBoxIcon"'>
+			Compact on
+		</button>
+		<h2>dijit.form.ComboButton</h2>
+		<button title="creative title 1" data-dojo-type="dijit.form.ComboButton" data-dojo-props='optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<button title="creative title 2" data-dojo-type="dijit.form.ComboButton" data-dojo-props='dropDownPosition:["above"], optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<button title="creative title 3" data-dojo-type="dijit.form.ComboButton" data-dojo-props='dropDownPosition:["before"], optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<button title="creative title 4" data-dojo-type="dijit.form.ComboButton" data-dojo-props='dropDownPosition:["after"], optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<button title="creative title 5" disabled data-dojo-type="dijit.form.ComboButton" data-dojo-props='optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button Disabled</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<br/>
+		<button title="creative title 6" data-dojo-type="dijit.form.ComboButton" class="idxButtonCompact"
+			data-dojo-props='optionsTitle:"save options", onClick:function(){ console.log("clicked combo save") }'>
+			<span>Combo Button Compact</span>
+			<span data-dojo-type="idx.oneui.Menu">
+				<span data-dojo-type="dijit.MenuItem"  data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconSave",
+					onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create blank</span>
+				<span data-dojo-type="dijit.MenuItem"
+					data-dojo-props='onClick:function(){ console.log("not actually saving anything, just a test!"); }'>Create from template</span>
+			</span>
+		</button>
+		<h2>dijit.form.DropdownButton</h2>
+		<button title="edit title 1" value="Edit" data-dojo-type="dijit.form.DropDownButton" data-dojo-props='iconClass:"noteIcon"'>
+			<span>DropDown</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+		<button title="edit title 2" value="Edit" data-dojo-type="dijit.form.DropDownButton" data-dojo-props='dropDownPosition:["above"], iconClass:"noteIcon"'>
+			<span>DropDown</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+		<button title="edit title 3" value="Edit" data-dojo-type="dijit.form.DropDownButton" data-dojo-props='dropDownPosition:["before"], iconClass:"noteIcon"'>
+			<span>DropDown</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+		<button title="edit title 4" value="Edit" data-dojo-type="dijit.form.DropDownButton" data-dojo-props='dropDownPosition:["after"], iconClass:"noteIcon"'>
+			<span>DropDown</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+		<button title="edit title 5" value="Edit" disabled data-dojo-type="dijit.form.DropDownButton" data-dojo-props='iconClass:"noteIcon"'>
+			<span>DropDown Disabled</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+		<br/>
+		<button title="edit title 6" value="Edit" data-dojo-type="dijit.form.DropDownButton" class="idxButtonCompact" data-dojo-props='iconClass:"noteIcon"'>
+			<span>DropDown Compact</span>
+			<span data-dojo-type="idx.oneui.Menu" >
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }'>Cut</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!"); }'>Copy</span>
+				<span data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!"); }'>Paste</span>
+				<span data-dojo-type="dijit.MenuSeparator"></span>
+				<span data-dojo-type="dijit.PopupMenuItem">
+					<span>Submenu</span>
+					<span data-dojo-type="idx.oneui.Menu" >
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!"); }'>Submenu Item One</span>
+						<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!"); }'>Submenu Item Two</span>
+						<span data-dojo-type="dijit.PopupMenuItem">
+							<span>Deeper Submenu</span>
+							<span data-dojo-type="idx.oneui.Menu" >
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!"); }'>Sub-sub-menu Item One</span>
+								<span data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!"); }'>Sub-sub-menu Item Two</span>
+							</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</button>
+	</div> <!-- end of buttons -->
+
+	<div id="checkboxesTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Check Boxes", style:"padding:15px;"'>
+		<!-- Add idx.oneui.form.CheckBox/idx.oneui.form.CheckBoxSelect/idx.oneui.form.CheckBoxList/
+			 idx.oneui.form.TriStateCheckBox/idx.oneui.form.RadioButtonSet/dijit.form.RadioButton here -->
+		<h2>idx.oneui.form.CheckBox</h2>
+		<input data-dojo-type="idx.oneui.form.CheckBox" data-dojo-props='
+			name:"checkbox", 
+			label: "CheckBox",
+			id: "checkbox"
+		'/>
+		<h2>idx.oneui.form.TriStateCheckBox</h2>
+		<input id="tristatecheckbox" data-dojo-type="idx.oneui.form.TriStateCheckBox" data-dojo-props='
+			name:"tristatecheckbox", 
+			label:"TriStateCheckBox"'
+		/>
+		<h2>idx.oneui.form.CheckBoxSelect</h2>
+		<select data-dojo-type="idx.oneui.form.CheckBoxSelect" data-dojo-props="
+			labelAlignment: 'horizontal',
+			label: 'CheckBoxSelect:',
+			name: 'checkboxselect',
+			id: 'checkboxselect',
+			labelWidth: 100">
+			<option value="TN">Tennessee</option>
+			<option value="VA" selected="selected">Virginia</option>
+			<option value="WA" selected="selected">Washington</option>
+			<option value="FL">Florida</option>
+			<option value="CA">California</option>
+		</select>
+		
+		<h2>idx.oneui.form.CheckBoxList</h2>
+		<select id="checkboxlist" data-dojo-type="idx.oneui.form.CheckBoxList" data-dojo-props="
+			name: 'checkboxlist',
+			label: 'CheckBoxList:',
+			labelAlignment: 'horizontal',
+			groupAlignment: 'vertical',
+			value: ['VA'],
+			labelWidth: 100,
+			id: 'checkboxlist',
+			required: true
+		">
+			<option value="TN">Tennessee</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="FL">Florida</option>
+			<option value="CA">California</option>
+		</select>
+	</div><!-- end of checkbox tab -->
+
+	<div id="dropdownsTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Dropdown Widgets', style:'padding:15px;'">
+		<!-- Add idx.oneui.form.FilteringSelect/idx.oneui.form.Select/idx.oneui.form.ComboBox/dijit.form.MultiSelect here -->
+		<h2>idx.oneui.form.FilteringSelect</h2>
+		<select id="filteringSelect" data-dojo-type="idx.oneui.form.FilteringSelect"
+				data-dojo-props='name:"filteringSelect",
+				label: "FilteringSelect:",
+				hint: "some hint",
+				pageSize: 20,
+				labelWidth: 100
+		'>
+			<option value="AK">Alaska</option>
+			<option value="AS">American Samoa</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="AE">Armed Forces Europe</option>
+			<option value="AP">Armed Forces Pacific</option>
+			<option value="AA">Armed Forces the Americas</option>
+			<option value="CA" selected>California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District of Columbia</option>
+			<option value="FM">Federated States of Micronesia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="GU">Guam</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MH">Marshall Islands</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="MP">Northern Mariana Islands</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="PR">Puerto Rico</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VI">Virgin Islands, U.S.</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+		<h2>idx.oneui.form.Select</h2>
+		<select data-dojo-type="idx.oneui.form.Select" id="select" data-dojo-props='
+			label: "Select:",
+			labelAlignment: "horizontal",
+			labelWidth: 100
+		'>
+			<option value="TN" selected="selected">Tennessee</option>
+			<option value="VA" >Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="FL">Florida</option>
+			<option value="CA">California</option>
+		</select>
+		<h2>idx.oneui.form.ComboBox</h2>
+		<select id="combobox" data-dojo-type="idx.oneui.form.ComboBox"
+				data-dojo-props='name:"combobox",
+				value: "",
+				label: "ComboBox:",
+				hint: "Select state",
+				labelWidth: 100
+		'>
+			<option value="AK">Alaska</option>
+			<option value="AS">American Samoa</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="AE">Armed Forces Europe</option>
+			<option value="AP">Armed Forces Pacific</option>
+			<option value="AA">Armed Forces the Americas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District of Columbia</option>
+			<option value="FM">Federated States of Micronesia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="GU">Guam</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MH">Marshall Islands</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="MP">Northern Mariana Islands</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="PR">Puerto Rico</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VI">Virgin Islands, U.S.</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+		<h2>dijit.form.MultiSelect</h2>
+		<select id="multiSelect" multiple data-dojo-type="dijit.form.MultiSelect"
+			data-dojo-props='name:"multiSelect", baseClass: "dijitMultiSelect",
+			style:{height:"100px", width:"175px"}'>
+
+			<option value="TN" selected>Tennessee</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="FL">Florida</option>
+			<option value="CA">California</option>
+		</select>
+	</div><!-- end of dropdown list -->
+
+	<div id="editorTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Editor", style:"padding:15px;"'>
+		<div data-dojo-type="dijit.Editor" id = "editor1">
+		<p>This instance is created from a div directly with default toolbar and plugins</p>
+		The following HTML should appear as source: &lt;INPUT TYPE="IMAGE" SRC="javascript:alert('no scripting attacks')"&gt;
+		</div>
+		<br>
+		<div data-dojo-type="dijit.Editor"
+		data-dojo-props="plugins:['bold','italic','|','createLink','foreColor','hiliteColor',{name:'dijit._editor.plugins.FontChoice', command:'fontName', generic:true},'fontSize','formatBlock','insertImage','insertHorizontalRule'], styleSheets:'idx/oneui/document.css'"
+		id="editor2">
+		This instance includes optional toolbar buttons which pull in additional ui (dijit) code.
+		Note the dojo.require() statements required to pull in the associated editor plugins to make
+		this work.
+		<br>
+		<span style="font-family: serif">This is serif.</span>
+		<br>
+		<span style="font-family: sans-serif">This is sans-serif.</span>
+		<br>
+		<span style="font-family: monospace">This is monospace.</span>
+		<br>
+		<span style="font-family: cursive">This is cursive.</span>
+		<br>
+		<span style="font-family: fantasy">This is fantasy.</span>
+		<br>
+	</div>
+	</div>
+	<div id="progressbarTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Progress Bar", style:"padding:15px;"'>
+		<h2>dijit.ProgressBar</h2>
+		<div data-dojo-type="dijit.ProgressBar" data-dojo-props='
+			style:"width:400px",
+			indeterminate: true, 
+			label: ""'>
+		</div><br>
+		<div data-dojo-type="dijit.ProgressBar" data-dojo-props='
+			style:"width:400px",
+			value: 50,
+			indeterminate: false, 
+			label: ""'>
+		</div><br>
+		<div data-dojo-type="dijit.ProgressBar" data-dojo-props='
+			style:"width:400px",
+			indeterminate: true, 
+			label: "Loading..."'>
+		</div><br>
+		<div data-dojo-type="dijit.ProgressBar" data-dojo-props='
+			style:"width:400px",
+			value: 50,
+			indeterminate: false, 
+			label: "Loading..."'>
+		</div>
+	</div>
+	
+	<div id="radioTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Radio Buttons", style:"padding:15px;"'>
+		<h2>dijit.form.RadioButton</h2>
+		<input id="radioButton" data-dojo-type="dijit.form.RadioButton" data-dojo-props='
+			name:"radioButton"'/>
+		<label for="radioButton">Single RadioButton</label>
+		<h2>idx.oneui.form.RadioButtonSet</h2>
+		<select data-dojo-type="idx.oneui.form.RadioButtonSet" data-dojo-props="
+			name: 'radioButtonSet',
+			label: 'RadioButtonSet:',
+			labelAlignment: 'horizontal',
+			groupAlignment: 'vertical',
+			value: ['VA']
+		">
+			<option value="TN">Tennessee</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="FL" disabled="true">Florida</option>
+			<option value="CA">California</option>
+		</select>
+	</div>
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Sliders', style:'padding:15px;'">
+		
+		<!-- Sliders: -->
+		<h2>idx.oneui.form.HorizontalSlider</h2>
+		<div data-dojo-type="idx.oneui.form.HorizontalSlider" data-dojo-props='
+			label: "Horizontal Slider:",
+			labelAlignment: "horizontal",
+			name:"horizontal1",
+			value:70,
+			maximum:100,
+			minimum:0,
+			pageIncrement:100,
+			showButtons:true,
+			intermediateChanges:true,
+			slideDuration:500,
+			style:{width:"500px"},
+			labelWidth: 160
+			'>
+			<ol data-dojo-type="idx.oneui.form.HorizontalRuleLabels" data-dojo-props='container:"topDecoration", style:{height:"1.2em",fontSize:"75%"}'>
+				<li>lowest</li>
+				<li>normal</li>
+				<li>highest</li>
+			</ol>
+			<div data-dojo-type="idx.oneui.form.HorizontalRule" data-dojo-props='container:"topDecoration", count:5, style:{height:"5px"}'></div>
+			<div data-dojo-type="idx.oneui.form.HorizontalRule" data-dojo-props='container:"bottomDecoration", count:6, style:{height:"5px"}'></div>
+			<ol data-dojo-type="idx.oneui.form.HorizontalRuleLabels" data-dojo-props='container:"bottomDecoration", style:{height:"1em",fontSize:"75%"}, count:6, numericMargin:1'></ol>
+		</div>
+		<br/>
+		
+		<div data-dojo-type="idx.oneui.form.HorizontalSlider" data-dojo-props='
+			label: "Horizontal Slider Disabled:",
+			labelAlignment: "horizontal",
+			name:"horizontal1",
+			value:70,
+			maximum:100,
+			minimum:0,
+			disabled:true,
+			pageIncrement:100,
+			showButtons:true,
+			intermediateChanges:true,
+			slideDuration:500,
+			style:{width:"500px"},
+			labelWidth: 160
+			'>
+			<ol data-dojo-type="idx.oneui.form.HorizontalRuleLabels" data-dojo-props='container:"topDecoration", style:{height:"1.2em",fontSize:"75%"}'>
+				<li>lowest</li>
+				<li>normal</li>
+				<li>highest</li>
+			</ol>
+			<div data-dojo-type="idx.oneui.form.HorizontalRule" data-dojo-props='container:"topDecoration", count:5, style:{height:"5px"}'></div>
+			<div data-dojo-type="idx.oneui.form.HorizontalRule" data-dojo-props='container:"bottomDecoration", count:6, style:{height:"5px"}'></div>
+			<ol data-dojo-type="idx.oneui.form.HorizontalRuleLabels" data-dojo-props='container:"bottomDecoration", style:{height:"1em",fontSize:"75%"}, count:6, numericMargin:1'></ol>
+		</div>
+		<h2>idx.oneui.form.VerticalSlider</h2>
+		<div data-dojo-type="idx.oneui.form.VerticalSlider" data-dojo-props='
+			label: "Vertical Slider:",
+			labelAlignment: "horizontal",
+			name:"vertical1",
+			value:60,
+			maximum:100,
+			minimum:0,
+			discreteValues:11,
+			style: {height:"300px"},
+			labelWidth: 160
+			'>
+			<ol data-dojo-type="idx.oneui.form.VerticalRuleLabels" data-dojo-props='container:"leftDecoration", style:{width:"2em"}, count:6, numericMargin:1, maximum:100, constraints:{pattern:"#"}'></ol>
+			<div data-dojo-type="idx.oneui.form.VerticalRule" data-dojo-props='container:"leftDecoration", count:11, style:{width:"5px"}, ruleStyle:"border-color: #888"'></div>
+			<div data-dojo-type="idx.oneui.form.VerticalRule" data-dojo-props='container:"rightDecoration", count:11, style:{width:"5px"}, ruleStyle:"border-color: #888"'></div>
+			<ol data-dojo-type="idx.oneui.form.VerticalRuleLabels" data-dojo-props='container:"rightDecoration", style:{width:"2em"}, labelStyle:"right:0px;"'>
+				<li>0</li>
+				<li>100</li>
+			</ol>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		
+		<div data-dojo-type="idx.oneui.form.VerticalSlider" data-dojo-props='
+			label: "Vertical Slider Disabled:",
+			labelAlignment: "horizontal",
+			name:"vertical1",
+			value:60,
+			disabled:true,
+			maximum:100,
+			minimum:0,
+			discreteValues:11,
+			style: {height:"300px"},
+			labelWidth: 160
+			'>
+			<ol data-dojo-type="idx.oneui.form.VerticalRuleLabels" data-dojo-props='container:"leftDecoration", style:{width:"2em"}, count:6, numericMargin:1, maximum:100, constraints:{pattern:"#"}'></ol>
+			<div data-dojo-type="idx.oneui.form.VerticalRule" data-dojo-props='container:"leftDecoration", count:11, style:{width:"5px"}, ruleStyle:"border-color: #888"'></div>
+			<div data-dojo-type="idx.oneui.form.VerticalRule" data-dojo-props='container:"rightDecoration", count:11, style:{width:"5px"}, ruleStyle:"border-color: #888"'></div>
+			<ol data-dojo-type="idx.oneui.form.VerticalRuleLabels" data-dojo-props='container:"rightDecoration", style:{width:"2em"}, labelStyle:"right:0px;"'>
+				<li>0</li>
+				<li>100</li>
+			</ol>
+		</div>
+	</div>
+	
+	<div id="textboxesTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Text Field and Area", style:"padding:15px;"'>
+		<!-- Add idx.oneui.form.TextBox/idx.oneui.form.Textarea/idx.oneui.form.TimeTextBox/idx.oneui.form.NumberSpinner/... -->
+		<h2>idx.oneui.form.TextBox</h2>
+		<input data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+			hint: "Input text",
+			hintPosition: "inside",
+			label: "Normal TextBox:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			required: true
+		'/>
+		<br/>
+		<input data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+			hint: "Input text",
+			hintPosition: "outside",
+			label: "Normal TextBox:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			required: true
+		'/>
+		<br/>
+		<input data-dojo-type="idx.oneui.form.TextBox" disabled data-dojo-props='
+			hint: "Input text",
+			hintPosition: "inside",
+			label: "TextBox Disabled:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			value: "Disabled"
+		'/>
+		<br/>
+		<input data-dojo-type="idx.oneui.form.TextBox" readOnly data-dojo-props='
+			hint: "Input text",
+			hintPosition: "inside",
+			label: "TextBox Restart:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			value: "ReadOnly"
+		'/>
+		<h2>idx.oneui.form.Textarea</h2>
+		<textarea data-dojo-type="idx.oneui.form.Textarea" data-dojo-props='
+			rows: 2,
+			cols: 20,
+			trim: true,
+			hint: "Input text",
+			hintPosition: "inside",
+			label: "Textarea:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			required: true
+		'>
+		</textarea>
+		<h2>idx.oneui.form.TimeTextBox</h2>
+		<input id="timetextbox" data-dojo-type="idx.oneui.form.TimeTextBox" data-dojo-props='
+			hint: "some tip",
+			hintPosition: "inside",
+			label: "Time:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			value: "T12:00:00",
+			required: true
+		'/>
+		<h2>idx.oneui.form.DateTextBox</h2>
+		<input id="datetextbox" data-dojo-type="idx.oneui.form.DateTextBox" data-dojo-props='
+			hint: "MM/DD/YYYY",
+			hintPosition: "inside",
+			label: "Date:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			required:true
+		'/>
+		<h2>idx.oneui.form.NumberSpinner</h2>
+		<input id="numberspinner" data-dojo-type="idx.oneui.form.NumberSpinner" data-dojo-props='
+			hint: "Input number",
+			hintPosition: "inside",
+			label: "NumberSpinner:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			unit: "Items",
+			required: true
+		'/>
+		<h2>idx.oneui.form.CurrencyTextBox</h2>
+		<input id="currency" data-dojo-type="idx.oneui.form.CurrencyTextBox" data-dojo-props='
+			hint: "Input the number",
+			hintPosition: "inside",
+			label: "Currency:",
+			labelAlignment: "horizontal",
+			currency: "USD",
+			labelWidth: 100,
+			required: true
+		'/>
+		<h2>idx.oneui.form.NumberTextBox</h2>
+		<input id="numberTextBox" data-dojo-type="idx.oneui.form.NumberTextBox" data-dojo-props='
+			hint: "Enter a number",
+			hintPosition: "inside",
+			label: "NumberTextBox:",
+			labelAlignment: "horizontal",
+			labelWidth: 100,
+			required: true
+		'/>
+		
+	</div><!-- end of textbox field&area -->
+	
+	<div id="treesTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Trees", style:"padding:15px;"'>
+		<!-- tree widget -->
+		<h2>dijit.Tree</h2>
+		<div data-dojo-type="dijit.Tree" 
+			data-dojo-props="dndController: 'idx.oneui.dnd.dndSource',autoExpand:true,model: continentModel, query:{ type:'continent'}, label:'Continents', openOnClick:true"
+		></div>
+		<!--<div id="rootlessTree" data-dojo-type="dijit.Tree" data-dojo-props="
+			model:continentModel,
+			query:{ type:'continent' },
+			showRoot: false,
+			openOnClick:true
+		">
+		</div>-->
+		<h2>idx.oneui.CheckBoxTree</h2>
+		<div id="checkboxtree" data-dojo-type="idx.oneui.CheckBoxTree" data-dojo-props="
+			model:continentModel,
+			autoExpand:true, 
+			openOnClick:true
+		">
+		</div>
+	</div>
+	
+	<div id="othersTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Others", style:"padding:15px;"'>
+		<h2>dijit.Calendar</h2>
+		<input data-dojo-type="dijit.Calendar" data-dojo-props='isDisabledDate:dojo.date.locale.isWeekend'/>
+		<h2>dijit.ColorPalette</h2>
+		<div data-dojo-type="dijit.ColorPalette" data-dojo-props="palette:'3x4'"></div>
+		<br><br>
+		<div data-dojo-type="dijit.ColorPalette" data-dojo-props=""></div>
+	</div>
+</div><!-- end of region="center" TabContainer -->

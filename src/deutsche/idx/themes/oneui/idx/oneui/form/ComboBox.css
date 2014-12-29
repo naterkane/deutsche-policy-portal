@@ -1,0 +1,13 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .oneuiHintOutside{
+	margin: 5px 0 0 10px;
+}
+.dj_ie6 .oneui .idxComboBoxWrap .dijitComboBox{
+	margin-bottom: 4px;
+}

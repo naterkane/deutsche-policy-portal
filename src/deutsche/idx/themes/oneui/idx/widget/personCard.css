@@ -1,0 +1,71 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxPersonCard {
+	padding: 5px;
+	color: #666;
+}
+
+.oneui .idxPersonCardContainer {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	}
+
+.oneui .idxPersonCardContainer > div {
+	padding: 2px;
+	margin-left: 137px;
+}
+.dijitRtl .oneui .idxPersonCardContainer > div {
+	margin-left: 0px;
+	margin-right: 137px;
+}
+
+.oneui .idxPersonCardPhoto {
+	margin: 0 20px 20px 20px;
+	position: absolute;
+	height: 90px;
+	width: 90px;
+	padding: 3px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	float: left;
+}
+.dijitRtl .oneui .idxPersonCardPhoto {
+	float: right;
+}
+
+.oneui .idxPersonCardFn {
+	
+	font-family: Georgia, Times New Roman, Serif;
+	font-size: 22px;
+	color: #00649d;
+}
+
+.oneui .idxPersonCardTitle {
+	font-size: .9em;
+	color: #222;
+}
+
+.oneui .idxPersonCardOrg {
+	font-size: .9em;
+}
+
+.oneui .idxPersonCardAdr {
+	font-size: .8em;
+}
+
+.oneui .idxPersonCardTel {
+	font-size: .8em;
+}
+
+.oneui .idxPersonCardEmail {
+	font-size: .9em;
+}
+
+.oneui .idxPersonCardSametime {
+	font-size: .9em;
+	}

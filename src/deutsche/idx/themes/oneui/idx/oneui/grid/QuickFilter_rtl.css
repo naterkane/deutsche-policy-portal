@@ -1,0 +1,33 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dojoxGridRtl .dojoxGridQuickFilter {
+	right: auto;
+	left: 2px;
+}
+
+.dojoxGridRtl .dojoxGridQuickFilter .dijitTextBox {
+	float: left;
+}
+
+.dojoxGridRtl .dojoxGridQuickFilterClearBtn {
+	left: 2px;
+	right: auto;
+}
+
+.dojoxGridRtl .dojoxGridQuickFilterCanClear .dijitTextBox .dijitInputContainer {
+	padding-left: 14px;
+	padding-right: 0;
+}
+
+.dojoxGridRtl .dojoxGridQuickFilter .dojoxGridQuickFilterSingleBtn {
+	float: left;
+}
+
+.dojoxGridRtl .dojoxGridQuickFilter .dojoxGridQuickFilterComboBtn {
+	float: left;
+}

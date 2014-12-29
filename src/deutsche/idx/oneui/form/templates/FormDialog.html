@@ -1,0 +1,33 @@
+<div class="dijitDialog" role="dialog" aria-labelledby="${id}_title"
+	><div dojoAttachPoint="titleBar" class="dijitDialogTitleBar"
+		><span dojoAttachPoint="titleNode" class="dijitDialogTitle" id="${id}_title"
+		></span
+		><span dojoAttachPoint="closeButtonNode" class="dijitDialogCloseIcon"
+		dojoAttachEvent="ondijitclick:onCancel" title="${buttonCancel}" role="button"
+		tabIndex="-1"
+			><span dojoAttachPoint="closeText" class="closeText" title="${buttonCancel}"
+			>x</span
+		></span
+	></div
+	><div class="dijit dijitReset"
+		><form class="oneuiFormForm" dojoAttachPoint="formNode"
+		dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit" ${!nameAttrSetting}
+		><div class="oneuiFormBody" dojoAttachPoint="bodyNode"
+			><div class="oneuiFormDescription"
+			dojoAttachPoint="descriptionNode" tabindex="0"
+			>${description}</div
+			><div class="oneuiFormInlineMessage" dojoAttachPoint="inlineMessageNode"
+			>${invalidMessage}</div
+			><div class="oneuiFormContainer" dojoAttachPoint="containerNode"></div
+			><div class="oneuiFormLegend" dojoAttachPoint="legendNode" tabIndex="0"
+			><span style="color: red ">*&nbsp</span>${legend}</div
+		></div
+		><div class="oneuiFormFooter" dojoAttachPoint="contentFooterNode"
+			><button dojoType="dijit.form.Button" dojoAttachPoint="submitButton" type="submit"
+			>${executeLabel}</button
+			><button dojoType="dijit.form.Button" dojoAttachPoint="resetButton" type="reset"
+			>${resetLabel}</button
+		></div
+		></form
+	></div
+></div>

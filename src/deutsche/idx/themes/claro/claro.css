@@ -1,0 +1,20 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2011, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+ 
+/*
+  THIS FILE CONTAINS FIXES TO THE CLARO THEME THAT ARE OTHERWISE PENDING FROM DOJO  
+*/
+
+/* COMBO-BUTTON TOO TALL */
+.claro .dijitComboButton .dijitArrowButton {
+   padding: 0px 2px;
+}
+
+/* DROP-DOWN BUTTON TOO TALL */
+.claro .dijitDropDownButton .dijitArrowButtonInner {
+	height: 13px;
+}

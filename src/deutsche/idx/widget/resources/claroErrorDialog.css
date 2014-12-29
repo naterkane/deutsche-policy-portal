@@ -1,0 +1,14 @@
+.claro .idxErrorDialogMessageId {
+    left: 10px;
+    padding: 5px;
+    position: absolute;
+}
+
+.dijitRtl .claro .idxErrorDialogMessageId {
+    right: 10px;
+    left: auto;
+}
+
+.claro .idxErrorDialogDetail {
+	margin: 5px 0px 0px;
+}

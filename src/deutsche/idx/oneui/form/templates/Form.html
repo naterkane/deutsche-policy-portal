@@ -1,0 +1,23 @@
+<div class="dijit dijitReset dijitInline" 
+	><form class="oneuiFormForm" dojoAttachPoint="formNode"
+		dojoAttachEvent="onreset:_onReset,onsubmit:_onSubmit" ${!nameAttrSetting}
+		><div class="oneuiFormHeader" dojoAttachPoint="headingNode"
+		>${heading}</div
+		><div class="oneuiFormBody" dojoAttachPoint="bodyNode"
+			><div class="oneuiFormDescription" dojoAttachPoint="descriptionNode"
+			>${description}</div
+			><div class="oneuiFormInlineMessage" dojoAttachPoint="inlineMessageNode"
+			>${invalidMessage}</div
+			><div class="oneuiFormContainer" dojoAttachPoint="containerNode"
+			></div
+			><div class="oneuiFormLegend" dojoAttachPoint="legendNode"
+			><span style="color: red ">*&nbsp</span>${legend}</div
+		></div
+			><div class="oneuiFormFooter" dojoAttachPoint="contentFooterNode"
+				><button dojoType="dijit.form.Button" dojoAttachPoint="submitButton" type="submit"
+				>${executeLabel}</button 
+				><button dojoType="dijit.form.Button" dojoAttachPoint="resetButton" type="reset"
+				>${resetLabel}</button 
+			></div
+	></form
+></div>

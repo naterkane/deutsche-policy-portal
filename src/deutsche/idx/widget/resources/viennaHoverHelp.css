@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/*
+ * Licensed Materials - Property of IBM
+ * 5724-Q36
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or or otherwise 
+ * divested of its trade secrets, irrespective of what has been 
+ * deposited with the U.S. Copyright Office.
+ */
+
+/* HoverHelp stylings: */
+.vienna .idxHoverHelp {
+    display: inline;
+}
+
+.vienna .idxHoverHelpInfoWrapper {
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+}
+
+.vienna .idxHoverHelpButtonOptions {
+	background-image: url("../../resources/blank.gif?placement=toolbar&buttonType=help&displayMode=iconOnly");
+}
+
+.vienna .idxHoverHelp .dijitButton {
+    margin-left: 0px;
+}
+
+.vienna .idxHoverHelp_TooltipDialog .dijitTooltipContainer {
+    background-color: #FDF6A8;
+    max-width: 250px;
+}
+
+.vienna .idxHoverHelpAbove .dijitTooltipContainer {
+    margin-bottom: -5px;
+    margin-right: 8px;
+}
+
+.vienna .idxHoverHelpBelow .dijitTooltipContainer {
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+.vienna .idxHoverHelp .dijitArrowButtonInner {
+    display:none;
+    visibility: hidden;
+}
+
+.vienna .idxHoverHelpMessage {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #464646;
+    display: block;
+}
+
+.vienna div.idxHoverHelpLinkHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.vienna div.idxHoverHelpLink {
+    display: block;
+    margin: 8px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.vienna a.idxHoverHelpLink {
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #2966AE;
+    display: inline;
+    white-space: nowrap;    
+}
+
+.vienna .idxHoverHelpAbove .dijitTooltipConnector {
+	bottom: -5px;
+}
+.vienna .idxHoverHelpBelow .dijitTooltipConnector {
+	top: -5px;
+}
+
+.vienna .idxHoverHelpTooltipContainer .dijitTooltipConnector {
+    display: none;
+    visibility: hidden;
+}
+
+.vienna .idxHoverHelpTooltipContainer .dijitTooltipContents {
+    padding: 8px 8px 8px 8px;
+}
+
+.vienna .idxButtonDerived .idxHelpIcon {
+	margin-left: 4px;
+}

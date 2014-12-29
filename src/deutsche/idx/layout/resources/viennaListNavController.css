@@ -1,0 +1,231 @@
+
+.vienna .dijitStackController.idxListNavController
+{
+	padding: 0px;
+	background-color: #f6f4f0;
+	height: 100%;
+}
+
+.vienna .dijitStackController.idxListNavController .idxListNavButton
+{
+	display: block; /*Show stackController buttons vertically*/
+	width: 100%;
+	background-color: #f6f4f0;
+}
+
+.vienna .dijitStackController.idxListNavController .dijitCheckedFocused,
+.vienna .dijitStackController.idxListNavController .dijitCheckBoxFocused  {
+	outline-width:0px;
+}
+
+.vienna .dijitStackController.idxListNavController .dijitButtonNode
+{
+	border:none;
+	color: #464646;
+	font-weight: normal;
+    font-size: 11px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	height: 18px;
+	width: 100%;
+
+	margin:0px;
+	background-color:transparent;
+	background-image:none;
+	
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-bottomright:0;
+	-moz-border-radius-topleft:0;
+	-moz-border-radius-topright:0;
+	
+	text-align:left;
+	text-indent: 3px; /*padding-left didn't work for IE8, see defect 3019*/
+	padding-left: 0px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.dijitRtl .vienna .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-align: right;
+	padding-right: 0px;
+}
+
+
+/*text-indent fix for IE8 broke look of IE7, continue using padding for IE7 (note: both methods work in FF)*/
+.dj_ie7 .claro .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 0px;
+	padding-left: 5px;
+}
+
+.vienna .dijitStackController.idxListNavController .idxListNavButtonHover .dijitButtonNode,
+.vienna .idxSectionedNavigation .dojoxGrid .dojoxGridRowOver
+{
+    color: #464646; 
+    text-decoration: none;
+    background-color: #e2f4b2;
+    background-image: none;
+}
+
+.vienna .dijitStackController.idxListNavController .idxListNavButtonChecked .dijitButtonNode,
+.vienna .dijitStackController.idxListNavController .idxListNavButtonCheckedHover .dijitButtonNode,
+.vienna .idxSectionedNavigation .dojoxGrid .dojoxGridRowSelected
+{
+	
+    color: #464646;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #C6E966;
+}
+
+
+.vienna .dijitStackController.idxListNavController .idxListNavButton .dijitButtonText
+{
+	color: #464646; 
+}
+
+/*ContentPane grouping navigation list items*/
+.vienna .idxListNavigation,
+.vienna .idxListNavigation .idxHeaderPaneContent
+{
+	background-color: #f6f4f0;
+}
+
+.vienna .idxNestedNavigation,
+.vienna .idxSectionedNavigation
+{
+	background-color: #e4e1da;
+	padding: 0px;
+	margin: 0px;
+}
+
+.vienna .idxNestedNavigation .idxHeaderPaneContent,
+.vienna .idxNestedNavigation .dijitTitlePaneContentInner
+{
+	padding: 0px;
+}
+
+/*TitlePanes and Grids that make up Nested and Sectioned List Navigation*/
+.vienna .idxNestedNavigation .dijitTitlePaneTitle,
+.vienna .idxSectionedNavigation .dijitTitlePaneTitle
+{
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: solid 1px #c2bfb3;
+	
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+
+.vienna .idxNestedNavigation .dijitTitlePaneTitle  {
+	background-color: #e4e1da;
+	padding: 2px 8px 1px;
+}
+
+.vienna .idxSectionedNavigation .dijitTitlePaneTitle
+{
+	padding: 2px 8px 1px;
+	background-color: #f4f5f1;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f5f1', endColorstr='#E8E7E0'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#f4f5f1), to(#E8E7E0)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #f4f5f1,  #E8E7E0); /* for firefox 3.6+ */
+}
+
+.vienna .idxNestedNavigation .dijitTitlePaneTitleFocus,
+.vienna .idxSectionedNavigation .dijitTitlePaneTitleFocus
+{
+	margin: 0;
+}
+
+.vienna .idxNestedNavigation .dijitTitlePaneContentOuter,
+.vienna .idxSectionedNavigation .dijitTitlePaneContentOuter
+{
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: solid 1px #c2bfb3;
+}
+
+.vienna .idxNestedNavigation .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 10px; /*padding-left didn't work for IE8, see defect 3019*/
+	padding-left: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/*text-indent fix for IE8 broke look of IE7, continue using padding for IE7 (note: both methods work in FF)*/
+.dj_ie7 .claro .idxNestedNavigation .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 0px;
+	padding-left: 20px;
+}
+
+.vienna .idxSectionedNavigation .dojoxGrid
+{
+/*	border: none;*/
+}
+
+.vienna .idxSectionedNavigation .dojoxGridHeader,
+.vienna .idxSectionedNavigation .dojoxGridHeader .dojoxGridCell,
+.vienna .idxSectionedNavigation .dojoxGridHeader .dojoxGridSortNode
+{
+	filter: none;
+	background-image: none;
+	background-color: #e4e1da;
+}
+
+.dj_ie8 .vienna .idxSectionedNavigation .dojoxGridHeader,
+.dj_ie8 .vienna .idxSectionedNavigation .dojoxGridHeader .dojoxGridCell,
+.dj_ie8 .vienna .idxSectionedNavigation .dojoxGridHeader .dojoxGridSortNode
+{
+	filter: inherit;
+}
+
+.vienna .idxSectionedNavigation .dojoxGridRow
+{
+	border-top-color: #f6f4f0;
+	border-bottom-color: #f6f4f0;
+	background-color: #f6f4f0;
+	cursor: pointer;
+}
+
+.dj_ie7 .vienna .idxSectionedNavigation .dojoxGridRow.dojoxGridRowOver .dojoxGridCell,
+.dj_ie7 .vienna .idxSectionedNavigation .dojoxGridRowOver .dojoxGridCell {
+	background-color:#E2F4B2;
+}
+
+
+.dj_ie7 .vienna .idxSectionedNavigation .dojoxGridRow .dojoxGridCell
+{
+	background-color: #f6f4f0;
+}
+
+.vienna .idxSectionedNavigation .dojoxGridRowTable tr
+{
+	background-color: inherit;
+}
+
+.vienna .idxSectionedNavigation .dojoxGridRowSelected .dojoxGridRowTable tr,
+.vienna .idxSectionedNavigation .dojoxGridRowSelected .dojoxGridRowTable .dojoxGridCell {
+	background-color:#C6E966;
+}
+
+.vienna .idxSectionedNavigation .dojoxGridMasterHeader
+{
+	border-bottom-color: #c2bfb3; 
+}
+
+.vienna .idxSectionedNavigation .dojoxGridCell
+{
+	border-right-color: #d6d1c7;
+}
+
+.vienna .idxSectionedNavigation .dojoxGridRowSelected .dojoxGridCell,
+.vienna .idxSectionedNavigation .dojoxGridRowOver .dojoxGridCell {
+	border-top: medium none !important;
+}

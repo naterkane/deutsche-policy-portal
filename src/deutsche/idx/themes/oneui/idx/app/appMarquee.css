@@ -1,0 +1,233 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxAppMarqueeOptions {
+  background-image: url(../images/blank.gif?app=leader&vendor=trailer&body=center&borderDesign=sidebar);
+}
+
+.oneui .idxAppMarquee_idxDefaults {
+  background-image: url(../images/blank.gif?preferAppLogo=false);
+}
+
+.oneui div.idxAppMarquee {
+  width: 100%;
+  height: 38px;
+  position: relative;
+  background: rgb(62,62,62);
+  background: -moz-linear-gradient(top,  rgb(62,62,62) 0%, rgb(19,19,19) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(62,62,62)), color-stop(100%,rgb(19,19,19)));
+  background: -webkit-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%); 
+  background: -o-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+  background: -ms-linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+  background: linear-gradient(top,  rgb(62,62,62) 0%,rgb(19,19,19) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e3e3e', endColorstr='#131313',GradientType=0 );  
+  color: #FFFFFF;
+}
+
+.oneui .idxAppFrameMarquee div.idxAppMarquee {
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: none;
+  width: auto;
+  height: auto;
+  position: static;
+}
+
+.oneui div.idxAppMarqueeUnused {
+	line-height: 0px;
+	font-size: 0px;
+}
+
+.oneui div.idxAppMarqueeHeader {
+  overflow: hidden;
+  position: absolute;
+}
+
+.oneui div.idxAppMarqueeLeft {
+  overflow: hidden;
+  position: absolute;
+  padding-left: 30px;
+}
+
+.oneui .idxAppFrameMarquee div.idxAppMarqueeLeft {
+  padding-left: 0px;
+}
+
+.oneui div.idxAppMarqueeRight {
+  overflow: hidden;
+  position: absolute;
+  padding-right: 25px;
+  background: none black;
+}
+
+.oneui .idxAppFrameMarquee div.idxAppMarqueeRight {
+  padding-right: 25px;
+}
+
+.oneui div.idxAppMarqueeFooter {
+  overflow: hidden;
+  position: absolute;
+  line-height: 0px;
+}
+
+.oneui div.idxAppMarqueeCenter {
+  overflow: hidden;
+  position: absolute;
+  vertical-align: middle;
+}
+
+.oneui div.idxAppMarqueeBody {
+  overflow: hidden;
+  position: absolute;
+  color: #ffffff;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0px;
+  padding-right: 0px;
+  top: auto;
+  bottom: 9px;
+  right: 12px;
+  left: 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.oneui .idxAppMarquee .idxAppMarqueeAppLogo  {
+	display: none;
+	visibility: hidden;
+}
+
+.oneui .idxAppMarquee .idxAppMarqueeAppName,
+.oneui .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+	position: absolute;
+	top: -10000px;
+	width: 0px;
+	height: 0px;		
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+	visibility: visible;
+	display: block;
+	position: absolute;
+  	bottom: 8px;
+  	left: 30px;
+}
+
+.oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+	visibility: hidden;
+	display: none;
+}
+
+.oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+	left: 0px;
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName,
+.oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+  top: auto;
+  width: auto;
+  height: auto;
+  display: block;
+  visibility: visible;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: absolute;	
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  left: 0px;
+  bottom: 7px;
+  padding: 0px;
+  padding-left: 30px;
+}
+
+.oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName {
+  padding-left: 0px; 
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppLogo {
+	display: none;
+	visibility: hidden;
+}
+
+.oneui .idxAppMarquee .idxAppMarqueeVendorLogo  {
+	display: none;
+	visibility: hidden;
+}
+
+.oneui .idxAppMarquee .idxAppMarqueeVendorName,
+.oneui .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorName {
+	position: absolute;
+	top: -10000px;
+	width: 0px;
+	height: 0px;		
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+	visibility: visible;
+	display: block;
+	position: absolute;
+  	right: 25px;
+ 	bottom: 9px;
+}
+
+.oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+	visibility: hidden;
+	display: none;
+}
+
+.oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+  right: 25px;
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorName,
+.oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorName {
+	top: auto;
+	width: auto;
+	height: auto;
+    display: block;
+    visibility: visible;
+	white-space: nowrap;
+    position: static;
+    line-height: 38px;
+    height: 38px;
+    font-size: 16px;
+    text-align: right;
+    margin: 0px;
+}
+
+.oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorName {
+    padding-right: 0px;
+}
+
+.oneui .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorLogo {
+	display: none;
+	visibility: hidden;
+}
+
+/* Links */
+
+.oneui .idxAppMarquee .idxLinkDerived,
+.oneui .idxAppMarquee .idxDropDownLinkAnchor {
+  	color: #DDD;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.oneui .idxAppMarquee .idxLinkDerived:hover,
+.oneui .idxAppMarquee .idxDropDownLinkAnchor:hover {
+	text-decoration: underline;
+	color: #fff;
+	}
+	
+.oneui .idxAppMarquee .idxDropDownLink .dijitArrowButtonInner {
+	margin-left: -4px;
+	}

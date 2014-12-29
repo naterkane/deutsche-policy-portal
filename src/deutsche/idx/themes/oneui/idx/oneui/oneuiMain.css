@@ -1,0 +1,32 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/*
+ *  loads all the stylesheets in the idx/oneui subdirectory of the oneui
+ *  theme folder, plus those in "layout". Note: "form" and "messaging" have
+ *  their own main files in order not to exceed IE max imports per file. 
+ */
+
+@import url("document.css");
+
+@import url("Header.css");
+@import url("Header_rtl.css");
+@import url("HoverHelpTooltip.css");
+@import url("HoverHelpTooltip_rtl.css");
+@import url("HoverCard.css");
+@import url("HoverCard_rtl.css");
+@import url("dialog.css");
+@import url("Menu.css");
+@import url("Menu_rtl.css");
+@import url("MenuDialog.css");
+@import url("CheckBoxTree.css");
+
+@import url("layout/HighLevelTemplate.css");
+@import url("layout/TabContainer.css");
+@import url("layout/TabContainerHeader_rtl.css");
+@import url("layout/TabContainerHeader.css");
+@import url("layout/ToggleSplitter.css");

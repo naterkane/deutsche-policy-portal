@@ -1,0 +1,87 @@
+.claro .idxButtonBar_idxDefaults {
+  background-image: url(../../resources/blank.gif?directionSensitive=false);
+}
+
+.claro .idxButtonBar {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxButtonBarLeading {
+
+}
+
+.claro .idxButtonBarTrailing {
+
+}
+
+.claro .idxButtonBarHidden {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxButtonBarPrimary {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxButtonBarSecondary {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxButtonBarSpacer {
+  width: 4px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.dj_ie7 .claro .idxButtonBarSpacer {
+  display: inline;
+}
+
+.dj_ie7 .claro .idxButtonBar table.dijitComboButton {
+  vertical-align: bottom;
+}
+
+.claro .idxButtonBarSeparator {
+  filter: none;
+  background: none;
+  background-color: #b2bece;
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.dj_ie7 .claro .idxButtonBarPrimary,
+.dj_ie7 .claro .idxButtonBarSecondary,
+.dj_ie7 .claro .idxButtonBar,
+.dj_ie7 .claro .idxButtonBarSeparator {
+  display: inline;
+}
+
+.claro .idxButtonBarSeparatorHidden {
+  visibility: hidden;
+  display: none;
+}
+
+.dj_ie7 .claro .idxButtonBarSeparatorHidden {
+  display: none;
+}
+
+.claro .idxButtonBar .dijitToggleButton, 
+.claro .idxButtonBar .dijitButton, 
+.claro .idxButtonBar .dijitDropDownButton,
+.claro .idxButtonBar .dijitComboButton {
+  margin: 0px;
+}

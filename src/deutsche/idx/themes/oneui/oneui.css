@@ -1,0 +1,40 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/*
+ * This CSS file is the single import required to support the
+ * IBM "oneui" theme. The following files should all be imported
+ * first, as they provide base stylings which this stylesheet
+ * complements, overrides and adds to:
+ *   1) /dojo/resources/dojo.css
+ *   2) /dijit/themes/dijit.css
+ *   3) /dijit/themes/dijit_rtl.css (if RTL support is required)
+ *   
+ * This file includes all the stylesheets for RTL support, so no
+ * additional imports are required.  
+ */
+
+/* oneui overrides to dijit styles */
+@import url("dijit/dijitMain.css");
+@import url("dijit/dijitMain_rtl.css");   
+
+/* styles and oneui overrides for dojox Grid */
+@import url("dojox/grid/oneuiGrid.css");
+@import url("dojox/grid/oneuiGrid_rtl.css");
+
+/* styles specific to general IDX widgets */
+@import url("idx/common.css");
+@import url("idx/app/app.css");
+@import url("idx/form/form.css");
+@import url("idx/grid/grid.css");
+@import url("idx/layout/layout.css");
+@import url("idx/widget/widget.css");
+	
+/* styles specific to oneui enablement widgets */
+@import url("idx/oneui/oneuiMain.css");
+@import url("idx/oneui/form/form.css");
+@import url("idx/oneui/messaging/messaging.css");

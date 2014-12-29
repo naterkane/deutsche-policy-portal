@@ -1,0 +1,81 @@
+@import "../variables";
+
+.oneui .dijitTabContainerTop-tabs .dijitTabRtl,
+.oneui .dijitTabContainerBottom-tabs .dijitTabRtl {
+	margin-right: 0;
+	margin-left: 1px;
+}
+.oneui .dijitTabRtl {
+	-moz-box-orient:horizontal;
+	text-align: right;
+}
+.dj_ie7 .oneui .dijitTabRtl .dijitTabContent {
+	display: block;
+	left: 0;
+}
+.dj_ie7 .oneui .dijitTabContainerTop-tabs .dijitTabRtl,
+.dj_ie7 .oneui .dijitTabContainerTop-tabs .dijitTabCheckedRtl {
+	top: 1px;
+}
+
+// Note that .tabStripButtonRtl .dijitButtonContents needed for IE8 quirks but breaks IE6 quirks
+.dj_ie7 .oneui .tabStripButtonRtl .dijitButtonContents,
+.dj_ie8 .oneui .tabStripButtonRtl .dijitButtonContents,
+.dj_ie6 .oneui .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie6 .oneui .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .oneui .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .oneui .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_iequirks .oneui .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_iequirks .oneui .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv {
+	float:left;
+}
+.dj_ie6 .oneui .dijitTabRtl .tabLabel,
+.dj_ie6 .oneui .dijitTabContainerRight-tabs .dijitTabRtl,
+.dj_ie6 .oneui .dijitTabContainerLeft-tabs .dijitTabRtl,
+.dj_ie7 .oneui .dijitTabContainerRight-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .oneui .dijitTabContainerLeft-tabs .dijitTabRtl .dijitTabInnerDiv {
+	/*Make the .tablabel have width in ie6 with haslayout property, fix Close icon position bug*/
+	zoom:1;
+}
+.dj_ie6 .oneui .dijitTabRtl .dijitTabCloseButton,
+.dj_ie7 .oneui .dijitTabRtl .dijitTabCloseButton,
+.dj_iequirks .oneui .dijitTabRtl .dijitTabCloseButton {
+	margin-right:5px;
+}
+
+.dj_ie6 .oneui .dijitTabContainerRightRtl .dijitTabContainerRight-tabs,
+.dj_ie6 .oneui .dijitTabContainerLeftRtl .dijitTabContainerLeft-tabs {
+	width:1%;
+}
+
+.dj_ie6 .dijitTabContainerTopStrip,
+.dj_ie6 .dijitTabContainerBottomStrip {
+	position:absolute;
+}
+.dj_iequirks .oneui .dijitTabContainerTopRtl .dijitTabContainerTopStrip {
+	padding-top: 10px;
+}
+.dj_ie7 .oneui .dijitTabContainerRight-tabs .dijitTabRtlChecked .dijitTabInnerDiv {
+	background-position:-341px -179px;
+}
+
+.dj_ie6 .dijitTabContainerTopRtl .dijitTabStripIcon,
+.dj_ie6 .dijitTabContainerBottomRtl .dijitTabStripIcon {
+   position: relative;
+}
+
+
+.dj_ie6-rtl .oneui .dijitTabContainerTop-tabs {	
+	/* this strange rule prevents IE6 bug in themeTester.html?dir=rtl upon closing
+	 * "Closable" tab, where the other tabs disappear
+	 */
+	padding-left: 3px;
+}
+
+.dj_iequirks-rtl .oneui .dijitTabListWrapper {
+	/* this strange rule prevents IE6 bug in themeTesterQuirk.html?dir=rtl upon closing
+	 * "Closable" tab, where the other tabs disappear
+	 */
+	border-left: 1px solid @pane-background-color;
+	border-right: 1px solid @pane-background-color;
+}

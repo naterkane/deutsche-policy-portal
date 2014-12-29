@@ -1,0 +1,89 @@
+/*************************************************/
+/* TriStateCheckBox								 */
+/*************************************************/
+.claro .idxTriStateCheckBoxOptions {
+  background-image: url("../../resources/blank.gif?theme=claro");
+}
+
+.claro .idxTriStateCheckBox {
+	width: 15px;
+	height: 15px;
+	background-position: 0px;
+}
+
+.idxTriStateCheckBox .idxHCImage {
+	display: none;
+}
+
+.dijit_a11y .idxTriStateCheckBox .idxHCImage {
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+
+.claro .idxTriStateCheckBoxchecked {
+	background-image: url("claro/check_selected.png");
+}
+
+.claro .idxTriStateCheckBoxunchecked {
+	background-image: url("claro/check_unselected.png");
+}
+
+.claro .idxTriStateCheckBoxmixed {
+	background-image: url("claro/check_triselected.png");
+}
+
+.claro .idxTriStateCheckBoxuncheckedDisabled {
+	background-image: url("claro/check_unselected_d.png");
+}
+
+.claro .idxTriStateCheckBoxcheckedDisabled {
+	background-image: url("claro/check_selected_d.png");
+}
+
+.claro .idxTriStateCheckBoxmixedDisabled {
+	background-image: url("claro/check_triselected_d.png");
+}
+
+.claro .idxTriStateCheckBox .dijitCheckedFocused, .dijitCheckBoxFocused {
+	outline: 1px dotted #666666;
+}
+
+.dj_ie .claro .idxTriStateCheckBox {
+	border: 1px solid #FFFFFF;
+}
+.dj_ie .claro .idxTriStateCheckBox.dijitFocused {
+	border: 1px dotted #B5BCC7;
+}
+
+/* temporarily sub-classing idx.oneui.form.TriStateCheckBox for 1.2 */
+.claro .idxOneuiTriStateCheckBoxInner {
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	text-align: center;
+}
+
+.dijit_a11y .claro .idxOneuiTriStateCheckBoxInner {
+	visibility: visible;
+	display: block;
+}
+
+.claro .idxOneuiTriStateCheckBoxInput {
+	opacity: 0.01;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 14px;
+	height: 14px;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.dj_ie .claro .idxOneuiTriStateCheckBoxInput {
+	filter: alpha(opacity=0);
+}
+
+.claro .idxOneuiTriStateCheckBoxWrap .dijitValidationContainer {
+	display: none;
+}

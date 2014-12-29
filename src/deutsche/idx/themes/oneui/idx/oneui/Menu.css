@@ -1,0 +1,111 @@
+/* Message menus
+ * 
+ * Styling consists of:
+ *  - classes to mark menu items with the appropriate icons
+ *  
+ */
+
+/* Styles for menu item icons for each message class */
+.oneui .dijitMenuTable .oneuiMenuColumn tr:first-child .dijitMenuArrowCell,
+.oneui .dijitMenuTable .oneuiMenuColumn tr:first-child .dijitMenuItemIconCell,
+.oneui .dijitMenuTable .oneuiMenuColumn tr:first-child .dijitMenuItemLabel{
+	border-top: 1px solid white;
+}
+
+.oneuiErrorMenuItemIcon,
+.oneuiWarningMenuItemIcon,
+.oneuiConfirmationMenuItemIcon,
+.oneuiSuccessMenuItemIcon,
+.oneuiInformationMenuItemIcon,
+.oneuiCriticalMenuItemIcon,
+.oneuiAttentionMenuItemIcon,
+.oneuiComplianceMenuItemIcon {
+	display: inline-block;
+	width: 16px;
+	height: 16px; 
+}
+
+.oneuiErrorMenuItemIcon,
+.oneuiWarningMenuItemIcon,
+.oneuiConfirmationMenuItemIcon,
+.oneuiSuccessMenuItemIcon,
+.oneuiInformationMenuItemIcon{
+	background-image: url('messaging/images/msgIcons_24bit.png');
+}
+
+.dj_ie6 .oneuiErrorMenuItemIcon,
+.dj_ie6 .oneuiWarningMenuItemIcon,
+.dj_ie6 .oneuiConfirmationMenuItemIcon,
+.dj_ie6 .oneuiSuccessMenuItemIcon,
+.dj_ie6 .oneuiInformationMenuItemIcon {
+	background-image: url('messaging/images/msgIcons_8bit.png');
+}
+
+.oneuiErrorMenuItemIcon {
+	background-position: -1px -1px;
+}
+
+.oneuiWarningMenuItemIcon {
+	background-position: -19px -1px;
+}
+
+.oneuiConfirmationMenuItemIcon {
+	background-position: -37px -1px;
+}
+
+.oneuiSuccessMenuItemIcon {
+	background-position: -55px -1px;
+}
+
+.oneuiInformationMenuItemIcon {
+	background-position: -73px -1px;
+}
+
+.oneuiErrorMenuItemIcon,
+.oneuiAttentionMenuItemIcon,
+.oneuiComplianceMenuItemIcon{
+	background-image: url('messaging/images/alertIcons_24bit.png');
+}
+
+.dj_ie6 .oneuiErrorMenuItemIcon,
+.dj_ie6 .oneuiAttentionMenuItemIcon,
+.dj_ie6 .oneuiComplianceMenuItemIcon{
+	background-image: url('messaging/images/alertIcons_8bit.png');
+}
+
+.oneuiCriticalMenuItemIcon {
+	background-position: -1px 0;
+}
+
+.oneuiAttentionMenuItemIcon {
+	background-position: -37px 0;
+}
+
+.oneuiComplianceMenuItemIcon {
+	background-position: -55px 0;
+}
+
+/* Styles for menu items */
+
+.oneui .oneuiMessageMenu .dijitMenuItem td {
+	padding: 10px 0px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.oneui .oneuiMessageMenu td.dijitMenuItemIconCell {
+	padding-left: 15px;
+	padding-right: 8px;
+}
+
+.oneui .oneuiMessageMenu td.dijitMenuItemLabel {
+	padding-right: 4px;
+}
+
+.oneui .oneuiMessageMenu .dijitMenuItemHover {
+	background-color: #cce8f2;
+}
+
+.oneui .oneuiMessageMenu .messageMenuTimestamp {
+	float: right;
+	padding-left: 1.5em;
+}

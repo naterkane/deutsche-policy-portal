@@ -1,0 +1,62 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.dijitRtl .oneui div.idxWorkspaceTabTitle {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #003851;
+}
+
+.dijitRtl .oneui div.idxWorkspaceTabTitlePostHovered {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: transparent;
+}
+
+.dijitRtl .oneui div.idxWorkspaceTabTitlePostSelected {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: transparent;
+}
+
+.dijitRtl .oneui div.idxWorkspaceTabTitleHovered {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: transparent;
+}
+
+.dijitRtl .oneui div.idxWorkspaceTabTitleSelected {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: transparent;
+}
+
+.dijitRtl .oneui div.idxWorkspaceTabTitleFirst {
+  border-left-style: none;
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: transparent;
+}
+
+

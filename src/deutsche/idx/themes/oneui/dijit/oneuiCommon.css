@@ -1,0 +1,177 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxComposite{
+	margin:1px;
+	padding:1px;
+}
+.oneui .idxSelectWrap .dijitSelect{
+	margin: 0;
+}
+.oneui .idxComposite .idxLabel{
+	text-align: left;
+}
+.oneui .idxSelectWrap .idxLabel.dijitInline, 
+.oneui .idxSliderWrap .idxLabel.dijitInline{
+	/**display: table-cell;**/
+}
+.oneui .idxLabel{
+	vertical-align: top;
+	padding:0 10px 0 0;
+	margin: 3px 0 2px 0;
+}
+
+.oneui .idxCheckBoxListWrap .idxLabel,
+.oneui .idxRadioButtonSetWrap .idxLabel{
+	vertical-align: top;
+}
+.oneui .idxLabel .idxRequiredIcon{
+	display:none;
+}
+.oneui .dijitRequired .idxLabel .idxRequiredIcon{
+	display: inline-block;
+	color: #e87820;
+  font-family: Verdana;
+  font-size: 1em;
+}
+}
+.oneui .idxComposite .idxHint{
+	display: none;
+}
+.dj_ie7 .idxComposite .idxHintOutside{
+	position: static;
+}
+.oneui .idxComposite .idxUnit{
+	padding-left: 5px;
+	padding-right: 0px;
+}
+.oneui .idxComposite .dijitSpinner .dijitSpinnerButtonContainer .dijitArrowButton{
+	width: auto;
+}
+
+/** Validation Styles **/
+.oneui .idxComposite .dijitValidationContainer{
+	visibility: hidden;
+	/*background-color: #D46464;
+    background-image: url("form/images/error.png");
+    background-position: center top;
+    width: 9px;
+    height: 14px;
+    border-color: #D46464;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 0 1px 0;
+    */
+    height: 25px;
+    width: 15px;
+    vertical-align: top;
+    margin: 0 0 0 4px;
+}
+
+.oneui .idxComposite .dijitValidationContainer .dijitValidationIcon {
+	height: 15px;
+	width: 15px;
+	margin: 5px 0;
+	background-image: url("../idx/oneui/messaging/images/msgIcons_24bit.png");
+    background-position: -2px -2px;
+}
+.dj_ie6 .oneui  .idxComposite .dijitValidationContainer .dijitValidationIcon {
+	background-image: url("../idx/oneui/messaging/images/msgIcons_8bit.png");
+}
+.dj_ie6 .oneui .idxTextBoxWrap .dijitTextBox {
+	padding: 3px 10px;
+}
+.dj_ie6 .oneui .idxTextBoxWrap .dijitTextBox .dijitInputField {
+  	padding: 0;
+}
+.dj_ie7 .oneui .idxTextareaWrap .dijitInputContainer{
+	display: inline;
+}
+.oneui .idxTextareaWrap .dijitValidationContainer .dijitValidationIcon{
+	margin: 0;
+}
+.oneui .idxComposite .dijitValidationContainer input {
+	background-color: transparent !important;
+	width: 0px;
+	border:0px;
+}
+.oneui .idxComposite .dijitSpinnerButtonContainer {
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  padding: 0 2px;
+}
+
+.oneui .idxComposite input.dijitValidationInner {
+	direction: ltr !important;
+	height: auto !important;
+	text-align: left !important;
+	text-indent: -1em !important;
+}
+.oneui .idxComposite.dijitError .dijitValidationContainer{
+	visibility: visible;
+}
+/** FileInput is not in V1 
+.oneuiFileInputWrap .dijitValidationContainer{
+	display: none;
+}
+.oneuiFileInputWrapError .dijitValidationContainer{
+	display: inline-block;
+	padding: 2px 0 3px 0;
+}
+.dj_ie7 .oneuiFileInputWrapError .dijitValidationContainer{
+	display: inline;
+}
+.dj_gecko .oneuiFileInputWrapError .dijitValidationContainer{
+	height: 15px;
+}
+.oneuiFileInputWrapError .dijitFileInputError .dijitFileInputVisible,
+.idxCheckBoxListWrapError .dijitSelectError{
+    border: 1px solid #cd321a;
+    background-color: #fff3f3;
+}
+**/
+
+/* Fix outline issue in IE for composite widget such as CheckBoxList and RadioButtonSet*/
+.oneui .idxNoOutline{
+	outline-style: none;
+}
+
+.oneui .idxFormBodyRow{
+	margin: 0;
+	padding: 2px 0;
+}
+.oneui .idxFormBodyRow .idxComposite{
+	vertical-align: top;
+}
+
+/* Drag and Drop */
+.oneui .idxDndAvatar {
+  background-color: transparent;
+}
+.oneui .idxDndAvatarBody {
+  padding: 7px 10px;
+  background: #333333;
+  background: rgba(0,0,0,0.8);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: Arial bold 12px;
+  color: #ffffff;
+}
+.oneui .idxDndAvatar .dndType{
+  padding-right: 5px;
+}
+.oneui .idxDndAvatar .dropIndicator {
+  width:16px;
+  height: 16px;
+  background: url("images/dndSource_16px.png");
+  vertical-align: top;
+}
+.oneui .idxDndAvatar.idxDndAvatarCanDrop .dropIndicator {
+  background: transparent;
+}

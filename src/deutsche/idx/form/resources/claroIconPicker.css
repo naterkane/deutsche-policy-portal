@@ -1,0 +1,60 @@
+@import url("claroDateTimeFormatter.css");
+
+.claro .idxIconPicker {
+	padding: 0px 20px 0px 1px;
+	width: 7em;
+	position: relative;
+}
+
+.dijitRtl .claro .idxIconPicker {
+	padding-right: 1px;
+	padding-left: 20px;
+}
+
+.claro .idxPickerIconLink {
+	vertical-align: top;
+	position: absolute;
+	top: 1px;
+	right: 2px;
+}
+
+.dijitRtl .claro .idxPickerIconLink {
+	right: auto;
+	left: 2px;
+} 
+
+.claro .idxPickerIcon {
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 16px;
+	height: 16px;
+}
+
+.claro .idxPickerTextIcon {
+	display: none;
+	visibility: hidden;
+}
+
+.claro.dijit_a11y .idxPickerIcon {
+	display: none;
+	visibility: hidden;
+}
+
+.claro.dijit_a11y .idxPickerTextIcon {
+	display: block;
+	visibility: visible;
+	width: 16px;
+	height: 16px;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	font-size: 125%;
+}
+
+.claro .idxIconPicker .dijitTextBoxDisabledFocused .dijitInputContainer {
+	background-color: #EFEFEF !important;	
+}
+
+.claro .idxIconPicker .dijitArrowButton {
+	display: none;
+}

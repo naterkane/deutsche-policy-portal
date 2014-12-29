@@ -1,0 +1,15 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+@import url("ModalDialog.css");
+@import url("ModalDialog_rtl.css");
+@import url("SingleMessage.css");
+@import url("SingleMessage_rtl.css");
+@import url("Toaster.css");
+@import url("Toaster_rtl.css");
+
+@import url("../../../dojox/html/ellipsis.css");

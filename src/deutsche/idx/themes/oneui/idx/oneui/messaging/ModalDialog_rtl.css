@@ -1,0 +1,54 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* Messaging UI fix for rtl */
+.oneui .idxModalDialogRtl .dijitDialogTitleBar .dijitDialogCloseIcon,
+.oneui .idxConfirmDialogRtl .dijitDialogTitleBar .dijitDialogCloseIcon {
+	right:auto;
+	left:5px;
+}
+.oneui .idxModalDialogRtl .messageSummary img,
+.oneui .idxConfirmDialogRtl .messageSummary img {
+	float:right;
+	margin:0 0 0 10px;
+	background-image: url(images/msgIcons_24bit_rtl.png);
+}
+.dj_ie6 .oneui .idxModalDialogRtl .messageSummary img,
+.dj_ie6 .oneui .idxConfirmDialogRtl .messageSummary img {
+	background-image: url(images/msgIcons_8bit_rtl.png);
+}
+.oneui.idx_i18n_il .idxModalDialogRtl .messageSummary img,
+.oneui.idx_i18n_il .idxConfirmDialogRtl .messageSummary img{
+	background-image: url('images/msgIcons_24bit_rtl_il.png');
+}
+.dj_ie6 .idx_i18n_il .idxModalDialogRtl .messageSummary img,
+.dj_ie6 .idx_i18n_il .idxConfirmDialogRtl .messageSummary img{
+	background-image: url('images/msgIcons_8bit_rtl_il.png');
+}
+
+
+.oneui .idxModalDialogRtl .messageDialogFooter .messageCheckBox,
+.oneui .idxConfirmDialogRtl .messageDialogFooter .messageCheckBox{
+	float: right;
+}
+.oneui .idxModalDialogRtl .messageDialogFooter .messageAction,
+.oneui .idxConfirmDialogRtl .messageDialogFooter .messageAction{
+	float: left;
+}
+.oneui .idxModalDialogRtl .messageRef,
+.oneui .idxConfirmDialogRtl .messageRef{
+	float: right;
+	margin-left: 10px;
+}
+.oneui .idxModalDialogRtl .messageTimeStamp,
+.oneui .idxConfirmDialogRtl .messageTimeStamp{
+	float: right;
+}
+.oneui .idxModalDialogRtl .dijitTabContainerCompactRtl .dijitTabContainerTop-tabs,
+.oneui .idxConfirmDialogRtl .dijitTabContainerCompactRtl .dijitTabContainerTop-tabs {
+	padding-right: 30px;
+}

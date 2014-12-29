@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+	<title>Create a XXXX.net Account</title>
+	<link rel="stylesheet" href="../themes/oneui/oneui.css" media="screen">
+	<style type="text/css">
+
+/* ======= Global Classes ======== */
+
+			.uxdCentred {
+				border: 1px solid #CCCCCC;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 0;
+				width: 980px;
+			}
+			
+			.w3uxd {
+			font-family: Arial, Tahoma, Verdana, sans-serif;
+			color: #222222;
+			
+			}
+
+			p {
+				margin: 11px 0px;
+			}
+		
+			.itembox {
+				padding-top: 10px; 
+				padding-left: 20px;
+				padding-right: 20px;	
+				padding-bottom: 10px; 
+			}
+			
+			/* Headings */
+			h1 {
+				
+				font-size: 2em;
+				font-weight: normal;
+				line-height: 1em; 
+				margin-top: 1em;
+				margin-bottom:0.727em;
+				color: #222222;
+				text-shadow: #C6C6C6 0px 1px 1px;
+			}
+
+			.w3uxd .dijitDialog h1 { 
+				margin-top:0em; 
+
+			}
+		
+			h2 { 
+			
+				color: #222222;
+				font-size: 1.5em;
+				font-weight: normal;
+				line-height: 1.455em;
+				margin-bottom: 0.6em;
+				margin-top: 1em;
+				
+			}
+
+
+			/*h3, h4, h5, h6 {
+				font-size:1.091em; 
+				font-weight: normal; 
+				line-height: 1.5em; 
+				margin-top: 1.5em; 
+				margin-bottom: 0;
+				color: #222222;
+			}*/
+
+			h3 {
+				color: #222222;
+				font-size: 1.17em;
+				font-weight: bold;
+				line-height: 1.5em;
+				margin-bottom: 0;
+				margin-top: 1.5em;
+
+			}
+
+			h4 {
+			color: #222222;
+			font-size: 1.08em;
+			font-weight: bold;
+			line-height: 1.5em;
+			margin-bottom: 0;
+			margin-top: 1.5em;
+			}
+			
+			h5{
+				color: #222222;
+				font-size: 1em;
+				font-weight: bold;
+				line-height: 1.5em;
+				margin-bottom: 0;
+				margin-top: 1.5em;
+			}
+			
+			h6{
+				color: #222222;
+				font-size: 0.92em;
+				font-weight: bold;
+				line-height: 1.5em;
+				margin-bottom: 0;
+				margin-top: 1.5em;
+			}
+	
+			/*paragraphs, quotes and lists */
+			td, tr, p { 
+				font-size: 12px; 
+				line-height: 1.3em;
+				margin-bottom: 10px;
+			}
+
+			blockquote { 
+				font-size: 0.916em; 
+				margin-top: 3.272em; 
+				margin-bottom: 3.272em; 
+				line-height: 1.636em; 
+				padding: 1.636em; 
+				border-top: 1px solid #ccc; 
+				border-bottom: 1px solid #ccc;
+			}
+
+			ol li, ul li { 
+				font-size: 12px;  
+				line-height: 1.3em; 
+				margin: 0;			
+				margin-bottom: 10px;
+			}
+
+			/* pre and code */
+			pre, code { 
+				font-size:115%;
+				*font-size:100%;
+				font-family:inherit; 
+				background-color: #efefef; 
+				border: 1px solid #ccc;
+			}
+
+			pre { 
+				border-width: 1px 0; 
+				padding: 1.5em;
+			}
+			
+			/* link styling */
+			.ibmui10_contentLink a:link {
+			color:#4c6e94;
+			text-decoration:none;
+			}
+
+			.ibmui10_contentLink a:hover {
+			color:#4c6e94;
+			text-decoration: underline;
+			}
+
+			.ibmui10_contentLink a:visited {
+			color:#996699;
+			text-decoration:none;
+			}
+
+			.ibmui10_contentLink a:visited:hover {
+			color:#996699;
+			text-decoration: underline;
+			}
+			
+/* ======= IBM One UI Website Specific Classes ======== */
+
+			.figure {
+				color: #555555;
+				font-size: 0.92em;
+				font-family: Georgia,Times New Roman,Serif;
+				font-weight: normal;	
+				font-style: italic; 
+				line-height: 1.5em;
+				margin-bottom: 0;
+				margin-top: 1.5em;
+			} 
+
+			.fullimg{
+				margin: 20px 0px 0px 0px;
+			}
+
+			.h2title{
+				margin: 20px 0px 0px 0px;
+			}
+
+			.example{
+				margin: 0px 0px 0px 25px; 
+			}
+
+			.updateon{
+				margin: -10px 0px 0px 0px;
+				color: #666666;
+			}
+
+			.imgRightP{
+				margin-left: 70px;
+			}
+
+			.imgRightP2{
+				margin-left: 60px;
+			}
+
+			.titlePaddingTop{
+				padding: 8px;
+			}
+
+			.ibmOneUIIntro {
+ 				font-size: 16px;
+ 				margin-bottom: 20px;
+				line-height: 24px;
+			}
+
+			.ibmOneUICompliance {
+				font-size: 12px;
+				margin-bottom: 20px;
+				line-height: 24px;
+			}
+
+			.ibmOneUIsubheader {
+				font-size: 14px;
+				border-bottom: 1px solid #D6DADF; 
+				clear:left; 
+				padding-top:10px;
+			}
+
+			.ibmOneUITeam {
+				font-size: 11px; 
+			}
+
+			.ibmOneUITableHeader {
+				background-color:#cccccc;
+			}
+	
+			.ibmOneUITableOdd {
+				background-color:#f0f0f0;
+			}
+
+			.ibmOneUITablePadding {
+				padding: 10px;
+			}
+
+			.ibmOneUITeamsubheader {
+ 				font-size: 16px;
+ 				border-bottom: 1px solid #D6DADF;
+ 				margin-top: 55px;
+			}
+
+			.bottomspacing {
+				margin-bottom: 10px;
+			}
+
+/* ======= UXD Website Specific Classes ======== */
+        
+ .uxd_popimage {
+	margin-top: 13px;
+}
+
+.uxd_imgRightP {
+	padding-left: 60px;
+}
+
+.uxd_imgRightP2 {
+	padding-left: 70px;
+}
+
+.uxd_imgRightPHome {
+	padding-left: 115px;
+}
+
+.uxd_titleImgAlign {
+	margin: 10px 10px 0 0;
+}
+
+.uxd_imgAlign {
+	margin-top: 20px; 
+	margin-right: 10px;
+}
+
+.uxd_imgAlignIdeaJam {
+	margin-top: 2px; 
+	margin-right: 10px;
+}
+
+.uxd_itemSpacing {
+	padding-bottom: 55px;
+}
+
+.uxd_itemSpacingHome {
+	padding-bottom: 5px;
+}
+
+.uxd_communityItemSpacing {
+	padding-bottom: 10px;
+}
+
+.uxd_toolsItemSpacing {
+	padding-bottom: 5px;
+}
+
+.uxd_tableWidth {
+	table-layout:fixed;
+	width: 780px; 
+}
+
+.uxd_tableWidthUIdesign {
+	width: 768px; 
+}
+
+.uxd_tableColumn {
+	width: 560px;
+	vertical-align: top; 
+}
+
+.uxd_tableColumnRight {
+	width: 220px;
+	vertical-align: top; 
+	/* background-color: white; */
+}
+
+.lead-in {
+	font-weight: bold;
+}
+
+.ibm-external-link {
+    background: url("//1.www.s81c.com/i/v17/icons/ibm_sprite_links_OFF.png") no-repeat scroll 1px -2px transparent;
+}       
+
+		.uxdCentred{
+			border: none;
+		}
+		.uxdCentred table{
+			margin-left: 15px;
+		}
+		
+		.oneui .uxdCentred .inputFields{
+			margin: 0 0 15px 0;
+		}
+		
+		.oneuiCheckBoxWrap .dijitValidationContainer{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+
+	<script type="text/javascript">
+	
+		var emptyStore;
+		require(["dojo", "../../../lib/dojo/ready", "idx/oneui/layout/Header", "idx/oneui/Menu", "../../../../lib/dijit/MenuItem", "idx/oneui/MenuBar", "dijit/MenuBarItem", "dijit/PopupMenuBarItem",
+				"idx/oneui/form/CheckBox", "idx/oneui/form/TextBox", "idx/oneui/form/Select", "dojo/data/ItemFileReadStore", "dijit/form/Button"], function(
+			dojo, ready, Header, Menu, MenuItem, MenuBar, MenuBarItem, PopupMenuBarItem, CheckBox, TextBox, Select, ItemFileReadStore){
+				ready(function(){
+					var navigationMenu = new MenuBar();
+					navigationMenu.addChild(new MenuBarItem({ label: "Home" }));
+					
+					var navigationMenu_01 = new Menu();
+					navigationMenu_01.addChild(new MenuItem({ label: "Rational Team Concert" }));
+					navigationMenu_01.addChild(new MenuItem({ label: "Rational Quality Manager" }));
+					navigationMenu_01.addChild(new MenuItem({ label: "Rational Requirements Composer" }));
+					navigationMenu_01.addChild(new MenuItem({ label: "Rational DOORS Next Generation" }));
+					navigationMenu.addChild(new PopupMenuBarItem({ label: "Projects", popup: navigationMenu_01 }));
+					
+					var navigationMenu_02 = new Menu();
+					navigationMenu_02.addChild(new MenuItem({ label: "Rational Team Concert" }));
+					navigationMenu_02.addChild(new MenuItem({ label: "Rational Quality Manager" }));
+					navigationMenu_02.addChild(new MenuItem({ label: "Rational Requirements Composer" }));
+					navigationMenu_02.addChild(new MenuItem({ label: "Rational DOORS Next Generation" }));
+					navigationMenu.addChild(new PopupMenuBarItem({ label: "Download", popup: navigationMenu_02 }));
+					
+					navigationMenu.addChild(new MenuBarItem({ label: "About" }));
+			
+					var actionsMenu = new Menu();
+					actionsMenu.addChild(new MenuItem({ label: "Edit Profile" }));
+					actionsMenu.addChild(new MenuItem({ label: "Sign Out" }));
+					
+					var helpMenu = new Menu();
+					helpMenu.addChild(new MenuItem({ label: "Help Center" }));
+					helpMenu.addChild(new MenuItem({ label: "About" }));
+			
+					var header = new Header({
+						primaryTitle: "IBM Product/Context",
+						navigation: navigationMenu,
+						user: {
+							displayName: "User Name",
+							actions: actionsMenu
+						},
+						help: helpMenu,
+						secondaryTitle: "XXXX Community Site",
+						secondarySearch: {
+							entryPrompt: "Search",
+							onSubmit: function(value){ alert('Search for "' + value + '" requested.'); }
+						},
+						secondaryBannerType: "white",
+						layoutType: "fixed"
+					},
+					"header");
+				});
+			emptyStore = new ItemFileReadStore({
+				data: {
+					identifier: "value",
+					label: "label",
+					items: [{
+						label: "--none--",
+						value: "NULL"
+					}]
+				}
+			});
+		});
+		function changeStates(newValue){
+			if(newValue == "US"){
+				dijit.byId("state").setStore(statesStore);
+			}else{
+				dijit.byId("state").setStore(emptyStore);
+			}
+		}
+		function tryValidate(){
+			dijit.byId("email2").validate();
+		}
+	</script>
+
+</head>
+<body class="oneui">
+<span dojoType="dojo.data.ItemFileReadStore" 
+		jsId="jsonStore" url="../tests/_data/countries.json">
+</span>
+<span dojoType="dojo.data.ItemFileReadStore" 
+		jsId="statesStore" url="../tests/_data/states.json">
+</span>
+<div id="header"></div>
+<div class="uxdCentred">
+	<table>
+	<tbody>
+	<tr>
+		<td>
+			<div class="w3uxd itembox ibmui10_contentLink">
+				<h1>Create a XXXX.net Account</h1>
+				<span>
+				XXXX.net registration is open to everyone! In most cases, we can validate your registration and send you your password right away if you provide us with complete and accurate information.
+				</span>
+				<img width="100%" height="1px" alt="" src="http://dleadt.torolab.ibm.com/dl/uxd_images/home/singledot.gif">
+				<span>
+				The fields indicated with an asterisk (*) are required to complete this transaction; other fields are optional. If you do not want to provide us with the required information, please use the "Back" button on your browser to return to the previous page, or close the window or browser session that is displaying this page.
+				</span>
+				<table class="inputFields">
+					<tbody>
+						<tr>
+							<td>
+								<h3>Personal Information</h3>
+							</td>
+							<td>
+								<h3>Contact Information</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="id" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Create a XXXX.net User ID:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+							<td>
+								<input id="addr1" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Address Line 1:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="firstName" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "First Name:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+							<td>
+								<input id="addr2" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Address Line 2:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="lastName" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Last Name:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+							<td>
+								<input id="city" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "City:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="email" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "E-mail:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true,
+									invalidMessage: "You must specify a valid work e-mail address",
+									onChange: function(){
+										dijit.byId("email2").validate();
+									},
+									isValid: function(isFocused){
+											if(/^.+@.+\..+$/.test(this.value)){
+												return true;
+											}else{
+												return false;
+											}
+									}
+								'/>
+							</td>
+							<td>
+								<input id="country" data-dojo-type="idx.oneui.form.Select" data-dojo-props='
+									label: "Country/Region:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									store: jsonStore,
+									onChange: changeStates,
+									required: true
+								'/>
+								</input>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="email2" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Re-type E-mail:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true,
+									invalidMessage: "The e-mail addresses did not match",
+									isValid: function(){
+										return this.value == dijit.byId("email").value;
+									}
+								'/>
+							</td>
+							<td>
+								<input id="zip" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Zip/Postal Code: ",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select id="describtion" data-dojo-type="idx.oneui.form.Select" data-dojo-props='
+									label: "Select the entry that best describes you:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true,
+									isValid: function(isFocused){
+										if(isFocused){
+											return this.value == "NULL" ? false : true;
+										}
+										return true;
+									},
+									invalidMessage: "Please select a valid option"
+								'/>
+									<option value="NULL">--none--</option>
+									<option value="RC">Rational Customer</option>
+									<option value="RBP">Rational Business Partner</option>
+									<option value="ST">Student</option>
+									<option value="AR">Academic Researcher</option>
+									<option value="IE">IBM Employee</option>
+									<option value="O">Other</option>
+								</select>
+							</td>
+							<td>
+								<input id="tel" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Telephone:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="company" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+									label: "Company or Organization Name:",
+									labelAlignment: "horizontal",
+									labelWidth: 250,
+									fieldWidth: 200,
+									required: true
+								'/>
+							</td>
+							<td>
+								<select id="state" data-dojo-type="idx.oneui.form.Select" data-dojo-props='
+									label: "State/Province:",
+									labelAlignment: "horizontal",
+									labelWidth: 110,
+									fieldWidth: 200,
+									maxHeight: 200,
+									isValid: function(isFocused){
+										if(isFocused){
+											return this.value == "NULL" ? false : true;
+										}
+										return true;
+									},
+									invalidMessage: "Please select a valid option",
+									store: emptyStore
+								'/>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<span>
+					Type the letters you see in the image below. If you cannot read the image, <a href="javascript:return false;">load a new image</a>.
+				</span>
+				<br/>
+				<br/>
+				<input id="captcha" data-dojo-type="idx.oneui.form.TextBox" data-dojo-props='
+					label: "",
+					labelAlignment: "horizontal",
+					labelWidth: 0,
+					fieldWidth: 200,
+					required: true,
+					isValid: function(){
+						return this.value.toLowerCase() == "ooteri";
+					}
+				'/>
+				<div class="dijitInline" style="height: 28px; width: 200px; background-image: url(images/captcha.jpg); background-position: -20px -40px;"></div>
+				<br/>
+				<h3>Privacy</h3>
+				<span>IBM and its affiliates may use the information you have provided to keep you informed about IBM products, services and offerings.</span>
+				<br/>
+				<br/>
+				<input data-dojo-type="idx.oneui.form.CheckBox" data-dojo-props='
+					label: "by email.",
+					labelAlignment: "horizontal"'/>
+				<br/>
+				<input data-dojo-type="idx.oneui.form.CheckBox" data-dojo-props='
+					label: "by telephone or postal mail.",
+					labelAlignment: "horizontal"'/>
+				<br/>
+				<br/>
+				By submitting this form I agree that IBM may process my data in the manner indicated above and as described in IBM's Privacy statement.
+				<br/>
+				In addition, I have read and agree to the XXXX.net Privacy Policy and XXXX.net website Terms of Use.
+				<br/>
+				<br/>
+				<div style="margin-left: 270px;">
+				<button data-dojo-type="dijit.form.Button" data-dojo-props='onClick:function(){ console.log("registered!"); }'>
+				I agree. Register me!
+				</button>
+				<button data-dojo-type="dijit.form.Button" data-dojo-props='onClick:function(){ console.log("declined!"); }, baseClass: "dijitButton secondaryButton"'>
+				I don't agree. Don't register me.
+				</button>
+				</div>
+			</div>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+</body>
+</html>

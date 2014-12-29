@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <title>Demo: Layout with Dijit</title>
+
+     <link rel="stylesheet" href="dijit/themes/tundra/tundra.css" media="screen">
+     <link rel="stylesheet" href="deutsche/resources/css/db-styles.css" media="screen">
+<!-- load dojo and provide config via data attribute -->
+<script src="dojo/dojo.js" data-dojo-config="async:true, parseOnLoad:true"></script>
+<script>
+    require(["../node_modules/intern-geezer/node_modules/dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer",
+        "dijit/layout/ContentPane"]);
+	 require(["../node_modules/intern-geezer/node_modules/dojo/parser", "dijit/TooltipDialog", "dijit/form/DropDownButton", "dijit/form/TextBox", "dijit/form/Button"]);
+</script>
+</head>
+<!-- one column layout -->
+<body class="tundra">
+	<div id="db-banner">
+   	<div class="db-branding-right"></div>
+      <div class="db-branding-left">
+      	<div class="db-name">Deutsche Bank</div>
+         <div class="db-portalTitle">Policy Portal</div>
+      </div>
+      <div class="db-bannerLinks">
+      	<a href="#">GPAG Contacts</a>|<a href="#">Policy template</a>|<a href="#">Policy principles</a>|<a href="#">Support</a>
+      </div>  
+   </div>
+   <div class="db-topNav">
+   	<div class="profileMenu" style="float: right;">
+          <div data-dojo-type="dijit/form/DropDownButton">
+             <span>User Name</span>
+             <div data-dojo-type="dijit/TooltipDialog">
+					<dl class="profileDialog">
+               	<dt>Location:</dt>
+                  <dd>Frankfurt, Germany</dd>
+               	<dt>Language:</dt>
+                  <dd>English</dd>
+               	<dt>Functional Applicability:</dt>
+                  <dd>DB Group</dd>
+               	<dt>Geographical Applicability:</dt>
+                  <dd>Global</dd>
+               	<dt>Policy Producing Function:</dt>
+                  <dd class="last">Compliance</dd>
+               </dl>
+             </div>
+         </div>
+     
+      </div>
+      <a href="#" class="navLink active">Policies</a><a href="#" class="navLink">Add new doc</a>
+   </div>
+
+	<div id="appLayout" class="dbLayout-oneCol" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+		<div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+            <div>
+                <h4>Group 1 Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div>
+                <h4>Group 2 Content</h4>
+            </div>
+            <div>
+                <h4>Group 3 Content</h4>
+            </div>
+		</div>
+
+	</div><!-- end appLayout -->
+</body> 
+ 
+
+
+</html>

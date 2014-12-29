@@ -1,0 +1,175 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* oneui/form/Common.css */
+/*========================= common css =========================*/
+/* 'dijitTextBox' refers to 'dijit(TextBox|DateTextBox|CurrencyTextBox|...)' */
+.oneui .dijitTextBoxError .dijitValidationContainer {
+  background-color: #d46464;
+  background-image: url('images/error.png');
+  background-position: top center;
+  border: solid #d46464 0;
+  border-left-width: 1px;
+  width: 9px;
+}
+.oneui .dijitTextBoxError .dijitValidationIcon {
+  width: 0;
+  background-color: transparent !important;
+  /* so the INPUT doesn't obscure the border in rtl+a11y */
+
+}
+/* Padding for the input area of TextBox based widgets, and corresponding padding for the
+ * down arrow button and the placeholder.   placeholder is explicitly listed  because
+ * dijitPlaceHolder is absolutely positioned, so padding set on dijitInputField
+ * won't affect it
+ */
+.oneui .dijitTextBox {
+	outline: medium none;
+}
+.oneui .dijitTextBox .dijitInputField {
+  padding: 3px 10px;
+  color: #222222;
+}
+.oneui .dijitInputField .dijitPlaceHolder,
+.oneui .dijitInputContainer .dijitPlaceHolder {
+  padding: 4px 10px;
+  color: #777777;
+}
+.oneui .dijitTextArea {
+  padding: 4px 8px;
+  color: #222222;
+}
+.oneui .dijitHintOuter {
+	color: #777777;
+	padding-top: 5px;
+}
+.dj_gecko .oneui .dijitTextBox .dijitInputInner, 
+.dj_webkit .oneui .dijitTextBox .dijitInputInner,
+.dj_ie8 .oneui .dijitTextBox .dijitInputInner,
+.dj_ie7 .oneui .dijitTextBox .dijitInputInner {
+  padding: 1px 1px 2px 1px;
+}
+.oneui .dijitTextBox, .oneui .dijitTextBox .dijitButtonNode {
+  /* color for (outer) border on *TextBox widgets, and border between input and buttons on ComboBox and Spinner */
+  
+  border-color: #aaaaaa;
+  -webkit-transition-property: background-color, border;
+  -moz-transition-property: background-color, border;
+  transition-property: background-color, border;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+}
+.oneui .dijitTextBox {
+  border: 1px solid #aaaaaa;
+  background-color: #ffffff;
+}
+
+/* hover */
+.oneui .dijitTextBoxHover, .oneui .dijitTextBoxHover .dijitButtonNode {
+  border-color: #66d0e9;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+.oneui .dijitTextBoxHover {
+/*
+  background-color: #e9f4fe;
+  background-image: url('images/textBox_back.png');
+  background-repeat: repeat-x;
+  */
+}
+/* error state */
+.oneui .dijitTextBoxError, .oneui .dijitTextBoxError .dijitButtonNode {
+  border-color: #cd321a;
+}
+.oneui .dijitTextBoxError, .oneui .dijitTextBoxError .dijitInputContainer {
+  background-color: #fff3f3;
+}
+/* focused state */
+.oneui .dijitTextBoxFocused, .oneui .dijitTextBoxFocused .dijitButtonNode {
+  border-color: #008abf !important;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.oneui .dijitTextBoxFocused {
+/*
+  background-color: #ffffff;
+  background-image: url('images/textBox_back.png');
+  background-repeat: repeat-x;
+  */
+}
+.oneui .dijitTextBoxFocused .dijitInputContainer {
+  background: #ffffff;
+}
+.oneui .dijitTextBoxErrorFocused, .oneui .dijitTextBoxErrorFocused .dijitButtonNode {
+  border-color: #ce4f4f;
+}
+/* disabled state */
+.oneui .dijitTextBoxDisabled, .oneui .dijitTextBoxDisabled .dijitButtonNode {
+  border-color: #cccccc;
+}
+.oneui .dijitTextBoxDisabled, 
+.oneui .dijitTextBoxDisabled .dijitInputContainer,
+.oneui .dijitTextBoxDisabled .dijitInputField .dijitPlaceHolder {
+  background-color: #f3f3f3;
+  background-image: none;
+  color: #aaaaaa;
+}
+.oneui .dijitTextBoxReadOnly {
+	border: 1px solid #bbbbbb;
+}
+.oneui .dijitTextBoxReadOnly .dijitInputField{
+	color: #777777;
+}
+
+/* Simple Text Area */
+.oneui .dijitSimpleTextArea {
+  padding: 0px 0px 0px 10px;
+  color: #222222;
+}
+.oneui .dijitSimpleTextAreaDisabled {
+  background-color: #f3f3f3;
+  color: #aaaaaa;
+  border-color: #cccccc;
+}
+.oneui .dijitSimpleTextAreaReadOnly {
+  color: #777777;
+  border-color: #bbbbbb;
+}
+/*========================= for special widgets =========================*/
+/* Input boxes with an arrow (for a drop down) */
+.oneui .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+  border: none;
+}
+.oneui .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+  border: none;
+}
+/* Add 1px vertical padding to the <input> where user types and the validation icon,
+   to match the 1px border on arrow button */
+.oneui .dijitTextBox .dijitInputInner, .oneui .dijitTextBox .dijitValidationContainer {
+  padding: 1px 0;
+}
+
+/*========================= hacks for browsers =========================*/
+/* it seems the input[type="hidden"] has a height (16px) too... this may cause the widget's height calculate error */
+.dj_ff3 .oneui .dijitInputField input[type="hidden"] {
+  display: none;
+  height: 0;
+  width: 0;
+}
+/* ie6 doesn't support transparent background img */
+.dj_ie6 .oneui .dijitTextBox, .dj_ie6 .oneui .dijitComboBox .dijitButtonNode {
+  background-image: none;
+}
+.dj_borderbox .oneui .dijitComboBox .dijitHasDropDownOpen .dijitArrowButtonInner {
+  width: 18px;
+}
+.dj_borderbox .oneui .dijitComboBoxFocused .dijitHasDropDownOpen .dijitArrowButtonInner {
+  width: 16px;
+}

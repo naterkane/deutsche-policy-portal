@@ -1,0 +1,57 @@
+
+.vienna .idxTooltipDialog .dijitTooltipConnector {
+    background-image:url("vienna/tooltipDialogConnector.png");    
+}
+
+.vienna .idxTooltipDialog .dijitTooltipAbove .dijitTooltipConnector {
+
+}
+
+.vienna .idxTooltipDialog .dijitTooltipBelow .dijitTooltipConnector {
+
+}
+
+.vienna .idxTooltipDialog .dijitTooltipContainer {
+	background-color:#8493a3;
+	background-image: none;
+	border: 4px solid #8493a3;
+        
+	padding: 0px 0px 0px 0px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.vienna .idxTooltipDialog .dijitTooltipContents {
+	background-color:#ffffff;
+	background-image: none;
+	border: 1px solid #b0b3cf;
+	padding: 4px 8px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.vienna .idxTooltipDialog .dijitTooltipContainer .dijitTooltipDialog {
+
+}
+
+.vienna .idxTooltipDialog .dijitDialogPaneContent {
+
+}
+
+.vienna .idxTooltipDialog .dijitDialogPaneContentArea {
+
+}
+
+.vienna .idxTooltipDialog .dijitDialog {
+
+}
+
+.vienna .idxTooltipDialog .dijitDialogTitleBar {
+
+}
+
+.vienna .idxTooltipDialog .dijitDialogTitle {
+
+}

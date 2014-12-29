@@ -1,0 +1,37 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .dijitCalendarRtl .dijitCalendarIncrease {
+  background-position: -77px 0;
+}
+.oneui .dijitCalendarRtl .dijitCalendarDecrease {
+  background-position: -25px 0;
+}
+.oneui .dijitCalendarRtl .dijitCalendarArrowHover .dijitCalendarIncrease {
+  background-position: -177px 0;
+}
+.oneui .dijitCalendarRtl .dijitCalendarArrowHover .dijitCalendarDecrease {
+  background-position: -125px 0;
+}
+.oneui .dijitCalendarRtl .dijitCalendarArrowActive .dijitCalendarIncrease {
+  background-position: -177px 0;
+}
+.oneui .dijitCalendarRtl .dijitCalendarArrowActive .dijitCalendarDecrease {
+  background-position: -125px 0;
+}
+.oneui .dijitCalendarRtl .dijitDropDownButton .dijitButtonNode {
+    padding: 0 2px 0 3px;
+}
+.oneui .dijitCalendarRtl .dijitCalendarDateTemplate .dijitCalendarDateLabel {
+    padding: 3px 4px 3px 5px;
+}
+.oneui .dijitCalendarRtl .dijitCalendarDisabledDate .dijitCalendarDateLabel {
+    padding: 4px 5px 4px 6px;
+}
+.oneui .dijitCalendarRtl .dijitDropDownButtonRtl .dijitButtonText {
+    padding: 1px 0 3px;
+}

@@ -1,0 +1,54 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxAccordionTabContainer {
+	position: relative;
+}
+
+.oneui .idxAccordionTabContainerHeader {
+	min-width: 2px;
+}
+
+.oneui .idxAccordionTabContainerTabOuter {
+	text-align: right;
+	vertical-align: bottom;
+}
+.dijitRtl .oneui .idxAccordionTabContainerTabOuter {
+	text-align: left;
+}
+
+.oneui .idxAccordionTabContainerToolbarOuter {
+	vertical-align: bottom;
+}
+
+.oneui .idxAccordionTabContainerToolbar {
+	border: none !important;
+	text-align: right;
+	padding: 2px 5px !important;
+}
+.dijitRtl .oneui .idxAccordionTabContainerToolbar {
+	text-align: left;
+}
+
+.oneui .idxAccordionTabContainerToolbar .dijitButton {
+	margin: 0px 2px 2px;
+}
+
+.oneui .idxAccordionTabContainerTabList {
+	border-collapse: collapse;
+	border: solid 1px #B5BCC7;
+	background-color: #F1F1F1;
+}
+
+.oneui .idxAccordionTabContainer .dijitTabContainerTop-tabs .dijitTabContent {
+    min-width: 25px;
+}
+
+.oneui .idxAccordionTabContainer .dijitToolbar {
+	background-color: transparent;
+	background-image: none;
+}

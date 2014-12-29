@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html lang="en-US">
+<head>
+	<title>Overview</title>
+
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+		@import "../demo.css";
+	</style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.MenuBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.MenuItem",
+			"dijit.form.TextBox",
+			"dijit.form.Button",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.Menu",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.Header"];
+				 
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+				 
+		function fire(){
+			alert("menu item selected");
+		}
+		
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>	
+</head>
+
+<body class="oneui">
+<div class="demoContent">
+	<p>
+		The idx.oneui.Header widget provides a single straight-forward interface to
+		produce all the possible permutations of header elements that are provided
+		for in the IBM One UI design specification. 
+	</p>
+	<p>
+		The idx.oneui.Header widget is commonly used declaratively, in HTML mark-up,
+		but can also be instantiated programmatically if required. It performs
+		all creation and layout of DOM components at start-up, and has no dynamic
+		layout overhead. The required elements of the header are all configured via
+		arguments passed to the widget on startup. There are quite a few of these,
+		reflecting the many permutations and features of the One UI header design,
+		making the idx.oneui.Header appear quite a complex widget. However, it's
+		function and use are actually quite straightforward. 
+	</p>
+	<p>
+		At its simplest, an idx.oneui.Header can simply be created with just a primary
+		title, producing an extremely basic header as shown here: 
+	</p>
+	 
+	<div class="demoBox"><div class="demoSampleWide"><div class="demoSampleNotice">Working sample</div>
+		<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'Simple header example'">
+		</div>
+	</div></div>
+	
+	<p>
+		More complex examples can be found on the <b>Demo</b> page, and the
+		<b>Detailed examples</b> page contains a considerable range of header
+		permutations, complete with source code in HTML or JavaScript, so
+		that you can quickly get started with an example that most closely
+		matches your particular header requirements.
+	</p>
+	
+	<!-- reserve space for the drop-down from the Header -->
+	<div style="height: 1px"></div>
+</div>
+</body>
+</html>

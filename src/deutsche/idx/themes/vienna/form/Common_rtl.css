@@ -1,0 +1,9 @@
+/* claro/form/Common_rtl.css */
+.vienna .dijitTextBoxRtlError .dijitValidationIcon {
+/* border-left-width: 0px; */
+/* border-right-width: 1px; */
+}
+.vienna .dijitTextBoxRtlError .dijitValidationContainer {
+/* border-left-width: 0px; */
+/* border-right-width: 1px; */
+}

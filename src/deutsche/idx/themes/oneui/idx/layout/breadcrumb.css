@@ -1,0 +1,74 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxBreadcrumbController
+{
+	height: 1em;
+	overflow: hidden;
+	border: none;
+	padding-left: 8px;
+	white-space: nowrap;
+}
+
+.oneui.dijit_a11y .idxBreadcrumbController,
+.dijit_a11y.oneui .idxBreadcrumbController {
+	height: 22px;
+}
+
+.oneui .idxBreadcrumb .dijitButtonText
+{
+	color: #00649d;
+	text-decoration: none;
+}
+
+.oneui .idxBreadcrumbHover .dijitButtonText
+{
+	color: #05386b;
+	text-decoration: underline;
+}
+
+.oneui .idxBreadcrumb .dijitButtonNode
+{
+	border: none;
+	padding: 0px;
+	padding: 0 5px;
+}
+
+.oneui .idxBreadcrumbSeparator
+{
+	color: #666;
+	font-size: 100%;
+	position: relative;
+	height: 1em;
+	padding: 0 0.3em;
+	vertical-align: bottom;	
+	white-space: nowrap;	
+}
+
+.oneui .idxBreadcrumb
+{
+	position: relative;
+	height: 1em;
+	vertical-align: middle;
+	display: inline;
+	line-height: 1em;
+	white-space: nowrap;
+}
+
+.oneui .idxBreadcrumbController .idxBreadcrumbRtl
+{
+	padding-left: 0px;
+	padding-right: 9px;
+}
+
+.oneui .idxBreadcrumbChecked .dijitButtonText
+{
+	font-weight: bold;
+	text-decoration: none;
+	cursor:default;
+	color: #222;
+}

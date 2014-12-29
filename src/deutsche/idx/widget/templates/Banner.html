@@ -1,0 +1,31 @@
+<div class="idxBanner"><!--
+ * IBM Confidential
+ * OCO Source Materials
+ * (C) Copyright IBM Corp. 2010, 2011
+ * The source code for this program is not published 
+ * or otherwise divested of its trade secrets, irrespective
+ * of what has been deposited with the U.S. Copyright Office.
+-->
+	<div class="idxBannerInnerContainer">
+		<div class="idxBannerLogoArea">
+			<div class="idxBannerLogo"></div>
+		</div>
+		<div dojoAttachPoint="_trailerNode" class="idxBannerTrailer">
+			<div dojoAttachPoint="actionsButton" 
+					dojoType="dijit.form.DropDownButton"
+					iconClass="idxBannerActionButtonIcon">
+				<span>${usernameLabel}</span>
+				<div dojoType="dijit.Menu" dojoAttachPoint="actionsMenu" style="display: none;">
+				</div>
+			</div>
+			<div dojoAttachPoint="helpButton" 
+					dojoType="dijit.form.Button"
+					label="${helpLabel}"
+					showLabel="false"
+					iconClass="idxBannerHelpButtonIcon">
+			</div>
+		</div>
+		<div dojoAttachPoint="containerNode" class="idxBannerContainer"></div>
+	</div>
+	<div class="idxBannerBottomBar"></div>
+</div>

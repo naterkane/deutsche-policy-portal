@@ -1,0 +1,45 @@
+.claro .idxDockable {
+	z-index: 50;
+	position: relative;
+}
+
+.claro .idxDockableFloating {
+	position: absolute;
+}
+
+.claro .idxDockAreaDockable {
+	border: dashed 1px #7C7CFC !important;
+}
+
+.claro .idxDockAreaMockPane {
+	border: dashed 2px #7C7CFC !important;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.claro .idxDockAreaVertical .idxDockPane,
+.claro .idxDockAreaVertical .idxDockPane .dijitTitlePaneContentInner {
+	height: auto;
+	overflow: hidden;
+}
+
+.claro .idxDockAreaHorizontal .idxDockPane {
+	height: 100%;
+}
+
+.claro .idxDockTabContainer .idxDockPaneTitle {
+	display: none;
+}
+
+.claro .idxDockArea > .idxDockable > .dijitTitlePaneTitle {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	/* to avoid margins being collapsed above me */
+	padding-top: 1px;	
+}
+
+.claro .idxDockArea > .idxDockable > .dijitTitlePaneContentOuter {
+	border-left: none;
+	border-right: none;
+}

@@ -1,0 +1,23 @@
+<div class="dijitTreeNode ${idxBaseClass}" role="presentation"
+	><div data-dojo-attach-point="rowNode" class="dijitTreeRow" role="presentation" 
+	      data-dojo-attach-event="onmouseenter:_onMouseEnter, onmouseleave:_onMouseLeave, onclick:_onClick, ondblclick:_onDblClick"
+		><img src="${_blankGif}" alt="" data-dojo-attach-point="expandoNode" class="dijitTreeExpando" role="presentation"
+		/><span data-dojo-attach-point="expandoNodeText" class="dijitExpandoText" role="presentation"
+		></span
+		><span data-dojo-attach-point="contentNode"
+			class="dijitTreeContent" role="presentation">
+			<span role="presentation" data-dojo-attach-point="selectMarkerNode" class="${idxBaseClass}SelectMarker"
+			></span><img src="${_blankGif}" alt="" data-dojo-attach-point="iconNode" class="dijitIcon dijitTreeIcon" 
+				 role="presentation"
+			/><span data-dojo-attach-point="labelNode" class="dijitTreeLabel" role="treeitem" tabindex="-1" 
+					aria-selected="false" aria-describedby="${id}_badge"
+				    data-dojo-attach-event="onfocus:_onLabelFocus"></span
+		    ><span data-dojo-attach-point="badgeNode" class="${idxBaseClass}Badge" id="${id}_badge">
+		    	<img src="${_blankGif}" alt="" data-dojo-attach-point="badgeIconNode" 
+					  class="dijitIcon ${idxBaseClass}BadgeIcon" role="presentation"
+		 		/><span data-dojo-attach-point="badgeLabelNode" class="${idxBaseClass}BadgeLabel"></span>
+		   </span
+		></span
+		></div>
+	<div data-dojo-attach-point="containerNode" class="dijitTreeContainer" role="presentation" style="display: none;"></div>
+</div>

@@ -1,0 +1,14 @@
+.navigationLink {
+	position: absolute;
+	top: -2000px;
+}
+
+h1.testTitle {
+	font-size: 2em;
+	margin: 0 0 1em 0;
+}
+
+/* all test content goes into a DIV with class="testMain" */
+.testMain {
+	padding: 2em;
+}

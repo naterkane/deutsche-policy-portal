@@ -1,0 +1,89 @@
+.claro .idxAppFrameOptions {
+  background-image: url(../../resources/blank.gif?marquee=header&body=center&marqueeSizing=fixed&borderDesign=headline);
+}
+
+.claro div.idxAppFrame {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: #568ccc;
+  background-image: url(claro/header_swoosh.png);
+  background-repeat: repeat-x;
+}
+
+.claro div.idxAppFrameHeader {
+  overflow: hidden;
+  position: absolute;
+  height: 35px;
+  border: none;
+  padding: 0px;
+}
+
+.claro div.idxAppFrameFooter {
+  overflow: hidden;
+  position: absolute;
+  height: 5px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+}
+
+.claro div.idxAppFrameLeft {
+  overflow: hidden;
+  position: absolute;
+  width: 5px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+}
+
+.claro div.idxAppFrameRight {
+  overflow: hidden;
+  position: absolute;
+  width: 5px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+}
+
+.claro div.idxAppFrameCenter {
+  overflow: hidden;
+  position: absolute;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -opera-border-radius: 6px;
+  background-image: url(claro/dark_swoosh.png);
+  background-position: -5px -35px;
+  background-color: #33547a;
+  background-repeat: repeat-x;
+}
+
+.claro div.idxAppFrameMarquee {
+  overflow: hidden;
+  float: left;
+  position: absolute;
+  background: none;
+  left: 11px;
+  right: 11px;
+  top: 0px;
+  bottom: 0px;
+  padding: 0px;
+}
+
+.claro div.idxAppFrameBody {
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  background: none;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+}
+

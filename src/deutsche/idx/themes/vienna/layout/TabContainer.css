@@ -1,0 +1,539 @@
+/* TabContainer 
+ * 
+ * Styling TabContainer means styling the TabList and Its content container  (dijitTitlePane)
+ * 
+ * Tab List: (including 4 kinds of tab location)
+ * 		.dijitTabContainerTop-tabs     - tablist container at top
+ * 		.dijitTabContainerBottom-tabs  - tablist container at bottom
+ * 		.dijitTabContainerLeft-tabs    - tablist container at left
+ * 		.dijitTabContainerRight-tabs   - tablist container at right
+ * 
+ * Tab Strip Button:
+ * 		.dijitTabStripIcon - tab strip button icon
+ * 		.dijitTabStripMenuIcon - down arrow icon position
+ * 		.dijitTabStripSlideLeftIcon - left arrow icon position
+ * 		.dijitTabStripSlideRightIcon - right arrow icon position
+ * 
+ * 		.tabStripButtonDisabled - styles for disabled tab strip buttons
+ * 
+ * Tab Button:
+ * 		.dijitTabContainerTop-tabs .dijitTabInnerDiv/.dijitTabContent     - styles for top tab botton container
+ * 		.dijitTabContainerBottom-tabs .dijitTabInnerDiv/.dijitTabContent  - styles for bottom tab botton container
+ * 		.dijitTabContainerLeft-tabs .dijitTabInnerDiv/.dijitTabContent    - styles for left tab botton container
+ * 		.dijitTabContainerRight-tabs .dijitTabInnerDiv/.dijitTabContent   - styles for right tab botton container
+ * 
+ * 		.dijitTabContainerTop-tabs .dijitTabChecked .dijitTabInnerDiv/.dijitTabContent    
+ * 				- styles for selected status of top tab botton
+ * 		same to Bottom, Left, Right Tabs
+ * 
+ * 		.dijitTabHover .dijitTabInnerDiv   - styles when mouse hover on tab bottons
+ * 		.dijitTabActive .dijitTabInnerDiv  - styles when mouse down on tab bottons
+ * 		.dijitTabChecked .dijitTabInnerDiv  - styles when on buttons of selected tab		
+ * 
+ * 		.dijitTabCloseButton - the close action buttons lie at the right top of each tab button on closable tabs
+ * 		.dijitTabCloseButtonHover - styles when mouse hover on close action button
+ * 		.dijitTabCloseButtonActive - styles when mouse down on close action button
+ * 
+ * Tab Button: (checked status)
+ * 
+ * Tab Content Container:
+ * 		.dijitTabContainerTop-dijitContentPane
+ * 		.dijitTabContainerBottom-dijitContentPane
+ * 		.dijitTabContainerLeft-dijitContentPane
+ * 		.dijitTabContainerRight-dijitContentPane - for background and padding
+ * 
+ * Nested Tabs:
+ * 		.dijitTabContainerNested - Container for nested tabs
+ * 		.dijitTabContainerTabListNested - tab list container for nested tabs
+ */
+
+/*** some common features ***/
+.vienna .dijitTabPaneWrapper {
+/* background:#fff; */
+}
+
+.vienna .dijitTabPaneWrapper,
+.vienna .dijitTabContainerTop-tabs,
+.vienna .dijitTabContainerBottom-tabs,
+.vienna .dijitTabContainerLeft-tabs,
+.vienna .dijitTabContainerRight-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabPaneWrapper,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs {
+	border-color: #9caec2;
+}
+
+.vienna .dijitTabContainerTop-tabs,
+.vienna .dijitTabContainerLeft-tabs,
+.vienna .dijitTabContainerRight-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs {
+	/* todo: add common class name for this div */
+	
+	background-image: url(images/viennaTabTrayBackground.png);
+	background-position: bottom center;
+	background-repeat:repeat-x;	
+
+}
+
+.dj_ie7 .vienna .dijitTabCloseButton,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabCloseButton {
+	margin-left: 3px;
+}
+
+.dj_ie8 .vienna .dijitTabCloseButton,
+.dj_ie8 .vienna .dijitTabContainerTabListNested .dijitTabCloseButton {
+	width: 19px;
+}
+
+.vienna .dijitTabCloseButton,
+.vienna .dijitTabContainerTabListNested .dijitTabCloseButton {
+	background: url("images/tabClose.png") no-repeat;
+	background-position: 0px 0px;
+	width: 18px;
+	height: 16px;
+	margin-left: 0px;
+	margin-right: -2px;
+	margin-top: -2px;
+}
+.vienna .dijitTabCloseButtonHover,
+.vienna .dijitTabContainerTabListNested .dijitTabCloseButtonHover {
+	background-position:-21px  0px;
+}
+.vienna .dijitTabCloseButtonActive,
+.vienna .dijitTabContainerTabListNested .dijitTabCloseButtonActive {
+	background-position:-42px 0px;
+}
+.vienna .dijitTabSpacer,
+.vienna .dijitTabContainerTabListNested .dijitTabSpacer {
+	/* set the spacer invisible.  note that height:0 doesn't work on IE/quirks, it's still 10px. */
+/* display: none; */
+}
+.vienna .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTab .dijitTabInnerDiv {
+	background-color:#e8edf4;
+/* -webkit-transition-property:background-color, border; */
+/* 	-webkit-transition-duration:.35s; */
+	color:#464646;
+}
+.vienna .dijitTabHover .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabHover .dijitTabInnerDiv {
+	background-color:#ffffff;
+/* 	-webkit-transition-duration:.25s; */
+	color:#464646;
+}
+
+.vienna .dijitTabActive .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabActive .dijitTabInnerDiv {
+	background-color:#ffffff;
+	color:#464646;
+/* -webkit-transition-duration:.1s; */
+}
+.vienna .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent {
+	background-color:#ffffff;
+	border-bottom: 0px none transparent;
+/* color:#000; */
+}
+
+.vienna .dijitTabContent,
+.vienna .dijitTabContainerNested .dijitTabContent {
+	border: 1px solid #ccd3da;
+}
+.vienna .dijitTabHover .dijitTabContent,
+.vienna .dijitTabActive .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabHover .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabActive .dijitTabContent {
+	border-color: #ccd3da;
+    padding: 3px 8px 2px;
+}
+	
+.vienna .dijitTabContainerTabListNested .dijitTabChecked.dijitTabHover .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabActive.dijitTabHover .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabCheckedHover .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabActiveHover .dijitTabContent {
+    padding-bottom: 7px;
+    padding-top: 3px;
+}
+    
+.vienna .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent {
+	color:#48678a;
+	font-weight: bold;
+	border-color: #9caec2;	
+}
+
+.vienna .tabStripButton .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .tabStripButton .dijitTabInnerDiv {
+/* background-color: transparent; */
+}
+.vienna .tabStripButton .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .tabStripButton .dijitTabContent {
+/* border: none; */
+}
+/*** end common ***/
+
+
+/*************** top tab ***************/
+.vienna .dijitTabContainerTop-tabs .dijitTab,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTab {
+/* top: 1px; */	/* used for overlap */
+	margin-right: 2px;
+/* padding-top: 3px; */
+}
+.dj_ie7 .vienna .dijitTabContainerTop-tabs .dijitTab,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTab {
+    top: -1px;
+    border-bottom: solid 1px #9caec2;;
+}
+.dj_ie7 .vienna .dijitTabContainerTop-tabs .dijitTab.dijitTabChecked,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTab.dijitTabChecked  {
+    top: 2px;
+}
+.dj_ie7 .vienna .dijitTabContainerBottom-tabs .dijitTab.dijitTabChecked,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTab.dijitTabChecked  {
+    top: -2px;
+}
+
+/* for top tab padding. change height when status changes */
+.vienna .dijitTabContainerTop-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabContent {
+	padding:3px 8px 2px 8px;
+/* border-bottom: 1px; */
+	background-image:url("images/tabTop.png");
+	background-position:0px -230px;
+/* background-repeat:repeat-x; */
+	min-width: 0px;
+/* text-align: center; */
+}
+.vienna .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabChecked.dijitTabHover .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabCheckedHover .dijitTabContent {
+	padding-bottom: 7px;
+	padding-top: 3px;
+}
+
+.dj_ie .vienna .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent,
+.dj_ie .vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+/* border-bottom: none; */
+}
+
+/* normal status */
+.vienna .dijitTabContainerTop-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabInnerDiv {
+/* background-image:url("images/tabTop.png"); */
+/* background-position:0px -248px; */
+/* background-position:bottom; */
+/* background-repeat:repeat-x; */
+/* box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.04); */
+/* -webkit-box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.04); */
+/* -moz-box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.04); */
+}
+
+/* checked status */
+.vienna .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabInnerDiv {
+/* background-image:none; */
+/* box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.05); */
+/* -webkit-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.05); */
+/* -moz-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.05); */
+}
+.vienna .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent {
+/* background-position:0px -102px; */
+/* background-repeat:repeat-x; */
+}
+/** end top tab **/
+
+
+/*************** bottom tab ***************/
+.vienna .dijitTabContainerBottom-tabs,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs {
+	/* todo: add common class name for this div */
+	
+	background-image: url(images/viennaTabTrayBackground_bottom.png);
+	background-position: top center;
+	background-repeat:repeat-x;	}
+
+
+.vienna .dijitTabContainerBottom-tabs .dijitTab,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTab {
+/* top: -1px; */	/* used for overlap */
+	margin-right: 2px;
+}
+.dj_ie7 .vienna .dijitTabContainerBottom-tabs .dijitTab,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTab {
+	top: 4px;
+}
+.dj_ie7 .vienna .dijitTabContainerBottom-tabs .dijitTabChecked,
+.dj_ie7 .vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabChecked {
+	top: -1px;
+}
+
+/* calculate the position and size */
+.vienna .dijitTabContainerBottom-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabContent {
+	padding:2px 8px 4px 4px;
+/* border-top: none; */
+	background-image: url("images/tabBottom.png");
+	background-position:0px 0px;
+/* background-repeat: repeat-x; */
+/* background-position:bottom; */
+/* min-width: 60px; */
+/* text-align: center; */
+}
+
+.vienna .dijitTabContainerBottom-tabs .dijitTab,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTab {
+/* padding-bottom: 3px; */
+}
+/* normal status */
+.vienna .dijitTabContainerBottom-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabInnerDiv {
+/* background-image: url("images/tabBottom.png"); */
+/* background-position: top; */
+/* background-repeat: repeat-x; */
+/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.04); */
+/* -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.04); */
+/* -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.04); */
+	
+}
+
+/* checked status */
+.vienna .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent {
+	padding-bottom: 4px;
+	padding-top: 7px; 
+/* background-position:0px -119px; */
+}
+.vienna .dijitTabContainerBottom-tabs .dijitTabChecked,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabChecked {
+/* padding-bottom: 3; */
+}
+.vienna .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabInnerDiv {
+/* background-image:none; */
+/* box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); */
+/* -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); */
+/* -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); */
+}
+/** end bottom tab **/
+
+/*************** left tab ***************/
+.vienna .dijitTabContainerLeft-tabs .dijitTab,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTab {
+/* left: 1px; */	/* used for overlap */
+	margin-bottom: 2px;
+}
+/* normal status */
+.vienna .dijitTabContainerLeft-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabInnerDiv {
+/* background-image: url("images/tabLeft.png"); */
+/* background-position: -347px -340px; */
+/* background-repeat: repeat-y; */
+}
+.vienna .dijitTabContainerLeft-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabContent {
+/* padding:3px 8px 4px 4px; */
+/* background-image: url("images/tabLeft.png"); */
+/* background-repeat: repeat-y; */
+/* background-position:0px 0px; */
+}
+/* checked status */
+.vienna .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabContent {
+/* padding-right: 9px; */
+/* border-right: none; */
+/* background-image: none; */
+}
+.vienna .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabInnerDiv {
+/* background-position:0px -179px; */
+/* background-repeat:repeat-y; */
+/* box-shadow: -1px 0px 2px rgba(0, 0, 0, .05); */
+/* -webkit-box-shadow: -1px 0px 2px rgba(0, 0, 0, .05); */
+/* -moz-box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.05); */
+}
+/** end left tab **/
+
+/*************** right tab ***************/
+.vienna .dijitTabContainerRight-tabs .dijitTab,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTab {
+/* left: -1px; */	/* used for overlap */
+	margin-bottom: 2px;
+}
+/* normal status */
+.vienna .dijitTabContainerRight-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabInnerDiv {
+/* background-image: url("images/tabRight.png"); */
+/* background-repeat: repeat-y; */
+/* background-position: -1px -347px; */
+}
+.vienna .dijitTabContainerRight-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabContent {
+/* padding:3px 8px 4px 4px; */
+/* background-image: url("images/tabRight.png"); */
+/* background-position:right top; */
+/* background-repeat: repeat-y; */
+}
+/* checked status */
+.vienna .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabContent {
+/* padding-left: 5px; */
+/* border-left: none; */
+/* background-image: none; */
+}
+.vienna .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabInnerDiv {
+/* background-position:-348px -179px; */
+/* box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.07); */
+/* -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.07); */
+/* -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.07); */
+}
+/** end right tab **/
+
+/** round corner **/
+.vienna .dijitTabContainerTop-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTop-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTab .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTab .dijitTabContent {
+	border-radius: 3px 3px 0px 0px;
+		-moz-border-radius: 3px 3px 0px 0px;
+		-webkit-border-top-left-radius:3px;
+		-webkit-border-top-right-radius:3px;
+}
+.vienna .dijitTabContainerBottom-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerBottom-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerBottom-tabs .dijitTabContent {
+	border-radius: 0px 0px 3px 3px;
+		-moz-border-radius: 0px 0px 3px 3px;
+		-webkit-border-bottom-right-radius:3px;
+		-webkit-border-bottom-left-radius:3px;
+}
+.vienna .dijitTabContainerLeft-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerLeft-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerLeft-tabs .dijitTabContent{
+	border-radius: 3px 0px 0px 3px;
+		-moz-border-radius: 3px 0px 0px 3px;
+		-webkit-border-top-left-radius:3px;
+		-webkit-border-bottom-left-radius:3px;
+}
+
+.vienna .dijitTabContainerRight-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerRight-tabs .dijitTabContent,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabInnerDiv,
+.vienna .dijitTabContainerTabListNested .dijitTabContainerRight-tabs .dijitTabContent{
+	border-radius: 0px 3px 3px 0px;
+		-moz-border-radius: 0px 3px 3px 0px;
+		-webkit-border-top-right-radius:3px;
+		-webkit-border-bottom-right-radius:3px;
+}
+
+/************ left/right scroll buttons + menu button ************/
+.vienna .tabStripButton,
+.vienna .dijitTabContainerTabListNested .tabStripButton {
+/* background-color:#deecf9; */
+	border: 1px solid #9caec2;
+}
+.vienna .dijitTabListContainer-top .tabStripButton,
+.vienna .dijitTabContainerTabListNested .dijitTabListContainer-top .tabStripButton {
+	padding: 3px 3px 5px 3px;
+/* margin-top:7px; */
+/* background-image: url("images/tabTop.png"); */
+/* background-position:0px 0px; */
+}
+.vienna .dijitTabListContainer-bottom .tabStripButton,
+.vienna .dijitTabContainerTabListNested .dijitTabListContainer-bottom .tabStripButton {
+/* padding:5px 3px; */
+/* margin-bottom:4px; */
+/* background-image: url("images/tabTop.png"); */
+/* background-position:0px -248px; */
+/* background-position:bottom; */
+}
+.vienna .tabStripButtonHover,
+.vienna .dijitTabContainerTabListNested .tabStripButtonHover {
+/* background-color:#a6d2fb; */
+}
+.vienna .tabStripButtonActive,
+.vienna .dijitTabContainerTabListNested .tabStripButtonActive {
+/* background-color:#7dbefa; */
+}
+.vienna .dijitTabStripIcon,
+.vienna .dijitTabContainerTabListNested .dijitTabStripIcon {
+/* height:15px; */
+/* width:15px; */
+/* margin: 0 auto; */
+/* background:url("../form/images/buttonArrows.png") no-repeat -75px 50%; */
+/* background-color: transparent; */
+}
+.vienna .dijitTabStripSlideRightIcon,
+.vienna .dijitTabContainerTabListNested .dijitTabStripSlideRightIcon{
+/* background-position: -24px 50%; */
+}
+.vienna .dijitTabStripMenuIcon,
+.vienna .dijitTabContainerTabListNested .dijitTabStripMenuIcon {
+/* background-position: -51px 50%; */
+}
+
+/*disabled styles for tab strip buttons*/
+.vienna .dijitTabListContainer-top .tabStripButtonDisabled,
+.vienna .dijitTabListContainer-bottom .tabStripButtonDisabled,
+.vienna .dijitTabContainerTabListNested .dijitTabListContainer-top .tabStripButtonDisabled,
+.vienna .dijitTabContainerTabListNested .dijitTabListContainer-bottom .tabStripButtonDisabled {
+/* background-color:#dddddd; */
+/* border:1px solid #c9c9c9; */
+}
+.vienna .tabStripButtonDisabled .dijitTabStripSlideLeftIcon,
+.vienna .dijitTabContainerTabListNested .tabStripButtonDisabled .dijitTabStripSlideLeftIcon {
+/* background-position:-175px 50%; */
+}
+.vienna .tabStripButtonDisabled .dijitTabStripSlideRightIcon,
+.vienna .dijitTabContainerTabListNested .tabStripButtonDisabled .dijitTabStripSlideRightIcon {
+/* background-position: -124px 50%; */
+}
+.vienna .tabStripButtonDisabled .dijitTabStripSlideRightIcon,
+.vienna .dijitTabContainerTabListNested .tabStripButtonDisabled .dijitTabStripSlideRightIcon {
+/* background-position: -151px 50%; */
+} 
+
+
+.dj_ie6 .vienna .dijitTabContent,
+.dj_ie6 .vienna .dijitTabInnerDiv,
+.dj_ie6 .dijitTabListContainer-top .tabStripButton,
+.dj_ie6 .dijitTabListContainer-bottom .tabStripButton,
+.dj_ie6 .vienna .dijitTabContainerTabListNested .dijitTabContent,
+.dj_ie6 .vienna .dijitTabContainerTabListNested .dijitTabInnerDiv,
+.dj_ie6 .dijitTabListContainer-top .tabStripButton,
+.dj_ie6 .dijitTabListContainer-bottom .tabStripButton{
+/* background-image: none; */
+}
+
+.vienna .dijitTabContainerTabListNested .dijitTabContainerTop-tabs .dijitTabInnerDiv {
+    background-image: url("images/tabTop.png");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.vienna .dijitTabContainerNested .dijitTabContainerTop-tabs {
+    border-bottom: 1px solid #9CAEC2;
+    margin-top: 0px;
+    padding: 0px 0px 0px;
+}
+
+.vienna .dijitTabPaneWrapperNested {
+	border: 1px solid #9CAEC2;
+	border-top: 0px none transparent;
+}
+

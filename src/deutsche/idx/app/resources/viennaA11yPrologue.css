@@ -1,0 +1,6 @@
+/* same as dijitOffScreen */
+.vienna .idxA11yPrologue {
+	position: absolute;
+	left: 50%;
+	top: -10000px;
+}

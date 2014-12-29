@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Primer</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+    <style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+        @import "../demo.css";
+        @import "../../tests/_pagefooter/_PageFooter.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.tests._pagefooter._PageFooter"];
+				 
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+	</script>
+	
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+	<div class="demoContent" dir="ltr">
+		<p>
+			Mega menu functionality is not implememted as a single widget, but rather
+			as a set of 4 widgets that closely parallel and integrate with 
+			the existing dijit widgets that 
+			are used to implement menus. The 4 widgets are:
+			<ul>
+				<li>
+					idx.oneui.MenuBar - an enhanced version of dijit.MenuBar that provides
+					trigger on hover functionality.
+				</li>
+				<li>
+					idx.oneui.MenuDialog - a synthesis of the dijit Menu and TooltipDialog
+					classes that allows menus to contain arbitrary dialog content.
+				<li>
+					idx.oneui.Menu - an enhanced version of dijit.Menu that provides 
+					multi-column support and integrates with idx.oneui.MenuDialog and 
+					dijit menu functionality.
+				</li>
+				<li>
+					idx.oneui.MenuHeading - a subclass of dijit.MenuSeparator that 
+					provides textual headings between menu items instead of a 
+					simple line. 
+				</li>
+			</ul> 
+		</p>
+		<h2>Mega menu content</h2>
+		<p>
+			<h3>Including arbitrary dialog content in a menu</h3>
+			<p>
+				The key to being able to include arbitrary dialog content in a menu 
+				is to use an idx.oneui.MenuDialog rather than a dijit.Menu. Instead of
+				being a container that accepts only menu items, MenuDialog is a 
+				container that functions like a ContentPane and accepts arbitrary 
+				dialog content. As a consequence, it does not accept menu items
+				directly, but a menu can (and often is) inserted into it as one of
+				the dialog elements (see next section).
+			</p>
+			<p>
+				So, the example on the overview page creates the 'Communities' mega
+				menu like this:
+<pre class="code">&lt;div data-dojo-type="idx.oneui.MenuBar" id="overview_menu"&gt;
+  &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+    &lt;span&gt;Communities&lt;/span&gt;
+    <span class="highlitCode"">&lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;</span>
+      &lt;!-- Arbitrary communities mega menu content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+			</p>
+			<p>
+				If the user interacts with an element in a mega menu other than a
+				idx.oneui.Menu (see below) such that an action is triggered that should
+				close or cancel the menu then the client code should call either
+				onExecute() or onCancel() to notify the dijit menu framework
+				appropriately and to get the menu closed. onExecute() indicates that 
+				the user has initiated an action from the mega menu, and will dismiss the
+				menu and any menus it may have cascaded from. onCancel() will close 
+				the particular mega menu but not any previous ones that it may have
+				cascaded from. E.g.
+<pre class="code">&lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+    ...
+  &lt;button onclick="dijit.getEnclosingWidget(this).<span class='highlitCode'>onExecute();</span>"&gt;Submit&lt;/button&gt;
+  &lt;button onclick="dijit.getEnclosingWidget(this).<span class='highlitCode'>onCancel();</span>"&gt;Cancel&lt;/button&gt;
+    ...
+&lt;/div&gt;</pre>			
+			</p>
+			<p>
+				To facilitate initialization and cleanup, client code can connect to
+				onOpen() and onClose() methods of an idx.oneui.MenuDialog. The normal dialog
+				reset() method is also called every time an idx.oneui.MenuDialog is 
+				shown. E.g.
+<pre class="code">&lt;div data-dojo-type="idx.oneui.MenuDialog" <span class='highlitCode'>reset="dojo.byId('field_1').value = 'Field #1 initial value';"</span>&gt;
+    ...
+  <span class='highlitCode'>Field #1: &lt;input id="field_1" type="text" name="field_1" value="Field #1 initial value"/&gt;</span>
+    ...
+&lt;/div&gt;</pre>			
+			</p>
+			<h3>Incorporating a menu into a mega menu</h3>
+			<p>
+				Since the primary purpose of a mega menu is to act as a menu, albeit 
+				one with significant extra functionality and UI features, then 
+				being able to include a menu and menu items within the mega menu is
+				fundamental. The easiest way to do this is to add a single idx.oneui.Menu as one
+				of the children of the idx.oneui.MenuDialog, and insert menu items into
+				it. 
+			</p>
+			<p>
+				So, the example on the overview page creates the menu functionality
+				of the 'Communities' mega menu like this:
+<pre class="code">&lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+  &lt;div style="padding: 1.5em 1em 1em 1em;"&gt;
+    &lt;b&gt;Communities&lt;/b&gt;
+    &lt;a style="margin-left: 2em;" href="javascript:"&gt;&lt;b&gt;I'm a Member&lt;/b&gt;&lt;/a&gt;
+    &lt;a style="margin-left: 2em;" href="javascript:"&gt;&lt;b&gt;I'm an Owner&lt;/b&gt;&lt;/a&gt;
+    &lt;a style="margin-left: 2em;" href="javascript:"&gt;&lt;b&gt;I'm Following&lt;/b&gt;&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style="padding: 0px 1em 0.75em 1em;" class="communities-search"&gt;
+    &lt;span style="color: #7f7f7f;"&gt;Search:&lt;/span&gt;&nbsp;
+    &lt;input data-dojo-type="dijit.form.TextBox" /&gt;
+    &lt;input data-dojo-type="dijit.form.Button" data-dojo-props="iconClass: 'idxHeaderSearchButton', showLabel: false" /&gt;
+  &lt;/div&gt;
+
+  <span class="highlitCode">&lt;div data-dojo-type="idx.oneui.Menu" class="menu-communities"&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon-greenwell'"&gt;
+      &lt;span class="mi-communities-name"&gt;Greenwell Partnership&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Dan Misawa 10:28 AM&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon-nightowl'"&gt;
+      &lt;span class="mi-communities-name"&gt;Night Owl Brainstorming&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Mickey Parky 7/19/11&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon-lagunitas'"&gt;
+      &lt;span class="mi-communities-name"&gt;Lagunitas Maximus&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Boris Blade 7/12/11&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon-creative'"&gt;
+      &lt;span class="mi-communities-name"&gt;Creative Brainstorming&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Vince Driver 7/9/11&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon-carpool'"&gt;
+      &lt;span class="mi-communities-name"&gt;Car Pool Initiative&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Frankie Four 9:17 AM&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon-night'"&gt;
+      &lt;span class="mi-communities-name"&gt;Night courses&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Tony Bullet 7/14/11&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon-efa'"&gt;
+      &lt;span class="mi-communities-name"&gt;Economic fluctuations assessment&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Doug Head 7/11/11&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon-uxld'"&gt;
+      &lt;span class="mi-communities-name"&gt;UX Lab Directives&lt;/span&gt;&lt;br /&gt;
+      &lt;span class="mi-communities-note'"&gt;Updated by Samantha Daryn 7/8/11&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</span>
+
+  &lt;div style="padding: 0.75em 1em 1em 1em;"&gt;
+    &lt;span style="color: #7f7f7f; margin-right: 1.5em;"&gt;Showing 8 most recently updated of 57&lt;/span&gt;
+    &lt;a href="javascript:"&gt;&lt;b&gt;View All&lt;/b&gt;&lt;/a&gt;
+  &lt;/div&gt;			
+&lt;/div&gt;</pre>
+			</p>
+			<p>
+				There are several things to note about this behaviour:
+				<ul>
+					<li>
+						The inclusion of a <em>single</em> idx.oneui.Menu child in a 
+						idx.oneui.MenuDialog causes the two widgets to co-operate and 
+						act like a single menu with respect to the rest of the 
+						regular dijit menu mechanics. This includes hiding and showing
+						the mega menu appropriately, propogating events, and keystroke
+						handling etc. <br />(It is possible to include dijit.Menu's and/or more
+						than one dijit.Menu or idx.oneui.Menu in a MenuDialog, but 
+						it entails significantly more work, and is likely to be a 
+						marginal use case.) 
+					</li>
+					<li>
+						The idx.oneui.Menu can be placed anywhere within the content of 
+						the idx.oneui.MenuDialog, but it must be an immediate child widget
+						of it. 
+					</li>
+					<li>
+						It is not necessary to call onExecute or onClose when menu
+						items in the idx.oneui.Menu are selected or the cancel key is 
+						pressed. This is handled automatically by the idx.oneui.Menu. 
+					</li>
+				</ul>
+			</p>
+			<h3>Using multiple columns of menu items</h3>
+			<p>
+				The idx.oneui.Menu widgets supports organising menu items into multiple
+				columns. A menu item is allocated to a column simply by setting a
+				"column" property on it. The idx.oneui.Menu widget creates columns as 
+				needed. Empty columns are allowed, and column numbering starts from 0.
+			</p>
+			<p>
+				So, the example on the overview page allocates menu items to 
+				columns in the 'Communities' mega menu like this: 
+<pre class="code">&lt;div data-dojo-type="idx.oneui.Menu" class="menu-communities"&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 0,</span> iconClass: 'mi-communities-icon-greenwell'"&gt;
+    &lt;span class="mi-communities-name"&gt;Greenwell Partnership&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Dan Misawa 10:28 AM&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 0,</span> iconClass: 'mi-communities-icon-nightowl'"&gt;
+    &lt;span class="mi-communities-name"&gt;Night Owl Brainstorming&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Mickey Parky 7/19/11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 0,</span> iconClass: 'mi-communities-icon-lagunitas'"&gt;
+    &lt;span class="mi-communities-name"&gt;Lagunitas Maximus&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Boris Blade 7/12/11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 0,</span> iconClass: 'mi-communities-icon-creative'"&gt;
+    &lt;span class="mi-communities-name"&gt;Creative Brainstorming&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Vince Driver 7/9/11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 1,</span> iconClass: 'mi-communities-icon-carpool'"&gt;
+    &lt;span class="mi-communities-name"&gt;Car Pool Initiative&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Frankie Four 9:17 AM&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 1,</span> iconClass: 'mi-communities-icon-night'"&gt;
+    &lt;span class="mi-communities-name"&gt;Night courses&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Tony Bullet 7/14/11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 1,</span> iconClass: 'mi-communities-icon-efa'"&gt;
+    &lt;span class="mi-communities-name"&gt;Economic fluctuations assessment&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Doug Head 7/11/11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div data-dojo-type="dijit.MenuItem" onclick="fire();" <span class="highlitCode">data-dojo-props="column: 1,</span> iconClass: 'mi-communities-icon-uxld'"&gt;
+    &lt;span class="mi-communities-name"&gt;UX Lab Directives&lt;/span&gt;&lt;br /&gt;
+    &lt;span class="mi-communities-note'"&gt;Updated by Samantha Daryn 7/8/11&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre> 
+			</p>
+			<p>
+				Individual columns in a multi-column menu can be styled programmatically
+				by using the columnNodes property of idx.oneui.Menus, which returns an
+				array of DOMNodes that are suitable for applying styles to in order
+				to style individual columns.
+			</p>
+			<h3>Including menu headings</h3>
+			<p>
+				Headings can be inserted between menu items using the idx.oneui.MenuHeading
+				widget. This is a subclass of dijit.MenuSeparator that allows the 
+				display of non-clickable text instead of the separator line. For 
+				example:
+<pre class="code">&lt;div data-dojo-type="idx.oneui.Menu"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column:'0',<span class="highlitCode">label:'Column #0'</span>"&gt;&lt;/div&gt;
+    ...
+&lt;/div&gt;</pre>
+			</p>		
+		</p>
+		<h2>Using mega menus with the One UI Header</h2>
+		<p>
+			idx.oneui.Menus and idx.oneui.MenuDialogs can be used as drop-down menus from 
+			idx.oneui.MenuBars that are incorporated into a <a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y30&vsub=*&hsub=*&openpanes=10100000">idx.oneui.Header</a>.
+		</p>
+		<p>
+			Using an idx.oneui.MenuBar instead of a regular dijit.MenuBar provides open
+			on hover support.
+		</p>
+		<p>
+			A specific application of mega menus within a Header is they can be used
+			to provide a designated message area in a header. 
+			See: <a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y11&vsub=*&hsub=*&openpanes=10101000#index__10">Messaging</a>
+		</p>
+		<h2>Using mega menus as pop-up or drop-down menus from other page elements</h2>
+		<p>
+			Because idx.oneui.Menus and idx.oneui.MenuBars are subclasses of the corresponding 
+			dijit widgets then they can be incorporated into pages in the same way that 
+			the dijit versions can in order to provide static, flat menus and menu bars. 
+		</p>
+		<p>
+			idx.oneui.MenuDialogs and idx.oneui.Menus can also be used as drop-down menus for 
+			arbitrary page elements such as buttons, a left-nav, etc. For example, 
+			to create a MenuDialog that drops down from a button:
+<pre class="code">&lt;button id="trigger_element"&gt;
+  Hover here to open drop-down menu
+&lt;/button&gt;
+&lt;div style="display:none" data-dojo-type="idx.oneui.MenuDialog" data-dojo-props="targetNodeIds:['trigger_element'], leftClickToOpen:true"&gt;
+  &lt;h3&gt;Popup idx.oneui.MenuDialog&lt;/h3&gt;
+  &lt;p&gt;
+    ...with arbitrary dialog content
+  &lt;/p&gt;
+&lt;/div&gt;</pre>		
+		</p>
+		<p>
+			Note that:
+			<ul>
+				<li>The 'targetNodeIds' property is what associates the MenuDialog
+				popup with the triggering element (a button in this case). This is 
+				used in declarative HTML. A bindDomNode() method is provided for
+				doing the same association dynamically.</li>
+				<li>The popup idx.oneui.MenuDialog should initially be hidden (style="display:none").</li>
+				<li>a single idx.oneui.MenuDialog can be associated with multiple trigger nodes.
+				To facilitate this targetNodeIds takes an array of string ids/DOMNodes.</li>
+				<li>Setting the leftClickToOpen property to true causes the popup 
+				MenuDialog to be triggered via a left mouse button click. It also 
+				causes it to be positioned relative to the triggering element
+				rather than the mouse position.</li>
+				<li>MenuDialog has a boolean hoverToOpen property that can be set to turn
+				on/off the hover trigger behaviour.</li>
+				<li>MenuDialog has a popupPosition property that can be set to 
+				choose where the popup MenuDialog should appear relative to 
+				triggering element. It takes an ordered list of positions in
+				order of preference as an array of strings, e.g. ['before', 'after'].</li>
+			</ul> 
+		</p>
+		<p>
+			MenuDialogs can also behave like popup context menus. Setting the leftClickToOpen
+			property to false causes them to be positioned relative to the pointer
+			and trigger via a right mouse click, just like a context menu. 
+		</p>
+		<p>
+			Finally, MenuDialogs can also be made to appear visually like TooltipDialogs by 
+			setting the useConnector property to true.  
+		</p>
+		<h2>Cascading mega menus</h2>
+		<p>
+			idx.oneui.Menus and idx.oneui.MenuDialogs can be used as cascade menus from:
+			<ul>
+				<li>dijit.PopupMenuItems in other menus</li>
+				<li>arbitrary trigger elements in other idx.oneui.MenuDialogs</li>
+			</ul> 
+			When used in this way they will participate in the menu cascade or chain
+			of popups as expected. For example, if a menu item is selected the whole
+			chain of cascaded menus will automatically close, or if a popup is cancelled
+			that popup will close, leaving the rest of the chain visible.
+		</p>
+		<h2>Additional points of note</h2>
+		<p>
+			Since idx.oneui.MenuHeadings are simply textual versions of dijit.Separators
+			then they can be used anywhere a regular dijit.Separator can, including
+			in regular dijit.Menus. 
+		</p>
+		<p>
+			Similarly, since idx.oneui.Menus are subclasses of dijit.Menu then they can
+			also be used anywhere a regular dijit.Menu can, including with regular 
+			dijit.MenuBars. The main advantage of doing this is that they will still
+			provide multi-column functionality (without supporting arbitrary dialog
+			content, as this is provided by idx.oneui.MenuDialog). 
+		</p>
+		<p>
+			Also similarly, since idx.oneui.MenuBars are subclasses of dijit.MenuBar then they can
+			also be used anywhere a regular dijit.MenuBar can. The main advantage 
+			of doing this is that they will provide trigger on hover functionality.
+		</p>
+		<p>
+			An idx.oneui._EventTriggerMixin is provided that can be used as a mixin class
+			when developing other widgets that need to be triggered by a combination of
+			mouse and/or keyboard events.
+		</p>
+	</div>
+</body>
+</html>

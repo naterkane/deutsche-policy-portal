@@ -1,0 +1,50 @@
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props="">
+	<div id="messagesTab" class="testMessagingTab" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='selected: true, title:"Messaging", style:"padding:15px 15px 15px 10px;"'>
+		<!-- Add idx.oneui.messaging.ModalDialog/idx.oneui.messaging.ComfirmationDialog/idx.oneui.messaging.SingleMessage/idx.oneui.HoverHelp here-->
+		<h2>idx.oneui.messaging.ModalDialog</h2>
+		
+		<button dojoType="dijit.form.Button" onClick="showError();">show error</button>
+		<button dojoType="dijit.form.Button" onClick="showWarning();">show warning</button>
+		<button dojoType="dijit.form.Button" onClick="showInformation();">show Information</button>
+		<div id="error"></div>
+		<div id="warning"></div>
+		<div id="information"></div>
+		<div id="confirmation"></div>
+		
+		<h2>idx.oneui.messaging.ComfirmationDialog</h2>
+		<button dojoType="dijit.form.Button" onClick="showConfirmation();">show confirmation</button>
+		<h2>idx.oneui.messaging.SingleMessage</h2>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'error', title: 'Error message without View All link', showAction: false,
+			dateFormat:{datePattern: 'dd MMMM y &nbsp', timePattern: 'HH:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;', description: 'Here is the detail message description, it can be configured via setting the \'description\' parameter of a SingleMessage widget. By default the message description is the same as the message title.'">
+		</div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'warning', collapsed: false, title: 'Warning message without View All link', showAction: false,
+			dateFormat:{datePattern: 'dd MMMM y &nbsp', timePattern: 'HH:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;', description: 'Here is the detail message description, it can be configured via setting the \'description\' parameter of a SingleMessage widget. By default the message description is the same as the message title.'">
+		</div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'information', title: 'Information message with long timestamp',
+			dateFormat:{datePattern: 'dd MMMM y &nbsp', timePattern: 'HH:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;', description: 'Here is the detail message description, it can be configured via setting the \'description\' parameter of a SingleMessage widget. By default the message description is the same as the message title.'">
+		</div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'success', title: 'Success message with long timestamp',
+			dateFormat:{datePattern: 'dd MMMM y &nbsp', timePattern: 'HH:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;', description: 'Here is the detail message description, it can be configured via setting the \'description\' parameter of a SingleMessage widget. By default the message description is the same as the message title.'">
+		</div>
+		<h2>idx.oneui.messaging.SingleMessage(Alert type messages)</h2>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'critical', title: 'Processor is running at full capacity. You must shut down some processes or they will be stopped by the system.',
+			dateFormat:{selector: 'time', timePattern: 'hh:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;'"></div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'warning', title: 'Processor is within 10% of the specified threshhold.  You might want to review the running processes or adjust the threshhold.',
+			dateFormat:{selector: 'time', timePattern: 'hh:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;'"></div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'attention', title: 'One or more key servers are using the default password rather than something more secure.',
+			dateFormat:{selector: 'time', timePattern: 'hh:mm a'}, messageId: 'CAT123456', messageNumber: 7, style: 'width: 90%;'"></div>
+		<div data-dojo-type="idx.oneui.messaging.SingleMessage" data-dojo-props="type: 'compliance', title: '13,378 processes are currently running.',
+			dateFormat:{selector: 'time', timePattern: 'hh:mm a'}, messageId: 'CAT123456', showId: false, messageNumber: 7, style: 'width: 90%;'"></div>
+		
+		<h2>idx.oneui.messaging.Toaster</h2>
+		<button dojoType="dijit.form.Button" onClick="addMessage();">show toaster</button>
+	</div><!-- end of messaging tab -->
+</div>
+<div id="toaster" data-dojo-type="idx.oneui.messaging.Toaster">
+</div>

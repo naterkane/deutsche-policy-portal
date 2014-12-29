@@ -1,0 +1,42 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+
+/* popup */
+.oneui .idxDatePickerYearLabel .dijitCalendarNextYear,
+.oneui .idxDatePickerYearLabel .dijitCalendarPreviousYear {
+	margin: 0px;
+	padding: 1px 2px;
+}
+
+.oneui .idxDatePickerYearLabel .dijitCalendarNextYearHover,
+.oneui .idxDatePickerYearLabel .dijitCalendarPreviousYearHover {
+	margin: 0px;
+	padding: 0px 1px;
+}
+
+.oneui .idxDatePickerYearLabel .dijitCalendarIncrementControl {
+	background-position: -5px 0px;
+	width: 8px;
+}
+.oneui .idxDatePickerYearLabel .dijitCalendarIncrease {
+	background-position: -23px 0px;
+}
+
+.oneui .idxCalendarIcon {
+	background-image: url('images/datepicker16.png');
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.oneui .dijitComboBoxReadOnly .idxCalendarIcon {
+	opacity: .5;
+	}
+
+.oneui .dijitDateTextBoxDisabled .idxCalendarIcon {
+	opacity: .35;
+}

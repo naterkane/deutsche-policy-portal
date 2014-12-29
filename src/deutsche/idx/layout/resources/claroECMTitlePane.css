@@ -1,0 +1,80 @@
+.claro .idxECMTitlePane {
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitleFocus {
+	position: relative;
+	padding-right: 16px;
+	padding-left: 0px;
+}
+
+.claro .dijitRtl .idxECMTitlePane .dijitTitlePaneTitleFocus {
+	padding-right: 0px;
+	padding-left: 16px;
+}
+
+.claro .idxECMTitlePane .idxECMTitlePaneIconLink {
+	position: absolute;
+	text-decoration: none;
+}
+
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitleBarIcon {
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;	
+}
+
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxCloseIcon {
+	background-image: url("claro/close16.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxCloseIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxCloseIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxCloseIcon {
+	background-image: url("claro/close16_hover.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxHelpIcon {
+	background-image: url("claro/help16.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxHelpIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxHelpIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxHelpIcon {
+	background-image: url("claro/help16_hover.png");
+}
+
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxMaximizeIcon {
+	background-image: url("claro/title_maximize16.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxMaximizeIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxMaximizeIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxMaximizeIcon {
+	background-image: url("claro/title_maximize16_hover.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxRestoreIcon {
+	background-image: url("claro/title_restore16.png");
+}
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxRestoreIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxRestoreIcon,
+.claro .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:Active .idxRestoreIcon {
+	background-image: url("claro/title_restore16_hover.png");
+}
+
+.claro .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitle .idxECMTitleBarIcon {
+	display: none;
+}
+
+.claro .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitleHover .idxECMTitleBarIcon,
+.claro .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitleActive .idxECMTitleBarIcon,
+.claro .idxECMTitlePane.idxHideIcon .idxECMTitlePaneTitleFocused .idxECMTitleBarIcon {
+	display: inline;
+}
+
+/* A11y */
+.claro .idxECMTitlePane .idxECMTitlePaneA11yText {
+	display: none;
+}
+.claro .dijit_a11y .idxECMTitlePane .idxECMTitlePaneA11yText {
+	display: inline;
+}
+.claro .dijit_a11y .idxECMTitlePane A.idxECMTitlePaneIconLink IMG,
+.claro .dijit_a11y .idxECMTitlePane.idxHideIcon A.idxECMTitlePaneIconLink IMG {
+	display: none;
+}

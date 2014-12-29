@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Primer</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+	<style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+        @import "../demo.css";
+        @import "../../tests/_pagefooter/_PageFooter.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo.date.locale",
+			"dijit.registry",
+			"idx.oneui.Menu",
+			"idx.oneui.tests._pagefooter._PageFooter"],
+			locale,
+			Menu,
+			registry;
+			
+		function preParse(modules){
+			locale =   modules["dojo/date/locale"];
+			Menu =     modules["idx/oneui/Menu"];
+			registry = modules["dijit/registry"];
+		}
+
+		function postParse(){		
+			var menuItem = Menu.createMessageMenuItem({
+				type: "error",    // or "warning", "information" or "success"
+				content: "Hello, world!\u200e",
+				timestamp: locale.format(new Date(), { formatLength: "medium", locale: this.lang }),
+				messageId: "CAT123456"
+			});
+			
+			registry.byId("message_menu_1").addChild(menuItem);
+		}
+		
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+		
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+	<div class="demoContent">
+		<div dir="ltr">
+			<p>
+				Message menus are not realized as a particular widget, but
+				rather implemented using the more general purpose 
+				<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y51&vsub=*&hsub=*&openpanes=10100001">Mega Menu</a> widgets. 
+			</p>
+			<p>
+				Message menus are usually included in a One UI 
+				<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y30&vsub=*&hsub=*&openpanes=10100000">Header</a>.
+			</p>
+			<p>
+				These examples use declarative HTML because it is more compact and 
+				easier to read. However, they could equally well have been coded
+				in JavaScript using the APIs for the various widgets.
+			</p>
+			<h2>Creating a message menu in a Header</h2>
+				<h3>Create an idx.oneui.MenuBar to provide the navigation in the Header</h3>
+				<p>
+					This will normally contain regular menus for the application as well as
+					the message menu. It should have an id that can be passed to the Header
+					when it is created.
+				</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>			
+				<h3>Add a popupMenuBarItem for the message menu</h3>
+				<p>
+					This is a regular dijit popupMenuBarItem, as is used for normal 
+					menu bar items.
+				</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    <span class="highlitCode">&lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages ... &lt;/span&gt;
+        ...
+    &lt;/div&gt;</span>
+      ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+				<h3>Add an idx.oneui.MenuDialog as the drop-down menu</h3>
+				<p>
+					The idx.oneui.MenuDialog provides a drop-down menu that can also include 
+					rich dialog content (like the "View all" link) as well as 
+					menu items. 
+				</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages ... &lt;/span&gt;
+      <span class="highlitCode">&lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+        ...
+      &lt;/div&gt;</span>
+    &lt;/div&gt;
+      ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+				<h3>Add an idx.oneui.Menu to the MenuDialog</h3>
+				<p>
+					The idx.oneui.Menu will contain the message menu items within the message
+					menu. It automatically works in concert with the enclosing idx.oneui.MenuDialog
+					so that the whole assembly behaves like a single drop-down menu. Be sure to 
+					apply the oneuiMessageMenu class to it so that the appropriate 
+					One UI message styling is applied to it and any menu items in it.
+				</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages ... &lt;/span&gt;
+      &lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+        <span class="highlitCode">&lt;div data-dojo-type="idx.oneui.Menu" id="message_menu_1" class="oneuiMessageMenu"&gt;
+          ...
+        &lt;/div&gt;</span>
+      &lt;/div&gt;
+    &lt;/div&gt;
+      ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+				<h3>Create a header</h3>
+				<p>
+					Once the structure of the whole menu bar and its menus has been 
+					defined then create an idx.oneui.Header and pass the menu bar to it that is to 
+					be used as the main navigation for the page. The menu bar and its
+					drop-downs should be fully defined before creating the header, but 
+					individual menu items can be added and removed from the drop-downs
+					after header creation if so desired (which will almost certainly
+					be the case for message menus).
+				</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages ... &lt;/span&gt;
+      &lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+        &lt;div data-dojo-type="idx.oneui.Menu" id="message_menu_1" class="oneuiMessageMenu"&gt;
+          ...
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+      ...
+  &lt;/div&gt;
+  <span class="highlitCode">&lt;div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'Mega-menu examples', primaryBannerType: 'thick', navigation: 'menus', help: 'help'"&gt;
+  &lt;/div&gt;</span>
+    ...
+&lt;/body&gt;</pre>
+			<h2>Putting a "badge" on the Header menu item</h2>
+			<p>
+				A badge can be added to the popupMenuBarItem for a message menu like so:
+			</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages<span class="highlitCode">&lt;span class="idxBadgeWarning"&gt;5&lt;/span&gt;</span>&lt;/span&gt;
+      &lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+      ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+			<p>
+				Classes that can be used are: "idxBadgeError", "idxBadgeWarning", 
+				"idxBadgeInformation" and "idxBadgeSuccess". 
+			</p>
+			<h2>Adding messages to the menu</h2>
+				<h3>Creating menu items with createMessageMenuItem()</h3>
+				<p>
+					Whilst items in a message menu are regular dijit.MenuItem's, very 
+					specific content and formatting are prescribed by the One UI 
+					standard. A convenience method called idx.oneui.Menu.createMessageMenuItem() is provided that can
+					be used to create conforming menu items:
+				</p>		
+					
+<pre class="code">var menuItem = Menu.createMessageMenuItem({
+    type: "error",    // or "warning", "information" or "success"
+    content: "Hello, world!\u200e",
+    timestamp: locale.format(new Date(), { formatLength: "medium", locale: this.lang }),
+    messageId: "CAT123456"
+});</pre>
+		</div>	
+		<div class="demoBox">			
+			<div class="demoSample">
+				<div class="demoSampleNotice">Will produce a menu item that looks like this:</div>
+				<div data-dojo-type="idx.oneui.Menu" id="message_menu_1" class="oneuiMessageMenu">
+				</div>
+			</div>
+		</div>
+		<div dir="ltr">
+				<h3>Alternatively, creating message menu items from scratch</h3>
+				<p>
+					Message menu items can also be created in the conventional way,
+					should there be a need for alternative formatting or content. The menu
+					item above could be created manually like this:
+				</p>
+<pre class="code">var menuItem = new MenuItem({ 
+  label: '&lt;span class="messageMenuTimestamp messagesContrast"&gt;Mar 14, 2012 2:23:46 PM&lt;/span&gt;
+          &lt;span class="messageTitles"&gt;Hello, world!&lt;/span&gt;
+          &lt;span class="messagesContrast"&gt;(CAT123456)&lt;/span&gt;', 
+  iconClass: "oneuiErrorMenuItemIcon"
+});</pre>			
+				<h3>Inserting items into the menu</h3>
+				<p>
+					Message menu items are added to message menus by calling addChild() on the
+					appropriate idx.oneui.Menu. 
+				</p>
+<pre class="code">var menuItem = Menu.createMessageMenuItem({
+    type: "error",    // or "warning", "information" or "success"
+    content: "Hello, world!",
+    timestamp: locale.format(new Date(), { formatLength: "medium", locale: this.lang }),
+    messageId: "CAT123456"
+});
+<span class="highlitCode">dijit.byId("message_menu_1").addChild(menuItem);</span></pre>	
+			<h2>Removing messages from the menu</h2>
+			<p>
+				Message menu items can be removed from a message menu simply by calling
+				removeChild() on the appropriate idx.oneui.Menu.
+			</p>
+<pre class="code">var menuItem = ...;
+  ...
+<span class="highlitCode">dijit.byId("message_menu_1").removeChild(menuItem);
+menuItem.destroy();</span></pre>	
+			<h2>Including additional filter, navigation and search options</h2>
+			<p>
+				Additional UI elements can be included in a message menu simply by making
+				them peers of the idx.oneui.Menu within the idx.oneui.MenuDialog. So, for example, 
+				a "View all" link could be added below the menu items like this:
+			</p>
+<pre class="code">&lt;body class="oneui"&gt;
+  &lt;div data-dojo-type="idx.oneui.MenuBar" id="menus"&gt;
+    &lt;div data-dojo-type="dijit.PopupMenuBarItem"&gt;
+      &lt;span&gt;Messages ... &lt;/span&gt;
+      &lt;div data-dojo-type="idx.oneui.MenuDialog"&gt;
+        &lt;div data-dojo-type="idx.oneui.Menu" id="message_menu_1" class="oneuiMessageMenu"&gt;
+          ...
+        &lt;/div&gt;
+        <span class="highlitCode">&lt;div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"&gt;&lt;a href="javascript:"&gt;View all (10)&lt;/a&gt;&lt;/div&gt;</span>
+      &lt;/div&gt;
+    &lt;/div&gt;
+      ...
+  &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+			<p>
+				Active UI content within the message menu that results in the menu being 
+				closed will need additional code to support it, as is the case for
+				mega menus in general. Details of how to do this can be found in the 
+				<a href="http://uxd.torolab.ibm.com/uxd/uxd_oneui.jsp?site=ibmoneui&top=x1&left=y51&vsub=*&hsub=*&openpanes=10100001">Mega Menu</a>
+				documentation. 
+			</p>
+		</div>
+		<div dir="ltr" data-dojo-type="idx.oneui.tests._pagefooter._PageFooter"></div>
+	</div>
+</body>
+</html>

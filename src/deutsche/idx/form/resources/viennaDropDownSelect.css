@@ -1,0 +1,12 @@
+.vienna .idxDropDownSelect {
+
+}
+
+.vienna .idxDropDownSelect .dijitArrowButtonInner {
+  background-image: url("vienna/buttonArrowsSecondary.png");
+  vertical-align: top;
+}
+
+.vienna .idxAppMarquee .idxDropDownSelect .dijitArrowButtonInner {
+  background-image: url("../../themes/vienna/form/images/buttonArrows.png");
+}

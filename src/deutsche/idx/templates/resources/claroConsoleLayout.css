@@ -1,0 +1,182 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2011, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.claro .idxAppMarqueeCenter div.idxAppMarqueeBody
+{
+	top: 8px;
+	bottom: auto;
+}
+ 
+.claro .contextSwitch .dijitToggleButton .dijitButtonNode
+{
+	background: transparent none;
+	border: none;
+}
+
+.claro .contextSwitch .dijitToggleButtonChecked .dijitButtonNode
+{
+	background: #33547a none;
+	border: none;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs
+{
+	width: 100%;
+	height: 100%;
+
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabListContainer-top
+{
+  height: 24px;
+  position: absolute;
+  top: 0px;
+  left: 6px;
+  right: 6px;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabContainerTop-tabs
+{
+	background: none;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabContainerTop-tabs .dijitTab
+{
+	padding-top: 0px;
+}
+ 
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTab {
+  height: 18px;
+  /*position: absolute;
+  top: 3px;*/
+  /*border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #BBBBFF;*/
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTab.dijitTabChecked
+{
+	border: none;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .tabLabel
+{
+    background: none repeat scroll 0 0 transparent;
+    border-color: #FFFFFF;
+    border-style: none;
+    border-width: 0;
+    color: #FFFFFF;
+    display: inline;
+    font-family: Tahoma,Sans-serif;
+    font-size: 11px;
+    margin: 0;
+    padding: 0 12px;
+    position: static;
+    text-align: center;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabChecked .tabLabel
+{
+	color: #48678A;
+}
+
+
+.claro .idxConsoleLayoutTabs .dijitTabInnerDiv,
+.claro .idxConsoleLayoutTabs .dijitTabContent 
+{
+	background: none repeat scroll 0 0 transparent;
+	border: none;
+}
+
+.claro .idxConsoleLayoutTabs .dijitTabChecked .dijitTabInnerDiv,
+.claro .idxConsoleLayoutTabs .dijitTabChecked .dijitTabContent 
+{
+	background-color: #ffffff;
+	border: #ffffff 1px solid;
+}
+
+/*.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabHover {
+  background-image: url(./claro/tab_select_background.png);
+  padding-top: 3px;
+  bottom: 1px;
+  border-left-style: none;
+  border-left-width: 1px;
+  margin-left: 2px;
+  background-repeat: repeat-x;
+  cursor: pointer;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+}*/
+
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabHover .dijitTabContent{
+  font-family: Tahoma,Sans-serif;
+  font-size: 11px;
+  color: #486784;
+  cursor: pointer;
+}
+
+/*.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTab {
+  position: absolute; 
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.claro .dijitTabContainer.idxConsoleLayoutTabs div.idxTabMenuLauncherTabDock {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #66bb88;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+*/
+.claro .dijitTabContainer.idxConsoleLayoutTabs .dijitTabPaneWrapper {
+  position: absolute;
+  padding: 0px;
+  
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  
+  background-color: #ffffff;
+  background-image: none;
+  
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -opera-border-radius: 6px;
+  
+}
+
+/* wln added next 2 Hover-over tab */
+.claro .idxConsoleLayoutTabs>.dijitTabListContainer-top>.dijitTabListWrapper>.dijitTabContainerTop-tabs>.dijitTabHover>.dijitTabInnerDiv>.dijitTabContent {
+	background: white;
+}
+
+.claro .idxConsoleLayoutTabs>.dijitTabListContainer-top>.dijitTabListWrapper>.dijitTabContainerTop-tabs>.dijitTabHover>.dijitTabInnerDiv>.dijitTabContent>*>.tabLabel {
+	color: #48678a;
+}
+
+a:hover {
+	cursor: pointer; 
+	cursor: hand;
+}
+a {
+	text-decoration: underline;
+}

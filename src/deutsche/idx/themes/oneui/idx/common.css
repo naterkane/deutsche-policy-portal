@@ -1,0 +1,104 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxSignIcon {
+	background-image: url(images/msgIcons_24bit.png);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	padding: 0 !important;
+}
+
+.oneui .idxSimpleIconContainer {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.oneui .idxSimpleIconText {
+	padding: 0px 0px 0px 5px;
+}
+
+.dijitRtl .oneui .idxSimpleIconText {
+	padding: 0px 5px 0px 0px;
+}
+
+.oneui .idxInformIcon {
+	background-position: -96px -18px;
+}
+
+.oneui .idxWarnIcon {
+	background-position: -24px -18px;
+}
+
+.oneui .idxErrorIcon {
+	background-position: 0 -18px;
+}
+
+.oneui .idxConfirmIcon {
+	background-position: -48px -18px;
+}
+
+
+/* dialog messages  */
+.oneui .idxDialogIconWarning,
+.oneui .idxDialogIconInformation,
+.oneui .idxDialogIconError {
+	background-image: url('images/msgIcons_24bit.png');
+	background-repeat: no-repeat; 
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+}
+	
+.oneui .idxDialogIconWarning
+{
+	background-position: -24px -18px;
+}
+
+.oneui .idxDialogIconInformation
+{
+	background-position: -96px -18px;
+}
+
+.oneui .idxDialogIconError
+{
+	background-position: 0 -18px;
+}
+
+.oneui .idxDialogIconText
+{	
+	margin-left: 0px;
+}
+
+.oneui .idxDetailsPaneText
+{
+	border-style: none none solid;
+    border-width: 0px;
+    text-align: center; 
+    display: block !important; 
+    font-family: Georgia, "Times New Roman", serif;
+    color: #666;
+    padding: 15px;
+}
+
+.dijit_a11y .oneui .idxSignIcon.dijitContentPaneLoading {
+	color: black;
+}
+
+
+/* workaround for absolute position specified for dijitContentPaneLoading in themes/oneui/Common.css. */
+.oneui .idxSignIcon.dijitContentPaneLoading {
+	width: 50px; 
+	height: 50px; 
+	top: auto; 
+	bottom: auto; 
+	left: auto; 
+	right: auto; 
+	background: url(images/loadingAnimation38px.gif) no-repeat;
+	padding-left: 45px !important;
+	padding-top: 12px !important;
+}

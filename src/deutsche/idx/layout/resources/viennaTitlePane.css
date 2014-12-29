@@ -1,0 +1,149 @@
+.vienna .idxTitlePane_idxDefaults {
+
+}
+
+.vienna .idxTitlePane {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneTitle {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneTitleTitleFocus {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneTextNode {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneTitleFocus {
+
+}
+
+.vienna .dijitRtl .idxTitlePane .dijitTitlePaneTitleFocus {
+
+}
+
+.vienna .idxTitlePaneActions {
+
+}
+
+.vienna .dijitRtl .idxTitlePaneActions {
+
+}
+
+.vienna .idxTitlePaneAutoHide.dijitTitlePaneFocused .idxTitlePaneActions,
+.vienna .idxTitlePaneAutoHide .dijitTitlePaneTitleHover .idxTitlePaneActions {
+
+}
+
+.vienna .idxTitlePaneAutoHide .idxTitlePaneActions {
+
+}
+
+.vienna .idxTitlePaneNoCollapse .dijitArrowNode {
+
+}
+
+.vienna .idxTitlePaneNoCollapse .dijitArrowNodeInner {
+
+}
+
+/* A11y */
+.idxTitlePane .idxTitlePaneA11yText {
+
+}
+
+.dijit_a11y .idxTitlePane .idxTitlePaneA11yText {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneContentInner.dijitTitlePaneSingleChild {
+
+}
+
+.vienna .idxTitlePane .dijitTitlePaneContentInner.dijitTitlePaneSingleChild .dijitTitlePane-child {
+
+}
+
+
+/*----- stacked container inside of title pane-------*/
+.vienna .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild  {
+	border: 0px none transparent;
+	border-top: 1px solid #B0BECF;
+}
+
+.vienna .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild.dijitClosed  {
+	border-bottom: 0px none transparent;
+}
+
+.vienna .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxChild.dijitOpen  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+.vienna .dijitTitlePaneTitle.dijitTitlePane-idxStackedContainer-idxFirstChild  {
+	border-top: 0px none transparent;
+}
+
+.vienna .dijitTitlePaneContentOuter.dijitTitlePane-idxStackedContainer-idxChild  {
+	border: 0px none transparent;
+}
+
+/*----- stacked container inside of content pane-------*/
+.vienna .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild  {
+	border-top: 1px solid #B0BECF;
+}
+
+.vienna .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild.dijitClosed  {
+	border-bottom: 0px none transparent;
+}
+
+.vienna .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxLastChild.dijitClosed  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+.vienna .dijitTitlePaneTitle.dijitContentPane-idxStackedContainer-idxChild.dijitOpen  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+.vienna .dijitTitlePaneContentOuter.dijitContentPane-idxStackedContainer-idxChild  {
+	border-bottom: 0px none transparent;
+}
+
+.vienna .dijitTitlePaneContentOuter.dijitContentPane-idxStackedContainer-idxLastChild  {
+	border-bottom: 1px solid #B0BECF;
+}
+
+/*---- only child of TitlePane ------*/
+.vienna .dijitTitlePane-onlyChild {
+	border: 0px none transparent;
+}
+
+.dj_ie8 .dijitTitlePaneTitleFocus .dijitArrowNode {
+
+}
+
+.dj_ie8 .dijitTitlePaneTitleFocus .dijitTitlePaneTextNode {
+
+}
+
+.dj_ie8 .dijitTitlePaneTitleFocus .idxTitlePaneActions {
+
+}
+
+.dj_ie7 .dijitTitlePaneTitleFocus .dijitArrowNode {
+	position: relative;
+	top: 2px;
+}
+
+.dj_ie7 .dijitTitlePaneTitleFocus .dijitTitlePaneTextNode {
+	position: relative;
+	top: 2px;
+}
+
+.dj_ie7 .dijitTitlePaneTitleFocus .idxTitlePaneActions {
+	padding-top: 2px;
+}
+

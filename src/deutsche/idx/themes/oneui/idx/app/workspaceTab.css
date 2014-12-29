@@ -1,0 +1,176 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxWorkspaceTabOptions {
+
+}
+
+.oneui div.idxWorkspaceTab {
+  color: #ffffff;
+  height: 48px;
+  position: absolute;
+  top: 0px;
+  margin: 0px;
+  background: #0075a3;
+  background-image: -moz-linear-gradient(#1a96c6, #0075a3);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a96c6), to(#0075a3));
+  background-image: -webkit-linear-gradient(#1a96c6, #0075a3);
+  background-image: -o-linear-gradient(#1a96c6, #0075a3);
+  filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#1a96c6', EndColorStr='#0075a3');
+}
+
+.oneui div.idxWorkspaceTabTitle {
+  white-space: nowrap;
+  border-color: transparent;
+  position: relative;
+  height: 1em;
+  top: 50%;
+  margin-top: -0.5em;
+  line-height: 1em; 
+  font-family: Arial,Tahoma,Sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #003851;
+}
+
+.oneui div.idxWorkspaceTabPreHovered {
+
+}
+
+.oneui div.idxWorkspaceTabTitlePreHovered {
+
+}
+
+.oneui button.idxWorkspaceTabTitlePreHovered {
+
+}
+
+.oneui div.idxWorkspaceTabPostHovered {
+
+}
+
+.oneui div.idxWorkspaceTabTitlePostHovered {
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+
+.oneui button.idxWorkspaceTabTitlePostHovered {
+
+}
+
+.oneui div.idxWorkspaceTabPreSelected {
+
+}
+
+.oneui div.idxWorkspaceTabPreTitleSelected {
+
+}
+
+.oneui div.idxWorkspaceTabPostSelected {
+
+}
+
+.oneui div.idxWorkspaceTabTitlePostSelected {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: transparent;
+}
+
+.oneui button.idxWorkspaceTabTitlePostSelected {
+
+}
+
+.oneui div.idxWorkspaceTabHovered {
+  background: #ffffff;
+  background: #0075a3;
+  background-image: -moz-linear-gradient(#1FADED, #058cc3);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1FADED), to(#058cc3));
+  background-image: -webkit-linear-gradient(#1FADED, #058cc3);
+  background-image: -o-linear-gradient(#1FADED, #058cc3);
+  filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#1FADED', EndColorStr='#058cc3');
+  cursor: pointer;
+}
+
+.oneui div.idxWorkspaceTabTitleHovered {
+  font-family: Arial,Tahoma,Sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #ffffff;
+  cursor: pointer;
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+
+.oneui button.idxWorkspaceTabTitleHovered {
+  font-family: Arial,Tahoma,Sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #486784;
+  cursor: pointer;
+}
+
+.oneui div.idxWorkspaceTabSelected {
+  background-image: none;
+  filter: none;
+  bottom: 0px;
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.oneui div.idxWorkspaceTabTitleSelected {
+  font-family: Arial,Tahoma,Sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  color: #000000;
+  cursor: default;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: transparent;
+}
+
+.oneui button.idxWorkspaceTabTitleSelected {
+  font-family: Arial,Tahoma,Sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #486784;
+  cursor: default;
+}
+
+.oneui div.idxWorkspaceTabFirst {
+
+}
+
+.oneui div.idxWorkspaceTabTitleFirst {
+  border-left-color: transparent;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+
+.oneui button.idxWorkspaceTabTitleFirst {
+
+}
+
+.oneui div.idxWorkspaceTabLast {
+
+}
+
+.oneui div.idxWorkspaceTabTitleLast {
+
+}
+
+.oneui button.idxWorkspaceTabTitleLast {
+
+}
+
+

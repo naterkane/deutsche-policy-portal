@@ -1,0 +1,12 @@
+.idxDropDownMultiSelect .idxDropDownMultiSelectDisplayNode {
+	padding: 0px 1px 1px;
+	white-space: nowrap;
+}
+
+.idxDropDownMultiSelect.dijitInputContainer {
+	cursor: pointer;
+}
+
+.idxDropDownMultiSelectMenuItemLabel {
+	cursor: pointer;
+}

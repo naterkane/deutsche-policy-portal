@@ -1,0 +1,76 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+
+.dijitRtl .oneui div.idxAppMarqueeLeft {
+  overflow: hidden;
+  position: absolute;
+  padding-left: 25px;
+  background: none black;
+}
+
+.dijitRtl .oneui div.idxAppMarqueeRight {
+  overflow: hidden;
+  position: absolute;
+  padding-right: 30px;
+  padding-left: 0px;
+  background: none;
+}
+
+.dijitRtl .oneui .idxAppFrameMarquee div.idxAppMarqueeLeft {
+  padding-left: 25px;
+}
+
+
+.dijitRtl .oneui .idxAppFrameMarquee div.idxAppMarqueeRight {
+  padding-right: 0px;
+}
+
+.dijitRtl .oneui div.idxAppMarqueeBody {
+  text-align: left;
+}
+
+.dijitRtl .oneui .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+  left: auto;
+  right: 30px;
+}
+
+.dijitRtl .oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+  right: 0px;
+  left: auto;
+}
+
+.dijitRtl .oneui .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName,
+.dijitRtl .oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+  left: auto;
+  right: 0px;
+  padding-left: 0px;
+  padding-right: 30px;
+}
+
+.dijitRtl .oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName {
+  padding-right: 0px;
+}
+
+.dijitRtl .oneui .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorLogo {
+  right: auto;
+  left: 25px;
+}
+
+.dijitRtl .oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorLogo {
+  right: auto;
+  left: 25px;
+}
+
+.dijitRtl .oneui .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeVendorName,
+.dijitRtl .oneui.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeVendorName {
+  text-align: left;
+}
+
+.dijitRtl .oneui .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeVendorName {
+  padding-left: 0px;
+}

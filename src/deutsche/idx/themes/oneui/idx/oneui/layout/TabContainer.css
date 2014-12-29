@@ -1,0 +1,58 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/************ Compact Tabs ************/
+/* Compact Top Tabs*/
+.oneui .compact .dijitTabContainerTop-tabs .dijitTabContent {
+	padding: 6px 14px 5px;
+}
+.oneui .compact .dijitTabContainerTop-tabs .dijitTabHover .dijitTabContent {
+	padding: 5px 14px 5px;
+}
+.oneui .compact .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent,
+.oneui .compact .dijitTabContainerTop-tabs .dijitTabCheckedHover .dijitTabContent,
+.oneui .compact .dijitTabContainerTop-tabs .dijitTabCheckedActive .dijitTabContent {
+	padding: 5px 14px 6px;
+}
+/** end Compact top tab **/
+/*************** Compact bottom tab ***************/
+.oneui .compact .dijitTabContainerBottom-tabs .dijitTabContent {
+	padding: 5px 14px 6px;
+}
+.oneui .compact .dijitTabContainerBottom-tabs .dijitTabHover .dijitTabContent {
+	padding: 5px 14px 5px;
+}
+.oneui .compact .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent,
+.oneui .compact .dijitTabContainerBottom-tabs .dijitTabCheckedHover .dijitTabContent,
+.oneui .compact .dijitTabContainerBottom-tabs .dijitTabCheckedActive .dijitTabContent {
+	padding: 6px 14px 5px;
+}
+/** end Compact bottom tab **/
+/*************** Compact left tab ***************/
+.oneui .compact .dijitTabContainerLeft-tabs .dijitTabContent {
+	padding: 5px 14px 6px;
+}
+.oneui .compact .dijitTabContainerLeft-tabs .dijitTabHover .dijitTabContent,
+.oneui .compact .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabContent {
+	padding: 5px 14px 6px 13px;
+}
+/*************** Compact right tab ***************/
+.oneui .compact .dijitTabContainerRight-tabs .dijitTabContent {
+	padding: 5px 13px 6px;
+}
+.oneui .compact .dijitTabContainerRight-tabs .dijitTabHover .dijitTabContent,
+.oneui .compact .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabContent {
+	padding: 5px 13px 6px;
+}
+/** end right tab **/
+.oneui .compact .tabStripButton {
+	height:30px;
+}
+.oneui .compact .tabStripButton .dijitTabInnerDiv {
+	height:19px;
+	padding: 6px 7px 2px;
+}

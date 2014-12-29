@@ -1,0 +1,89 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2011, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+  	
+.vienna .contextSwitch .dijitToggleButton .dijitButtonNode
+{
+}
+
+.vienna .contextSwitch .dijitToggleButtonChecked .dijitButtonNode
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs
+{
+}
+
+.vienna div.idxAppMarqueeAppName
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabListContainer-top
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabContainerTop-tabs
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabContainerTop-tabs .dijitTab
+{
+}
+ 
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTab {
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTab.dijitTabChecked
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .tabLabel
+{
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabChecked .tabLabel
+{
+}
+
+
+.vienna .idxConsoleLayoutTabs .dijitTabInnerDiv,
+.vienna .idxConsoleLayoutTabs .dijitTabContent 
+{
+}
+
+.vienna .idxConsoleLayoutTabs .dijitTabChecked .dijitTabInnerDiv,
+.vienna .idxConsoleLayoutTabs .dijitTabChecked .dijitTabContent 
+{
+}
+
+/*.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabHover {
+}*/
+
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabHover .dijitTabContent{
+}
+
+/*.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTab {
+}
+
+.vienna .dijitTabContainer.idxConsoleLayoutTabs div.idxTabMenuLauncherTabDock {
+}
+*/
+.vienna .dijitTabContainer.idxConsoleLayoutTabs .dijitTabPaneWrapper {
+}
+
+/* wln added next 2 Hover-over tab */
+.vienna .idxConsoleLayoutTabs>.dijitTabListContainer-top>.dijitTabListWrapper>.dijitTabContainerTop-tabs>.dijitTabHover>.dijitTabInnerDiv>.dijitTabContent {
+}
+
+.vienna .idxConsoleLayoutTabs>.dijitTabListContainer-top>.dijitTabListWrapper>.dijitTabContainerTop-tabs>.dijitTabHover>.dijitTabInnerDiv>.dijitTabContent>*>.tabLabel {
+}
+
+a:hover {
+
+}
+a {
+}

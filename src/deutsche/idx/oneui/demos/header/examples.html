@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html lang="en-US">
+<head>
+	<title>Header widget example</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+	
+    <style id="idxStyles" type="text/css">
+        @import "../../../themes/oneui/oneui.css";
+        @import "../demo.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo/dom", 
+			"dojo.ready",
+			"idx.oneui.tests.headerExamples"];
+			
+		var dom, ready, ht;
+
+		function preParse(modules){
+			dom = modules["dojo/dom"] || dojo;
+			ready = modules["dojo/ready"];
+			ht = modules["idx/oneui/tests/headerExamples"];
+		}
+
+		function postParse(modules){
+			var factory = ht.getHeaderFactory(template, example),
+				html = "",
+				ntm = ht.getNumberOfTemplates(),
+				nex, itm, iex, anode;
+				
+			for(itm = (template ? 1 : 0); itm <= ntm; itm++){
+				html += '<div style="display: table-row;">' +
+						'<div style="display: table-cell; border-top: 1px solid #e7e7e7; padding-top: 0.5em; padding-bottom: 0.5em;padding-right: 1em;">Template ' + itm + ': ';
+
+				if(itm == template){
+					html += '<b>' + ht.getTitle(itm) + '</b>';
+				}else{
+					html += '<a href="' + makelink(itm, 1) + '">' + ht.getTitle(itm) + '</a>';
+				}
+
+				html += '</div>' +
+						'<div style="display: table-cell; border-top: 1px solid #e7e7e7; *border: 0; padding-top: 0.5em; padding-bottom: 0.5em; *padding-left: 12em;">';
+				nex = ht.getNumberOfExamples(itm);
+				for(iex = 1; iex <= nex; iex++){
+					if(iex > 1){ html += '<br />'; }
+					if((itm == template) && (iex == example)){
+						html += 'example ' + iex + ': <b>' + ht.getTitle(itm, iex) + '</b>';
+					}else{
+						html += 'example ' + iex + ': <a href="' + makelink(itm, iex) + '">' + ht.getTitle(itm, iex) + '</a>';
+					}
+				}
+				html += '</div></div>';
+			}
+			
+			dom.byId("pi_links").innerHTML = html;
+			
+			if(factory){
+				dom.byId("pi_te_bad").style.display = "none";
+				
+				if(template == 0){
+					dom.byId("pi_te_g0").style.display = "none";
+				}else{
+					dom.byId("pi_te_0").style.display = "none";
+				}
+				
+				dom.byId("pi_template").innerHTML = template;
+				dom.byId("pi_template_title").innerHTML = ht.getTitle(template);
+				dom.byId("pi_example").innerHTML = example;
+				dom.byId("pi_example_title").innerHTML = ht.getTitle(template, example);
+				
+				var overrides = {};
+				
+				if(template == 0){
+					var val = allparams.nav;
+					if((null != val) && (typeof val == "string")){
+						overrides.primaryBannerType = val;
+					}
+
+					val = allparams.type;
+					if((null != val) && (typeof val == "string")){
+						overrides.secondaryBannerType = val;
+					}
+
+					val = allparams.layout;
+					if((null != val) && (typeof val == "string")){
+						overrides.layoutType = val;
+					}
+
+					val = allparams.inline;
+					if((null != val) && (typeof val == "string")){
+						overrides.contentTabsInline = ("true" == val.toLowerCase());
+					}
+				}
+			
+				factory("header", "content_container", overrides);
+				
+				var pre = dom.byId("pi_sc"),
+					functionbody = factory.toString(),
+					innerbody = functionbody.match(/\/\/START([\s\S]*)\/\/END/m);
+				
+				functionbody = (innerbody ? innerbody[1] : functionbody).replace(/__id__/g, '"header"').replace(/__contentcontainer__/g, '"content_container"');
+					
+				pre.innerHTML = ""; 
+				pre.appendChild(document.createTextNode('<div id="header"></div>\r\n' +
+						                                (factory.hasContent ? '<div id="content_container"></div>\r\n\r\n' : '\r\n') +
+													    '<scr' + 'ipt type="text/javascript">\r\n\r\n' +
+													    '\trequire(["idx/oneui/layout/Header", "idx/oneui/Menu", "dijit/MenuItem"],\r\n' +
+													    '\t        function(Header, Menu, MenuItem){\r\n' +
+														functionbody +
+													    '\t});\r\n\r\n' +
+													    '</scr' + 'ipt>'));
+			}else{
+				dom.byId("pi_te_ok").style.display = "none";
+			}
+											   
+			var tabs = dijit.byId("content_container");
+			if(tabs){
+				tabs.layout();
+			}
+		}
+
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+	
+		var page_isltr, page_isa11y, allparams, template, example, isltr, isa11y;
+
+		// this needs to be called once there is a body but before the DOM parsing finishes
+		function initialiseDOM(){
+			page_isltr = dojo.isBodyLtr();
+			page_isa11y = dojo.hasClass(dojo.body(), "dijit_a11y");
+			allparams = dojo.queryToObject(window.location.search.substr(1));
+			template = parseInt(allparams.template || "1");
+			example = parseInt(allparams.example || "1");
+			isltr = !allparams.dir || ("rtl" != allparams.dir.toLowerCase());
+			isa11y = (allparams.a11y && ("true" == allparams.a11y.toLowerCase())) ? true : false;
+
+			if(isltr != page_isltr){
+				dojo.doc.getElementsByTagName("html")[0].dir = isltr ? "ltr" : "rtl";
+			}
+			
+			if(isa11y && !page_isa11y){
+				dojo.addClass(dojo.body(), "dijit_a11y");
+			}
+			
+			/*dojo.byId("pi_td").innerHTML = isltr ? "left-to-right" : "right-to-left";
+			dojo.byId("pi_tdo").innerHTML = isltr ? "right-to-left" : "left-to-right";
+			dojo.byId("pi_lk_dir").href = makelink(null, null, true, false);
+			
+			dojo.byId("pi_hc").innerHTML = isa11y ? "enabled" : "not enabled";
+			dojo.byId("pi_hco").innerHTML = isa11y ? "not enabled" : "enabled";
+			dojo.byId("pi_lk_hc").href = makelink(null, null, false, true);*/			
+		}
+				
+		function makelink(newtemplate, newexample, changedir, changea11y){
+			var newparams = {
+				template: newtemplate || template,
+				example: newexample || example
+			};
+			if((isltr == page_isltr) == (changedir ? true : false)){
+				newparams.dir = (changedir ? !isltr : isltr) ? "ltr" : "rtl";
+			}
+			if((isa11y == page_isa11y) == (changea11y ? true : false)){
+				newparams.a11y = (changea11y ? !isa11y : isa11y) ? true : false;
+			}
+			return window.location.pathname + "?" +dojo.objectToQuery(newparams);
+		};
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+
+</head>
+<body class="oneui">
+	
+<div class="demoContent">
+		
+	<p>This page displays a variety of Header usage examples, incorporating different combinations
+	of features. These examples are grouped into five template arrangements of the main navigation
+	components, within which different combinations of display options and content arrangements
+	are shown.</p>
+		
+	<div id="page_info" dir="ltr" style="width: 100%; background-color: #f7f7f7; border-top: 1px solid #e7e7e7; font-size: 0.9em;">
+		<div style="display: table;" id="pi_links">
+		</div>
+	</div>
+	
+	<div class="demoBox"><div class="demoSampleWide" style="margin: 1em 0;"><div class="demoSampleNotice">Working sample</div>
+		<div id="header"></div>
+	
+		<div id="content_container">
+			<p id="pi_te_bad" style="display: none;" dir="ltr">This is <b>NOT</b> a valid test example</p>
+			<p id="pi_te_ok" style="font-style: italic; display: none;"><span dir="ltr">This is <span id="pi_te_g0"><b>template <span id="pi_template"></span></b> (<span id="pi_template_title"></span>),</span>
+			<span id="pi_te_0"><b>NOT</b> a standard header template, but is a <b>test example</b>,</span>
+			<b>example <span id="pi_example"></span></b> (<span id="pi_example_title"></span>)</span></p>
+		</div>
+	</div>
+	
+	<h3>Source code for this example</h3>
+	<pre id="pi_sc" style="font-size: 0.9em;">
+	</pre>
+	
+</div>
+
+<script type="text/javascript">
+	initialiseDOM();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="dijit dijitReset"
+	><div class="idxMessageHead"
+		><div class="dijitInline idxMessageIcon" src="${_blankGif}" dojoAttachPoint="iconNode" dojoAttachEvent="onmouseenter: onIconEnter, onmouseleave: onIconLeave"
+			><span id="${id}_type" dojoAttachPoint="typeNode" class="idxMessageIconText idxMessageContent idxMessageAltText"></span></div
+		><div class="dijitInline idxMessageContent" dojoAttachPoint="focusNode" tabIndex="${tabIndex}" dojoAttachEvent="ondijitclick: _onClick"
+			><span class="dijitInline idxMessageTitle" dojoAttachPoint="titleNode"></span
+			><span class="dijitInline idxMessageId messagesContrast" dojoAttachPoint="idNode"></span
+		></div
+		><div class="idxMessageFakeContent" dojoAttachPoint="fakeFocusNode" tabIndex="${tabIndex}" dojoAttachEvent="ondijitclick: _onClick"
+			><span class="idxMessageTitle" dojoAttachPoint="fakeTitleNode"></span
+			><span class="idxMessageId messagesContrast" dojoAttachPoint="fakeIdNode"></span
+		></div
+		><div class="dijitInline idxMessageRightAligned" dojoAttachPoint="infoNode"
+			><div class="dijitInline idxMessageTimestamp messagesContrast" dojoAttachPoint="timestampNode">03 March 2011  12:00 PM</div
+			><div class="dijitInline idxMessageSeparator" dojoAttachPoint="separatorNode">|</div
+			><a class="dijitInline idxMessageAction" tabIndex="${tabIndex}" dojoAttachPoint="actionNode" dojoAttachEvent="ondijitclick: onAction" href="javascript: void(0);"></a
+			><div class="dijitInline idxMessageCloseIcon" tabIndex="${tabIndex}" role="button" dojoAttachEvent="ondijitclick: _onClose" dojoAttachPoint="closeNode"
+				><span class="idxMessageContent idxMessageAltText">X</span
+			></div
+		></div
+	></div
+	><div class="idxMessageSplitter" src="${_blankGif}"/></div
+	><div class="idxMessageBody" dojoAttachPoint="bodyNode" role="document"
+		><span class="idxMessageDetail" dojoAttachPoint="descriptionNode" tabIndex="${tabIndex}"></span
+		><a class="idxMessageViewDetails" tabIndex="${tabIndex}" dojoAttachPoint="viewDetailsNode" href="javascript: void(0);" dojoAttachEvent="ondijitclick: onMoreDetails"></a
+	></div
+	><div class="idxMessageRefresh" 
+	><span dojoAttachPoint="refreshNode" tabIndex="${tabIndex}" dojoAttachEvent="ondijitclick: onRefresh"></span></div
+></div>

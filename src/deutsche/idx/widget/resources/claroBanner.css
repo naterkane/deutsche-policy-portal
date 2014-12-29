@@ -1,0 +1,122 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.claro .idxBanner {
+	color: #FFFFFF;
+	background-color: #224466;
+	background-image: url('claro/banner.png');
+	background-position: bottom;
+	background-repeat: repeat-x;
+	border-style: solid;
+	border-color: #224466;
+	border-width: 1px;
+	border-top-width: 0px;
+	padding: 5px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.25);
+}
+
+.claro .idxBanner .idxBannerBottomBar {
+	display: none;
+}
+
+.claro .idxBanner .idxBannerTrailer {
+	float: right;
+	padding: 0px 15px 6px 0px;
+}
+
+.dijitRtl .claro .idxBanner .idxBannerTrailer {
+	float: left;
+	padding: 0px 0px 6px 15px;
+}
+
+.claro .idxBanner .idxBannerContainer {
+	padding: 5px;
+}
+
+.claro .idxBanner .idxBannerHelpButtonIcon {
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 16px;
+	height: 16px;
+	background-image: url(claro/help.png);
+	border-left: 1px solid #fff;
+	padding: 0px 0px 0px 15px;
+}
+
+.dijitRtl .claro .idxBanner .idxBannerHelpButtonIcon {
+	background-position: left;
+	border-left: 0px;
+	border-right: 1px solid #fff;
+	padding: 0px 15px 0px 0px;
+}
+
+.claro .idxBanner .dijitButton,
+.claro .idxBanner .dijitDropDownButton,
+.claro .idxBanner .dijitButtonNode,
+.claro .idxBanner .dijitButton .dijitButtonNode,
+.claro .idxBanner .dijitDropDownButton .dijitButtonNode,
+.claro .idxBanner .dijitButtonActive .dijitButtonNodeHover,
+.claro .idxBanner .dijitDropDownButton .dijitButtonNodeHover,
+.claro .idxBanner .dijitDropDownButton .dijitDownArrowButtonHover {
+	border: none !important;
+	background: none !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
+    border-radius: 0px 0px 0px 0px !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.claro .idxBanner .dijitButton .dijitButtonNode,
+.claro .idxBanner .dijitDropDownButton .dijitButtonNode {
+	min-width: 0px;
+	padding-right: 0;
+}
+
+.claro .idxBanner .dijitArrowButtonInner {
+	background-image: url(claro/bannerArrow.png);
+	background-position: center;
+}
+
+.dijitRtl .claro .idxBanner .dijitArrowButtonInner {
+	margin-right: 2px;
+}
+
+.claro .idxBanner .dijitButtonContents {
+    border: none !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+.claro .idxBanner .dijitButtonContents .dijitButtonText {
+    color: #dddddd;
+    font-weight: bold;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.claro .idxBanner .dijitButtonContents .dijitButtonText:hover {
+	color: #fff;
+}
+
+.claro .idxBanner .idxLink {
+	padding-left: 5px;
+	padding-right: 5px;
+    color: #dddddd;
+	text-decoration: none;
+}
+
+.claro .idxBanner .idxLink:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.claro .idxBanner .idxLinkSelected {
+    color: #fff;
+	text-decoration: underline;
+	cursor: auto;
+}

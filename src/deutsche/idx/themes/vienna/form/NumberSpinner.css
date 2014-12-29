@@ -1,0 +1,149 @@
+/* NumberSpinner - namespace "dijitSpinner"
+ * 
+ * Styling NumberSpinner mainly includes:
+ * 
+ * 1. Arrows
+ * 		Outer containers: .dijitSpinnerButtonContainer|.dijitSpinnerButtonInner  - for border, padding and position
+ * 		Arrows: .dijitArrowButton|.dijitUpArrowButton.|dijitDownArrowButton
+ * 		Inner container: .dijitArrowButtonInner - for border, padding, width|height and background image
+ * 
+ * 2. Hover state
+ * 		.dijitUpArrowButtonHover|.dijitDownArrowButtonHover .*  - for background color|image
+ * 
+ * 3. Active state
+ * 		.dijitUpArrowButtonActive|.dijitDownArrowButtonActive .*  - for border, padding, margin and background color|image
+ * 
+ * 4. Focused state
+ * 		.dijitSpinnerFocused .* - for background color|image
+ * 
+ * 5. Disabled state
+ * 		.dijitSpinnerDisabled .* - for background color|image
+ */
+
+.vienna .dijitSpinnerButtonContainer {
+/* overflow: hidden; */
+/* position: relative; */
+/* width: auto; */
+/* padding: 0 2px; */
+}
+.vienna .dijitSpinnerButtonContainer .dijitSpinnerButtonInner {
+/* border-width: 1px 0; */ /* reserve space to match the claro combobox button border with border and not padding to make IE happier */
+/* border-style: solid none; */
+}
+
+/* button */
+.vienna .dijitSpinner .dijitArrowButton {
+/* width:auto; */
+	background-color: #d6dde7;
+/* background-image: url("images/formHighlight.png"); */
+/* background-position:0px 0px; */
+/* background-repeat:repeat-x; */
+/* overflow: hidden; */
+}
+.dj_iequirks .vienna .dijitSpinner .dijitArrowButton {
+/* overflow: visible; */ /* 0 height w/o this */
+}
+
+.vienna .dijitSpinner .dijitSpinnerButtonInner {
+/* width: 15px; */
+}
+/* up & down button icons */
+.vienna .dijitSpinner .dijitArrowButtonInner {
+	border:solid 1px transparent;
+/* border-bottom-width: 0; */ /* 2 top borders = 1 top+bottom border in ComboBox */
+/* background-image: url("images/commonFormArrows.png"); */
+/* background-repeat: no-repeat; */
+/* height: 100%; */
+/* width:15px; */
+/* padding-left: 1px; */
+/* padding-right: 1px; */
+
+	/* for up arrow */
+/* background-position:-139px center; */
+
+	/* override button.css (TODO: move to Common.css since ComboBox needs this too) */
+/* display: block; */
+/* margin: -1px 0px -1px 0px; */	/* compensate for inner border */
+/* #margin-top: 0; */ /* since its bottom aligned */
+}
+.dj_iequirks .vienna .dijitSpinner .dijitArrowButtonInner {
+/* width: 19px; */
+}
+.vienna .dijitSpinner .dijitDownArrowButton .dijitArrowButtonInner {
+/* background-position:-34px; */
+}
+.vienna .dijitSpinner .dijitArrowButtonInner .dijitInputField {
+/* padding: 0; */
+}
+
+/** hover & focused status **/
+
+.vienna .dijitUpArrowButtonActive,
+.vienna .dijitDownArrowButtonActive {
+	background-color:#b7c2d3;
+}
+
+.vienna .dijitSpinner .dijitUpArrowButtonHover,
+.vienna .dijitSpinner .dijitDownArrowButtonHover,
+.vienna .dijitSpinnerFocused .dijitArrowButton {
+	background-color: #b7c2d3;
+}
+
+.vienna .dijitSpinner .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position:-174px;
+}
+.vienna .dijitSpinner .dijitDownArrowButton .dijitArrowButtonInner {
+	background-position:-69px;
+}
+.vienna .dijitSpinner .dijitUpArrowButtonHover .dijitArrowButtonInner {
+/* background-position:-174px; */
+}
+.vienna .dijitSpinner .dijitDownArrowButtonHover .dijitArrowButtonInner {
+/* background-position:-69px; */
+}
+
+.vienna .dijitSpinnerFocused {
+/* background-color: #fff; */
+/* background-image: none; */
+}
+
+/* mouse down status */
+.vienna .dijitSpinner .dijitDownArrowButtonActive,
+.vienna .dijitSpinner .dijitUpArrowButtonActive {
+	background-color: #b7c2d3;
+/* background-position:0px -177px; */
+}
+.vienna .dijitSpinner .dijitUpArrowButtonActive .dijitArrowButtonInner,
+.vienna .dijitSpinner .dijitDownArrowButtonActive .dijitArrowButtonInner {
+	/* hide inner border while button is depressed */
+	border: 0px;
+/* padding: 1px; */
+/* margin-right:2px; */
+/* margin-bottom:1px; */
+}
+.vienna .dijitSpinner .dijitUpArrowButtonActive .dijitArrowButtonInner {
+/* background-position:-173px; */
+}
+.vienna .dijitSpinner .dijitDownArrowButtonActive .dijitArrowButtonInner {
+/* background-position:-68px; */
+}
+
+/* disabled */
+
+.vienna .dijitSpinnerDisabled .dijitArrowButtonInner {
+	background-color: #F6F6F6;
+}
+.vienna .dijitSpinnerDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position:-104px;
+}
+.vienna .dijitSpinnerDisabled .dijitDownArrowButton .dijitArrowButtonInner {
+	background-position:1px;
+}
+
+/** hacks for browsers **/
+
+/* for IE 7, when div is enlarged, 
+ * should be no empty space between dijitInputLayoutContainer and dijitSpinner*/
+.dj_ie7 .vienna .dijitSpinner {
+/* overflow:visible; */
+} 

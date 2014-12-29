@@ -1,0 +1,13 @@
+.claro .idxECMBreadcrumb {
+	
+}
+
+.claro .idxECMBreadcrumb .idxECMBreadcrumbItem {
+	color: black;
+	text-decoration: none;
+}
+
+.claro .idxECMBreadcrumb .idxECMBreadcrumbItem.idxECMBreadcrumbItemClickable {
+	color: blue;
+	text-decoration: underline;
+}

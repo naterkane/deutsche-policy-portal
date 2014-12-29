@@ -1,0 +1,20 @@
+<div class="idxDialog" role="dialog" aria-labelledby="${id}_title" aria-describedby="${id}_desc">
+	<div class="dijitDialogTitle">
+		<span id="${id}_title" dojoAttachPoint="titleNode" tabindex="0">${title}</span>
+	</div>
+	<div class="dijitDialogInstruction">
+		<span id="${id}_desc" role="document" dojoAttachPoint="instructionNode" tabindex="0">${instruction}</span>
+	</div>	
+	<div dojoAttachPoint="contentWrapper" class="dijitDialogPaneContentWrapper compact">
+		<div dojoAttachPoint="containerNode" class="dijitDialogPaneContent" tabindex="0">
+		</div>
+	</div>
+	<div class="dijitDialogPaneActionBar">
+		<span class="idxDialogActionBarLead">
+			<a dojoAttachPoint="reference" href="${referenceLink}">${referenceName}</a>
+		</span>
+		<span class="idxDialogActionBarEnd">
+		<input dojoAttachPoint="closeButtonNode"/>
+		</span>
+	</div>
+</div>

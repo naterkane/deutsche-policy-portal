@@ -1,0 +1,15 @@
+<div class="${baseClass}" 
+     dojoAttachEvent="onMouseover:_onTabMouseOver,onmouseout:_onTabMouseOut,ondijitclick:_onTabSelect"
+     dojoAttachPoint="focusNode" role="presentation" wairole="presentation">
+<!--
+ * IBM Confidential
+ * OCO Source Materials
+ * (C) Copyright IBM Corp. 2010, 2011
+ * The source code for this program is not published 
+ * or otherwise divested of its trade secrets, irrespective
+ * of what has been deposited with the U.S. Copyright Office.
+-->
+<div type="button" class="${baseClass}Title" dojoAttachPoint="tabNode,titleNode"
+   role="tab" wairole="tab" aria-selected="false" tabindex="0"
+   dojoAttachEvent="onmouseover:_onTabMouseOver,onmouseout:_onTabMouseOut,onClick:_onTabSelect,onFocus:_onTabMouseOver,onBlur:_onTabMouseOut"></div>
+</div>

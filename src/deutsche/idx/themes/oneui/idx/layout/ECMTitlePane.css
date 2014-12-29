@@ -1,0 +1,107 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxECMTitlePane {
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitleFocus {
+	position: relative;
+	padding-right: 16px;
+	padding-left: 0px;
+}
+
+.oneui .dijitRtl .idxECMTitlePane .dijitTitlePaneTitleFocus {
+	padding-right: 0px;
+	padding-left: 16px;
+}
+
+.oneui .idxECMTitlePane .idxECMTitlePaneIconLink {
+	position: absolute;
+	text-decoration: none;
+}
+
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitleBarIcon {
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;	
+}
+
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxRestoreIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxRestoreIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxRestoreIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:Active .idxRestoreIcon {
+	background-image: url(images/buttonIcons.png);
+	background-repeat: no-repeat;
+	}
+
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxCloseIcon {
+	background-position: 0px 0px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxCloseIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxCloseIcon {
+	background-position: -16px 0px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxHelpIcon {
+	background-position: 0px -80px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxHelpIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxHelpIcon {
+	background-position: -16px -80px;
+}
+
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxMaximizeIcon {
+	background-position: 0px -128px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxMaximizeIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:ACTIVE .idxMaximizeIcon {
+	background-position: -16px -128px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink .idxRestoreIcon {
+	background-position: 0px -144px;
+}
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:HOVER .idxRestoreIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:FOCUS .idxRestoreIcon,
+.oneui .idxECMTitlePane .dijitTitlePaneTitle .idxECMTitlePaneIconLink:Active .idxRestoreIcon {
+	background-position: -16px -144px;
+}
+
+.oneui .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitle .idxECMTitleBarIcon {
+	display: none;
+}
+
+.oneui .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitleHover .idxECMTitleBarIcon,
+.oneui .idxECMTitlePane.idxHideIcon .dijitTitlePaneTitleActive .idxECMTitleBarIcon,
+.oneui .idxECMTitlePane.idxHideIcon .idxECMTitlePaneTitleFocused .idxECMTitleBarIcon {
+	display: inline;
+}
+
+/* A11y */
+.oneui .idxECMTitlePane .idxECMTitlePaneA11yText {
+	display: none;
+}
+.oneui .dijit_a11y .idxECMTitlePane .idxECMTitlePaneA11yText {
+	display: inline;
+}
+.oneui .dijit_a11y .idxECMTitlePane A.idxECMTitlePaneIconLink IMG,
+.oneui .dijit_a11y .idxECMTitlePane.idxHideIcon A.idxECMTitlePaneIconLink IMG {
+	display: none;
+}

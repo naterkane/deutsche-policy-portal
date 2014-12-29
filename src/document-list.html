@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <title>Document List/View/History</title>
+     
+     <link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui-dojo.css">
+     <link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui.css">
+     <link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+     <link rel="stylesheet" href="deutsche/resources/css/db-styles.css" media="screen">
+      <!-- load dojo and provide config via data attribute -->
+      <script src="lib/dojo/dojo.js" data-dojo-config="async:true, parseOnLoad:true"></script>
+      <script>
+          require([
+	          "lib/dojo/parser",
+	          "lib/dijit/layout/BorderContainer",
+	          "lib/dijit/layout/TabContainer",
+              "lib/dijit/layout/ContentPane",
+	          "lib/dijit/TooltipDialog",
+	          "lib/dijit/form/DropDownButton",
+	          "lib/dijit/form/TextBox",
+	          "lib/dijit/form/Button",
+	          "lib/dijit/Dialog",
+	          "lib/dijit/Toolbar",
+	          "lib/dijit/form/ToggleButton",
+	          "lib/dijit/ToolbarSeparator"
+          ]);
+       </script>
+</head>
+<!-- two column layout, fixed left col -->
+<body class="oneui claro">
+	<div id="db-banner">
+   	<div class="db-branding-right"></div>
+      <div class="db-branding-left">
+      	<div class="db-name">Deutsche Bank</div>
+         <div class="db-portalTitle">Policy Portal</div>
+      </div>
+      <div class="db-bannerLinks">
+      	<a href="#">GPAG Contacts</a>|<a href="#">Policy template</a>|<a href="#">Policy principles</a>|<a href="#">Support</a>
+      </div>  
+   </div>
+   <div class="db-topNav">
+   	<div class="profileMenu" style="float: right;">
+          <div data-dojo-type="dijit/form/DropDownButton">
+             <span>User Name</span>
+             <div data-dojo-type="dijit/TooltipDialog">
+					<dl class="profileDialog">
+               	<dt>Location:</dt>
+                  <dd>Frankfurt, Germany</dd>
+               	<dt>Language:</dt>
+                  <dd>English</dd>
+               	<dt>Functional Applicability:</dt>
+                  <dd>DB Group</dd>
+               	<dt>Geographical Applicability:</dt>
+                  <dd>Global</dd>
+               	<dt>Policy Producing Function:</dt>
+                  <dd class="last">Compliance</dd>
+               </dl>
+             </div>
+         </div>    
+      </div> <!-- end profile menu -->
+      <!-- navLinks -->
+      <div class="db-navLinks">
+      	<a href="#" class="navLink active">Policies</a><a href="#" class="navLink">Add new doc</a>
+      </div>
+   </div>
+
+	<div id="appLayout" class="dbLayout-left" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+		<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">
+        	Sidebar content (left)
+		</div>
+		<div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+
+         <p>When pressing this button the dialog will popup:</p>
+         <button id="buttonThree" data-dojo-type="dijit/form/Button" type="button" onClick="docInfoDialog.show();">
+             Show document info
+         </button>
+
+
+
+		</div>
+
+	</div><!-- end appLayout -->
+
+<!-- doc info dialog -->
+<div id="docInfoDialog" title="Document Info" data-dojo-type="dijit/Dialog" data-dojo-id="docInfoDialog">
+	<div class="dialog-dynamicTitle"><h1>Document Name <span class="titleLinks"><a href="#" class="fileType">PDF</a> | <a href="#" class="fileType">Word</a></span></h1></div>
+	<div class="dialog-rightCol">
+   	<div class="attachment-container">
+      	<div class="attachment-title">DB-060a: Exhibit 2: Outline of Conflicts of Interest Management System</div>
+         <div class="attachment-links topMargin"><a href="#" class="fileType">PDF</a> | <a href="#" class="fileType">Word</a></div>
+      </div>
+    	<div class="attachment-container">
+      	<div class="attachment-title">DB-060a: Exhibit 2: Outline of Conflicts of Interest Management System</div>
+         <div class="attachment-links topMargin"><a href="#" class="fileType">PDF</a> | <a href="#" class="fileType">Word</a></div>
+      </div>
+   	<div class="attachment-container">
+      	<div class="attachment-title">DB-060a: Exhibit 2: Outline of Conflicts of Interest Management System</div>
+         <div class="attachment-links topMargin"><a href="#" class="fileType">PDF</a> | <a href="#" class="fileType">Word</a></div>
+      </div>   </div>
+	<div class="dialog-leftCol">
+   	<h4>Approvals</h4>
+      <table class="table-plain table-bordered">
+      	<tbody>
+         <tr>
+         	<td class="table-label">Approver</td>
+            <td class="table-value">Name Surname</td>
+         </tr>
+         </tbody>
+      </table>
+
+   	<h4>Document Info</h4>
+      <table class="table-plain table-bordered table-striped">
+      	<tbody>
+         <tr>
+         	<td class="table-label">Master / Translation</td>
+            <td class="table-value">Master</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Document Status</td>
+            <td class="table-value">Effective</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Document business version</td>
+            <td class="table-value">
+            	<div>
+               	<span class="versionLink"><a href="#" onClick="docInfoDialog.hide(); docHistoryDialog.show();">Show all previous versions</a></span>
+                  1.0               
+               </div>
+           	</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Document system version</td>
+            <td class="table-value">1.0</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Language of document</td>
+            <td class="table-value">English</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Available translations</td>
+            <td class="table-value"><a href"#">German</a>, <a href="#">French</a>, <a href="#">Italian</a></td>
+         </tr>
+         <tr>
+         	<td class="table-label">Key policy</td>
+            <td class="table-value">No</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Classification (Level)</td>
+            <td class="table-value">Policy (Level 3)</td>
+         </tr> 
+         <tr>
+         	<td class="table-label">Regulatory extract</td>
+            <td class="table-value">No</td>
+         </tr> 
+         <tr>
+         	<td class="table-label">Policy Producing Function</td>
+            <td class="table-value">Policy Producing Function</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Compliance category</td>
+            <td class="table-value">Compliance category</td>
+         </tr>
+         </tbody>
+      </table>
+
+   	<h4>Document Contact</h4>
+      <table class="table-plain table-bordered table-striped">
+      	<tbody>
+         <tr>
+         	<td class="table-label">Technical author</td>
+            <td class="table-value">name surname</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Author</td>
+            <td class="table-value">name surname</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Additional contact</td>
+            <td class="table-value">name surname</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Portfolio owner</td>
+            <td class="table-value">name surname</td>
+         </tr>
+         <tr>
+         	<td class="table-label"></td>
+            <td class="table-value"></td>
+         </tr>
+         <tr>
+         	<td class="table-label"></td>
+            <td class="table-value"></td>
+         </tr>
+         </tbody>
+      </table>
+ 
+    	<h4>Document Applicability</h4>
+      <table class="table-plain table-bordered table-striped">
+      	<tbody>
+          <tr>
+         	<td class="table-label">Functional applicability</td>
+            <td class="table-value">DB Group</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Geographic applicability</td>
+            <td class="table-value">Global</td>
+         </tr>
+         </tbody>
+      </table>
+
+    	<h4>Document Distribution</h4>
+      <table class="table-plain table-bordered table-striped">
+      	<tbody>
+         <tr>
+         	<td class="table-label">Document business version</td>
+            <td class="table-value">
+            	<div>
+               	<a href="#">Targeted email</a>, Email subject, <a href="#">Distribution lists</a>, dd-mmm-yyy, <a href="#">Intranet announcement</a>, dd-mmm-yyy
+               	<br/>
+                  <span class="versionLink"><a href="#" onClick="docInfoDialog.hide(); commHistoryDialog.show();">Show all previous communications</a></span>
+                  <div class="clearfix"></div>             
+               </div>
+           	</td>
+         </tr>
+         </tbody>
+      </table>
+
+    	<h4>Review</h4>
+      <table class="table-plain table-bordered table-striped">
+      	<tbody>
+         <tr>
+         	<td class="table-label">Original issue date</td>
+            <td class="table-value">mm/dd/yyyy</td>
+         </tr>
+         <tr>
+         	<td class="table-label">System issue date</td>
+            <td class="table-value">mm/dd/yyyy</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Last review date</td>
+            <td class="table-value">mm/dd/yyyy</td>
+         </tr>
+         <tr>
+         	<td class="table-label">Next review date</td>
+            <td class="table-value">mm/dd/yyyy</td>
+         </tr>
+
+         </tbody>
+      </table>
+ 
+   </div>
+   <!-- show buttons only if rights apply -->
+   <div class="dialog-buttonRow">
+   	<div class="formCtrls-right">
+         <button id="docUpdate" data-dojo-type="dijit/form/Button" type="button" onClick="docInfoDialog.hide()">Submit
+
+         </button> <button id="docDecom" data-dojo-type="dijit/form/Button" type="button" onClick="docInfoDialog.hide()">Decommission</button> <button id="docConfirm" data-dojo-type="dijit/form/Button" type="button" onClick="docInfoDialog.hide()">Confirm Remains Accurate</button> 
+      </div>
+   
+   </div>
+
+</div>
+
+<!-- END doc info dialog -->
+
+<!-- doc history dialog -->
+<div id="docHistoryDialog" title="Document Info &gt; Document History" data-dojo-type="dijit/Dialog" data-dojo-id="docHistoryDialog">
+	<a href="#" class="backLink" onClick="docHistoryDialog.hide(); docInfoDialog.show();">&laquo; Back to Document Info</a>
+	<div class="dialog-dynamicTitle"><h1>Document Name</h1></div>
+
+   <div id="toolbar_docHistory" data-dojo-type="dijit/Toolbar" class="db-toolbar bottomMargin">
+   	<div data-dojo-type="dijit/form/Button" id="toolbar_docHistory.read" data-dojo-props="iconClass:'db-toolbar-icon icon-read', showLabel:false" disabled="disabled">Read</div>
+      <div data-dojo-type="dijit/form/Button" id="toolbar_docHistory.info" data-dojo-props="iconClass:'db-toolbar-icon icon-info', showLabel:false">Info</div>
+      <div data-dojo-type="dijit/form/Button" id="toolbar_docHistory.download" data-dojo-props="iconClass:'db-toolbar-icon icon-download', showLabel:false">Download</div>
+      <!-- favorites placeholder for when needed 
+      <div data-dojo-type="dijit/form/Button" id="toolbar_docHistory.favorite" data-dojo-props="iconClass:'db-toolbar-icon icon-favorite', showLabel:false">Favorite</div>
+      -->
+   </div>   
+   
+   
+	<div id="docHistory_grid" class="db-dgrid dgrid-striped"></div>
+   <script>
+		require(['dojo/_base/declare', 'dgrid/Grid', 'dgrid/Keyboard', 'dgrid/Selection', 'dojo/domReady!' ], function (declare, Grid, Keyboard, Selection) {
+		var history_data = [
+				  { sysVersion: 'xxx.xx.x.xt', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' },
+				  { sysVersion: 'xxx.xx.x.x', version: 'x.x', date: 'mm/dd/yyy', username: 'Name Surname', eventType: 'Event', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus eros, ultricies id arcu non. ' }
+			 ];
+			  // Create a new constructor by mixing in the components
+			  var CustomGrid = declare([ Grid, Keyboard, Selection ]);		 
+			 
+			 var grid = new CustomGrid({
+				  columns: {
+						sysVersion: 'System Version',
+						version: 'Version',
+						date: 'Date',
+						username: 'User name',
+						eventType: 'Event',
+						desc: 'Description'
+						
+				  },
+              // for Selection; only select a single row at a time
+              selectionMode: 'single',
+              // for Keyboard; allow only row-level keyboard navigation
+              cellNavigation: false
+			}, 'docHistory_grid');
+			 grid.renderArray(history_data);
+		});
+	
+	 </script>  
+   
+</div>
+
+<!-- END doc history dialog -->
+
+<!-- comm historydialog -->
+<div id="commHistoryDialog" title="Document Info &gt; Communication History" data-dojo-type="dijit/Dialog" data-dojo-id="commHistoryDialog">
+	<a href="#" class="backLink" onClick="commHistoryDialog.hide(); docInfoDialog.show();">&laquo; Back to Document Info</a>
+	<div class="dialog-dynamicTitle"><h1>Document Name</h1></div>
+
+   <h4>Current version: version 1.5</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table>
+
+   <h4>Version 1.6</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">No Communications</td>
+      </tr>
+      </tbody>
+   </table>
+
+   <h4>Version 1.5</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+
+   <h4>Version 1.4</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+
+   <h4>Version 1.3</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+
+   <h4>Version 1.3</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+
+   <h4>Version 1.2</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+
+   <h4>Version 1.1</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table> 
+ 
+    <h4>Version 1.0</h4>
+   <table class="table-plain table-bordered table-striped">
+      <tbody>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Targeted email, Email subject, Distribution list: To, Distribution list: CC, dd-mmm-yyy</td>
+      </tr>
+      <tr>
+         <td class="table-value">Intranet announcement, dd-mmm-yyy</td>
+      </tr>
+      </tbody>
+   </table>   
+</div>
+
+<!-- END comm history dialog -->
+
+
+
+
+</body> 
+ 
+
+
+</html>

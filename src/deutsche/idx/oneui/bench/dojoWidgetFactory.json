@@ -1,0 +1,152 @@
+{
+	identifier: "clazz",
+	label: "clazz",
+	items: [
+		{
+			clazz: "dijit.form.ValidationTextBox", 
+			group: "dojo",
+			templates: [{
+				_type: "widgetPoprs",
+				name: "Dijit ValidationTextBox",
+				props: {
+					value: "Dojo toolkit"} 
+			}]
+		},{
+			clazz: "dijit.form.CheckBox", 
+			group: "dojo",
+			templates: [{
+				_type: "widgetPoprs",
+				name: "Dijit CheckBox"
+			}]
+		},{
+			clazz: "dijit.form.ComboBox",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit ComboBox",
+				props: {
+					store: testStoreLong,
+					searchAttr: "name",
+					value: "New York"
+				}
+			}]
+		},{
+			clazz: "dijit.form.CurrencyTextBox",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit CurrencyTextBox",
+				props: {
+					currency: "USD",
+                	value: 100
+				}
+			}]
+		},{
+			clazz: "dijit.form.DateTextBox",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit DateTextBox",
+				props: {
+					displayedValue: "4/1/2012"
+				}
+			}]
+		},{
+			clazz: "dijit.form.FilteringSelect",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit FilteringSelect",
+				props: {
+	                store: testStoreLong,
+	                searchAttr: "name",
+					value: "New York"
+           		}
+			}]
+		},{
+			clazz: "dijit.form.NumberSpinner",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit NumberSpinner",
+				props: {
+	                value: 100
+           		}
+			}]
+		},{
+			clazz: "dijit.form.NumberTextBox",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit NumberTextBox",
+				props: {
+	                value: 100
+           		}
+			}]
+		},{
+			clazz: "dijit.form.RadioButton",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit RadioButton",
+				props: {
+	               	name: "dijitRadio"
+           		}
+			}]
+		},{
+			clazz: "dijit.form.Select",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit Select",
+				props: {
+	               	options: [
+							{value:"TN",selected:"selected",label:"Tennessee"},
+							{value:"VA",label:"Virginia"},
+							{value:"WA",label:"Washington"},
+							{value:"FL",label:"Florida"},
+							{value:"CA",label:"California"}
+					]
+           		}
+			},{
+				_type: "widgetProps",
+				name: "Dijit Select with data store",
+				props: {
+	               	store: testStoreShort
+           		}
+			}]
+		},{
+			clazz: "dijit.form.Textarea",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit Textarea",
+				props: {
+					value: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+				}
+			}]
+		},{
+			clazz: "dijit.form.TimeTextBox",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit TimeTextBox",
+				props: {
+					displayedValue: "12:00 PM"
+				}
+			}]
+		},{
+			clazz: "dijit.Tree",
+			group: "dojo",
+			templates:[{
+				_type: "widgetProps",
+				name: "Dijit TimeTextBox",
+				props: {
+					model:treeModel, 
+					autoExpand:true, 
+					openOnClick:true
+				}
+			}]
+		}			
+	]
+}

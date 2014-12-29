@@ -1,0 +1,194 @@
+/* claro/form/Common.css */
+
+/*========================= common css =========================*/
+
+/* 'dijitTextBox' refers to 'dijit(TextBox|DateTextBox|CurrencyTextBox|...)' */
+
+.vienna .dijitTextBoxError .dijitValidationContainer {
+	background-color: #FFFFe3;
+	background-image: url('images/error.png');
+	background-repeat:no-repeat;
+	background-position: center center;
+	border: none;
+	border-left-width:none;
+	width: 17px;
+}
+.vienna .dijitTextBoxError .dijitValidationIcon {
+/* width: 0px; */
+/* background-color: transparent !important; */ /* so the INPUT doesn't obscure the border in rtl+a11y */
+}
+
+/* .dijitInputField .dijitPlaceHolder is explicitly listed below because
+   dijitPlaceHolder is absolutely positioned, so padding set on dijitInputField
+   won't affect it */
+.vienna .dijitTextBox .dijitInputContainer,
+.vienna .dijitTextArea,
+.vienna .dijitInputField .dijitPlaceHolder {
+/* padding: 2px; */
+}
+
+.vienna .dijitTextBox,
+.vienna .dijitTextBox .dijitButtonNode {
+	/* color for (outer) border on *TextBox widgets, and border between input and buttons on ComboBox and Spinner */
+	border-color: #B0BECF;
+/* -webkit-transition-property:background-color, border; */
+/* 	-webkit-transition-duration:.35s; */
+}
+.vienna .dijitTextBox {
+	background-color: #FFFFFF;
+	font-family:tahoma;
+	font-size:inherit;
+	font-style:normal;
+	color: #464646;
+}
+
+/* hover */
+.vienna .dijitTextBoxHover,
+.vienna .dijitTextBoxHover .dijitButtonNode {
+	/*border-color: #B0BECF;
+	outline:solid 1px #A2c1e4;*/
+/* 	-webkit-transition-duration:.25s; */
+}
+.vienna .dijitTextBoxHover {
+/* background-color: #e9f4fe; */
+/* background-image: url('images/textBox_back.png'); */
+/* background-repeat: repeat-x; */
+	outline:solid 1px #A2c1e4;
+}
+
+/* error state */
+.vienna .dijitTextBoxError,
+.vienna .dijitTextBoxError .dijitButtonNode {
+	border-color: #B0BECF;
+}
+.vienna .dijitTextBoxError,
+.vienna .dijitTextBoxError .dijitInputContainer {
+	background-color: #FFFFE3;
+}
+
+/* focused state */
+.vienna .dijitTextBoxFocused,
+.vienna .dijitTextBoxFocused .dijitButtonNode {
+	/*border-color:#B0BECF;*/
+	outline:solid 1px #A2c1E4;
+/* 	-webkit-transition-duration:.1s; */
+}
+.vienna .dijitTextBoxFocused {
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: none;
+}
+.vienna .dijitTextBoxFocused .dijitInputContainer {
+/* background: #fff; */
+}
+
+.vienna .dijitTextBoxErrorFocused,
+.vienna .dijitTextBoxErrorFocused .dijitButtonNode {
+	border-color:#B0BECF;
+}
+
+/* disabled state */
+.vienna .dijitTextBoxDisabled,
+.vienna .dijitTextBoxDisabled .dijitButtonNode {
+	border-color: #C4C4C4;
+}
+.vienna .dijitTextBoxDisabled,
+.vienna .dijitTextBoxDisabled .dijitInputContainer {
+	background-color: #F6F6F6;
+/* background-image: none; */
+	color: #c4c4c4;
+}
+
+/* read only
+ */
+.vienna .dijitTextBoxReadOnly,
+.vienna .dijitTextBoxReadOnlyFocused {
+	background-color: #EAEFF3;
+}
+
+
+/*========================= for special widgets =========================*/
+
+/* ComboBox */
+
+.vienna .dijitComboBox .dijitArrowButtonInner {
+	background-image: url("images/commonFormArrows.png");
+/* background-position:-35px 53%; */
+/* background-repeat: no-repeat; */
+/* margin: 0px; */
+/* width:16px; */
+/* height:100%; */
+	border: 1px solid transparent;
+}
+
+.vienna .dijitTextBox .dijitInputField {
+/* padding-top: 1px; */ /* 1px and not 2px due to 1px padding on the INPUT */
+/* padding-bottom: 1px; */
+}
+.vienna .dijitTextBox .dijitInputInner {
+	/* left padding helps line up input text with menu text */
+/* padding: 1px 2px 1px 0; */ /* match 1px vertical border on button */
+}
+.vienna .dijitTextBox .dijitValidationContainer {
+/* padding: 0 0 2px 0; */ /* match 1px border height in button */
+}
+
+.vienna .dijitComboBox .dijitButtonNode {
+	background-color: #d6dde7;
+/* background-image: url("images/formHighlight.png"); */
+/* background-repeat:repeat-x; */
+}
+
+/* hover state */
+.vienna .dijitComboBoxHover .dijitButtonNode {
+	background-color:#b7c2d3;
+}
+.vienna .dijitComboBoxHover .dijitArrowButtonInner {
+/* background-position:-70px 53%; */
+}
+
+/* focused state */
+.vienna .dijitComboBoxFocused .dijitButtonNode {
+	background-color:#b7c2d3;
+/* background-position:0px -177px; */
+/* padding: 1px; */
+}	
+.vienna .dijitComboBoxFocused .dijitArrowButtonInner {
+/* background-position:-70px 53%; */
+	border: 0px none;
+}
+
+/* disabled state */
+.vienna div.dijitComboBoxDisabled .dijitArrowButtonInner {
+	/* specific selector set to override background-position setting from Button.js
+	 * (.vienna .dijitComboBoxDisabled .dijitArrowButtonInner) */
+/* background-position:0px 50%; */
+	background-color: #F6F6F6;
+}
+
+
+/*========================= hacks for browsers =========================*/
+/* it seems the input[type="hidden"] has a height (16px) too... this may cause the widget's height calcuate error */
+.dj_ff3 .vienna .dijitInputField input[type="hidden"] {
+/* display: none; */
+/* height: 0; */
+/* width: 0; */
+}
+
+/* ie6 doesn't support transparent background img */
+.dj_ie6 .vienna .dijitTextBox,
+.dj_ie6 .vienna .dijitComboBox .dijitButtonNode {
+/* background-image: none; */
+}
+
+
+/* In quirks mode strangely all browsers do border-box sizing for input nodes.
+ * Drop the 1px white border around ComboBox arrow to fix misalignment of icon, and to jump on focus.
+ * Note also that these rules are copying what is done on focus.
+ */
+.dj_quirks .vienna .dijitComboBox .dijitArrowButtonInner {
+/* border: 0px; */
+}
+.dj_quirks .vienna .dijitComboBox .dijitArrowButtonContainer {
+/* padding: 1px; */
+}

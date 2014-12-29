@@ -1,0 +1,20 @@
+@import url("viennaIconPicker.css");
+
+.vienna .idxTimePicker .idxPickerIcon  {
+	width: 16px;
+	height: 16px;
+}
+
+.vienna .idxTimePicker .idxPickerIconLink {
+	top: 0px;
+	bottom: 1px;
+	right: 2px;
+}
+
+.vienna .idxTimeIcon {
+	background-image: url('vienna/clock-time.gif');
+}
+
+.vienna .dijitTimeTextBoxDisabled .idxTimeIcon {
+	background-image: url('vienna/clock-time_d.gif');
+}

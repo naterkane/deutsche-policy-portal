@@ -1,0 +1,51 @@
+<div class="${baseClass}">
+<div class="idxAppFrame"  dojoType="dijit.layout.BorderContainer" dojoAttachPoint="_frameContainer" gutters="false" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+
+	<!-- header at top of frame -->
+	<div region="top" class="idxAppFrameHeader" dojoType="dijit.layout.ContentPane" dojoAttachPoint="headerNode" wairole="banner" role="banner">
+   	    <div class="idxAppFrameMarquee" id="${id}_banner"> 	
+			<div dojoType="idx.app.AppMarquee" 
+			   dojoAttachPoint="marqueeNode"
+		       appName="${title}"
+		       vendorName="${vendorName}"
+		       vendorLogo="${vendorLogo}">		
+			       <div class="contextSwitch" dojoType="dijit.layout.StackController" containerId="${id}_ctxMain" style="visibility: hidden;" dojoAttachPoint="_ctxSwitcher"></div>	
+			       <span>${welcome}</span> 	
+			       <a dojoAttachEvent="onclick:onAbout">${msg.about}</a>
+			       <span>|</span>
+			       <a dojoAttachEvent="onclick:onHelp">${msg.help}</a>
+			       <span  dojoAttachPoint="logoutNode"  style="display: none;">
+			       		<span>|</span>
+			       		<a dojoAttachEvent="onclick:onLogout">${msg.logout}</a>
+			       </span>
+		 	</div>
+		</div>				
+	</div>
+		
+	<div region="left"  class="idxAppFrameLeft"  dojoAttachPoint="leftNode" dojoType="dijit.layout.ContentPane"></div>
+
+	<!-- client work area tabs -->
+	<div region="center" class="idxAppFrameCenter " dojoAttachPoint="centerNode" dojoType="dijit.layout.ContentPane" > 	
+		<div id="${id}_mainContent" class="idxAppFrameBody idxTabMenu idxTabMenuLauncher">	
+			<!-- The registry determines which tab containers to add to this stack container. -->
+			<div id="${id}_ctxMain" dojoType="dijit.layout.StackContainer" dojoAttachPoint="_container" class="idxTabMenuLauncher" style="height: 100%;" ></div> 
+		</div>
+	</div>
+	
+	<div region="right" class="idxAppFrameRight" dojoAttachPoint="rightNode" dojoType="dijit.layout.ContentPane"></div>
+	
+	<!-- bottom status bar -->
+    <div region="bottom" class="appFrameStatusBar" dojoType="dijit.layout.ContentPane" dojoAttachPoint="footerNode" style="display: none;">	
+  		<div class="appFrameStatusBarContainer">
+<!-- Add back in when UX styling done for status bar	  				
+    		<div dojoType="idxx.app.StatusPane" class="appFrameStatusBarStatePanel"></div> 
+    		<div dojoType="idxx.app.AlertPane"  class="appFrameStatusBarAlertPanel"></div>
+-->     		   		
+  		</div>    		
+	</div>
+  
+  </div>
+
+
+</div>
+	

@@ -1,0 +1,395 @@
+/* Vienna styles for DataGrid */
+@import url("Grid.css");
+
+.vienna .dojoxGrid {
+	position: relative;
+	background-color: #EBEADB;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	-moz-outline-style: none;
+	color:#464646;
+	font-size:1em;
+	outline: none;
+	overflow: hidden;
+	height: 0;
+}
+
+.vienna .dojoxGrid {
+	margin:0px;
+	padding:0px !important;
+	border-collapse:collapse;	
+	background-color:#fff;	
+	border: 1px solid #B0BECF;
+}
+/*  messages */
+.vienna .dojoxGridMasterMessages {
+	background-color: #fefefe;
+}
+.vienna .dojoxGridLoading, 
+.vienna .dojoxGridError {
+	background-position:left center;
+	background-repeat: no-repeat;
+	padding-left:25px;
+}
+.vienna .dojoxGridLoading {
+	background-image:url("../images/loadingAnimation.gif");
+}
+.vienna .dojoxGridError {
+	background-image: url('../../../icons/images/commonIconsObjActEnabled.png'); 
+	background-position: -496px;
+	width: 16px;
+	height: 16px;
+}
+
+/* header */
+
+.vienna .dojoxGridMasterHeader {
+	background-color:#E5EDF4;
+	border-bottom: 1px solid #B0BECF;
+}
+
+/* collapse borders in column headers */
+.vienna .dojoxGridHeader table {
+	border-collapse: collapse;
+}
+
+.vienna .dojoxGridHeader {
+	background-color:#E5EDF4;
+}
+
+.vienna .dojoxGridHeader .dojoxGridCell { 
+    filter: none;
+	background:none;
+	background-image:none;
+	background-color: transparent;
+	border-left: 1px solid #B0BECF;
+	border-top: none;
+	border-bottom: none;
+	border-right: 1px solid #B0BECF;
+	padding: 2px 4px 2px 8px;
+}
+
+.vienna .dojoxGridHeader .dojoxGridCellFocus { 
+	background-color:#E5EDF4; /* keep header color same vs turn white on focus */
+    border: 1px dashed darkblue !important; /* like Claro */    
+	padding: 2px 4px 2px 8px;
+}
+
+.dj_ie6 .vienna .dojoxGridHeader .dojoxGridCell { 
+	border-color:#B0BECF #B0BECF #B0BECF #B0BECF;
+}
+.dj_ie8 .vienna .dojoxGridHeader .dojoxGridCell { 
+	filter: inherit;/* IE 8 prevent background from overlaying borders */
+}
+
+/* header sorting arrow */
+.vienna .dojoxGridSortNode {
+	background: none;
+	background-image: none;
+	Background-color: none;
+	text-decoration: none;
+	display:block;
+	padding: 0px;
+	border: none;
+}
+.dj_ie6 .vienna .dojoxGridSortNode {
+	background-image:none;
+}
+.vienna .dojoxGridCellOver .dojoxGridSortNode,
+.vienna .dojoxGridHeader .dojoxGridCellOver {
+	background-color:#C5D0DA;
+}
+.vienna .dojoxGridArrowButtonChar {
+	display:none;
+	float:right;
+}
+.vienna .dojoxGridArrowButtonNode {
+	background:transparent url(images/spriteArrows.png) no-repeat scroll left center;
+	display:block;
+	float:right;
+	height:1em;
+	margin:2px 4px 0 5px;
+	padding-left:0;
+	width:7px;
+}
+.vienna .dojoxGridSortUp .dojoxGridArrowButtonNode {
+	background-position:-22px 50%;
+}
+
+/* header rows */
+.dj_ie .vienna .dojoxGridHeader .dojoxGridRowTable {
+	border-collapse:collapse;
+}
+
+/* Grid view content */
+.vienna .dojoxGridScrollbox {
+	background-color: #FFFFFF;
+}
+
+/* rowbar - row headers */
+.vienna .dojoxGridRowbar { 
+	background-image:none;
+	background-color:#E7EdF3;
+	border:none;
+	border-right:1px solid #B0BECF;
+	width: 100%;
+}
+.vienna .dojoxGridRowbarTable { 
+	background:none;
+}
+.dj_ie6 .vienna .dojoxGridRowbar,
+.dj_ie6 .vienna .dojoxGridRowbarTable { 
+	background-image:none;
+}
+.vienna .dojoxGridRowbarInner {
+	border:none;
+	border-bottom:1px solid #B0BECF;
+}
+.vienna .dojoxGridRowbarOver .dojoxGridRowbarTable {
+	background-color:#C5D0DA;
+}
+.vienna .dojoxGridRowbarOver .dojoxGridRowbarTable .dojoxGridRowbarInner {
+	/*border: none !important;*/
+	border-right:1px solid #B0BECF !important;
+}
+
+.vienna .dojoxGridRowBarActive .dojoxGridRowbarTable {
+	background-color:#91c9fe;
+}
+.vienna .dojoxGridRowbarSelected {
+	background-color:#C5D0DA;
+	border-right:1px solid #B0BECF !important;
+}
+
+/* rows */
+.vienna .dojoxGridRow {
+	border:none;
+	background-color:#fff;
+}
+
+.dj_ie .vienna .dojoxGridMasterView .dojoxGridRowTable {
+	border-collapse:collapse;/*IE, separate is must to show the border of tr and td*/
+}
+
+.vienna .dojoxGridHeader .dojoxGridRowTable tr {
+    background: none repeat scroll 0 0 transparent;
+}
+
+.vienna .dojoxGridRowTable tr {
+	background-image:none;
+	background-color:#FFFFFF;
+}
+.vienna .dojoxGridRowOdd .dojoxGridRowTable tr {
+	background-color:#F6F7F4;
+}
+.vienna .dojoxGridRowSelected .dojoxGridRowTable tr {
+	background-color:#C6E966;
+}
+
+/* cells */
+.vienna .dojoxGrid table {
+	border-collapse: collapse;
+}
+
+.vienna .dojoxGridCell {
+	padding: 1px 4px 2px 8px;
+	border:none;
+	border-left: 1px solid transparent;
+	border-top: 1px none transparent !important;
+	border-bottom: none;
+	border-right: 1px solid #e2e3df;
+}
+
+.dj_ie6 .vienna .dojoxGridCell {
+	border-color:#e2e3df;
+}
+.dj_ie6 .vienna .dojoxGridRowOdd .dojoxGridCell {
+	border-left-color:#e2e3df;
+	border-right-color:#e2e3df;
+}
+.dj_ie6 .vienna .dojoxGridRowSelected .dojoxGridCell {
+	border-left-color:#e2e3df;
+	border-right-color:#e2e3df;
+}
+.vienna .dojoxGridRowSelected .dojoxGridCell {
+	padding: 1px 4px 2px 8px;
+	border:none;
+	border-left: 1px solid transparent;
+	border-top: none !important; /* can't seem to get this to override claro without the !important*/
+	border-bottom: none !important; /* can't seem to get this to override claro without the !important*/
+	border-right: 1px solid #e2e3df;
+}	
+.vienna .dojoxGridRowSelected .dojoxGridCellFocus, 
+.vienna .dojoxGridCell .dojoxGridRowSelected,
+.vienna .dojoxGridCellFocus .dojoxGridRowSelected, 
+.vienna .dojoxGridCellFocus .dojoxGridRowSelected .dojoxGridCell, 
+.vienna .dojoxGridCellFocus .dojoxGridCell,
+.vienna .dojoxGridCellFocus .dojoxGridCellOver,  
+.vienna .dojoxGridCellFocus { 		
+    border: 1px dashed darkblue !important; /* like Claro */ 
+}
+.vienna .dojoxGridCellContent {
+	padding:5px 6px 4px 8px;
+}
+
+/*  Single Affordance Hover Effect */
+.vienna .dojoxGridRowOver .dojoxGridCell {
+	background-image:none;
+	background-color:#E2F4B2;
+	border-top: 1px none transparent !important;
+	border-left: 1px solid transparent !important;
+	border-bottom:none;
+}
+
+.dj_ie6 .vienna .dojoxGridRowOver .dojoxGridCell,
+.dj_ie7 .vienna .dojoxGridRowOver .dojoxGridCell {
+	border-left:1px solid #e2e3df;
+	border-right:1px solid #e2e3df;
+}
+.vienna .dojoxGridRowActive .dojoxGridCell {
+	background:url("images/td_button_down.png") #7DBEFA repeat-x;
+}
+.dj_ie6 .vienna .dojoxGridRowActive .dojoxGridCell,
+.dj_ie7 .vienna .dojoxGridRowActive .dojoxGridCell {
+	border-left:1px solid #e2e3df;
+	border-right:1px solid #e2e3df;	
+}
+
+/*  Double Affordance Hover Effect */
+.vienna .dojoxGridDoubleAffordance .dojoxGridRowOver .dojoxGridCellOver {
+	border:solid 1px #769dc0;
+	background-color:#93cafe;
+	border-collapse:separate;/*FF*/
+}
+
+.vienna .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCell{	
+	background-image:url("images/row_back.png");
+}
+.vienna .dojoxGridDoubleAffordance .dojoxGridRowActive .dojoxGridCellActive {	
+	background:url("images/td_button_down.png") #93cafe repeat-x;
+}
+.dj_ie6 .vienna .dojoxGridCell {
+	background-image:none !important;
+}
+
+/* editing */
+
+.vienna .dojoxGridInput, .dojoxGridSelect, .dojoxGridTextarea {
+	margin: 0;
+	padding: 0;
+	height: 16px;
+	border-style: none;
+	width: 100%;
+	font-size: 100%;
+	font-family: inherit;
+	border: 1px solid #B0BECF;
+}
+
+.vienna .dojoxGridRowEditing td {
+	/* background-color: #F4FFF4; */
+	background-color: #C6E966; 
+	/* padding: 0px 3px 0px 3px; */
+}
+.vienna .dojoxGridRow-inserting td {
+	background-color: #F4FFF4;
+}
+.vienna .dojoxGridRow-inflight td {
+	background-color: #F2F7B7;
+}
+.vienna .dojoxGridRow-error td {
+	background-color: #F8B8B6;
+}
+
+/* Drag and Drop */
+.vienna .dojoxGrid .dojoDndItemBefore {
+	border-left-color: #3559ac;
+}
+.vienna .dojoxGrid .dojoDndItemAfter {
+	border-right-color: #3559ac;
+}
+
+/* Tree Grid */
+.vienna .dojoxGridExpando {
+	float: left;
+	height: 14px;
+	width: 16px;
+	text-align: center;
+	margin-top: 2px;
+}
+
+.vienna .dojoxGridExpandoCell {
+	padding-top: 3px;
+	background-position: left top !important;
+	vertical-align:inherit
+}
+
+.vienna .dojoxGridRowSelected .dojoxGridExpandoCell {
+	padding-top: 5px;
+}
+
+.vienna .dojoxGridExpandoNode {
+	background-image: url('../images/spriteArrows.png');
+	background-repeat:no-repeat;
+    width: 12px;
+    height: 11px;
+	background-position: -21px 0px; /* for closed state */
+}
+.dj_ie6 .vienna .dojoxGridExpandoNode {
+	background-image: url('../images/treeExpandImages8bit.png');
+}
+.vienna .dojoxGridRowOver .dojoxGridExpandoNode {
+	background-position: -21px 0px;
+}
+.vienna .dojoxGridExpandoOpened .dojoxGridExpandoNode {
+	background-position: 0px 0px;
+}
+.vienna .dojoxGridRowOver .dojoxGridExpandoOpened .dojoxGridExpandoNode {
+	background-position: 0px 0px;
+}
+.vienna .dojoxGridExpandoLoading .dojoxGridExpandoNode {
+	background-image:url(../images/loading.gif);
+}
+.vienna .dojoxGridTreeModel .dojoxGridNoChildren .dojoxGridExpando {
+	visibility: visible !important;
+	width: 18px !important;
+	background-image: url('images/16_squarebullet.png'); /* wln */
+}
+.vienna .dojoxGridTreeModel .dojoxGridNoChildren .dojoxGridExpandoNode,
+.dj_ie6 .vienna .dojoxGridTreeModel .dojoxGridNoChildren .dojoxGridExpandoNode {
+	background-image:none;
+}
+.vienna .dojoxGridExpandoNodeInner {
+	visibility: hidden;
+}
+.dijit_a11y .dojoxGridExpandoNodeInner {
+	visibility: visible;
+}
+
+.vienna .dojoxGridSummaryRow .dojoxGridCell {
+	padding: 1px 4px 2px 8px;
+	border-left: 1px solid transparent;
+	border-top: none !important; /* can't seem to get this to override claro without the !important*/
+	border-bottom: none !important; /* can't seem to get this to override claro without the !important*/
+	border-right: 1px solid #e2e3df;
+}
+.dj_ie6 .vienna .dojoxGridSummaryRow .dojoxGridCell {
+	border-color:#e2e3df;
+}
+.vienna tr.dojoxGridSubRowAlt {
+	background-color:#F6F7F4;
+}
+.vienna .dojoxGridRowOdd tr.dojoxGridSubRowAlt {
+	background-color:#fff;
+}
+.vienna .dojoxGridRow .dojoxGridRowTable tr.dojoxGridRowSelected {
+	background-color:#C6E966;
+}
+
+/*----grid inside of header-------*/
+.vienna .idxHeaderPaneContent.idxHeaderPaneSingleChild .dojoxGrid {
+	Border: none;
+}
+
+/*----grid inside of title pane------*/
+.vienna .dijitTitlePaneContentInner.dijitTitlePaneSingleChild .dojoxGrid {
+	Border: none;
+}

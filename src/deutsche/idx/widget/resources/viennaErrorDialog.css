@@ -1,0 +1,15 @@
+.vienna .idxErrorDialogMessageId {
+
+}
+
+.vienna .idxErrorDialogSummary {
+
+}
+.vienna .idxErrorDialogDetail {
+
+}
+
+/* workaround for freeze on IE7 */
+.vienna .idxSimpleIconDialog .dijitDialogPaneContent {
+	padding: 10px 8px;
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+	<title>One UI toolkit interactive benchmark tool</title>
+
+	<!-- make display better on mobile, so that results appear under the controls rather than to the right of them -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+	<script type="text/javascript" src="../../tests/dojoVersion.js"></script>
+	<script type="text/javascript">
+		dojoCSSImport("../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+	</script>
+	<style id="idxStyles" type="text/css">
+        @import "../../themes/oneui/idx/oneui/oneuiMain.css";
+		@import "../../themes/oneui/dijit/dijitMain.css";
+        @import "../../themes/test.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+	</script>
+
+	<script type="text/javascript">
+		dojoScriptImport("../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+	
+	<style>
+		#testControl{
+			padding:10px;
+			background-color:#fff;
+			border: 1px solid #d2d2d2;
+    		border-radius: 2px;
+			margin-bottom: 12px;
+		}
+
+		.runHolder, .submitButton {
+			border:1px solid #ccc; padding:3px;
+			-moz-border-radius:8pt 8pt;
+			-webkit-border-radius:7pt;
+			text-align:center;
+			cursor:pointer; background-color:#ededed; display:block; width:125px;
+		}
+		
+		#sampleContainer{
+			vertical-align: top;
+			margin-left: 30px;
+		}
+		#sampleContainer h2{
+			color: #314E64;
+			margin-top: 3px;
+		}
+		#widgetSamples h4{
+			color:#66AB16;
+			font-size: 13px;
+			padding:0;
+			margin: 0 0 12px 0;
+		}
+		.widgetSample{
+			border: 1px solid #fff;
+			border-radius: 5px;
+    		cursor: pointer;
+			padding: 5px;
+			margin-bottom: 10px;
+		}
+		.widgetSampleSelected{
+			background-color: #E9F5FD;
+			border: 1px solid #E4ECF2;
+		}
+		.resultItem .dijitCheckBox, .resultItem .idxSingleMessage{
+			display: inline-block;
+   			padding: 0;
+    		vertical-align: middle;
+		}
+		.resultItem .idxSingleMessage{
+			margin: 5px;
+		}
+	</style>
+	
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo.fx",
+			"dijit.dijit", 
+			"dojo.data.ItemFileReadStore",
+			"dijit.tree.TreeStoreModel",
+			"dijit.form.Button",
+			"dijit.layout.TabContainer",
+			"dijit.layout.ContentPane",
+			"idx.oneui.form.Select",
+			"idx.oneui.form.NumberTextBox",
+			"idx.oneui.form.FilteringSelect",
+			"idx.oneui.form.RadioButtonSet",
+			"idx.oneui.messaging.SingleMessage",
+			"dojox.charting.Chart",
+			"dojox.charting.axis2d.Default",
+			"dojox.charting.plot2d.Bars",
+			"dojox.charting.themes.MiamiNice",
+			"dojox.charting.action2d.Tooltip",
+			"idx.oneui.bench.benchUtil"]; 
+		
+		var masterResults = { clientNavigator: navigator.userAgent, dataSet: [], errors: [] };
+		var isRunning = false;
+		var testCount = 0;
+		var currentStore = null;
+		var startTimer = null;
+		var currentTemplates = null;
+		var benchChart = null;
+		var chartTooltip = null;
+		var theTemplate = {clazz:"",name:"",props:null};
+		var testStoreShort = null;
+		var testStoreLong = null;
+		var treeModel = null;
+		function preParse(modules) {}
+		function postParse(){
+			// test data stores
+			testStoreShort = new dojo.data.ItemFileReadStore({
+				data: {
+					identifier: "value",
+					label: "label",
+					items: [
+						{value:"TN",selected:true,label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+					]
+				}
+			}); 
+			testStoreLong = new dojo.data.ItemFileReadStore({
+				url:'../tests/_data/states.json'
+			});
+				
+			treeModel = new dijit.tree.TreeStoreModel({
+				store: (new dojo.data.ItemFileReadStore({url: '../tests/_data/countries.json'})),
+				query:{id:"ROOT"},
+				rootId:"continentRoot", 
+				rootLabel:"Continents", 
+				childrenAttrs:["children"]
+			})
+			
+			masterResults.dojoVersion = dojo.version.toString();
+			currentStore = oneuiWidgetStore;
+			
+			dijit.byId("toolkitSelect")["onChange"] = function(value){
+				currentStore = (value == "dojo") ? dojoWidgetStore : oneuiWidgetStore;
+				dijit.byId("widgetList").set("store", currentStore);
+			};
+			dijit.byId("widgetList")["onChange"] = function(value){
+				clearWidget("widgetSamples");
+				currentStore.fetchItemByIdentity({
+					identity: value,
+					onItem: function(item){
+						//Enable "Run Test" button
+						dijit.byId("runner").set("disabled",false);
+						//Display widget sample container
+						dojo.style(dojo.byId("sampleContainer"), "display", "inline-block");
+						//Populate container with samples
+						currentTemplates = currentStore.getValues(item, "templates");
+						dojo.forEach(currentTemplates, function(template, idx){
+							var clazz = value.replace(/\./g, "/");
+							if(idx == 0){
+								theTemplate.props = currentTemplates[0].props;
+								theTemplate.clazz = dijit.byId("widgetList").get("value");
+								theTemplate.name = currentTemplates[0].name;
+							}
+							
+							require([clazz], function(){
+								var div = dojo.create("div", {
+									className: "widgetSample" + ((idx == 0) ? " widgetSampleSelected" : "")
+								}, "widgetSamples");
+								dojo.create("h4", {
+									innerHTML: template.name
+								}, div);
+								
+								var construction = dojo.getObject(value);
+								var tmp = new construction(template.props);
+								dojo.place(tmp.domNode, div);
+								tmp.startup();
+								dojo.connect(div, "onclick", selectWidgetSample);
+							})
+						})
+					}
+				})
+			}
+		}			
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+		
+		function selectWidgetSample(){
+			dojo.query(".widgetSample").forEach(function(sample, idx){
+				dojo.toggleClass(sample, "widgetSampleSelected", this == sample);
+				if(this == sample){
+					theTemplate.props = currentTemplates[idx].props;
+					theTemplate.clazz = dijit.byId("widgetList").get("value");
+					theTemplate.name = currentTemplates[idx].name;
+				}
+			}, this);
+		}
+		
+		function clearWidget(container){
+			var containerNode = dojo.byId(container);
+			// Remove widgets from previous run
+			dojo.forEach(dijit.findWidgets(containerNode), function(widget){
+				widget.destroyRecursive();
+			});
+			containerNode.innerHTML = null;
+		}
+		
+		function createWidget(clazz, props, count, method, container){
+			var tmpNode = dojo.create("div", {});
+			switch(method){
+				case "parse" :
+					var tmpString = [];
+					var tag = /Button/.test(clazz) ? "button" : (/Text/.test(clazz) ? "input" : "div");
+					var tmpProps = dojo.toJson(props||{});
+					
+					for(var i=0; i<count; i++){
+						tmpString.push(
+						"<",tag," ","data-dojo-type='",clazz,"'data-dojo-props='",
+						tmpProps.substring(1, (tmpProps.length -1)),"'></",tag,">");
+					}
+					tmpNode.innerHTML = tmpString.join("");
+					startTimer = new Date().getTime();
+					dojo.parser.parse(tmpNode);
+					break;
+				case "create" :
+				default:
+					var construction = dojo.getObject(clazz);
+						startTimer = new Date().getTime();
+					var i = 0;
+					while(i < count){
+						var tmp = new construction(props);
+						tmpNode.appendChild(tmp.domNode);
+						tmp.startup();
+						i++;
+					}
+				break;
+			}
+			dojo.place(tmpNode, container);
+		}
+		
+		function _toggleRunMsg(){
+			var newMsg = (isRunning) ? "Run Test" : "Running ...";
+			var runnerNode = dijit.byId("runner").containerNode;
+			dojo.fx.chain([
+				dojo.fadeOut({
+					node:runnerNode,
+					duration:200,
+					onEnd: function(){
+						runnerNode.innerHTML = newMsg;
+						isRunning=!isRunning;
+					}
+				}),
+				dojo.fadeIn({ node:runnerNode, duration: 200 })
+			]).play();
+		}
+
+		function runTest(){
+			if(isRunning){ return; }
+			_toggleRunMsg();
+			setTimeout(function(){ _runRealTest(); },1000);
+		}
+
+		function _runRealTest(){
+			clearWidget("widgetsContainer");
+
+			var count = dijit.byId("count").get("value"),
+				theMethod = dijit.byId("creationMethod").get("value");
+				
+			try{
+				createWidget(theTemplate.clazz, theTemplate.props, count, theMethod, "widgetsContainer");
+					
+				// [Some] browsers defer rendering until after JS finishes running
+				// so use a setTimeout(, 0) to make sure widgets render.
+				setTimeout(function(){
+					var endTime = new Date().getTime() - startTimer;
+
+					var average = (endTime / count);
+					var title = "It took: "+average+"ms to "+theMethod+" "+theTemplate.clazz+" widget in average.";
+					var description = "It took: "+endTime+"ms to "+theMethod+" "+count+" "+theTemplate.clazz+" widgets"+
+						"<br>(average: "+average+" ms/widget)";
+					var resultMessage = new idx.oneui.messaging.SingleMessage({
+						title: title,
+						type: "information",
+						showAction: false,
+						description: description,
+						style: "width: 90%"
+					});
+					masterResults.dataSet.unshift({
+						clazz: theTemplate.clazz,
+						name: theTemplate.name,
+						count: count,
+						average: average,
+						method: theMethod,
+						time: endTime
+					});
+					var checkbox = new dijit.form.CheckBox({});
+					var resultItem = dojo.create("div", {className:"resultItem"});
+					dojo.place(checkbox.domNode, resultItem);
+					dojo.place(resultMessage.domNode, resultItem);
+					
+					dojo.style(dojo.byId("results"), "display", "block");
+					dojo.place(resultItem, dijit.byId("chartingButton").domNode, "after");
+					
+					setTimeout(function(){ _toggleRunMsg(); },250);
+				}, 0);
+			}catch(e){
+				setTimeout(function(){ _toggleRunMsg(); },250);
+				console.error("Ooops:", e);
+			}
+
+		}
+		function generateCharting(){
+			var dataGroup = [];
+			dojo.query(".dijitCheckBox","results").forEach(function(node, idx){
+				if(dijit.byNode(node).checked){
+					dataGroup.push(masterResults.dataSet[idx]);
+				};
+			});
+			var series = dojo.map(dataGroup, function(item){
+				return {
+					y: item.average,
+					tooltip: item.average + "ms"
+				};
+			})
+			var labels = dojo.map(dataGroup, function(item, idx){
+				return {
+					value: idx + 1,
+					text: item.name + "("+item.method+"): " + item.time + "ms/" + item.count
+				};
+			})
+			if(benchChart){benchChart.destroy();}
+			if(chartTooltip){chartTooltip.destroy();}
+			
+			
+			dijit.byId("resultTabs").selectChild(dijit.byId("benchPane"));
+			
+			benchChart = new dojox.charting.Chart("benchChart");
+			benchChart.setTheme(dojox.charting.themes.MiamiNice).
+			addPlot("default", {
+				type: "Bars",
+				gap: 5
+			}).addSeries("A", series).
+			addAxis("y", {
+				vertical: true, 
+				includeZero: true, natural: true,
+				labels: labels
+			}).
+			addAxis("x", {
+				leftBottom: false,
+				includeZero: true,
+				title: "average time costs for each widget",
+			});
+			chartTooltip = new dojox.charting.action2d.Tooltip(benchChart, "default");
+			benchChart.render();
+		}
+	</script>
+	<script type="text/javascript" src="../../tests/commonTest.js"></script>
+</head>
+<body style="margin: 0; padding: 15px;">
+	<script type="text/javascript">applyThemeToBody("oneui");</script>
+	<h1 class="testTitle">One UI Benchmark Tool</h1>
+	
+	<div data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-id="oneuiWidgetStore"
+		data-dojo-props="url:'./oneuiWidgetFactory.json'"></div>
+	<div data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-id="dojoWidgetStore"
+		data-dojo-props="url:'./dojoWidgetFactory.json'"></div>
+	<div id="testControl">
+		<div id="leftForm" class="dijitInline">
+			<select data-dojo-type="idx.oneui.form.Select"
+					data-dojo-props="id: 'toolkitSelect', label: 'Toolkit', labelAlignment: 'vertical', fieldWidth:100">
+				<option selected="selected" value="oneui">oneui</option>
+				<option value="dojo">dojo</option>
+			</select>
+			
+			<select data-dojo-type="idx.oneui.form.FilteringSelect"
+				data-dojo-props='
+					id:"widgetList", 
+					store:oneuiWidgetStore, 
+					searchAttr:"clazz",
+					label: "Class", 
+					labelAlignment: "vertical"
+				'>
+			</select>
+			<br>
+			<input data-dojo-type="idx.oneui.form.NumberTextBox"
+					data-dojo-props="id:'count', value:'100', label: 'Count', labelAlignment: 'vertical'"/>
+			<br>
+			<select id="creationMethod" data-dojo-type="idx.oneui.form.RadioButtonSet" data-dojo-props='
+				label: "Method",
+				labelAlignment: "vertical",
+				name: "method"
+			'>
+				<!--<option value ="parse">Parse with 1.x dojoType syntax</option>-->
+				<option value ="parse">Parse with "data-dojo-type" syntax</option>
+				<option value ="create" selected="selected">Create programatically</option>
+			</select>
+			
+			<br><br>
+			<input data-dojo-type="dijit.form.Button" data-dojo-props="
+				label: 'Run Test',
+				id: 'runner',
+				onClick: runTest,
+				disabled: true
+			"/>
+		</div>
+		<div id="sampleContainer" class="dijitInline" style="display: none;">
+			<h2>Please Select a widget sample:</h2>
+			<div id="widgetSamples">
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props="id: 'resultTabs', style:{height: '380px'}">
+		<div id="resultsContainer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Results', style:'padding:10px 15px 15px 10px;'">
+			<div id="results" style="display:none;">
+				<button data-dojo-type="dijit.form.Button" data-dojo-props="
+					id:'chartingButton', 
+					style:'margin-left:25px',
+					onClick: generateCharting
+				">Charting for selected test results</button>
+				
+			</div>
+		</div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Generated Widgets', style:'padding:15px 10px 15px 10px;'">
+			<div id="widgetsContainer" style="clear: both;"></div>
+		</div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="id: 'benchPane',title:'Benchmark Chart', style:'padding:15px 10px 15px 10px;'">
+			<div id="chartContainer">
+				<div id="benchChart"></div>
+				<div id="legend"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

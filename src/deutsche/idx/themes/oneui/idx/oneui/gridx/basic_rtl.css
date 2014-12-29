@@ -1,0 +1,49 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .gridxRtl .gridxHeaderRow .gridxCell {
+	border-left: 1px solid #ccc;
+}
+
+.oneui .gridxRtl .gridxHeaderRow .gridxCell:first-child {
+	border-right-color: transparent;
+}
+
+.oneui .gridxRtl .gridxHeader .gridxHeaderRow .gridxHeaderCellFocus {
+	border-left: 1px solid #ccc;
+}
+
+.oneui .gridxRtl .gridxRow:first-child .gridxCell {
+	border-top-color: transparent;
+}
+
+.oneui .gridxRtl .gridxRow:first-child .gridxCellFocus {
+	border-top-color: darkblue;
+}
+
+.oneui .gridxRtl .gridxRow .gridxCellFocus:first-child {
+	border-left-color: transparent;
+	border-right: 1px dashed darkblue;
+}
+
+.oneui .gridxRtl .gridxBodyRowHoverEffect .gridxRowOver .gridxCell {
+	border-top-color: transparent;
+	border-bottom-color: #bbb;
+}
+
+.oneui .gridxRtl .gridxBodyRowHoverEffect .gridxRowOver + .gridxRow .gridxCell {
+	border-top-color: transparent;
+}
+
+.oneui .gridxRtl .gridxHeaderRow table,
+.oneui .gridxRtl .gridxRow .gridxRowTable {
+    border-collapse: collapse;
+}
+
+.oneui .gridxRtl .gridxMain .gridxBody {
+    border-right: none;
+}

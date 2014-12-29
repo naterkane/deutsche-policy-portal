@@ -1,0 +1,91 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+@charset "UTF-8";
+/*
+ * Licensed Materials - Property of IBM
+ * 5724-Q36
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or or otherwise 
+ * divested of its trade secrets, irrespective of what has been 
+ * deposited with the U.S. Copyright Office.
+ */
+
+/* HoverHelp stylings: */
+.oneui .idxHoverHelp {
+    display: inline;
+}
+
+.oneui .idxHoverHelpInfoWrapper {
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+}
+
+.oneui .idxHoverHelpButtonOptions {
+	background-image: url("../images/blank.gif?placement=toolbar&buttonType=help&displayMode=iconOnly");
+}
+
+.oneui .idxHoverHelp_TooltipDialog .dijitTooltipContainer {
+    max-width: 250px;
+}
+
+.oneui .idxHoverHelpAbove .dijitTooltipContainer {
+    margin-bottom: -5px;
+    margin-right: 8px;
+}
+
+.oneui .idxHoverHelpBelow .dijitTooltipContainer {
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+.oneui .idxHoverHelp .dijitArrowButtonInner {
+    display:none;
+    visibility: hidden;
+}
+
+.oneui .idxHoverHelpMessage {
+    width: 100%;
+    color: #464646;
+    display: block;
+}
+
+.oneui div.idxHoverHelpLinkHidden {
+    display: none;
+    visibility: hidden;
+}
+
+.oneui div.idxHoverHelpLink {
+    width: 100%;
+    display: block;
+    text-align: right;
+    white-space: nowrap;    
+}
+
+.oneui a.idxHoverHelpLink {
+    color: #2966AE;
+    display: inline;
+    white-space: nowrap;
+}
+
+.oneui .idxHoverHelpAbove .dijitTooltipConnector {
+	bottom: -5px;
+}
+
+.oneui .idxHoverHelpBelow .dijitTooltipConnector {
+	top: -5px;
+}
+
+.oneui .idxHoverHelpTooltipContainer .dijitTooltipConnector {
+
+}
+
+.oneui .idxHoverHelpTooltipContainer .dijitTooltipContents {
+/* this is applied to the node that receives focus */
+
+}

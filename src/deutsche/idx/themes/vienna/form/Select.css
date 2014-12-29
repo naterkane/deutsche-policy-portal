@@ -1,0 +1,142 @@
+/* Select
+ * 
+ * Styling Select mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitSelect - for border, background-color
+ * 		.dijitButtonContents - for border
+ *
+ * 2. Arrow
+ * 		.dijitArrowButton - for border, padding and background-color|image
+ * 		.dijitArrowButtonInner - for border, background-color|image, display and width|height
+ * 
+ * 3. Menu
+ * 		.dijitSelectMenu .* - for border, padding
+ * 
+ * 4. Various states
+ * 		.dijitSelectHover|.dijitSelectFocused|.dijitSelectDisabled .* - for border, padding and background-color|image 
+ */
+
+.vienna .dijitSelect .dijitButtonText {
+    padding: 2px 5px 2px 3px;
+	color: #464646;
+}
+
+/* normal status */
+.vienna .dijitSelect {
+	border: 1px solid #B0BECF;
+	background-color: #FFFFFF;
+/* border-collapse: separate; */
+}
+.dj_ie6 .vienna .dijitSelect,
+.dj_ie6 .vienna .dijitSelect .dijitButtonNode {
+/* background-image:none; */
+}
+
+.vienna .dijitSelect .dijitButtonContents {
+/* border: 0px solid #b5bcc7; */
+/* border-right-width: 1px; */
+}
+
+.vienna .dijitSelect .dijitArrowButton {
+/* padding: 0; */
+	border: 1px solid transparent;	/* removed - inner white border on button node */
+	border-top:none;
+	background-color:#d6dde7;
+	background-image: url("images/formHighlight.png"); */
+/* background-repeat:repeat-x; */
+}
+
+.vienna .dijitSelect .dijitArrowButton .dijitArrowButtonInner {
+	background-image: url("images/commonFormArrows.png");
+/* background-position:-35px 70%; */
+/* background-repeat: no-repeat; */
+/* width:16px; */
+/* height:16px; */
+/* display:block; */
+}
+
+/* hover status */
+.vienna .dijitSelectHover {
+	border: 1px solid #B0BECF;
+	background-color: #FFFFFF;
+	outline:solid 1px #A2c1e4;
+/* background-image: url('images/textBox_back.png'); */
+/* background-repeat: repeat-x; */
+}
+
+.vienna .dijitSelectHover .dijitButtonContents {
+	/*border-color:#B0BECF;
+	outline:solid 1px #A2c1e4;*/
+}
+
+.vienna .dijitSelectHover .dijitArrowButton {
+	background-color: #b7c2d3;
+	outline:solid 1px #A2c1e4;
+}
+.vienna .dijitSelectHover .dijitArrowButton .dijitArrowButtonInner {
+/* background-position:-70px 70%; */
+}
+
+/* focused status */
+.vienna .dijitSelectFocused {
+	border: 1px solid #B0BECF;
+	outline:solid 1px #A2c1e4;
+}
+.vienna .dijitSelectFocused .dijitButtonContents {
+	border-color:#B0BECF;
+}
+.vienna .dijitSelectFocused .dijitArrowButton {
+/* background-color:#7dbefa; */
+/* background-position:0px -177px; */
+	border: none;
+/* padding: 0px 1px; */
+}
+.vienna .dijitSelectFocused .dijitArrowButton .dijitArrowButtonInner {
+/* background-position:-70px 70%; */
+/* margin-bottom: 1px; */
+}
+
+/* disable status */
+.vienna .dijitSelectDisabled {
+	border-color: #C4C4C4;
+	background-color: #F6F6F6;
+/* background-image: none; */
+	color: #c4c4c4;
+}
+
+.vienna .dijitSelectDisabled .dijitSelectLabel,
+.vienna .dijitSelectDisabled .dijitButtonText {
+    color: #C4C4C4;
+}
+
+.vienna .dijitSelectReadOnly .dijitButtonNode,
+.vienna .dijitSelectReadOnly .dijitSelectLabel,
+.vienna .dijitSelectReadOnly .dijitButtonText {
+    background-color: #EAEFF3;
+}
+
+
+.vienna .dijitSelectDisabled .dijitArrowButton { 
+	background-color: #F6F6F6;
+}
+.vienna .dijitSelectDisabled .dijitArrowButton .dijitArrowButtonInner {
+	background-position:0px 70%
+}
+
+/* Dropdown menu style for select */
+
+.vienna .dijitSelectMenu td.dijitMenuItemIconCell,
+.vienna .dijitSelectMenu td.dijitMenuArrowCell { 
+	/* so that arrow and icon cells from MenuItem are not displayed */
+/* display: none; */  
+}
+.vienna .dijitSelectMenu td.dijitMenuItemLabel {
+	/* line up menu text with text in select box (in LTR and RTL modes) */
+/* padding-left: 5px; */
+/* padding-right: 5px; */
+}
+
+.vienna .dijitSelectMenu .dijitMenuSeparatorTop {
+/* border-bottom:1px solid #769dc0; */
+}

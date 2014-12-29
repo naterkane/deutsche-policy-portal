@@ -1,0 +1,190 @@
+.claro .idxHeaderPaneDefaults {
+
+}
+
+.claro .idxHeaderPane {
+  padding: 0px;
+  margin: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b0becf;
+  border-radius: 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -opera-border-radius: 3px;
+}
+
+.claro .idxHeaderPaneA11y {
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	display: inline;
+	left: 50%;
+	top: -10000px;
+	visibility: visible;
+}
+
+.claro .idxHeaderFrame {
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  border-style: none;
+  border-width: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.claro .idxHeaderPaneHeader {
+
+	background-color: #EFEFEF;
+    background-image: url("claro/titlebar.png");
+    background-repeat: repeat-x;
+    
+  position: absolute;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  padding: 8px;
+  padding-bottom: 6px;
+  border-style: none;
+  border-width: 0px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #b0becf;
+}
+
+.claro .idxHeaderPaneTitleBar {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.claro .idxHeaderPaneTitleLeft {
+  float: left;
+  position: static;
+  vertical-align: middle;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxHeaderPaneTitleText {
+  font-family:Tahoma, Verdana,Arial,Helvetica,sans-serif;
+  font-size: 110%;
+  color: #48678A;
+  font-weight: bold;
+  vertical-align: middle;
+  display: inline;
+  white-space: nowrap;
+}
+
+.claro .idxHeaderPaneTitleRight {
+  position: static;
+  float: right;
+  vertical-align: middle;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxHeaderPaneTitleActions {
+
+}
+
+.claro .idxHeaderPaneSpacer {
+  height: 6px;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.claro .idxHeaderPaneSpacerHidden {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxHeaderPaneActions {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.claro .idxHeaderPaneActionsHidden {
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxHeaderPaneActionsLeft {
+  float: left;
+  position: static;
+  vertical-align: middle;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxHeaderPaneMajorActions {
+
+}
+
+.claro .idxHeaderPaneActionsRight {
+  position: static;
+  float: right;
+  text-align: right;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+.claro .idxHeaderPaneClear {
+  position: static;
+  visibility: hidden;
+  clear: both;
+  height: 0px;
+  width: 0px;
+  line-height: 0px;
+}
+
+.claro .idxHeaderPaneMinorActions {
+
+}
+
+.claro .idxHeaderPaneAutoHide .idxHeaderPaneTitleActions {
+	visibility: hidden;
+}
+
+.claro .idxHeaderPaneAutoHide.idxHeaderPaneFocused .idxHeaderPaneTitleActions,
+.claro .idxHeaderPaneAutoHide .idxHeaderPaneHeaderHover .idxHeaderPaneTitleActions {
+	visibility: visible;
+}
+
+.claro .idxHeaderPaneContent {
+  background-color: #ffffff;
+  position: absolute;
+  display: block;
+  margin: 0px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  overflow: auto;
+}
+
+.claro .idxHeaderPaneContent.idxHeaderPaneSingleChild {
+  /* this class is used when only a single child is in the content area */
+  /* we give the child full-bleed to the edges and defer to the child   */
+  /* provide the scroll bars                                            */
+  padding: 0px 0px 0px 0px;
+  overflow: hidden;  
+}
+
+.claro .idxHeaderPaneContent.idxHeaderPaneSingleChild .idxHeaderPane-child {
+  /* this class is used when only a single child is in the content area */
+  /* we give the child full-bleed to the edges and defer to the child   */
+  /* provide the scroll bars                                            */
+  width: 100%;
+  border-collapse: collapse;
+}
+

@@ -1,0 +1,31 @@
+.vienna .dijitSliderRtl .dijitSliderProgressBarH,
+.vienna .dijitSliderRtl .dijitSliderRemainingBarH,
+.vienna .dijitSliderRtl .dijitSliderLeftBumper,
+.vienna .dijitSliderRtl .dijitSliderRightBumper,
+.vienna .dijitSliderRtl .dijitSliderTopBumper {
+/* background-position: top right; */
+}
+
+.vienna .dijitSliderRtl .dijitSliderProgressBarV,
+.vienna .dijitSliderRtl .dijitSliderRemainingBarV,
+.vienna .dijitSliderRtl .dijitSliderBottomBumper {
+/* background-position: bottom right; */
+}
+
+.vienna .dijitSliderRtl .dijitSliderLeftBumper {
+/* border-left-width: 0px; */
+/* border-right-width: 1px; */
+}
+
+.vienna .dijitSliderRtl .dijitSliderRightBumper {
+/* border-left-width: 1px; */
+/* border-right-width: 0px; */
+}
+
+.vienna .dijitSliderRtl .dijitSliderIncrementIconH {
+/* background-position:-357px 50%; */
+}
+
+.vienna .dijitSliderRtl .dijitSliderDecrementIconH {
+/* background-position:-251px 50%; */
+}

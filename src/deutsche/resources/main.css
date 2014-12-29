@@ -1,0 +1,19 @@
+@import "../../lib/dijit/themes/claro/claro.css";
+@import "../../lib/dgrid/css/skins/claro.css";
+@import "../../lib/gridx/resources/claro/Gridx.css";
+@import "css/oneui.css";
+@import "css/oneui-dojo.css";
+@import "css/db-styles.css";
+
+#borderContainerMain {
+    height: 100%;
+    width: 100%;
+}
+
+.oneui .dijitTabCloseButton {
+    background: url("../idx/themes/oneui/dijit/layout/images/tabClose.png") no-repeat;
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+    margin-right: -4px;
+}

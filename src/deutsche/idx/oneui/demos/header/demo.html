@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html lang="en-US">
+<head>
+	<title>Demo</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+    <style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+        @import "../demo.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.MenuBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.MenuItem",
+			"dijit.form.TextBox",
+			"dijit.form.Button",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.Menu",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.Header"];
+				 
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+				 
+		function fire(what){
+			alert((what || "menu item") + " selected");
+		}
+		
+	</script>
+
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+	
+	<style>
+	
+		.oneui .menu-workitem.dijitMenuTable { width: auto; padding: 1px 0px; }
+		.oneui .menu-workitem .oneuiMenuColumn { width: 50%; max-width: 250px; border-left: 1px solid #f0f0f0; padding: 4px 0px; }
+		.oneui .menu-workitem .oneuiMenuColumn:first-child { border-left: 0px; }
+		.dj_ie7 .oneui .menu-workitem .oneuiMenuColumn { width: 250px; }
+		.dijitRtl .oneui .menu-workitem .oneuiMenuColumn { border-left: 0px; border-right: 1px solid #f0f0f0 }
+		.dijitRtl .oneui .menu-workitem .oneuiMenuColumn:first-child { border-right: 0px; }
+		.oneui .menu-workitem .dijitMenuItem { white-space: normal; }
+		.oneui .menu-workitem .dijitMenuItem .dijitMenuItemIconCell { vertical-align: top; padding: 7px 6px 0px 19px; width: 16px; height: 16px; }
+		.dijitRtl .oneui .menu-workitem .dijitMenuItem .dijitMenuItemIconCell { padding: 7px 19px 0px 6px; }
+		.oneui .menu-workitem .dijitMenuItemLabel { vertical-align: top; }
+		.oneui .menu-workitem .dijitMenuItem .dijitMenuArrowCell { padding-left: 1px; padding-right: 1px; }
+		.oneui .menu-workitem td.oneuiMenuHeadingLabel { border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white; padding: 7px 20px 7px 14px; }
+		.dijitRtl .oneui .menu-workitem td.oneuiMenuHeadingLabel { padding: 7px 14px 7px 20px; }
+		
+		.oneui .dijitMenuTable .mi-workitem-icon-welcome,
+		.oneui .dijitMenuTable .mi-workitem-icon-query-folder,
+		.oneui .dijitMenuTable .mi-workitem-icon-query-create,
+		.oneui .dijitMenuTable .mi-workitem-icon-query,
+		.oneui .dijitMenuTable .mi-workitem-icon-defect,
+		.oneui .dijitMenuTable .mi-workitem-icon-task,
+		.oneui .dijitMenuTable .mi-workitem-icon-enhancement,
+		.oneui .dijitMenuTable .mi-workitem-icon-plan,
+		.oneui .dijitMenuTable .mi-workitem-icon-trackbuild,
+		.oneui .dijitMenuTable .mi-workitem-icon-retrospective,
+		.oneui .dijitMenuTable .mi-workitem-icon-story,
+		.oneui .dijitMenuTable .mi-workitem-icon-architectural,
+		.oneui .dijitMenuTable .mi-workitem-icon-adoption,
+		.oneui .dijitMenuTable .mi-workitem-icon-createfromtemplate { margin-left: 0px; margin-right: 0px; width: 16px; height: 16px; background-image: url(../megaMenus/images/menu_icons_workitems.png); }
+
+		.mi-workitem-icon-welcome { background-position: 0px 0px; }
+		.mi-workitem-icon-query-folder { background-position: -16px 0px; }
+		.mi-workitem-icon-query-create { background-position: -32px 0px; }
+		.mi-workitem-icon-query { background-position: -48px 0px; }
+		.mi-workitem-icon-defect { background-position: -64px 0px; }
+		.mi-workitem-icon-task { background-position: -80px 0px; }
+		.mi-workitem-icon-enhancement { background-position: -96px 0px; }
+		.mi-workitem-icon-plan { background-position: -112px 0px; }
+		.mi-workitem-icon-trackbuild { background-position: -128px 0px; }
+		.mi-workitem-icon-retrospective { background-position: -144px 0px; }
+		.mi-workitem-icon-story { background-position: -160px 0px; }
+		.mi-workitem-icon-architectural { background-position: -176px 0px; }
+		.mi-workitem-icon-adoption { background-position: -192px 0px; }
+		.mi-workitem-icon-createfromtemplate { background-position: -208px 0px; }
+
+		.communities-header { margin-bottom: 8px; padding: 15px; border-bottom: 1px solid #ededed; background-color: #fafafa; }
+		
+		.communities-filter-item { cursor: pointer; }
+		.communities-filter-item:hover { text-decoration: underline }
+		.communities-filter-separator { padding: 0px 8px; }
+		
+		.communities-search { margin: 15px 0px 0px 0px }
+		.communities-search .dijitTextBox { border: 1px solid #e3e3e3; width: 100%; -moz-border-radius: 12px; border-radius: 12px; }
+		.communities-search .dijitTextBox .dijitInputContainer { background: transparent; }
+		.communities-search .dijitButton { position: relative; width: 0px; }
+		.oneui .communities-search .dijitButton .dijitButtonNode {position: relative; left: -32px; top: -1px; background-image: url('../megaMenus/images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+		.dijitRtl .oneui .communities-search .dijitButton .dijitButtonNode {position: relative; right: -32px; top: -1px; background-image: url('../megaMenus/images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+		.communities-search .dijitButton.dijitIcon { height: 14px; width: 14px; border: 0px; }
+
+
+		.menu-communities {  }
+		.mi-communities-name { font-weight: bold; }
+		.mi-communities-note {  }
+		.menu-communities .dijitMenuItem .dijitMenuArrowCell { padding-right: 0px;}
+				
+		.mi-communities-icon { margin-left: 0px; margin-right: 0px; width: 32px; height: 32px; background-image: url(../megaMenus/images/megaMenuIcon32px.png); }
+		.menu-communities td.dijitMenuItemIconCell { padding-left: 5px; padding-right: 1px; }
+		.dijitRtl .menu-communities td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 5px; }
+		.menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 14px;}
+		.dijitRtl .menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 14px; }
+		
+		.communities-footer { margin-top: 8px; padding: 10px 15px 10px 15px; border-top: 1px solid #ededed; background-color: #fafafa;}
+		
+		.menu-apps .dijitMenuItem { height: 30px; }
+		
+		.mi-apps-suite { font-weight: bold; }
+		.mi-apps-associated { color: #7f7f7f; font-size: 0.9em; }
+		
+		.mi-apps-icon-activities,
+		.mi-apps-icon-blogs,
+		.mi-apps-icon-bookmarks,
+		.mi-apps-icon-files,
+		.mi-apps-icon-forums,
+		.mi-apps-icon-wikis { margin-left: 1em; margin-right: 4px; width: 16px; height: 16px; background-image: url(../megaMenus/images/menu_icons_apps.png); }
+
+		.mi-apps-icon-activities { background-position: 0px 0px; }
+		.mi-apps-icon-blogs { background-position: -16px 0px; }
+		.mi-apps-icon-bookmarks { background-position: -32px 0px; }
+		.mi-apps-icon-files { background-position: -48px 0px; }
+		.mi-apps-icon-forums { background-position: -64px 0px; }
+		.mi-apps-icon-wikis { background-position: -80px 0px; }
+		
+	</style>
+
+</head>
+<body class="oneui">
+
+<div data-dojo-type="idx.oneui.MenuBar" id="demo_menus">
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Menu</span>
+		<div data-dojo-type="idx.oneui.Menu">
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconCut'">Cut</div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconCopy'">Copy</div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconPaste'">Paste</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Dialog</span>
+		<div data-dojo-type="idx.oneui.MenuDialog">
+			<div style="padding: 1.5em 1em 1em 1em;">
+				<b>Some links</b>
+				<a style="margin-left: 2em;" href="javascript:" onclick="fire('link');"><b>A link</b></a>
+				<a style="margin-left: 2em;" href="javascript:" onclick="fire('link');"><b>Another link</b></a>
+			</div>
+			
+			<div style="padding: 0px 1em 0.75em 1em;">
+				<span style="color: #7f7f7f;">An entry field:</span>&nbsp;
+				<input data-dojo-type="dijit.form.TextBox" />
+			</div>
+			
+			<div style="padding: 0.75em 1em 1em 1em;">
+				<span style="color: #7f7f7f;">Some general HTML mark-up content</span>
+			</div>			
+
+			<div style="padding: 0px 1em 0.75em 1em;">
+				<span style="color: #7f7f7f;">Some buttons:</span>&nbsp;
+				<input data-dojo-type="dijit.form.Button" data-dojo-props="value: 'Submit'"></input>
+				<input data-dojo-type="dijit.form.Button" data-dojo-props="value: 'Cancel'"></input>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Dialog-with-menu</span>
+		<div data-dojo-type="idx.oneui.MenuDialog">
+			<div style="padding: 1.5em 1em 1em 1em;">
+				<b>A link:</b> <a href="javascript:" onclick="fire('link');"><b>Here</b></a>
+			</div>
+			
+			<div data-dojo-type="idx.oneui.Menu" style="width: 100%; border: none;">
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconCut'">Cut</div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconCopy'">Copy</div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="iconClass: 'dijitEditorIcon dijitEditorIconPaste'">Paste</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Workitems</span>
+		<div data-dojo-type="idx.oneui.Menu" class="menu-workitem">
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-welcome'"><span class="idxMenuCategoryItem">Welcome to Workitems</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Queries</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-folder'"><span class="idxMenuCategoryItem">My Queries</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-folder'"><span class="idxMenuCategoryItem">Shared Queries</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Query</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-create'"><span class="idxMenuCategoryItem">Create Query</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Workitem</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-defect'"><span class="idxMenuCategoryItem">Defect</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">Task</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-enhancement'"><span class="idxMenuCategoryItem">Enhancement</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-plan'"><span class="idxMenuCategoryItem">Plan Item</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-trackbuild'"><span class="idxMenuCategoryItem">Track Build Item</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-retrospective'"><span class="idxMenuCategoryItem">Retrospective</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-story'"><span class="idxMenuCategoryItem">Story</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-architectural'"><span class="idxMenuCategoryItem">Architectural Issue</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-adoption'"><span class="idxMenuCategoryItem">Adoption Item</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Workitem Set</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-createfromtemplate'"><span class="idxMenuCategoryItem">Create from Template...&#x200e;</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 1"><span class="idxMenuCategory">Recent Workitems &#x200f;(5)&#x200f;</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Communities</span>
+		<div data-dojo-type="idx.oneui.MenuDialog" aria-label="Communities">
+			<div class="communities-header">
+				<div class="messagesContrast" role="toolbar"
+					><span><b>Communities</b></span
+					>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+					>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Member filter');">I'm a Member</span
+					>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+					>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Owner filter');">I'm an Owner</span
+					>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+					>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Following filter');">I'm Following</span
+					>&#x200f;&#x200e;
+				</div>
+				
+				<div class="communities-search" role="search">
+					<table style="width: 100%; *width: 442px; border-spacing: 0px">
+						<tr>
+							<td style="width: 100%; white-space: nowrap">
+								<input data-dojo-type="dijit.form.TextBox" />
+								<input data-dojo-type="dijit.form.Button" data-dojo-props="iconClass: 'idxSearchButton', showLabel: false" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div data-dojo-type="idx.oneui.Menu" class="menu-communities" tabIndex="1">
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 1</span><br /><span class="mi-communities-note">Updated by John Doe 10:27 AM</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 2</span><br /><span class="mi-communities-note">Updated by Jane Doe 7/10/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 3</span><br /><span class="mi-communities-note">Updated by Jeff Doe 7/20/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 4</span><br /><span class="mi-communities-note">Updated by Pam Doe 6/06/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 5</span><br /><span class="mi-communities-note">Updated by Sue Doe 5/09/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 6</span><br /><span class="mi-communities-note">Updated by Sam Doe 11/13/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 7</span><br /><span class="mi-communities-note">Updated by Mark Doe 8/31/11</span></div>
+				<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 8</span><br /><span class="mi-communities-note">Updated by Tom Doe 6/26/11</span></div>
+			</div>
+			<div class="communities-footer messagesContrast"
+				><span aria-live="polite">Showing 8 most recently updated of 57&#x200f;&#x200e;</span
+				><a href="javascript:" onclick="fire('View All');" style="margin-left: 2.0em; margin-right: 2.0em; font-size: 11px;">View All</a
+			></div>			
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Apps</span>
+		<div data-dojo-type="idx.oneui.Menu" class="menu-apps">
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-activities'"><span class="mi-apps-suite">Activities</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">To Do List</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">High Priority</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-blogs'"><span class="mi-apps-suite">Blogs</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">Latest Entries</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">Browse Blogs</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-bookmarks'"><span class="mi-apps-suite">Bookmarks</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">Popular</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">Browse Bookmarks</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-files'"><span class="mi-apps-suite">Files</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">Shared with Me</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">Starred</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-forums'"><span class="mi-apps-suite">Forums</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">I'm an Owner</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">Browse Forums</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-apps-icon-wikis'"><span class="mi-apps-suite">Wikis</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1"><span class="mi-apps-associated">I'm an Owner</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 2"><span class="mi-apps-associated">Browse Wikis</span></div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="demoContent">
+
+	<p>The following example shows a header containing several navigation menus.</p>
+
+	<div class="demoBox"><div class="demoSampleWide"><div class="demoSampleNotice">Working sample</div>
+		<div data-dojo-type="idx.oneui.Header" data-dojo-props="primaryTitle: 'A header example', primaryBannerType: 'thick', navigation: 'demo_menus' ">
+		</div>
+	</div></div>
+	
+	<div style="min-height: 600px;">
+		<p>
+			The header includes many optional components which may be specified, creating
+			a range of designs from very simple examples to complex many-featured headers.
+			Select the <b>Detailed examples</b> tab for a more complete range of examples.
+		</p>
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,827 @@
+/** configure the display modes -- note that the "showLabel" button attribute hides labels for us **/
+.vienna .dijitButton.idxButtonLabelOnly .dijitIcon,
+.vienna .dijitComboButton.idxButtonLabelOnly .dijitIcon,
+.vienna .dijitDropDownButton.idxButtonLabelOnly .dijitIcon,
+.vienna .dijitToggleButton.idxButtonLabelOnly .dijitIcon {
+  visibility: hidden;
+  display: none;
+}
+
+/** choose the icon file based on the placement of the button **/
+.vienna .idxButtonIcon .dijitIcon {
+	background-image: url("vienna/buttonIconsPrimary.png");
+	width: 16px;
+	height: 16px;
+	margin: 0px;
+	border: 0px none;
+	padding: 0px;
+}
+
+/** choose the icon file based on the placement of the button **/
+.vienna .dijitTabButtonIcon.idxConfigureIcon,
+.vienna .dijitTabButtonIcon.idxCloseIcon,
+.vienna .dijitTabButtonIcon.idxEditIcon,
+.vienna .dijitTabButtonIcon.idxFilterIcon,
+.vienna .dijitTabButtonIcon.idxClearFilterIcon,
+.vienna .dijitTabButtonIcon.idxHelpIcon,
+.vienna .dijitTabButtonIcon.idxInfoIcon,
+.vienna .dijitTabButtonIcon.idxMinimizeIcon,
+.vienna .dijitTabButtonIcon.idxMaximizeIcon,
+.vienna .dijitTabButtonIcon.idxRestoreIcon,
+.vienna .dijitTabButtonIcon.idxRefreshIcon,
+.vienna .dijitTabButtonIcon.idxPrintIcon,
+.vienna .dijitTabButtonIcon.idxNextPageIcon,
+.vienna .dijitTabButtonIcon.idxPreviousPageIcon,
+.vienna .dijitTabButtonIcon.idxLastPageIcon,
+.vienna .dijitTabButtonIcon.idxFirstPageIcon {
+	background-image: url("vienna/tabButtonIcons.png");
+	width: 16px;
+	height: 16px;
+	margin: 0px;
+	border: 0px none;
+	padding: 0px;
+}
+
+.vienna .idxButtonSecondary.idxButtonIcon .dijitIcon,
+.vienna .idxButtonIcon.idxButtonSecondary .dijitIcon {
+	background-image: url("vienna/buttonIconsSecondary.png");
+}
+
+.vienna .idxButtonSpecial.idxButtonIcon .dijitIcon,
+.vienna .idxButtonIcon.idxButtonSpecial .dijitIcon {
+	background-image: url("vienna/buttonIconsSpecial.png");
+}
+
+.vienna .idxButtonToolbar.idxButtonIcon .dijitIcon,
+.vienna .idxButtonIcon.idxButtonToolbar .dijitIcon {
+	background-image: url("vienna/buttonIconsToolbar.png");
+}
+
+/** setup the background position for each icon type in each state **/
+.vienna .idxCloseIcon {
+	background-position: -0px -0px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxCloseIcon {
+   background-position: -16px -0px;
+}
+
+.vienna .idxButtonDerived.dijitActive .idxCloseIcon,
+.vienna .idxButtonDerived.dijitOpened .idxCloseIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxCloseIcon {
+   background-position: -32px -0px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxCloseIcon {
+   background-position: -48px -0px;
+}
+
+.vienna .idxConfigureIcon {
+	background-position: -0px -16px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxConfigureIcon {
+   background-position: -16px -16px;
+}
+.vienna .idxButtonDerived.dijitActive .idxConfigureIcon,
+.vienna .idxButtonDerived.dijitOpened .idxConfigureIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxConfigureIcon {
+   background-position: -32px -16px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxConfigureIcon {
+   background-position: -48px -16px;
+}
+
+.vienna .idxEditIcon {
+	background-position: -0px -32px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxEditIcon {
+   background-position: -16px -32px;
+}
+.vienna .idxButtonDerived.dijitActive .idxEditIcon,
+.vienna .idxButtonDerived.dijitOpened .idxEditIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxEditIcon {
+   background-position: -32px -32px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxEditIcon {
+   background-position: -48px -32px;
+}
+
+.vienna .idxFilterIcon {
+	background-position: -0px -48px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxFilterIcon {
+   background-position: -16px -48px;
+}
+.vienna .idxButtonDerived.dijitActive .idxFilterIcon,
+.vienna .idxButtonDerived.dijitOpened .idxFilterIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxFilterIcon {
+   background-position: -32px -48px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxFilterIcon {
+   background-position: -48px -48px;
+}
+
+.vienna .idxClearFilterIcon {
+	background-position: -0px -64px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxClearFilterIcon {
+   background-position: -16px -64px;
+}
+.vienna .idxButtonDerived.dijitActive .idxClearFilterIcon,
+.vienna .idxButtonDerived.dijitOpened .idxClearFilterIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxClearFilterIcon {
+   background-position: -32px -64px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxClearFilterIcon {
+   background-position: -48px -64px;
+}
+
+.vienna .idxHelpIcon {
+	background-position: -0px -80px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxHelpIcon {
+   background-position: -16px -80px;
+}
+.vienna .idxButtonDerived.dijitActive .idxHelpIcon,
+.vienna .idxButtonDerived.dijitOpened .idxHelpIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxHelpIcon {
+   background-position: -32px -80px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxHelpIcon {
+   background-position: -48px -80px;
+}
+
+.vienna .idxInfoIcon {
+	background-position: -0px -96px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxInfoIcon {
+   background-position: -16px -96px;
+}
+.vienna .idxButtonDerived.dijitActive .idxInfoIcon,
+.vienna .idxButtonDerived.dijitOpened .idxInfoIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxInfoIcon {
+   background-position: -32px -96px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxInfoIcon {
+   background-position: -48px -96px;
+}
+
+.vienna .idxMinimizeIcon {
+	background-position: -0px -112px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxMinimizeIcon {
+   background-position: -16px -112px;
+}
+.vienna .idxButtonDerived.dijitActive .idxMinimizeIcon,
+.vienna .idxButtonDerived.dijitOpened .idxMinimizeIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxMinimizeIcon {
+   background-position: -32px -112px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxMinimizeIcon {
+   background-position: -48px -112px;
+}
+
+.vienna .idxMaximizeIcon {
+	background-position: -0px -128px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxMaximizeIcon {
+   background-position: -16px -128px;
+}
+.vienna .idxButtonDerived.dijitActive .idxMaximizeIcon,
+.vienna .idxButtonDerived.dijitOpened .idxMaximizeIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxMaximizeIcon {
+   background-position: -32px -128px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxMaximizeIcon {
+   background-position: -48px -128px;
+}
+
+.vienna .idxRestoreIcon {
+	background-position: -0px -144px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxRestoreIcon {
+   background-position: -16px -144px;
+}
+.vienna .idxButtonDerived.dijitActive .idxRestoreIcon,
+.vienna .idxButtonDerived.dijitOpened .idxRestoreIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxRestoreIcon {
+   background-position: -32px -144px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxRestoreIcon {
+   background-position: -48px -144px;
+}
+
+.vienna .idxRefreshIcon {
+	background-position: -0px -160px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxRefreshIcon {
+   background-position: -16px -160px;
+}
+.vienna .idxButtonDerived.dijitActive .idxRefreshIcon,
+.vienna .idxButtonDerived.dijitOpened .idxRefreshIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxRefreshIcon {
+   background-position: -32px -160px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxRefreshIcon {
+   background-position: -48px -160px;
+}
+
+.vienna .idxPrintIcon {
+	background-position: -0px -176px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxPrintIcon {
+   background-position: -16px -176px;
+}
+.vienna .idxButtonDerived.dijitActive .idxPrintIcon,
+.vienna .idxButtonDerived.dijitOpened .idxPrintIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxPrintIcon {
+   background-position: -32px -176px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxPrintIcon {
+   background-position: -48px -176px;
+}
+
+.vienna .idxNextPageIcon {
+	background-position: -0px -192px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxNextPageIcon {
+   background-position: -16px -192px;
+}
+.vienna .idxButtonDerived.dijitActive .idxNextPageIcon,
+.vienna .idxButtonDerived.dijitOpened .idxNextPageIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxNextPageIcon {
+   background-position: -32px -192px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxNextPageIcon {
+   background-position: -48px -192px;
+}
+
+.vienna .idxPreviousPageIcon {
+	background-position: -0px -208px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxPreviousPageIcon {
+   background-position: -16px -208px;
+}
+.vienna .idxButtonDerived.dijitActive .idxPreviousPageIcon,
+.vienna .idxButtonDerived.dijitOpened .idxPreviousPageIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxPreviousPageIcon {
+   background-position: -32px -208px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxPreviousPageIcon {
+   background-position: -48px -208px;
+}
+
+.vienna .idxLastPageIcon {
+	background-position: -0px -224px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxLastPageIcon {
+   background-position: -16px -224px;
+}
+.vienna .idxButtonDerived.dijitActive .idxLastPageIcon,
+.vienna .idxButtonDerived.dijitOpened .idxLastPageIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxLastPageIcon {
+   background-position: -32px -224px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxLastPageIcon {
+   background-position: -48px -224px;
+}
+
+.vienna .idxFirstPageIcon {
+	background-position: -0px -240px;
+}
+
+.vienna .idxButtonDerived.dijitHover .idxFirstPageIcon {
+   background-position: -16px -240px;
+}
+.vienna .idxButtonDerived.dijitActive .idxFirstPageIcon,
+.vienna .idxButtonDerived.dijitOpened .idxFirstPageIcon,
+.vienna .idxButtonDerived.idxDropDownOpen .idxFirstPageIcon {
+   background-position: -32px -240px;
+}
+.vienna .idxButtonDerived.dijitDisabled .idxFirstPageIcon {
+   background-position: -48px -240px;
+}
+
+.vienna .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?profile=compact);
+}
+
+.vienna .idxSecondaryButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=secondary);
+}
+
+.vienna .idxSpecialButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=special);
+}
+
+.vienna .idxToolbarButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=toolbar);
+}
+
+.vienna .idxCompactButton.idxSecondaryButton .idxButtonDerived_idxDefaults,
+.vienna .idxSecondaryButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.vienna .idxCompactButton .idxSecondaryButton .idxButtonDerived_idxDefaults,
+.vienna .idxSecondaryButton .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=secondary&profile=compact);
+}
+
+.vienna .idxCompactButton.idxSpecialButton .idxButtonDerived_idxDefaults,
+.vienna .idxSpecialButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.vienna .idxCompactButton .idxSpecialButton .idxButtonDerived_idxDefaults,
+.vienna .idxSpecialButton .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=special&profile=compact);
+}
+
+.vienna .idxCompactButton.idxToolbarButton .idxButtonDerived_idxDefaults,
+.vienna .idxToolbarButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.vienna .idxCompactButton .idxToolbarButton .idxButtonDerived_idxDefaults,
+.vienna .idxToolbarButton .idxCompactButton .idxButtonDerived_idxDefaults{
+  background-image: url(../images/blank.gif?placement=toolbar&profile=compact);
+}
+
+
+/***** 
+ ***** SECONDARY BUTTONS
+ *****/
+.vienna .idxButtonSecondary.dijitButton .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitDropDownButton .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButton .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitToggleButton .dijitButtonNode,
+.vienna .dijitButton.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitDropDownButton.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitComboButton.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitToggleButton.idxButtonSecondary .dijitButtonNode {
+	background-color: #fdfdfe;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfe', endColorstr='#d6dde7'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfe), to(#d6dde7)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #fdfdfe,  #d6dde7); /* for firefox 3.6+ */
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonSecondary.dijitComboButton .dijitButtonNode,
+.dj_ie .vienna .dijitComboButton.idxButtonSecondary .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .vienna table.idxButtonSecondary.dijitComboButton,
+.dj_ie .vienna table.dijitComboButton.idxButtonSecondary {
+	background: none;
+        filter: none;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfe', endColorstr='#d6dde7'); /* for IE */
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonSecondary .dijitButtonText {
+	color:#464646;
+}
+
+.vienna .idxButtonSecondary .dijitArrowButtonInner {
+	width: 15px;
+	height: 13px;
+	background-image: url("vienna/buttonArrowsSecondary.png");
+	background-position:-51px 0px;
+}
+
+/* hover text color */
+.vienna .idxButtonSecondary.dijitButtonHover .dijitButtonText,
+.vienna .idxButtonSecondary.dijitDropDownButtonHover .dijitButtonText,
+.vienna .idxButtonSecondary.dijitComboButton .dijitButtonNodeHover .dijitButtonText,
+.vienna .idxButtonSecondary.dijitToggleButtonHover .dijitButtonText,
+.vienna .dijitButtonHover.idxButtonSecondary .dijitButtonText,
+.vienna .dijitDropDownButtonHover.idxButtonSecondary .dijitButtonText,
+.vienna .dijitComboButton.idxButtonSecondary  .dijitButtonNodeHover .dijitButtonText,
+.vienna .dijitToggleButtonHover.idxButtonSecondary .dijitButtonText
+ {
+	color:#ffffff;
+}
+
+/* disabled text color */
+.vienna .dijitDisabled.idxButtonSecondary .dijitButtonText {
+	color: #8f8f8f;
+}
+
+/* hover status */
+.vienna .idxButtonSecondary.dijitButtonHover .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitDropDownButtonHover .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButton .dijitButtonNodeHover, 
+.vienna .idxButtonSecondary.dijitComboButton .dijitDownArrowButtonHover,
+.vienna .idxButtonSecondary.dijitToggleButtonHover .dijitButtonNode {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#6a93b6), to(#49729f)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #6a93b6,  #49729f); /* for firefox 3.6+ */
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+/*
+    NOTE: We cheat a bit for "Hover" since the border and the background are so close in color.
+    Technically, the borders are not visible when we do this CSS on the ButtonNode cells, but 
+    they are replaced with the gradient which is just as dark on IE, and unnoticeable.  The
+    alternative would have been to hover-highlight the entire button instead of the parts
+*/
+.dj_ie .vienna .idxButtonSecondary.dijitComboButton .dijitButtonNodeHover, 
+.dj_ie .vienna .idxButtonSecondary.dijitComboButton .dijitDownArrowButtonHover {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+/*secondary button arrows on hover state*/
+.vienna .idxButtonSecondary.dijitDropDownButtonHover .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitComboButton .dijitDownArrowButtonHover .dijitArrowButtonInner, 
+.vienna .dijitDropDownButtonHover.idxButtonSecondary .dijitArrowButtonInner,
+.vienna .dijitComboButton.idxButtonSecondary .dijitDownArrowButtonHover .dijitArrowButtonInner {
+	background-image:url(../../themes/vienna/form/images/buttonArrows.png);
+}
+
+/* checked status */
+.vienna .idxButtonSecondary.dijitButtonActive .dijitButtonNode, 
+.vienna .idxButtonSecondary.dijitDropDownButtonActive .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButtonActive .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitToggleButtonActive .dijitButtonNode,
+.vienna .dijitButtonActive.idxButtonSecondary .dijitButtonNode, 
+.vienna .dijitDropDownButtonActive.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitComboButtonActive.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitToggleButtonActive.idxButtonSecondary .dijitButtonNode {
+	background-color: #49729f;
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#49729f), to(#6a93b6)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #49729f,  #6a93b6); /* for firefox 3.6+ */
+        color: #ffffff;
+}
+
+/*secondary button arrows on active state */
+.vienna .idxButtonSecondary.dijitDropDownButtonActive .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitComboButton .dijitDownArrowButtonActive .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitComboButtonActive .dijitDownArrowButton .dijitArrowButtonInner,
+.vienna .dijitDropDownButtonActive.idxButtonSecondary .dijitArrowButtonInner,
+.vienna .dijitComboButton.idxButtonSecondary .dijitDownArrowButtonActive .dijitArrowButtonInner,
+.vienna .dijitComboButtonActive.idxButtonSecondary .dijitDownArrowButton .dijitArrowButtonInner {
+	background-image:url(../../themes/vienna/form/images/buttonArrows.png);
+}
+
+.vienna .idxButtonSecondary.dijitButtonActive .dijitButtonText,
+.vienna .idxButtonSecondary.dijitDropDownButtonActive .dijitButtonText,
+.vienna .idxButtonSecondary.dijitComboButton .dijitButtonNodeActive .dijitButtonText,
+.vienna .idxButtonSecondary.dijitToggleButtonActive .dijitButtonText,
+.vienna .dijitButtonActive.idxButtonSecondary .dijitButtonText,
+.vienna .dijitDropDownButtonActive.idxButtonSecondary .dijitButtonText,
+.vienna .dijitComboButton.idxButtonSecondary .dijitButtonNodeActive .dijitButtonText,
+.vienna .dijitToggleButtonActive.idxButtonSecondary .dijitButtonText {
+	color:#ffffff;
+}
+
+.vienna .idxButtonSecondary.dijitButtonDisabled .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitDropDownButtonDisabled .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButtonDisabled .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitToggleButtonDisabled .dijitButtonNode,
+.vienna .dijitButtonDisabled.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitDropDownButtonDisabled.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitComboButtonDisabled.idxButtonSecondary .dijitButtonNode,
+.vienna .dijitToggleButtonDisabled.idxButtonSecondary .dijitButtonNode { 
+	background: none;
+	background-color: #d7d8da;
+        filter: none;
+	border: solid 1px #c6c9ca;
+	color: #696969;
+	box-shadow:none;
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonSecondary.dijitComboButtonDisabled .dijitButtonNode,
+.dj_ie .vienna .dijitComboButtonDisabled.idxButtonSecondary .dijitButtonNode {
+	background: none;
+	filter: none;
+}
+
+.dj_ie .vienna table.idxButtonSecondary.dijitComboButtonDisabled,
+.dj_ie .vienna table.dijitComboButtonDisabled.idxButtonSecondary {
+	background: none;
+	background-color: #d7d8da;
+        filter: none;
+}
+
+.dj_ie .vienna table.idxButtonSecondary.dijitComboButton.dijitComboButtonActive,
+.dj_ie .vienna table.dijitComboButton.dijitComboButtonActive.idxButtonSecondary {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+}
+
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonSecondary.dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 0px;
+
+}
+
+.vienna .idxButtonSecondary.dijitDropDownButton.dijitOpened .dijitButtonText,
+.vienna .idxButtonSecondary.dijitComboButton.dijitOpened .dijitButtonText,
+.vienna .idxButtonSecondary.dijitComboButton.idxDropDownOpen .dijitButtonText {
+   color: #ffffff;
+}
+
+.vienna .dijitDropDownButton.dijitOpened .dijitButtonText,
+.vienna .dijitDropDownButton.idxDropDownOpen .dijitButtonText,
+.vienna .dijitComboButton.dijitOpened .dijitButtonText,
+.vienna .dijitComboButton.idxDropDownOpen .dijitButtonText {
+   color: #ffffff;
+}
+
+.vienna .idxButtonSecondary.dijitDropDownButton.dijitOpened .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitDropDownButton.idxDropDownOpen .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButton.dijitOpened .dijitButtonNode,
+.vienna .idxButtonSecondary.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#6a93b6), to(#49729f)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #6a93b6,  #49729f); /* for firefox 3.6+ */
+}
+
+.vienna .dijitDropDownButton.dijitOpened .dijitButtonNode,
+.vienna .dijitDropDownButton.idxDropDownOpen .dijitButtonNode,
+.vienna .dijitComboButton.dijitOpened .dijitButtonNode,
+.vienna .dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background-color: #49729f;
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#49729f), to(#6a93b6)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #49729f,  #6a93b6); /* for firefox 3.6+ */
+	box-shadow:none;
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+}
+
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonSecondary.dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .idxButtonSecondary.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .vienna .dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background: none;
+		filter: none;
+}
+
+.dj_ie .vienna table.idxButtonSecondary.dijitComboButton.dijitOpened,
+.dj_ie .vienna table.idxButtonSecondary.dijitComboButton.idxDropDownOpen {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+}
+
+.dj_ie .vienna table.dijitComboButton.dijitOpened,
+.dj_ie .vienna table.dijitComboButton.idxDropDownOpen {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+}
+
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonSecondary.dijitDropDownButton.dijitOpened .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitDropDownButton.idxDropDownOpen .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitComboButton.dijitOpened .dijitArrowButtonInner,
+.vienna .idxButtonSecondary.dijitComboButton.idxDropDownOpen .dijitArrowButtonInner {
+	background-image:url(../../themes/vienna/form/images/buttonArrows.png);
+}
+
+
+/***** 
+ ***** TOOLBAR BUTTONS
+ *****/
+.vienna .idxButtonToolbar.dijitButton,
+.vienna .idxButtonToolbar.dijitDropDownButton ,
+.vienna .idxButtonToolbar.dijitComboButton,
+.vienna .idxButtonToolbar.dijitToggleButton,
+.vienna .dijitButton.idxButtonToolbar,
+.vienna .dijitDropDownButton.idxButtonToolbar,
+.vienna .dijitComboButton.idxButtonToolbar,
+.vienna .dijitToggleButton.idxButtonToolbar {
+	background: none;
+	padding: 0px;
+	margin: 0px;
+	border: 0px none;
+	drop-shadow: none;
+	-moz-drop-shadow: none;
+	-webkit-drop-shadow: none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.vienna .idxButtonToolbar.dijitButton .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitDropDownButton .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButton .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitToggleButton .dijitButtonNode,
+.vienna .dijitButton.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitDropDownButton.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitComboButton.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitToggleButton.idxButtonToolbar .dijitButtonNode {
+	background: none;
+	border: 0px none;
+	filter: none;
+	padding: 0px;
+	drop-shadow: none;
+	-moz-drop-shadow: none;
+	-webkit-drop-shadow: none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonToolbar.dijitComboButton .dijitButtonNode,
+.dj_ie .vienna .dijitComboButton.idxButtonToolbar .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .vienna table.idxButtonToolbar.dijitComboButton,
+.dj_ie .vienna table.dijitComboButton.idxButtonToolbar {
+	background: none;
+        filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonToolbar .dijitButtonText {
+	color:#464646;
+}
+
+.vienna .idxButtonToolbar .dijitArrowButtonInner {
+	width: 15px;
+	height: 13px;
+	background-image: url("vienna/buttonArrowsSecondary.png");
+	background-position:-51px 0px;
+}
+
+/* hover text color */
+.vienna .idxButtonToolbar.dijitButtonHover .dijitButtonText,
+.vienna .idxButtonToolbar.dijitDropDownButtonHover .dijitButtonText,
+.vienna .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover .dijitButtonText,
+.vienna .idxButtonToolbar.dijitToggleButtonHover .dijitButtonText,
+.vienna .dijitButtonHover.idxButtonToolbar .dijitButtonText,
+.vienna .dijitDropDownButtonHover.idxButtonToolbar .dijitButtonText,
+.vienna .dijitComboButton.idxButtonToolbar  .dijitButtonNodeHover .dijitButtonText,
+.vienna .dijitToggleButtonHover.idxButtonToolbar .dijitButtonText
+ {
+	color:#464646;
+	text-decoration: underline;
+}
+
+/* disabled text color */
+.vienna .dijitDisabled.idxButtonToolbar .dijitButtonText {
+	color: #8f8f8f;
+	text-decoration: none;
+}
+
+/* hover status */
+.vienna .idxButtonToolbar.dijitButtonHover .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitDropDownButtonHover .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover, 
+.vienna .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonHover,
+.vienna .idxButtonToolbar.dijitToggleButtonHover .dijitButtonNode {
+	background: none;
+	filter: none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+/*
+    NOTE: We cheat a bit for "Hover" since the border and the background are so close in color.
+    Technically, the borders are not visible when we do this CSS on the ButtonNode cells, but 
+    they are replaced with the gradient which is just as dark on IE, and unnoticeable.  The
+    alternative would have been to hover-highlight the entire button instead of the parts
+*/
+.dj_ie .vienna .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover, 
+.dj_ie .vienna .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonHover {
+	background: none;
+	filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+/*secondary button arrows on hover state*/
+.vienna .idxButtonToolbar.dijitDropDownButtonHover .dijitArrowButtonInner,
+.vienna .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonHover .dijitArrowButtonInner, 
+.vienna .dijitDropDownButtonHover.idxButtonToolbar .dijitArrowButtonInner,
+.vienna .dijitComboButton.idxButtonToolbar .dijitDownArrowButtonHover .dijitArrowButtonInner {
+	background-position: -51px 0px;
+}
+
+/* checked status */
+.vienna .idxButtonToolbar.dijitButtonActive .dijitButtonNode, 
+.vienna .idxButtonToolbar.dijitDropDownButtonActive .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButtonActive .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitToggleButtonActive .dijitButtonNode,
+.vienna .dijitButtonActive.idxButtonToolbar .dijitButtonNode, 
+.vienna .dijitDropDownButtonActive.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitComboButtonActive.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitToggleButtonActive.idxButtonToolbar .dijitButtonNode {
+	background: none;
+    filter: none;
+    color: #464646;
+}
+
+/*secondary button arrows on active state */
+.vienna .idxButtonToolbar.dijitDropDownButtonActive .dijitArrowButtonInner,
+.vienna .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonActive .dijitArrowButtonInner,
+.vienna .idxButtonToolbar.dijitComboButtonActive .dijitDownArrowButton .dijitArrowButtonInner,
+.vienna .dijitDropDownButtonActive.idxButtonToolbar .dijitArrowButtonInner,
+.vienna .dijitComboButton.idxButtonToolbar .dijitDownArrowButtonActive .dijitArrowButtonInner,
+.vienna .dijitComboButtonActive.idxButtonToolbar .dijitDownArrowButton .dijitArrowButtonInner {
+	background-image: url("vienna/buttonArrowsSecondary.png");
+}
+
+.vienna .idxButtonToolbar.dijitButtonActive .dijitButtonText,
+.vienna .idxButtonToolbar.dijitDropDownButtonActive .dijitButtonText,
+.vienna .idxButtonToolbar.dijitComboButton .dijitButtonNodeActive .dijitButtonText,
+.vienna .idxButtonToolbar.dijitToggleButtonActive .dijitButtonText,
+.vienna .dijitButtonActive.idxButtonToolbar .dijitButtonText,
+.vienna .dijitDropDownButtonActive.idxButtonToolbar .dijitButtonText,
+.vienna .dijitComboButton.idxButtonToolbar .dijitButtonNodeActive .dijitButtonText,
+.vienna .dijitToggleButtonActive.idxButtonToolbar .dijitButtonText {
+	color:#464646;
+	text-decoration: underline;
+}
+
+.vienna .idxButtonToolbar.dijitButtonDisabled .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitDropDownButtonDisabled .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButtonDisabled .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitToggleButtonDisabled .dijitButtonNode,
+.vienna .dijitButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitDropDownButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitComboButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.vienna .dijitToggleButtonDisabled.idxButtonToolbar .dijitButtonNode { 
+	background: none;
+    filter: none;
+	border: none;
+	color: #696969;
+	box-shadow:none;
+ 	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonToolbar.dijitComboButtonDisabled .dijitButtonNode,
+.dj_ie .vienna .dijitComboButtonDisabled.idxButtonToolbar .dijitButtonNode {
+	background: none;
+	filter: none;
+}
+
+.dj_ie .vienna table.idxButtonToolbar.dijitComboButtonDisabled,
+.dj_ie .vienna table.dijitComboButtonDisabled.idxButtonToolbar {
+	background: none;
+    filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonToolbar.dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 0px;
+
+}
+
+.vienna .idxButtonToolbar.dijitDropDownButton.dijitOpened .dijitButtonText,
+.vienna .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonText,
+.vienna .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonText {
+   color: #464646;
+}
+
+.vienna .idxButtonToolbar.dijitDropDownButton.dijitOpened .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonNode,
+.vienna .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+    filter: none;
+    background: none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .vienna table.idxButtonToolbar.dijitComboButton.dijitOpened,
+.dj_ie .vienna table.idxButtonToolbar.dijitComboButton.idxDropDownOpen {
+	background-color: none;
+    filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .idxButtonToolbar.dijitDropDownButton.dijitOpened .dijitArrowButtonInner,
+.vienna .idxButtonToolbar.dijitComboButton.dijitOpened .dijitArrowButtonInner,
+.vienna .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitArrowButtonInner {
+	background-image: url("vienna/buttonArrowsSecondary.png");
+}
+

@@ -1,0 +1,58 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or 
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+.claro .idxPropertyFormatter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.claro .idxPropertyFormatterFormat {
+  display: inline;
+}
+
+.claro .idxPropertyFormatterEdit {
+  display: none;
+  visibility: hidden;
+  vertical-align: middle;
+}
+
+.claro .idxPropertyFormatter .idxEditController {
+  margin-left: 8px;
+  display: inline-block;
+  visbility: visible;
+  vertical-align: bottom;
+}
+
+.dj_ie7 .claro .idxPropertyFormatter .idxEditController {
+	display: inline;
+}
+
+.dijitRtl .claro .idxPropertyFormatter .idxEditController {
+	margin-left: 0px;
+	margin-right: 8px;
+}
+
+.claro .idxPropertyFormatterNoEditors .idxEditController {
+  margin: 0px 0px 0px 0px;
+  display: none;
+  visibility: hidden;
+}
+
+.claro .idxPropertyFormatter.idxPropertyFormatterEditMode {
+	white-space: nowrap;
+}
+
+.claro .idxPropertyFormatterEditMode .idxPropertyFormatterEdit {
+  display: inline;
+  visibility: visible;
+  white-space: nowrap;
+}
+
+.claro .idxPropertyFormatterEditMode .idxPropertyFormatterFormat {
+  display: none;
+  visibility: hidden;
+  white-space: nowrap;
+}

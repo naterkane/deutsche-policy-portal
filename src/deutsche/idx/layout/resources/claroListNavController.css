@@ -1,0 +1,184 @@
+
+.claro .dijitStackController.idxListNavController
+{
+	padding: 0px;
+	background-color: #ffffff;
+	height: 100%;
+}
+
+.claro .dijitStackController.idxListNavController .idxListNavButton
+{
+	display: block; /*Show stackController buttons vertically*/
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.claro .dijitStackController.idxListNavController .dijitCheckedFocused,
+.claro .dijitStackController.idxListNavController .dijitCheckBoxFocused  {
+	outline-width:0px;
+}
+
+.claro .dijitStackController.idxListNavController .dijitButtonNode
+{
+	border:none;
+	font-weight: normal;
+    font-size: 11px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	height: 18px;
+	width: 100%;
+
+	margin: 0px;
+	background-color:transparent;
+	background-image:none;
+	
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-bottomright:0;
+	-moz-border-radius-topleft:0;
+	-moz-border-radius-topright:0;
+	
+	text-align:left;
+	text-indent: 3px; /*padding-left didn't work for IE8, see defect 3019*/
+	padding-left: 0px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.dijitRtl .claro .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-align: right;
+	padding-right: 0px;
+}
+
+/*text-indent fix for IE8 broke look of IE7, continue using padding for IE7 (note: both methods work in FF)*/
+.dj_ie7 .claro .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 0px;
+	padding-left: 5px;
+}
+
+.claro .dijitStackController.idxListNavController .idxListNavButtonHover .dijitButtonNode,
+.claro .idxSectionedNavigation .dojoxGrid .dojoxGridRowOver
+{
+    text-decoration: none;
+    background-color: #abd6ff;
+    background-image: none;
+}
+
+.claro .dijitStackController.idxListNavController .idxListNavButtonChecked .dijitButtonNode,
+.claro .dijitStackController.idxListNavController .idxListNavButtonCheckedHover .dijitButtonNode,
+.claro .idxSectionedNavigation .dojoxGrid .dojoxGridRowSelected
+{
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #D9E8F9;
+}
+
+/*ContentPane grouping navigation list items*/
+.claro .idxListNavigation
+{
+	background-color: #ffffff;
+}
+
+.claro .idxNestedNavigation,
+.claro .idxSectionedNavigation
+{
+	background-color: #ffffff;
+	padding: 0px;
+	margin: 0px;
+}
+
+.claro .idxNestedNavigation .idxHeaderPaneContent,
+.claro .idxNestedNavigation .dijitTitlePaneContentInner
+{
+	padding: 0px;
+}
+
+/*TitlePanes and Grids that make up Nested and Sectioned List Navigation*/
+.claro .idxNestedNavigation .dijitTitlePaneTitle,
+.claro .idxSectionedNavigation .dijitTitlePaneTitle
+{
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: solid 1px #c2bfb3;
+	
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+
+.claro .idxNestedNavigation .dijitTitlePaneTitle  {
+	background-color: #e4e1da;
+	padding: 2px 8px 1px;
+}
+
+.claro .idxSectionedNavigation .dijitTitlePaneTitle
+{
+	padding: 2px 8px 1px;
+	background-color: #f4f5f1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f5f1', endColorstr='#E8E7E0'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f5f1), to(#E8E7E0)); /* for webkit browsers */ 
+    background: -moz-linear-gradient(top,  #f4f5f1,  #E8E7E0); /* for firefox 3.6+ */
+}
+
+.claro .idxNestedNavigation .dijitTitlePaneTitleFocus,
+.claro .idxSectionedNavigation .dijitTitlePaneTitleFocus
+{
+	margin: 0;
+}
+
+.claro .idxNestedNavigation .dijitTitlePaneContentOuter,
+.claro .idxSectionedNavigation .dijitTitlePaneContentOuter
+{
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: solid 1px #c2bfb3;
+}
+
+.claro .idxNestedNavigation .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 10px; /*padding-left didn't work for IE8, see defect 3019*/
+	padding-left: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/*text-indent fix for IE8 broke look of IE7, continue using padding for IE7 (note: both methods work in FF)*/
+.dj_ie7 .claro .idxNestedNavigation .dijitStackController.idxListNavController .dijitButtonNode
+{
+	text-indent: 0px;
+	padding-left: 20px;
+}
+
+.claro .idxSectionedNavigation .dojoxGrid
+{
+	border: none;
+}
+
+.claro .idxSectionedNavigation .dojoxGridHeader,
+.claro .idxSectionedNavigation .dojoxGridHeader .dojoxGridCell,
+.claro .idxSectionedNavigation .dojoxGridHeader .dojoxGridSortNode
+{
+	/*Use claro defaults according to Alex S.
+	filter: none;
+	background-image: none;
+	background-color: #e4e1da;*/
+}
+
+.claro .idxSectionedNavigation .dojoxGridRowTable tr
+{
+	background-color: inherit;
+}
+
+.claro .idxSectionedNavigation .dojoxGridMasterHeader
+{
+	border-bottom-color: #c2bfb3; 
+}
+
+.claro .idxSectionedNavigation .dojoxGridCell
+{
+	border-right-color: #d6d1c7;
+}

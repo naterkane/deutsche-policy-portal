@@ -1,0 +1,271 @@
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<style>
+	.topAligned{
+		vertical-align: top;
+		margin-right: 20px;
+	}
+	.topAligned h4{
+		font-weight: normal;
+	    margin-bottom: 5px;
+	    margin-top: 0;
+	}
+</style>
+<div style="padding:20px;">
+	<h2>idx.oneui.Menu</h2>
+	<div class="dijitInline topAligned">
+		<h4>Simple Menu</h4>
+		<div id="navMenu1" data-dojo-type="idx.oneui.Menu" >
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='
+				onClick:function(){ console.log("drama!"); }'>Drama</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='
+				onClick:function(){ console.log("comedy!") }'>Comedy</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='
+				onClick:function(){ console.log("romance!") }'>Romance</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='
+				onClick:function(){ console.log("documentary!") }'>Documentary</div>
+		</div>
+	</div>
+		
+	<div class="dijitInline topAligned">
+		<h4>Menu with submenu</h4>
+		<div id="navMenu3" data-dojo-type="idx.oneui.Menu" >
+			<div id="navMenuPopupItem1" data-dojo-type="dijit.PopupMenuItem" >
+				<span>Enabled Submenu</span>
+				<div id="navMenuSub1" data-dojo-type="idx.oneui.Menu" >
+					<div id="navMenuSub1_item1" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div id="navMenuSub1_item2" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+					<div id="navMenuSub1_popup" data-dojo-type="dijit.PopupMenuItem" >
+						<span>Deeper Submenu</span>
+						<div id="navMenuSub2" data-dojo-type="idx.oneui.Menu" >
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!") }'>Sub-sub-menu Item One</div>
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!") }'>Sub-sub-menu Item Two</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="navMenuDisabledItem" data-dojo-type="dijit.PopupMenuItem" data-dojo-props='disabled:true '>
+				<span>Disabled Submenu</span>
+				<div id="navMenuSub3" data-dojo-type="idx.oneui.Menu" data-dojo-props='style:"display: none;"'>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+				</div>
+			</div>
+			<div data-dojo-type="dijit.PopupMenuItem">
+				<span>Different popup</span>
+				<div data-dojo-type="dijit.ColorPalette"></div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="dijitInline topAligned">
+		<h4>Menu with icons/CheckBoxes</h4>
+		<div id="navMenu2" data-dojo-type="idx.oneui.Menu" >
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+				onClick:function(){ console.log("drama!"); }'>Drama</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+				onClick:function(){ console.log("comedy!") }'>Comedy</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+				onClick:function(){ console.log("romance!") }'>Romance</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+				onClick:function(){ console.log("documentary!") }'>Documentary</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, onChange:function(val){ console.log("Now set to " + val); }'>Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem" >Not Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:false, disabled:true'>Disabled</div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, disabled:true'>Checked Disabled</div>
+		</div>
+	</div>
+		
+	<div class="dijitInline topAligned">
+		<h4>Menu with all features</h4>
+		<div id="compliatedMenu" data-dojo-type="idx.oneui.Menu"'>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Hello world"); }'>Complicated Menu</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='disabled:true, onClick:function(){ alert("this should NOT appear"); }'>Disabled Item</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+				onClick:function(){ console.log("not actually cutting anything, just a test!") }, accelKey:"Ctrl+X"'>Cut</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+				onClick:function(){ console.log("not actually copying anything, just a test!") }, accelKey:"Ctrl+C"'>Copy</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+				onClick:function(){ console.log("not actually pasting anything, just a test!") }, accelKey:"Ctrl+V"'>Paste</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div id="c_enabledSubmenu" data-dojo-type="dijit.PopupMenuItem" >
+				<span>Enabled Submenu</span>
+				<div id="c_submenu2" data-dojo-type="idx.oneui.Menu" >
+					<div id="c_submenu2_item1" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div id="c_submenu2_item2" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+					<div id="c_deeperSubmenu" data-dojo-type="dijit.PopupMenuItem" >
+						<span>Deeper Submenu</span>
+						<div id="c_submenu4" data-dojo-type="idx.oneui.Menu" >
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!") }'>Sub-sub-menu Item One</div>
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!") }'>Sub-sub-menu Item Two</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-dojo-type="dijit.PopupMenuItem" data-dojo-props='disabled:true'>
+				<span>Disabled Submenu</span>
+				<div id="c_submenu3" data-dojo-type="idx.oneui.Menu" data-dojo-props='style:"display: none;"'>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+				</div>
+			</div>
+			<div data-dojo-type="dijit.PopupMenuItem">
+				<span>Different popup</span>
+				<div data-dojo-type="dijit.ColorPalette"></div>
+			</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, onChange:function(val){ console.log("Now set to " + val); }'>Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem">Not Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, disabled:true'>Checked Disabled</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.PopupMenuItem">
+				<span>Bigger Submenu</span>
+				<div id="c_bigsubmenu" data-dojo-type="idx.oneui.Menu" data-dojo-props='style:"display: none;"'>
+					<div data-dojo-type="dijit.MenuItem">Item One</div>
+					<div data-dojo-type="dijit.MenuItem">Item Two</div>
+					<div data-dojo-type="dijit.MenuItem">Item Three</div>
+					<div data-dojo-type="dijit.MenuItem">Item Four</div>
+					<div data-dojo-type="dijit.MenuItem">Item Five</div>
+					<div data-dojo-type="dijit.MenuItem">Item Six</div>
+					<div data-dojo-type="dijit.MenuItem">Item Seven</div>
+					<div data-dojo-type="dijit.MenuItem">Item Eight</div>
+					<div data-dojo-type="dijit.MenuItem">Item Nine</div>
+					<div data-dojo-type="dijit.MenuItem">Item Ten</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="dijitInline topAligned">
+		<h4>Menu used as context menu</h4>
+		<div id="clickArea" style="background: #cce8f2; height: 300px; width: 180px; padding:10px;">
+		Rigth click here to open the context menu!
+		</div>
+		<div id="contextMenu" data-dojo-type="idx.oneui.Menu"' data-dojo-props='targetNodeIds:["clickArea"], style:"display: none;"'>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Hello world"); }'>Context Menu</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='disabled:true, onClick:function(){ alert("this should NOT appear"); }'>Disabled Item</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+				onClick:function(){ console.log("not actually cutting anything, just a test!") }, accelKey:"Ctrl+X"'>Cut</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+				onClick:function(){ console.log("not actually copying anything, just a test!") }, accelKey:"Ctrl+C"'>Copy</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+				onClick:function(){ console.log("not actually pasting anything, just a test!") }, accelKey:"Ctrl+V"'>Paste</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div id="ct_enabledSubmenu" data-dojo-type="dijit.PopupMenuItem" >
+				<span>Enabled Submenu</span>
+				<div id="ct_submenu2" data-dojo-type="idx.oneui.Menu" >
+					<div id="ct_submenu2_item1" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div id="ct_submenu2_item2" data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+					<div id="ct_deeperSubmenu" data-dojo-type="dijit.PopupMenuItem" >
+						<span>Deeper Submenu</span>
+						<div id="ct_submenu4" data-dojo-type="idx.oneui.Menu" >
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 1!") }'>Sub-sub-menu Item One</div>
+							<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Sub-submenu 2!") }'>Sub-sub-menu Item Two</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-dojo-type="dijit.PopupMenuItem" data-dojo-props='disabled:true'>
+				<span>Disabled Submenu</span>
+				<div id="ct_submenu3" data-dojo-type="idx.oneui.Menu" data-dojo-props='style:"display: none;"'>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 1!") }'>Submenu Item One</div>
+					<div data-dojo-type="dijit.MenuItem" data-dojo-props='onClick:function(){ console.log("Submenu 2!") }'>Submenu Item Two</div>
+				</div>
+			</div>
+			<div data-dojo-type="dijit.PopupMenuItem">
+				<span>Different popup</span>
+				<div data-dojo-type="dijit.ColorPalette"></div>
+			</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, onChange:function(val){ console.log("Now set to " + val); }'>Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem">Not Checked</div>
+			<div data-dojo-type="dijit.CheckedMenuItem" data-dojo-props='checked:true, disabled:true'>Checked Disabled</div>
+			<div data-dojo-type="dijit.MenuSeparator"></div>
+			<div data-dojo-type="dijit.PopupMenuItem">
+				<span>Bigger Submenu</span>
+				<div id="ct_bigsubmenu" data-dojo-type="idx.oneui.Menu" data-dojo-props='style:"display: none;"'>
+					<div data-dojo-type="dijit.MenuItem">Item One</div>
+					<div data-dojo-type="dijit.MenuItem">Item Two</div>
+					<div data-dojo-type="dijit.MenuItem">Item Three</div>
+					<div data-dojo-type="dijit.MenuItem">Item Four</div>
+					<div data-dojo-type="dijit.MenuItem">Item Five</div>
+					<div data-dojo-type="dijit.MenuItem">Item Six</div>
+					<div data-dojo-type="dijit.MenuItem">Item Seven</div>
+					<div data-dojo-type="dijit.MenuItem">Item Eight</div>
+					<div data-dojo-type="dijit.MenuItem">Item Nine</div>
+					<div data-dojo-type="dijit.MenuItem">Item Ten</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<h2>idx.oneui.MenuBar</h2>
+	<div id="oneuimenubar" data-dojo-type="idx.oneui.MenuBar">
+		<div id="file" data-dojo-type="dijit.PopupMenuBarItem" >
+			<span>File</span>
+			<div id="fileMenu" data-dojo-type="idx.oneui.Menu" >
+				<div id="new" data-dojo-type="dijit.MenuItem" >New</div>
+				<div id="open" data-dojo-type="dijit.MenuItem" >Open</div>
+				<div id="separator" data-dojo-type="dijit.MenuSeparator" ></div>
+				<div id="save" data-dojo-type="dijit.MenuItem">Save</div>
+				<div id="saveas" data-dojo-type="dijit.MenuItem" >Save As...</div>
+			</div>
+		</div>
+		<div id="edit" data-dojo-type="dijit.PopupMenuBarItem" >
+			<span>Edit</span>
+			<div id="editMenu" data-dojo-type="idx.oneui.Menu" >
+				<div id="cut" data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCut",
+					onClick:function(){ console.log("not actually cutting anything, just a test!"); }, accelKey:"Ctrl+X"'>Cut</div>
+				<div id="copy" data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconCopy",
+					onClick:function(){ console.log("not actually copying anything, just a test!") }, accelKey:"Ctrl+C"'>Copy</div>
+				<div id="paste" data-dojo-type="dijit.MenuItem" data-dojo-props='iconClass:"dijitEditorIcon dijitEditorIconPaste",
+					onClick:function(){ console.log("not actually pasting anything, just a test!") }, accelKey:"Ctrl+V"'>Paste</div>
+			</div>
+		</div>
+		<div id="view" data-dojo-type="dijit.PopupMenuBarItem" >
+			<span>View</span>
+			<div id="viewMenu" data-dojo-type="idx.oneui.Menu" >
+				<div data-dojo-type="dijit.MenuItem">Normal</div>
+				<div data-dojo-type="dijit.MenuItem">Outline</div>
+				<div data-dojo-type="dijit.PopupMenuItem">
+					<span>Zoom</span>
+					<div id="zoomMenu" data-dojo-type="idx.oneui.Menu" >
+						<div data-dojo-type="dijit.MenuItem">50%</div>
+						<div data-dojo-type="dijit.MenuItem">75%</div>
+						<div data-dojo-type="dijit.MenuItem">100%</div>
+						<div data-dojo-type="dijit.MenuItem">150%</div>
+						<div data-dojo-type="dijit.MenuItem">200%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="help" data-dojo-type="dijit.PopupMenuBarItem" >
+			<span>Help</span>
+			<div id="helpMenu" data-dojo-type="idx.oneui.Menu" >
+				<div data-dojo-type="dijit.MenuItem">Help Topics</div>
+				<div data-dojo-type="dijit.MenuItem">About Dijit</div>
+			</div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuBarItem" data-dojo-props='disabled:true'>
+			<span>Disabled</span>
+			<div data-dojo-type="idx.oneui.Menu">
+				<div data-dojo-type="dijit.MenuItem">You should not see this</div>
+			</div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Empty</span>
+			<div data-dojo-type="idx.oneui.Menu">
+			</div>
+		</div>
+		<div data-dojo-type="dijit.MenuBarItem" data-dojo-props='onClick:function(){ console.log("no submenu, just a clickable MenuItem"); }'>
+			Click me!
+		</div>
+	</div>
+</dvi>

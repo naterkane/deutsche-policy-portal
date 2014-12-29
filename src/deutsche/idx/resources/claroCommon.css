@@ -1,0 +1,95 @@
+.claro .idxSignIcon {
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 24px;
+	height: 24px;
+}
+
+.claro .idxSimpleIconContainer {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.claro .idxSimpleIconText {
+	padding: 0px 0px 0px 5px;
+}
+
+.dijitRtl .claro .idxSimpleIconText {
+	padding: 0px 5px 0px 0px;
+}
+
+.claro .idxInformIcon {
+	background-image: url('claro/information_24.png');
+}
+
+.claro .idxWarnIcon {
+	background-image: url('claro/warning_24.png');
+}
+
+.claro .idxErrorIcon {
+	background-image: url('claro/error_24.png');
+}
+
+.claro .idxConfirmIcon {
+	background-image: url('claro/unknown_24.png');
+}
+
+/* dialog messages  */
+.claro .idxDialogIconWarning
+{
+	background-image: url('claro/warning_24.png');
+	background-repeat: no-repeat; 
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+}
+.claro .idxDialogIconInformation
+{
+	background-image: url('claro/information_24.png');
+	background-repeat: no-repeat; 
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+}
+.claro .idxDialogIconError
+{
+	background-image: url('claro/error_24.png');
+	background-repeat: no-repeat; 
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+}
+.claro .idxDialogIconText
+{	
+	margin-left: 0px;
+}
+
+.claro .idxDetailsPaneText
+{
+	font-size: 12pt; /* 16pt too huge */
+	color: #4B73A3; 
+	font-family: Tahoma;
+	font-style: normal;
+	border-style: none none solid;
+    border-width: 0px;
+    text-align: center; 
+    display: block !important; 
+}
+
+
+/* workaround for absolute position specified for dijitContentPaneLoading in themes/claro/Common.css. */
+.claro .idxSignIcon.dijitContentPaneLoading {
+	color: transparent;
+	position: relative; 
+	width: 50px; 
+	height: 50px; 
+	top: auto; 
+	bottom: auto; 
+	left: auto; 
+	right: auto; 
+	background-position: center center;
+}
+
+.dijit_a11y .claro .idxSignIcon.dijitContentPaneLoading {
+	color: black;
+}

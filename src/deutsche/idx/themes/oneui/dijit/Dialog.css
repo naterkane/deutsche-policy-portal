@@ -1,0 +1,208 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* Dialog 
+ * 
+ * Styling Dialog includes two sections: Dialog and Tooltip & TooltipDialog
+ * 
+ * Dialog:
+ * 1. Dialog (default styling): 
+ * 		.dijitDialog - styles for dialog's bounding box
+ *
+ * 2. Dialog title 
+ * 		.dijitDialogTitleBar - styles for the title container at the top of dialog
+ * 		.dijitDialogTitle - the text container in dialog title
+ * 
+ * 3. Dialog content 
+ * 		.dijitDialogPaneContent - main container for content area and action bar
+ * 		.dijitDialogPaneContentArea - styles for content container
+ * 
+ * 4. Dialog action bar 
+ * 		.dijitDialogPaneActionBar - styles for action buttons lie at the bottom of dialog pane content
+ * 
+ * 5. Dialog underlay 
+ * 		.dijitDialogUnderlay - div under the dialog which used for separate dialog and page content
+ * 
+ * 
+ * Tooltip & TooltipDialog:
+ * 1. tooltip content container: 
+ * 		.dijitTooltipContainer - tooltip content container
+ *
+ * 2. tooltip connector: 
+ * 		.dijitTooltipConnector - tooltip anchor includes 4 direction(up, down, left, right)
+ */
+ 
+ 
+ 
+ /* IMPORTANT NOTE
+  *
+  * The following dialog styles are provided to support legacy products.
+  * If building a new or updated product, it is highly suggested that you
+  * use the IDX dialog instead.
+ */ 
+ 
+ 
+.oneui .dijitDialog {
+    border:4px solid #9a9a9a/*this is needed for IE*/;
+   	border:4px solid rgba(3, 3, 3, 0.4);
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-moz-box-shadow:0 0 4px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:0 0 4px 1px rgba(0, 0, 0, 0.2);
+	box-shadow:0 0 4px 1px rgba(0, 0, 0, 0.2);
+    min-width: 400px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.oneui .dijitDialogPaneContent {
+    padding: 10px 20px 20px;;
+	background: transparent;
+    position: relative;
+}
+
+.oneui .dijitDialogPaneContentArea { /* trick to get action bar (gray bar at bottom with OK/cancel buttons) to span from left to right but still indent dialog content */
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+.oneui .dijitDialogPaneContentArea .dijitTabPaneWrapper {
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
+	}
+
+.oneui .dijitDialogPaneActionBar {
+
+	padding-top: 20px;
+	background-color: transparent;
+    text-align: right;
+    border-top: 1px solid #ccc;
+}
+
+.oneui .dijitDialogTitleBar { /* outer container for the titlebar of the dialog */
+	padding: 20px 0;
+	margin: 0 20px;
+    border-bottom:1px solid #999999;
+   background:#transparent;
+}
+
+.oneui .dijitDialogTitle { /* typography and styling of the dialog title */
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.2;
+    color: #222;
+}
+
+.oneui .dijitDialogCloseIcon { /* the default close icon for the dialog */
+    display: none;
+}
+
+/* Tooltip and TooltipDialog */
+.oneui .dijitTooltip, .oneui .dijitTooltipDialog {
+  /* the outermost dom node, holding the connector and container */
+
+  background: transparent;
+  /* make the area on the sides of the arrow transparent */
+
+}
+.dijitTooltipBelow {
+  /* leave room for arrow above content */
+
+  padding-top: 13px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.dijitTooltipAbove {
+  /* leave room for arrow below content */
+
+  padding-bottom: 13px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.oneui .dijitTooltipContainer {
+  /* the part with the text */
+
+  background-color: #ffffff;
+  background-image: url("images/tooltipGradient.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  border: 1px solid #769dc0;
+  padding: 6px 8px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  font-size: 1em;
+}
+.dj_ie6 .oneui .dijitTooltipContainer {
+  background-image: none;
+}
+.oneui .dijitTooltipConnector {
+  /* the arrow piece */
+
+  border: 0;
+  z-index: 2;
+  background-image: url("images/tooltip.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 14px;
+}
+.dj_ie6 .oneui .dijitTooltipConnector {
+  background-image: url("images/tooltip8bit.png");
+}
+.oneui .dijitTooltipABRight .dijitTooltipConnector {
+  /* above or below tooltip, but the arrow appears on the right,
+		and the right edges of target and tooltip are aligned rather than the left */
+
+  left: auto !important;
+  right: 3px;
+}
+.oneui .dijitTooltipBelow .dijitTooltipConnector {
+  /* the arrow piece for tooltips below an element */
+
+  top: 0;
+  left: 3px;
+  background-position: -31px 0;
+  width: 16px;
+  height: 14px;
+}
+.oneui .dijitTooltipAbove .dijitTooltipConnector {
+  /* the arrow piece for tooltips above an element */
+
+  bottom: 0;
+  left: 3px;
+  background-position: -15px 0;
+  width: 16px;
+  height: 14px;
+}
+.dj_ie7 .oneui .dijitTooltipAbove .dijitTooltipConnector, .dj_ie6 .oneui .dijitTooltipAbove .dijitTooltipConnector {
+  bottom: -1px;
+}
+.oneui .dijitTooltipLeft {
+  padding-right: 14px;
+}
+.oneui .dijitTooltipLeft .dijitTooltipConnector {
+  /* the arrow piece for tooltips to the left of an element, bottom borders aligned */
+
+  right: 0;
+  background-position: 0 0;
+  width: 16px;
+  height: 14px;
+}
+.oneui .dijitTooltipRight {
+  padding-left: 14px;
+}
+.oneui .dijitTooltipRight .dijitTooltipConnector {
+  /* the arrow piece for tooltips to the right of an element, bottom borders aligned */
+
+  left: 0;
+  background-position: -48px 0;
+  width: 16px;
+  height: 14px;
+}

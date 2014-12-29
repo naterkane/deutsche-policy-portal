@@ -1,0 +1,124 @@
+/* Time Picker 
+ *
+ * Styling the Time Picker consists of the following: 
+ *
+ * 1. minor time values
+ * 		.dijitTimePickerTick - set text color, size, background color of minor values
+ * 		.dijitTimePickerTickHover - set hover style of minor time values
+ * 		dijitTimePickerTickSelected - set selected style of minor time values
+ *
+ * 2. major time values - 1:00, 2:00, times on the hour 
+ * 		set text color, size, background color, left/right margins for "zoom" affect
+ * 		.dijitTimePickerMarkerHover - to set hover style of major time values
+ * 		.dijitTimePickerMarkerSelected - set selected style of major time values
+ * 
+ * 3. up and down arrow buttons
+ * 		.dijitTimePicker .dijitButtonNode - background-color, border
+ * 		.dijitTimePicker .dijitUpArrowHover, .dijitTimePicker .dijitDownArrowHover - set background-color for hover state
+ *
+ *	Other classes provide the fundamental structure of the TimePicker and should not be modified. 
+ */
+
+@import "variables";
+
+/* override Button.css */
+.oneui .dijitTimePicker .dijitButtonNode {
+	padding: 0 0;
+	.border-radius(0);
+}
+.oneui .dijitTimePicker{
+	border:1px @border-color solid;
+	border-top:none;
+	border-bottom:none;
+	background-color:#fff;	/* TODO: useless?   Appears to be overridden by settings on individual elements */
+}
+.oneui .dijitTimePickerItem{
+	/* dijitTimePickerItem refers to both Tick's (minor values like 2:15, 2:30, 2:45) and Marker's (major values like 2PM, 3PM) */
+	background-image: url("images/commonHighlight.png");
+	background-position:0 -1px;
+	background-repeat:repeat-x;
+	border-top:solid 1px @border-color;
+	border-bottom:solid 1px @border-color;
+	margin-right:-1px;
+	margin-left:-1px;
+	margin-top:-1px;
+}
+/* to make up for lack of alpha transparency in IE6 */
+.dj_ie6 .oneui .dijitTimePickerItem {
+	background-image: none;
+}
+.oneui .dijitTimePickerTick {
+	/* minor value */
+	color:@timepicker-minorvalue-text-color;
+	background-color:@timepicker-minorvalue-background-color;
+	font-size:0.818em;
+}
+.oneui .dijitTimePickerMarker {
+	/* major value - 1:00, 2:00, times on the hour */
+	background-color: @timepicker-majorvalue-background-color;
+	font-size: 1em;
+	white-space: nowrap;
+}
+.oneui .dijitTimePickerTickHover,
+.oneui .dijitTimePickerMarkerHover,
+.oneui .dijitTimePickerMarkerSelected,
+.oneui .dijitTimePickerTickSelected {
+	background-color: @timepicker-value-hovered-background-color;
+	border:solid 1px @border-color;
+	margin-left:-7px;
+	margin-right:-7px;
+	color:@timepicker-value-hovered-text-color;
+}
+.oneui .dijitTimePickerMarkerSelected,
+.oneui .dijitTimePickerTickSelected {
+	font-size: 1em;
+}
+.dj_ie .oneui .dijitTimePickerTickHover,
+.dj_ie .oneui .dijitTimePickerMarkerHover,
+.dj_ie .oneui .dijitTimePickerMarkerSelected,
+.dj_ie .oneui .dijitTimePickerTickSelected  {
+	width: 114%;
+}
+.dj_ie6 .oneui .dijitTimePickerTickHover,
+.dj_ie6 .oneui .dijitTimePickerMarkerHover,
+.dj_ie6 .oneui .dijitTimePickerMarkerSelected,
+.dj_ie6 .oneui .dijitTimePickerTickSelected  {
+	position: relative; /* creates widening of element */	
+	zoom: 1; /* creates widening of element */
+}
+.oneui .dijitTimePickerTick .dijitTimePickerItemInner {
+	padding:1px;
+	margin:0;
+}
+.oneui .dijitTimePicker .dijitButtonNode {
+	border-left:none;
+	border-right:none;
+	border-color:@border-color;
+	background-color: @unselected-background-color;
+	background-image: url("images/commonHighlight.png");
+	background-position:0 -1px;
+	background-repeat:repeat-x;
+}
+.dj_ie6 .oneui .dijitTimePicker .dijitButtonNode {
+	background-image: none;
+}
+.oneui .dijitTimePicker .dijitArrowButtonInner{
+	height: 100%; /* hack oneui.button.css */
+	background-image: url("form/images/commonFormArrows.png");
+	background-repeat: no-repeat;
+	background-position:-140px 45%;
+}
+.oneui .dijitTimePicker .dijitDownArrowButton .dijitArrowButtonInner{
+	background-position:-35px 45%;
+}
+/* hover */
+.oneui .dijitTimePicker .dijitUpArrowHover, 
+.oneui .dijitTimePicker .dijitDownArrowHover {
+	background-color: @timepicker-arrow-hovered-background-color;
+}
+.oneui .dijitTimePicker .dijitUpArrowHover .dijitArrowButtonInner {
+	background-position:-175px 45%;
+}
+.oneui .dijitTimePicker .dijitDownArrowHover .dijitArrowButtonInner {
+	background-position:-70px 45%;
+}

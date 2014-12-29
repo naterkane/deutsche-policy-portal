@@ -1,0 +1,19 @@
+@import url("claroIconPicker.css");
+
+.claro .idxTimePicker .idxPickerIcon  {
+	width: 23px;
+	height: 23px;
+}
+
+.claro .idxTimePicker .idxPickerIconLink {
+	top: -3px;
+	right: 0px;
+}
+
+.claro .idxTimeIcon {
+	background-image: url('claro/time_picker23.png');
+}
+
+.claro .dijitTimeTextBoxDisabled .idxTimeIcon {
+	background-image: url('claro/time_picker23_d.png');
+}

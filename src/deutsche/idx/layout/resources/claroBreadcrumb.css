@@ -1,0 +1,69 @@
+.claro .idxBreadcrumbController
+{
+	height: 1em;
+	overflow: hidden;
+	border: none;
+	padding-left: 8px;
+	white-space: nowrap;
+}
+
+.claro.dijit_a11y .idxBreadcrumbController,
+.dijit_a11y.claro .idxBreadcrumbController {
+	height: 22px;
+}
+
+.claro .idxBreadcrumb .dijitButtonText
+{
+	color: #2966AE;
+	text-decoration: underline;
+	font-size: 100%	;
+}
+
+.claro .idxBreadcrumbHover .dijitButtonText
+{
+	color: #3b90f4;
+	text-decoration: underline;
+	font-size: 100%;
+}
+
+.claro .idxBreadcrumb .dijitButtonNode
+{
+	border: none;
+	padding: 0px;
+}
+
+.claro .idxBreadcrumbSeparator
+{	
+	color: #464646;
+	font-size: 100%;
+	position: relative;
+	height: 1em;
+	padding: 0 0.3em;
+	vertical-align: bottom;	
+	white-space: nowrap;
+}
+
+.claro .idxBreadcrumb
+{
+	position: relative;
+	height: 1em;
+	vertical-align: middle;
+	display: inline;
+	line-height: 1em;	
+	white-space: nowrap;
+}
+
+.claro .idxBreadcrumbController .idxBreadcrumbRtl
+{
+	padding-left: 0px;
+	padding-right: 9px;
+}
+
+.claro .idxBreadcrumbChecked .dijitButtonText
+{
+	color: #48678a;
+	font-size: 110%;
+	font-weight: bold;
+	text-decoration: none;
+	cursor:default;
+}

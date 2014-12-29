@@ -1,0 +1,34 @@
+.claro .idxComboLink.idxLinkDerived {
+	white-space: no-wrap;
+	display: inline;
+} 
+
+.claro .idxComboLinkArrowButton {
+	white-space: no-wrap;
+	display: inline;
+}
+
+.claro .idxComboLink .dijitArrowButtonInner {
+	cursor: pointer;
+}
+
+.claro .idxComboLink .idxComboLinkSeparator {
+	border: none;
+	border-right: solid 1px gray;
+	height: 1em;
+	width: 4px;
+	margin-right: 2px;
+}
+
+.claro .idxAppMarquee .idxComboLinkAnchor {
+  color: #ffffff;
+}
+
+.claro .idxComboLinkDisabled .idxComboLinkAnchor,
+.claro .idxAppMarquee .idxComboLinkDisabled .idxComboLinkAnchor {
+  color: #696969;
+}
+
+.claro .idxComboLinkDisabled .dijitArrowButtonInner {
+	cursor: auto;
+}

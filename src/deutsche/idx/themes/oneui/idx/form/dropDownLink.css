@@ -1,0 +1,34 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxDropDownLink.idxLinkDerived {
+	white-space: nowrap;
+	display: inline;
+} 
+
+.oneui .idxDropDownLink .idxDropDownLinkAnchor {
+	margin-right: 2px;
+}
+.dijitRtl .oneui .idxDropDownLink .idxDropDownLinkAnchor {
+	margin-right: 0px;
+	margin-left: 4px;
+}
+
+.oneui .idxDropDownLinkDisabled .idxDropDownLinkAnchor,
+.oneui .idxAppMarquee .idxDropDownLinkDisabled .idxDropDownLinkAnchor {
+  color: #696969;
+}
+
+.oneui .idxDropDownLinkDisabled .idxDropDownLinkAnchor:hover,
+.oneui .idxAppMarquee .idxDropDownLinkDisabled .idxDropDownLinkAnchor:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+.oneui .idxDropDownLinkDisabled .dijitArrowButtonInner {
+	cursor: auto;
+}

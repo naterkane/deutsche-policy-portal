@@ -1,0 +1,21 @@
+.claro .idxTabMenuDockOptions {
+  background-image: url(../../resources/blank.gif?tabWidget=idx.app.WorkspaceTab&autoHeight=false);
+}
+
+.claro div.idxTabMenuDock {
+  height: 24px;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  right: 2px;
+}
+
+.claro div.idxTabMenuDockTabs {
+  position: absolute; 
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+

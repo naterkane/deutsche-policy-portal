@@ -1,0 +1,74 @@
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+	id:'GridPage', 
+	style:'padding:0 28px;'">
+	<h2>Paging Grid</h2>
+	<div id="grid1" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid1Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true
+	">
+	</div>
+	<h2>Horizontally Constrained Paging Grid</h2>
+	<div id="grid2" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid2Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true
+	">
+	</div>
+	<h2>Scrolling Grid</h2>
+	<div id="grid3" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid3Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true
+	">
+	</div>
+	<h2>Dual Paging Grid</h2>
+	<div id="grid4" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid4Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true,
+		paginationBarPosition: 'both',
+		paginationBarGotoButton: false,
+		paginationBarDescription: 'bottom',
+		paginationBarSizeSwitch: 'top'
+	">
+	</div>
+	<h2>Zebra Grid</h2>
+	<div id="grid5" class="gridxAlternatingRows gridxWholeRow" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid5Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true
+	">
+	</div>
+	<h2>Compact Grid</h2>
+	<div id="grid6" class="compact" data-dojo-type="idx.gridx.Grid" data-dojo-props="
+		cacheClass: gridCache,
+		store: gridStore,
+		structure: gridLayout,
+		modules: grid6Modules,
+		autoWidth: true,
+		selectRowTriggerOnCell: true
+	">
+	</div>
+</div>

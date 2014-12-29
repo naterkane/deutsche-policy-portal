@@ -1,0 +1,27 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+
+
+.dijitRtl .oneui .idxPreviewContent {
+	padding: 20px 137px 0 20px; /*137px to account for image and no-text wrapping */
+	position: relative;	
+	font-size: 14px;
+	color: #222222;
+	line-height: 18px;
+}
+
+.dijitRtl .oneui .idxPreviewContent p{
+	margin-top: 8px;
+	text-align: right; 
+}
+
+.dijitRtl .oneui .idxOneuiHoverCardMoreActions{
+	float: left;
+	padding: 5px 10px;
+	 
+}

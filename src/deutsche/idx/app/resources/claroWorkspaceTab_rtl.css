@@ -1,0 +1,47 @@
+.dijitRtl .claro div.idxWorkspaceTab {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #BBBBFF;
+  border-left-style: none;
+  border-left-width: 0px;
+}
+
+.dijitRtl .claro div.idxWorkspaceTabPostHovered {
+ border-right-style: none;
+ border-right-width: 1px;
+ border-left-style: 0px;
+ margin-right: 2px;
+ margin-left: 0px;
+}
+
+.dijitRtl .claro div.idxWorkspaceTabPostSelected {
+ border-right-style: none;
+ border-right-width: 1px;
+ border-left-width: 0px;
+ margin-right: 2px;
+ margin-left: 0px;
+}
+
+.dijitRtl .claro div.idxWorkspaceTabHovered {
+  border-right-style: none;
+  border-right-width: 1px;
+  border-left-witdh: 0px;
+  margin-right: 2px;
+  margin-left: 0px;
+}
+
+.dijitRtl .claro div.idxWorkspaceTabSelected {
+  border-right-style: none;
+  border-right-width: 1px;
+  border-left-width: 0px;
+  margin-right: 2px;
+  margin-left: 0px;
+}
+
+.dijitRtl .claro div.idxWorkspaceTabFirst {
+ border-right-style: none;
+ border-right-width: 1px;
+ border-left-width: 0px;
+ margin-right: 2px;
+ margin-left: 0px;
+}

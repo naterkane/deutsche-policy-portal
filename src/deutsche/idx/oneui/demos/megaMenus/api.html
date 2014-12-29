@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>API documentation</title>
+	
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+		dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+		dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+    <style id="idxStyles" type="text/css">
+		@import "../../../themes/oneui/oneui.css";
+        @import "../demo.css";
+        @import "../../tests/_pagefooter/_PageFooter.css";
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"idx.oneui.tests._pagefooter._PageFooter"];
+				 
+		dojoRequireModules(modules, null, currentDojoVersion.async, null, null);
+	</script>
+	
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+	<div class="demoContent" dir="ltr">
+		<p>
+			Mega menu functionality is provided by the following four widgets.
+			<ul>
+				<li><a href="#menubar">idx.oneui.MenuBar</a></li>
+				<li><a href="#menudialog">idx.oneui.MenuDialog</a></li>
+				<li><a href="#menu">idx.oneui.Menu</a></li>
+				<li><a href="#menu">idx.oneui.MenuHeading</a></li>
+			</ul> 
+		</p>
+		
+		<h2><a name="menubar">idx.oneui.MenuBar</a></h2>
+	
+		<p>This widget is an an enhanced version of dijit.MenuBar that provides trigger-on-hover functionality.</p>
+	
+		<h3>Properties</h3>
+		<ul>
+			<li><span class="api-fieldname">openOnHover</span>: true (default) if hover will trigger the opening of popup items.</li>
+		</ul>
+		
+		<h2><a name="menudialog">idx.oneui.MenuDialog</a></h2>
+	
+		<p>This widget is the main container for rich mega-menu content. Instances can be supplied
+		as the "popup" parameter for dijit.PopupMenuItem and dijit.PopupMenuBarItem, and will work
+		"as expected". Instances can also operate as popup menus on arbitrary DOM nodes, or for the
+		whole window. Instances can display with a thick border and shark fin to connect to the
+		initiating element or with a thinner border and no shark fin and abutting the initiating
+		element. Instances behave as content panes, and HTML and dijits may be laid out within them.
+		If an idx.oneui.Menu instance with "menuForDialog" set to true is included within the layout, the
+		menu dialog will operate as a drop-down menu in combination with the contained menu.</p>
+	
+		<h3>Properties</h3>
+		<ul>
+			<li><span class="api-fieldname">useConnector</span>: true if a sharkfin connector is to be shown connecting the dialog to the initiating element.</li>
+			<li><span class="api-fieldname">hoverToOpen</span>: specifies whether hover will trigger popup (unless overridden at bind time).</li>
+			<li><span class="api-fieldname">isShowingNow</span> true when visible, false otherwise. Set to true in onOpen and set to false in onClose.</li>
+			<li><span class="api-fieldname">leftClickToOpen</span> specifies whether left click or right click will trigger popup (unless overridden at bind time).</li>
+			<li><span class="api-fieldname">parentMenu</span> identifies menu which opened me, when used as a drop-down/cascade.</li>
+			<li><span class="api-fieldname">popupPosition</span> position to use for popup bindings unless overridden at bind time.</li>
+			<li><span class="api-fieldname">targetNodeIds</span> array of node ids to be bound for popup at creation time.</li>
+		</ul>
+		
+		<h3>Methods</h3>
+		<ul>
+			<li><span class="api-fieldname">bindDomNode</span> Register a DOM node to act as a popup trigger.
+			Parameters include: trigger DOM node, around node (defaults to trigger node), orientation
+			(defaults to popupPosition), leftClickToOpen (defaults to leftClickToOpen),
+			hoverToOpen (defaults to hoverToOpen).</li>
+			
+			<li><span class="api-fieldname">onCancel</span> To be called when the menu is to be dismissed.</li>
+			
+			<li><span class="api-fieldname">onClose</span> This method is called whenever the menu dialog is hidden.</li>
+			
+			<li><span class="api-fieldname">onExecute</span> To be called when an action within the menu is activated.</li>
+			
+			<li><span class="api-fieldname">onOpen</span> This method is called with then the menu dialog is shown.</li>
+			
+			<li><span class="api-fieldname">unbindDomNode</span> Deregister a DOM node as a popup trigger.</li>
+		</ul>
+	
+	
+		<h2><a name="menu">idx.oneui.Menu</a></h2>
+	
+		<p>This widget is an enhanced version of dijit.Menu that provides trigger-on-hover functionality, can
+		be used inside an idx.oneui.MenuDialog to provide cascade menu behaviour, and provides multi-column menu support
+		including keyboard navigation. Instances can be supplied as the "popup" parameter for dijit.PopupMenuItem
+		and dijit.PopupMenuBarItem, and will operate as dijit.Menu does. Instances can operate as popup menus on
+		arbitrary DOM nodes, or for the whole window, and will operate as dijit.Menu does. Instances can be placed
+		"flat" within a layout in the UI, and will operate as dijit.Menu does, except that cascade-on-hover behaviour
+		is available. Instances can be placed within an idx.oneui.MenuDialog and act as a cascading menu in conjunction
+		with the containing idx.oneui.MenuDialog unless "menuForDialog" is set to false.</p>
+	
+		<p>When menu items are added to this widget, the "column" property on each item can be used to specify the
+		column in which the item should be placed. Columns will be created as needed to accommodate each new item.</p>
+	
+		<h3>Properties</h3>
+		<ul>
+			<li><span class="api-fieldname">columnNodes</span>: an array of the DOM nodes which provide the multiple columns containing the menu items.</li>
+			
+			<li><span class="api-fieldname">openOnHover</span> true (default) if hover will trigger the opening of popup items.</li>
+			
+			<li><span class="api-fieldname">menuForDialog</span> true (default) if this menu should be used by a containing idx.oneui.MenuDialog in order to provide the primary menu functionality.</li>
+		</ul>		
+	
+	
+		<h2><a name="menu">idx.oneui.MenuHeading</a></h2>
+	
+		<p>This widget is an enhanced version of dijit.MenuSeparator that 
+		provides textual headings between menu items instead of a simple line separator.</p> 
+	
+		<h3>Properties</h3>
+		<ul>
+			<li><span class="api-fieldname">label</span> text (and markup) to display in the item.</li>
+		</ul>
+	
+	</div>
+</body>
+</html>

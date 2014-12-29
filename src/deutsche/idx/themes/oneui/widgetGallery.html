@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>IBM One UI Widget Gallery</title>
+	<script>
+		var startTime = new Date();
+	</script>
+	<script type="text/javascript" src="../../tests/dojoVersion.js"></script>
+	
+	<script type="text/javascript">
+		dojoCSSImport("../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+		dojoCSSImport("../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+	</script>
+	<link rel="stylesheet" href="idx/oneui/gridx/Gridx.css"/>
+	<style id="idxStyles" type="text/css">
+		@import url("oneui.css");
+		@import url("idx/widget/personCard.css");
+		@import "http://localhost:59449/stwebapi/main.css";
+		
+		html, body { height: 100%; width: 100%; padding: 0; border: 0; }
+		#main { height: 88%; width: 100%; border: 0; }
+		#leftAccordion { width: 25%; }
+		#bottomTabs { height: 40%; }
+		#hs-1width {
+			width:400px;
+			height:40px;
+		}
+		/* pre-loader specific stuff to prevent unsightly flash of unstyled content */
+		#loader {
+			padding:0;
+			margin:0;
+			position:absolute;
+			top:0; left:0;
+			width:100%; height:100%;
+			background:#ededed;
+			z-index:999;
+			vertical-align:middle;
+		}
+		#loaderInner {
+			padding:5px;
+			position:relative;
+			left:0;
+			top:0;
+			width:175px;
+			background:#3c3;
+			color:#fff;
+		}
+
+		#indTestBar,
+		#setTestBar {
+			width:400px;
+		}
+		
+		hr.spacer { border:0; background-color:#ededed; width:80%; height:1px; }
+
+		.yellowBackground{
+			background-color: yellow !important;
+		}
+		.arbitraryMenuDialog {
+			margin: 10px;
+			border: 1px solid black; 
+            padding: 10px;
+            background: AliceBlue;
+        }
+
+		/* Gridx start */
+		.testDataWarningStatus,
+		.testDataCriticalStatus,
+		.testDataNormalStatus {
+			background-image: url("../../gridx/tests/support/data/status.png");
+			background-repeat: no-repeat;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.testDataWarningStatus {
+			background-position: 0 -2px;
+		}
+
+		.testDataNormalStatus {
+			background-position: -18px -2px;
+		}
+
+		.testDataCriticalStatus {
+			background-position: -36px -2px;
+		}
+		
+		.gridx {
+			width: 800px;
+			height: 280px;
+			margin-bottom: 20px;
+		}
+		/* Gridx end */
+		.testButtonTab h2, .testMessagingTab h2{
+			margin-left: 5px;
+		}
+		h2{
+			margin-left: 1px;
+		}
+		
+		/* Styles for Mega Menu */
+		.oneui .menu-workitem.dijitMenuTable { width: auto; padding: 1px 0px; }
+		.oneui .menu-workitem .oneuiMenuColumn { width: 50%; max-width: 250px; border-left: 1px solid #f0f0f0; padding: 4px 0px; }
+		.oneui .menu-workitem .oneuiMenuColumn:first-child { border-left: 0px; }
+		.dj_ie7 .oneui .menu-workitem .oneuiMenuColumn { width: 250px; }
+		.dijitRtl .oneui .menu-workitem .oneuiMenuColumn { border-left: 0px; border-right: 1px solid #f0f0f0 }
+		.dijitRtl .oneui .menu-workitem .oneuiMenuColumn:first-child { border-right: 0px; }
+		.oneui .menu-workitem .dijitMenuItem { white-space: normal; }
+		.oneui .menu-workitem .dijitMenuItem .dijitMenuItemIconCell { vertical-align: top; padding: 7px 6px 0px 19px; width: 16px; height: 16px; }
+		.dijitRtl .oneui .menu-workitem .dijitMenuItem .dijitMenuItemIconCell { padding: 7px 19px 0px 6px; }
+		.oneui .menu-workitem .dijitMenuItemLabel { vertical-align: top; }
+		.oneui .menu-workitem .dijitMenuItem .dijitMenuArrowCell { padding-left: 1px; padding-right: 1px; }
+		.oneui .menu-workitem td.oneuiMenuHeadingLabel { border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white; padding: 7px 20px 7px 14px; }
+		.dijitRtl .oneui .menu-workitem td.oneuiMenuHeadingLabel { padding: 7px 14px 7px 20px; }
+		
+		.oneui .dijitMenuTable .mi-workitem-icon-welcome,
+		.oneui .dijitMenuTable .mi-workitem-icon-query-folder,
+		.oneui .dijitMenuTable .mi-workitem-icon-query-create,
+		.oneui .dijitMenuTable .mi-workitem-icon-query,
+		.oneui .dijitMenuTable .mi-workitem-icon-defect,
+		.oneui .dijitMenuTable .mi-workitem-icon-task,
+		.oneui .dijitMenuTable .mi-workitem-icon-enhancement,
+		.oneui .dijitMenuTable .mi-workitem-icon-plan,
+		.oneui .dijitMenuTable .mi-workitem-icon-trackbuild,
+		.oneui .dijitMenuTable .mi-workitem-icon-retrospective,
+		.oneui .dijitMenuTable .mi-workitem-icon-story,
+		.oneui .dijitMenuTable .mi-workitem-icon-architectural,
+		.oneui .dijitMenuTable .mi-workitem-icon-adoption,
+		.oneui .dijitMenuTable .mi-workitem-icon-createfromtemplate { margin-left: 0px; margin-right: 0px; width: 16px; height: 16px; background-image: url(../../oneui/demos/megaMenus/images/menu_icons_workitems.png); }
+
+		.mi-workitem-icon-welcome { background-position: 0px 0px; }
+		.mi-workitem-icon-query-folder { background-position: -16px 0px; }
+		.mi-workitem-icon-query-create { background-position: -32px 0px; }
+		.mi-workitem-icon-query { background-position: -48px 0px; }
+		.mi-workitem-icon-defect { background-position: -64px 0px; }
+		.mi-workitem-icon-task { background-position: -80px 0px; }
+		.mi-workitem-icon-enhancement { background-position: -96px 0px; }
+		.mi-workitem-icon-plan { background-position: -112px 0px; }
+		.mi-workitem-icon-trackbuild { background-position: -128px 0px; }
+		.mi-workitem-icon-retrospective { background-position: -144px 0px; }
+		.mi-workitem-icon-story { background-position: -160px 0px; }
+		.mi-workitem-icon-architectural { background-position: -176px 0px; }
+		.mi-workitem-icon-adoption { background-position: -192px 0px; }
+		.mi-workitem-icon-createfromtemplate { background-position: -208px 0px; }
+
+		.communities-header { margin-bottom: 8px; padding: 15px; border-bottom: 1px solid #ededed; background-color: #fafafa; }
+		
+		.communities-filter-item { cursor: pointer; }
+		.communities-filter-item:hover { text-decoration: underline }
+		.communities-filter-separator { padding: 0px 8px; }
+		
+		.communities-search { margin: 15px 0px 0px 0px }
+		.communities-search .dijitTextBox { border: 1px solid #e3e3e3; width: 100%; -moz-border-radius: 12px; border-radius: 12px; }
+		.communities-search .dijitTextBox .dijitInputContainer { background: transparent; }
+		.communities-search .dijitButton { position: relative; width: 0px; }
+		.oneui .communities-search .dijitButton .dijitButtonNode {position: relative; left: -32px; top: -1px; background-image: url('../../oneui/demos/megaMenus/images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+		.dijitRtl .oneui .communities-search .dijitButton .dijitButtonNode {position: relative; right: -32px; top: -1px; background-image: url('../../oneui/demos/megaMenus/images/search_messages.png'); background-color: transparent; border: 0px; padding: 0px; width: 14px; height: 14px; min-width: 0px; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; }
+		.communities-search .dijitButton.dijitIcon { height: 14px; width: 14px; border: 0px; }
+
+
+		.menu-communities {  }
+		.mi-communities-name { font-weight: bold; }
+		.mi-communities-note {  }
+		.menu-communities .dijitMenuItem .dijitMenuArrowCell { padding-right: 0px;}
+				
+		.mi-communities-icon { margin-left: 0px; margin-right: 0px; width: 32px; height: 32px; background-image: url(../../oneui/demos/megaMenus/images/megaMenuIcon32px.png); }
+		.menu-communities td.dijitMenuItemIconCell { padding-left: 5px; padding-right: 1px; }
+		.dijitRtl .menu-communities td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 5px; }
+		.menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 14px;}
+		.dijitRtl .menu-communities .oneuiMenuColumn:first-child td.dijitMenuItemIconCell { padding-left: 1px; padding-right: 14px; }
+		
+		.communities-footer { margin-top: 8px; padding: 10px 15px 10px 15px; border-top: 1px solid #ededed; background-color: #fafafa;}
+		
+		/*Styles for HighLevelTemplate*/
+		.centeredContent{
+			margin-top:31px;
+			font-size: 28px;
+			text-align: center;
+		}
+		.content{
+			margin-top:0px;
+			font-size: 24px;
+			text-align: center;
+		}
+		
+		/*for HoverCard*/
+	    .placeHolderIcon {
+	          	background-image: url("idx/oneui/images/hoverActionIconPlaceholder.png");
+	          	background-repeat: no-repeat;
+	          	height: 16px;
+	          	text-align: center;
+	          	width: 16px;
+	          }
+	        
+	</style>
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+//			dojoConfig.locale = "en";
+	</script>
+	<script type="text/javascript">
+		dojoScriptImport("../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+	<!--<script type="text/javascript" src="../../allInOne.js"></script>-->
+	<!-- a check for stray globals: not needed! -->
+	<script type="text/javascript">
+		window.__globalList = { dojo: true, dijit: true, dojox: true, dojoConfig:true };
+		for(var i in window){
+			window.__globalList[i] = true;
+		}
+	</script>
+
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo.date.locale",
+			"dojo.data.ItemFileReadStore",
+			"dojo.data.ItemFileWriteStore",
+			"dojo.dnd.Source",
+			"dijit.TitlePane",
+			"dijit.ColorPalette",
+			"dijit.ProgressBar",
+			"dijit.PopupMenuBarItem",
+			"dijit.MenuBarItem",
+			"dijit.MenuItem",
+			"dijit.Editor",
+			"dijit._editor.plugins.TextColor", 
+			"dijit.layout.TabContainer",
+			"dijit.layout.LinkPane",
+			"dijit.layout.ContentPane",
+			"dijit.layout.AccordionContainer",
+			"dijit.layout.SplitContainer",
+			"dijit.form.Button",
+			"dijit.form.MultiSelect",
+			"idx.widget.PersonCard",
+			"idx.oneui.Dialog",
+			"idx.oneui.MenuBar",
+			"idx.oneui.Header",
+			"idx.oneui.Menu",
+			"idx.oneui.MenuHeading",
+			"idx.oneui.CheckBoxTree",
+			//"idx.oneui.LoginSplash",
+			"idx.oneui.MenuDialog",
+			"idx.oneui.dnd.dndSource",
+			"idx.oneui.HoverCard",
+			"idx.oneui._Preview",
+			"idx.oneui.layout.ToggleBorderContainer",
+			"idx.oneui.layout.HighLevelTemplate",
+			"idx.oneui.messaging.ModalDialog",
+			"idx.oneui.messaging.ConfirmationDialog",
+			"idx.oneui.messaging.Toaster",
+			"idx.oneui.messaging.SingleMessage",
+			//Grix begin
+			'idx.gridx.Grid',
+			'idx.gridx.core.model.cache.Async',
+			'idx.gridx.tests.support.data.ComputerData',
+			'idx.gridx.tests.support.stores.Memory',
+			'idx.oneui.gridx.tests.support.modules',
+			//Gridx end
+			"idx.oneui.form.TextBox",
+			"idx.oneui.form.Textarea",
+			"idx.oneui.form.TimeTextBox",
+			"idx.oneui.form.NumberSpinner",
+			"idx.oneui.form.CurrencyTextBox",
+			"idx.oneui.form.DateTextBox",
+			"idx.oneui.form.NumberTextBox",
+			"idx.oneui.form.ComboBox",
+			"idx.oneui.form.FilteringSelect",
+			"idx.oneui.form.Select",
+			"idx.oneui.form.CheckBoxSelect",
+			"idx.oneui.form.CheckBoxList",
+			"idx.oneui.form.TriStateCheckBox",
+			"idx.oneui.form.RadioButtonSet",
+			"idx.oneui.form.HorizontalSlider",
+			"idx.oneui.form.HorizontalRule",
+			"idx.oneui.form.HorizontalRuleLabels",
+			"idx.oneui.form.VerticalSlider",
+			"idx.oneui.form.VerticalRule",
+			"idx.oneui.form.VerticalRuleLabels"
+			]; 
+		var ModalDialog = null, 
+			ConfirmationDialog = null, 
+			Dialog = null,
+			TabContainer = null, 
+			ContentPane = null, 
+			Button = null;
+			Grid = null, 
+			GridCache = null, 
+			dataSource = null, 
+			storeFactory = null, 
+			gridmods = null,
+			messageTypes = ["error","warning","info","success"],
+			testmsgs = ["Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+						"Aenean semper sagittis velit.",
+						"Cras in mi. Duis porta mauris ut ligula. Proin porta rutrum lacus.",
+						"Etiam consequat scelerisque quam.",
+						"Nulla facilisi. Maecenas luctus venenatis nulla."];
+		function preParse(modules){
+			ModalDialog = modules["idx/oneui/messaging/ModalDialog"];
+			ConfirmationDialog = modules["idx/oneui/messaging/ConfirmationDialog"];
+			Dialog = modules["idx/oneui/Dialog"];
+			TabContainer = modules["dijit/layout/TabContainer"];
+			ContentPane = modules["dijit/layout/ContentPane"];
+			Button = modules["dijit/form/Button"];
+			Grid = modules["idx/gridx/Grid"];
+			GridCache = modules["idx/gridx/core/model/cache/Async"];
+			dataSource = modules["idx/gridx/tests/support/data/ComputerData"];
+			storeFactory = modules['idx/gridx/tests/support/stores/Memory'];
+			gridmods = modules['idx/oneui/gridx/tests/support/modules'];
+
+			//Gridx begin
+			gridCache = GridCache;
+
+			gridStore = storeFactory({
+				dataSource: dataSource,
+				size: 100
+			});
+
+			gridLayout = dataSource.layouts[0];
+
+			gridCommonModules = [
+				gridmods.Focus,
+				gridmods.CellWidget,
+				gridmods.ExtendedSelectRow,
+				gridmods.Sort,
+				gridmods.ColumnResizer,
+				gridmods.VirtualVScroller,
+				gridmods.Pagination
+			];
+
+			grid1Modules = gridCommonModules.concat([
+				gridmods.OneUIPaginationBar,
+			]);
+			grid2Modules = gridCommonModules.concat([
+				gridmods.PaginationBarDD
+			]);
+			grid3Modules = gridCommonModules.concat([
+				gridmods.SummaryBar
+			]);
+			grid4Modules = gridCommonModules.concat([
+				gridmods.OneUIPaginationBar
+			]);
+			grid5Modules = gridCommonModules.concat([
+				gridmods.SummaryBar
+			]);
+			grid6Modules = gridCommonModules.concat([
+				gridmods.OneUIPaginationBar
+			]);
+			
+			selectHighLevelTemplate = function(){
+				dojo.subscribe("_pages-selectChild", function(tab){
+					for(var i = 1; i < 5; i++){
+						var hlt = dijit.byId("hlt"+i)
+						dojo.toggleClass(hlt.domNode, "dijitHidden", i != tab.idx);
+						hlt.resize();
+					}
+				})
+				dijit.byId("_pages").selectChild("firstTemplate");
+			}
+			validateWidgets = function(){
+				dojo.forEach(dijit.findWidgets(dijit.byId("validationTab").containerNode), function(widget){
+					widget.validate(false);
+				});
+			}
+			relocateHoverHelpIcon = function(){
+				//workaround of enable TextBox with embedded HoverHelpTooltip, will remove in next release
+				dojo. place(dojo.byId("one"), dijit.byId("input1").compLabelNode, "after"); 
+			}
+		}
+		function postParse(modules){
+			showError = function(){
+				var errorDialog = dijit.byId("errorDialog");
+				if(!errorDialog){
+					errorDialog = new ModalDialog({
+						id: "errorDialog",
+						type: "error", 
+						text: "The client cannot connect to the server customdoc.usca.ibm.com.",
+						info: [{
+							title: "Fix this problem",
+							content: "The server might not be available because someone pulled out the plug.<br/><br/>" + 
+							"Plug in and restart the server. " + 
+							"<button data-dojo-type=\"dijit.form.Button\" data-dojo-props='\"class\":\"secondaryButton\", onClick:function(){ alert(\"clicked Restart\"); }, value:\"Secondary\"'>Restart</button>" +
+							"<br/><br/>If the problem persists, install a locked door to keep the people away from the server, then restart it."
+						},{
+							title: "Get more help",
+							content: "<a href='#'>Email this message to my administrator</a><br/><br/>" + 
+							"<a href='#'>Live chat with my administrator</a><br/><br/>" + 
+							"<a href='#'>Search support</a><br/><br/>" + 
+							"<a href='#'>Search communities</a>"
+						}],
+						messageId: "CAT123456",
+						messageRef: "http://www.google.com/",
+						messageTimeStamp: new Date(2011, 8, 1)
+					}, "error");
+				}
+				errorDialog.show();
+			}
+			showWarning = function(){
+				var warningDialog = dijit.byId("warningDialog");
+				if(!warningDialog){
+					warningDialog = new ModalDialog({
+						id: "warningDialog",
+						type: "warning", 
+						text: "The client cannot connect to the server customdoc.usca.ibm.com, please check the server's status",
+						info: "The server might not be available because someone pulled out the plug.<br/><br/>" + 
+							"Plug in and restart the server." + 
+							"<br/><br/>If the problem persists, install a locked door to keep the people away from the server, then restart it.",
+						messageId: "CAT123456",
+						messageRef: "http://www.google.com/"
+					}, "warning");
+				}
+				warningDialog.show();
+			}
+			showInformation = function(){
+				var infoDialog = dijit.byId("infoDialog");
+				if(!infoDialog){
+					infoDialog = new ModalDialog({
+						id: "infoDialog",
+						type: "information",
+						text: "The database was successfully installed. Restart the system."
+					}, "information");
+				}
+				infoDialog.show();
+			}
+			showConfirmation = function(){
+				var confirmationDialog = dijit.byId("confirmationDialog");
+				if(!confirmationDialog){
+					confirmationDialog = new ConfirmationDialog({
+						id: "confirmationDialog",
+						text: "Are you sure that you want to change the background color?",
+						buttonLabel: "Change",
+						type: "question"
+					}, "confirmation");
+				}
+				confirmationDialog.confirm(function(){
+					dojo.toggleClass(dijit.byId("messagesTab").domNode, "yellowBackground");
+				});
+			}
+			
+			showDialog1 = function(){
+				var dialog1 = dijit.byId("dialog1");
+				if(!dialog1){
+					dialog1 = new Dialog({
+						id: "dialog1",
+						title: "Dialog Title",
+						instruction: "Instructional information goes here.",
+						content: "<div style='height:80px'>" + testmsgs.join("")+ "</div>",
+						reference: {
+							name: "Link goes here",
+							link: "http://dojotoolkit.org/"
+						},
+						buttons: [new Button({
+							label: "Button1",
+							onClick: function(){alert("Button1 clicked!")}
+						}),new Button({
+							label: "Button2",
+							onClick: function(){alert("Button2 clicked!")}
+						})],
+						closeButtonLabel: "Cancel"
+					}, "dialog1");
+				}
+				dialog1.show();
+			}
+			
+			showDialog2 = function(){
+				var dialog2 = dijit.byId("dialog2");
+				if(!dialog2){
+					var content = new TabContainer({
+						useMenu: false,
+						useSlider: false,
+						style: "height: 175px"
+					});
+					var tab1 = new ContentPane({
+						title: "Fix This Problem",
+						content: testmsgs.join("")
+					});
+					var tab2 = new ContentPane({
+						title: "Get More Help",
+						content: "Nothing here..."
+					});
+					content.addChild(tab1);
+					content.addChild(tab2);
+					
+					dialog2 = new Dialog({
+						id: "dialog2",
+						instruction: testmsgs[0] + testmsgs[1],
+						reference: {
+							name: "Link goes here",
+							link: "http://dojotoolkit.org/"
+						}
+					}, "dialog2");
+					dialog2.set("content", content);
+				}
+				dialog2.show(); 
+			}
+			addMessage = function(){
+				var whichmsgtype = messageTypes[Math.floor(Math.random() * 4)];
+				var whichmsg = testmsgs[Math.floor(Math.random() * 5)];
+				var timestamp = dojo.date.locale.format(new Date(), {
+					selector: "time"
+				})
+				dijit.byId("toaster").add({
+					content: whichmsg,
+					timestamp: timestamp,
+					type: whichmsgtype
+				});
+			}
+			logStrayGlobals = function(){
+				// summary:
+				//		Print all the global variables that we've created [by mistake] inside of dojo
+				var strayGlobals = [];
+				for(var i in window){
+					if(!window.__globalList[i]){
+						strayGlobals.push(i);
+					}
+				}
+				if(strayGlobals.length){
+					console.warn("Stray globals: " + strayGlobals.join(", "));
+				}
+			};
+	
+			logWidgets = function(){
+				// summary:
+				//		Print all the widgets to console
+				console.log("Widgets in registry:");
+				dijit.registry.forEach(function(w){
+					console.log(w);
+				});
+			};
+	
+			tearDown = function(){
+				// summary:
+				//		Destroy all widgets, top down, and then check for any orphaned widgets
+				dijit._destroyAll();
+				logWidgets();
+			};
+
+			
+			var loadCompleteTime = +new Date();
+			console.log("Total load time: " + (loadCompleteTime - startTime) + "ms");
+
+//			dojo.parser.parse(dojo.byId('container'));
+			console.info("Total parse time: " + (+new Date() - loadCompleteTime) + "ms");
+
+			dojo.byId('loaderInner').innerHTML += " done.";
+			setTimeout(function hideLoader(){
+				dojo.fadeOut({ 
+					node: 'loader', 
+					duration:500,
+					onEnd: function(n){
+						n.style.display = "none";
+					}
+				}).play();
+			}, 250);
+
+			logStrayGlobals();
+			
+		}
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+
+		// Pops up alerts for user clicks on mega menus.
+		function fire(itemName){
+			alert((itemName ? itemName : "Item") + " selected");
+		}
+	</script>
+	<script type="text/javascript" src="../../tests/commonTest.js"></script>
+	<script type="text/javascript" src="../../oneui/demos/demoutils.js"></script>
+	<script type="text/javascript" src="http://localhost:59449/stwebapi/getStatus.js"></script>
+</head>
+<body class="oneui" style="width: 100%; height: 100%; margin: 0; padding: 0px;">
+	<a name="maincontent"></a>
+	<!-- basic preloader: -->
+	<div id="loader"><div id="loaderInner" style="direction:ltr;">Loading themeTester ... </div></div>
+
+	<!-- data for tree and combobox -->
+	<div data-dojo-type="dojo.data.ItemFileWriteStore" data-dojo-id="continentStore"
+		data-dojo-props="url:'../../oneui/tests/_data/countries.json'"></div>
+	<div data-dojo-id="continentModel" data-dojo-type="dijit.tree.ForestStoreModel" data-dojo-props='store:continentStore, query:{type:"continent"},
+		rootId:"continentRoot", rootLabel:"Continents", childrenAttrs:["children"]'></div>
+	<div data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-id="stateStore"
+		data-dojo-props="url:'../../oneui/tests/_data/states.json'"></div>
+	<!-- contentMenu popup -->												<!-- redundant display:none required here? -->
+	<div data-dojo-type="idx.oneui.Menu" id="submenu1" data-dojo-props='contextMenuForWindow:true, style:"display:none"' style="display: none;">
+		<div data-dojo-type="dijit.MenuItem" 
+			data-dojo-props="onClick:function(){ alert('Hello world'); }">Enabled Item</div>
+		<div data-dojo-type="dijit.MenuItem" data-dojo-props="disabled:true">Disabled Item</div>
+		<div data-dojo-type="dijit.MenuSeparator"></div>
+		<div data-dojo-type="dijit.MenuItem" data-dojo-props="iconClass:'dijitIconCut', onClick: function(){ alert('not actually cutting anything. Just a test!'); }">Cut</div>
+		<div data-dojo-type="dijit.MenuItem" data-dojo-props="iconClass:'dijitIconCopy', onClick:function(){ alert('not actually copying anything, just a test!'); }">Copy</div>
+		<div data-dojo-type="dijit.MenuItem" data-dojo-props="iconClass:'dijitIconPaste', onClick: function(){ alert('not actually pasting anything, just a test!'); }">Paste</div>
+		<div data-dojo-type="dijit.MenuSeparator"></div>
+		<div data-dojo-type="dijit.PopupMenuItem">
+			<span>Enabled Submenu</span>
+			<div data-dojo-type="idx.oneui.Menu" id="submenu2">
+				<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick: function(){ alert('Submenu 1!') }">Submenu Item One</div>
+				<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick: function(){ alert('Submenu 2!') }">Submenu Item Two</div>
+				<div data-dojo-type="dijit.PopupMenuItem">
+					<span>Deeper Submenu</span>
+					<div data-dojo-type="idx.oneui.Menu" id="submenu4">
+						<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick:function(){alert('Sub-submenu 1!')}">Sub-sub-menu Item One</div>
+						<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick:function(){alert('Sub-submenu 2!')}">Sub-sub-menu Item Two</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuItem" data-dojo-props="disabled:true">
+			<span>Disabled Submenu</span>
+			<div data-dojo-type="idx.oneui.Menu" id="submenu3" style="display: none;">
+				<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick:function(){alert('Submenu 1!')}">Submenu Item One</div>
+				<div data-dojo-type="dijit.MenuItem" data-dojo-props="onClick:function(){alert('Submenu 2!')}">Submenu Item Two</div>
+			</div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuItem">
+			<span>Different popup</span>
+			<div data-dojo-type="dijit.ColorPalette"></div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuItem">
+			<span>Different popup</span>
+			<div data-dojo-type="dijit.Calendar"></div>
+		</div>
+	</div>
+	<!-- end contextMenu -->
+	<div id="_nav" data-dojo-type="idx.oneui.MenuBar">
+		<div data-dojo-type="dijit.MenuBarItem">Link 1</div><div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Mega Menu 1</span>
+				<div data-dojo-type="idx.oneui.MenuDialog" aria-label="Communities">
+					<div class="communities-header">
+						<div class="messagesContrast" role="toolbar"
+							><span><b>Communities</b></span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Member filter');">I'm a Member</span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Owner filter');">I'm an Owner</span
+							>&#x200f;&#x200e;<span class="communities-filter-separator">|</span
+							>&#x200f;&#x200e;<span class="communities-filter-item" onclick="fire('Following filter');">I'm Following</span
+							>&#x200f;&#x200e;
+						</div>
+						
+						<div class="communities-search" role="search">
+							<table style="width: 100%; *width: 442px; border-spacing: 0px">
+								<tr>
+									<td style="width: 100%; white-space: nowrap">
+										<input data-dojo-type="dijit.form.TextBox" />
+										<input data-dojo-type="dijit.form.Button" data-dojo-props="iconClass: 'idxSearchButton', showLabel: false" />
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div data-dojo-type="idx.oneui.Menu" class="menu-communities" tabIndex="1">
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 1</span><br /><span class="mi-communities-note">Updated by John Doe 10:27 AM</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 2</span><br /><span class="mi-communities-note">Updated by Jane Doe 7/10/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 3</span><br /><span class="mi-communities-note">Updated by Jeff Doe 7/20/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 4</span><br /><span class="mi-communities-note">Updated by Pam Doe 6/06/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 5</span><br /><span class="mi-communities-note">Updated by Sue Doe 5/09/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 6</span><br /><span class="mi-communities-note">Updated by Sam Doe 11/13/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 7</span><br /><span class="mi-communities-note">Updated by Mark Doe 8/31/11</span></div>
+						<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-communities-icon'"><span class="mi-communities-name">Community 8</span><br /><span class="mi-communities-note">Updated by Tom Doe 6/26/11</span></div>
+					</div>
+					<div class="communities-footer messagesContrast"
+						><span aria-live="polite">Showing 8 most recently updated of 57&#x200f;&#x200e;</span
+						><a href="javascript:" onclick="fire('View All');" style="margin-left: 2.0em; margin-right: 2.0em; font-size: 11px;">View All</a
+					></div>			
+				</div>
+		</div><div data-dojo-type="dijit.PopupMenuBarItem">
+		<span>Mega Menu 2</span>
+		<div data-dojo-type="idx.oneui.Menu" class="menu-workitem">
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-welcome'"><span class="idxMenuCategoryItem">Welcome to Workitems</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Queries</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-folder'"><span class="idxMenuCategoryItem">My Queries</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-folder'"><span class="idxMenuCategoryItem">Shared Queries</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Query</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-query-create'"><span class="idxMenuCategoryItem">Create Query</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Workitem</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-defect'"><span class="idxMenuCategoryItem">Defect</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">Task</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-enhancement'"><span class="idxMenuCategoryItem">Enhancement</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-plan'"><span class="idxMenuCategoryItem">Plan Item</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-trackbuild'"><span class="idxMenuCategoryItem">Track Build Item</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-retrospective'"><span class="idxMenuCategoryItem">Retrospective</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-story'"><span class="idxMenuCategoryItem">Story</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-architectural'"><span class="idxMenuCategoryItem">Architectural Issue</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-adoption'"><span class="idxMenuCategoryItem">Adoption Item</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 0"><span class="idxMenuCategory">Create Workitem Set</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 0, iconClass: 'mi-workitem-icon-createfromtemplate'"><span class="idxMenuCategoryItem">Create from Template...&#x200e;</span></div>
+
+			<div data-dojo-type="idx.oneui.MenuHeading" data-dojo-props="column: 1"><span class="idxMenuCategory">Recent Workitems &#x200f;(5)&#x200f;</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+			<div data-dojo-type="dijit.MenuItem" onclick="fire();" data-dojo-props="column: 1, iconClass: 'mi-workitem-icon-task'"><span class="idxMenuCategoryItem">72725: Guidelines for menu interactions</span></div>
+		</div>
+	</div><div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>Messaging<span class="idxBadgeWarning"><a>5</a></span></span>
+			<div data-dojo-type="idx.oneui.MenuDialog">
+				<div data-dojo-type="idx.oneui.Menu" class="oneuiMessageMenu">
+					<div data-dojo-type="dijit.MenuItem"  data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span style="float: right; padding-left: 1.5em;" class="messagesContrast">2:03 PM</span><span class="messageTitles">Lorem ipsum dolor sit amet, consectetur</span> <span class="messagesContrast">(CAT123456)</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem"  data-dojo-props="iconClass: 'oneuiErrorMenuItemIcon'">
+						<span style="float: right; padding-left: 1.5em;" class="messagesContrast">1:30 PM</span><span class="messageTitles">Lorem ipsum dolor sit amet, consectetur rhonc...</span> <span class="messagesContrast">(CAT123456)</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem"  data-dojo-props="iconClass: 'oneuiInformationMenuItemIcon'">
+						<span style="float: right; padding-left: 1.5em;" class="messagesContrast">11:03 AM</span><span class="messageTitles">Lorem ipsum dolor sit amet, consectetur</span> <span class="messagesContrast">(CAT123456)</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem"  data-dojo-props="iconClass: 'oneuiWarningMenuItemIcon'">
+						<span style="float: right; padding-left: 1.5em;" class="messagesContrast">9:03 AM</span><span class="messageTitles">Lorem ipsum dolor sit amet, consectetur</span> <span class="messagesContrast">(CAT123456)</span>
+					</div>
+					<div data-dojo-type="dijit.MenuItem"  data-dojo-props="iconClass: 'oneuiSuccessMenuItemIcon'">
+						<span style="float: right; padding-left: 1.5em;" class="messagesContrast">8:13 AM</span><span class="messageTitles">Lorem ipsum dolor sit amet, consectetur vehic...</span> <span class="messagesContrast">(CAT123456)</span>
+					</div>
+				</div>
+				
+				<div style="padding: 10px 1em 10px 1em; background-color: #fafafa;"><a href="javascript:">View all (10)</a></div>
+			</div>
+		</div><div data-dojo-type="dijit.MenuBarItem" data-dojo-props="currentPage:true">Menu Selected</div>
+		</div>
+	
+	<div id="_action" data-dojo-type="idx.oneui.Menu" style="display:none">
+		<div data-dojo-type="dijit.MenuItem">Edit Profile</div>
+		<div data-dojo-type="dijit.MenuItem">Sign Out</div>
+	</div>
+	<div id="_help" data-dojo-type="idx.oneui.Menu" style="display:none">
+		<div data-dojo-type="dijit.MenuItem">Help Center</div>
+		<div data-dojo-type="dijit.MenuItem">About</div>
+	</div>
+	<div data-dojo-type="idx.oneui.Header" data-dojo-props="
+		primaryTitle: 'IBM One UI Widget Gallery',
+		navigation: '_nav',
+		user: {
+			displayName: 'User Name',
+			displayImage: 'http://w3.ibm.com/bluepages/api/BluePagesPhoto.jsp?CNUM=074773866',
+			actions: '_action'
+		},
+		contentContainer: '_submenu',
+		help: '_help'
+	"></div>
+	<div id="_submenu" data-dojo-type="dijit.layout.StackContainer" data-dojo-props="doLayout: true" style="width: auto; height:88%;">
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Welcome', id:'firstTab', selected: true,
+			href:'../../oneui/demos/widgetGallery/welcome.html'">
+        </div>
+        <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Containers',
+			href:'../../oneui/demos/widgetGallery/containers.html',
+			onLoad: selectHighLevelTemplate">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Menus',
+			href:'../../oneui/demos/widgetGallery/menus.html'">
+        </div>
+        <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'UI Controls',  
+			href:'../../oneui/demos/widgetGallery/uicontrols.html'">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Forms',
+			href:'../../oneui/demos/widgetGallery/forms.html',
+			onLoad: validateWidgets">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Grid',
+			href:'../../oneui/demos/widgetGallery/grid.html'">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'HighLevelTemplate',
+			href:'../../oneui/demos/widgetGallery/hltemplate.html'">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Log in and About',
+			href:'../../oneui/demos/widgetGallery/login.html'">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Pop Ups',
+			href:'../../oneui/demos/widgetGallery/popups.html',
+			onLoad: relocateHoverHelpIcon">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'Text in the UI',
+			href:'../../oneui/demos/widgetGallery/text.html'">
+        </div>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="
+			title: 'IDX Widget Gallery',
+			href:'../../oneui/demos/widgetGallery/idxWidgets.html'">
+        </div>
+    </div>
+	
+	<div id="dialog1"></div>
+	<div id="dialog2"></div>
+	<!--<div id="main" data-dojo-type="idx.oneui.layout.ToggleBorderContainer">
+		<div data-dojo-type="dijit.layout.AccordionContainer" data-dojo-props="region:'left', splitter:true, minSize:20"
+			style="width: 300px;" id="leftAccordion">
+
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"idx.oneui.Dialog"'>
+				<div style="padding:8px">
+				
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"dijit.Tree"'>
+				
+			</div>
+
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'dijit.Tree(rootless)'">
+				
+			</div>
+			
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="selected:true, title:'idx.oneui.CheckBoxTree'">
+				
+			</div>
+
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"dijit.Calendar"'>
+			</div>
+
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:""'>
+				<p>
+					Selecting a color will change the background color of the page.
+					Use this to test how tooltips and drop downs appear with different backgrounds.
+				</p>
+				<h2 class="testHeader">3x4</h2>
+				<script>
+					function setBackground(color){
+						dojo.query('.dijitAccordionChildWrapper .dijitContentPane').style('background', color);
+						dojo.query('.dijitTabPane').style('background', color);
+					}
+				</script>
+				<h2 class="testHeader">7x10</h2>
+			</div>
+		</div><!-- end AccordionContainer -->
+
+		<!-- top tabs (marked as "center" to take up the main part of the BorderContainer) -->
+		
+
+	<!--</div><!-- end of BorderContainer -->
+	
+	<!-- Add GridX here-->
+
+	
+	
+	<!--<div id="login" data-dojo-type="idx.oneui.Login" data-dojo-props='
+		title:"IBM Brand Software Product Name <br/>Product name in Multiple lines",
+		"aria-describedby":"intro",
+	'>
+		<table style="position:relative; width: 100%;">
+			<tr>
+				<td><input id="name" data-dojo-type="dijit.form.TextBox"  style="width: 35em;" data-dojo-props='type:"text",placeHolder: "Username", name:"name" '/></td>
+			</tr>
+			<tr>
+				<td><input id="loc" data-dojo-type="dijit.form.TextBox" style="width: 35em;" data-dojo-props='type:"text",placeHolder: "Password", name:"loc" '/></td>
+			</tr>
+			<tr style="height:15px">&nbsp;</tr>
+			<tr><td>Forgot your<span style="color:#3366FF">Username</span> or <span style="color:#3366FF">Password?</span><br />&#169;Copyright IBM Corp. 2001,2012</td></tr>
+			<tr>
+				<td style="text-align: right">
+				<button id="ok" data-dojo-type="dijit.form.Button" data-dojo-props='type:"submit"'>Sign In</button>
+				</td>
+			</tr>
+		</table>
+	</div>-->
+</body>
+</html>

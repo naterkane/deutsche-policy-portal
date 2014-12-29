@@ -1,0 +1,544 @@
+/** configure the display modes -- note that the "showLabel" button attribute hides labels for us */
+.claro .dijitButton.idxButtonLabelOnly .dijitIcon,
+.claro .dijitComboButton.idxButtonLabelOnly .dijitIcon,
+.claro .dijitDropDownButton.idxButtonLabelOnly .dijitIcon,
+.claro .dijitToggleButton.idxButtonLabelOnly .dijitIcon {
+  visibility: hidden;
+  display: none;
+}
+
+/** choose the icon file based on the placement of the button **/
+.claro .idxButtonIcon .dijitIcon {
+	background-image: url("claro/buttonIcons.png");
+	width: 16px;
+	height: 16px;
+}
+
+/** choose the icon file based on the placement of the button **/
+.claro .dijitTabButtonIcon.idxConfigureIcon,
+.claro .dijitTabButtonIcon.idxCloseIcon,
+.claro .dijitTabButtonIcon.idxEditIcon,
+.claro .dijitTabButtonIcon.idxFilterIcon,
+.claro .dijitTabButtonIcon.idxClearFilterIcon,
+.claro .dijitTabButtonIcon.idxHelpIcon,
+.claro .dijitTabButtonIcon.idxInfoIcon,
+.claro .dijitTabButtonIcon.idxMinimizeIcon,
+.claro .dijitTabButtonIcon.idxMaximizeIcon,
+.claro .dijitTabButtonIcon.idxRestoreIcon,
+.claro .dijitTabButtonIcon.idxRefreshIcon,
+.claro .dijitTabButtonIcon.idxPrintIcon,
+.claro .dijitTabButtonIcon.idxNextPageIcon,
+.claro .dijitTabButtonIcon.idxPreviousPageIcon,
+.claro .dijitTabButtonIcon.idxLastPageIcon,
+.claro .dijitTabButtonIcon.idxFirstPageIcon {
+	background-image: url("claro/tabButtonIcons.png");
+	width: 16px;
+	height: 16px;
+	margin: 0px;
+	border: 0px none;
+	padding: 0px;	
+}
+
+.claro .idxButtonSecondary.idxButtonIcon .dijitIcon,
+.claro .idxButtonIcon.idxButtonSecondary .dijitIcon {
+	background-image: url("claro/buttonIconsSecondary.png");
+}
+
+.claro .idxButtonSpecial.idxButtonIcon .dijitIcon,
+.claro .idxButtonIcon.idxButtonSpecial .dijitIcon {
+	background-image: url("claro/buttonIconsSpecial.png");
+}
+
+.claro .idxButtonToolbar.idxButtonIcon .dijitIcon,
+.claro .idxButtonIcon.idxButtonToolbar .dijitIcon {
+	background-image: url("claro/buttonIconsToolbar.png");
+}
+
+/** setup the background position for each icon type in each state **/
+.claro .idxCloseIcon {
+	background-position: 0px 0px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxCloseIcon {
+   background-position: -16px 0px;
+}
+.claro .idxButtonDerived.dijitActive .idxCloseIcon,
+.claro .idxButtonDerived.dijitOpened .idxCloseIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxCloseIcon {
+   background-position: -32px 0px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxCloseIcon {
+   background-position: -48px 0px;
+}
+
+.claro .idxConfigureIcon {
+	background-position: -0px -16px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxConfigureIcon {
+   background-position: -16px -16px;
+}
+
+.claro .idxButtonDerived.dijitActive .idxConfigureIcon,
+.claro .idxButtonDerived.dijitOpened .idxConfigureIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxConfigureIcon {
+   background-position: -32px -16px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxConfigureIcon {
+   background-position: -48px -16px;
+}
+
+.claro .idxEditIcon {
+	background-position: 0px -32px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxEditIcon {
+   background-position: -16px -32px;
+}
+.claro .idxButtonDerived.dijitActive .idxEditIcon,
+.claro .idxButtonDerived.dijitOpened .idxEditIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxEditIcon {
+   background-position: -32px -32px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxEditIcon {
+   background-position: -48px -32px;
+}
+
+.claro .idxFilterIcon {
+	background-position: 0px -48px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxFilterIcon {
+   background-position: -16px -48px;
+}
+.claro .idxButtonDerived.dijitActive .idxFilterIcon,
+.claro .idxButtonDerived.dijitOpened .idxFilterIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxFilterIcon {
+   background-position: -32px -48px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxFilterIcon {
+   background-position: -48px -48px;
+}
+
+.claro .idxClearFilterIcon {
+	background-position: 0px -64px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxClearFilterIcon {
+   background-position: -16px -64px;
+}
+.claro .idxButtonDerived.dijitActive .idxClearFilterIcon,
+.claro .idxButtonDerived.dijitOpened .idxClearFilterIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxClearFilterIcon {
+   background-position: -32px -64px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxClearFilterIcon {
+   background-position: -48px -64px;
+}
+
+.claro .idxHelpIcon {
+	background-position: 0px -80px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxHelpIcon {
+   background-position: -16px -80px;
+}
+.claro .idxButtonDerived.dijitActive .idxHelpIcon,
+.claro .idxButtonDerived.dijitOpened .idxHelpIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxHelpIcon {
+   background-position: -32px -80px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxHelpIcon {
+   background-position: -48px -80px;
+}
+
+.claro .idxInfoIcon {
+	background-position: 0px -96px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxInfoIcon {
+   background-position: -16px -96px;
+}
+.claro .idxButtonDerived.dijitActive .idxInfoIcon,
+.claro .idxButtonDerived.dijitOpened .idxInfoIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxInfoIcon {
+   background-position: -32px -96px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxInfoIcon {
+   background-position: -48px -96px;
+}
+
+.claro .idxMinimizeIcon {
+	background-position: 0px -112px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxMinimizeIcon {
+   background-position: -16px -112px;
+}
+.claro .idxButtonDerived.dijitActive .idxMinimizeIcon,
+.claro .idxButtonDerived.dijitOpened .idxMinimizeIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxMinimizeIcon {
+   background-position: -32px -112px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxMinimizeIcon {
+   background-position: -48px -112px;
+}
+
+.claro .idxMaximizeIcon {
+	background-position: 0px -128px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxMaximizeIcon {
+   background-position: -16px -128px;
+}
+.claro .idxButtonDerived.dijitActive .idxMaximizeIcon,
+.claro .idxButtonDerived.dijitOpened .idxMaximizeIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxMaximizeIcon {
+   background-position: -32px -128px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxMaximizeIcon {
+   background-position: -48px -128px;
+}
+
+.claro .idxRestoreIcon {
+	background-position: 0px -144px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxRestoreIcon {
+   background-position: -16px -144px;
+}
+.claro .idxButtonDerived.dijitActive .idxRestoreIcon,
+.claro .idxButtonDerived.dijitOpened .idxRestoreIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxRestoreIcon {
+   background-position: -32px -144px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxRestoreIcon {
+   background-position: -48px -144px;
+}
+
+.claro .idxRefreshIcon {
+	background-position: 0px -160px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxRefreshIcon {
+   background-position: -16px -160px;
+}
+.claro .idxButtonDerived.dijitActive .idxRefreshIcon,
+.claro .idxButtonDerived.dijitOpened .idxRefreshIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxRefreshIcon {
+   background-position: -32px -160px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxRefreshIcon {
+   background-position: -48px -160px;
+}
+
+.claro .idxPrintIcon {
+	background-position: 0px -176px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxPrintIcon {
+   background-position: -16px -176px;
+}
+.claro .idxButtonDerived.dijitActive .idxPrintIcon,
+.claro .idxButtonDerived.dijitOpened .idxPrintIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxPrintIcon {
+   background-position: -32px -176px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxPrintIcon {
+   background-position: -48px -176px;
+}
+
+.claro .idxNextPageIcon {
+	background-position: 0px -192px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxNextPageIcon {
+   background-position: -16px -192px;
+}
+.claro .idxButtonDerived.dijitActive .idxNextPageIcon,
+.claro .idxButtonDerived.dijitOpened .idxNextPageIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxNextPageIcon {
+   background-position: -32px -192px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxNextPageIcon {
+   background-position: -48px -192px;
+}
+
+.claro .idxPreviousPageIcon {
+	background-position: 0px -208px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxPreviousPageIcon {
+   background-position: -16px -208px;
+}
+.claro .idxButtonDerived.dijitActive .idxPreviousPageIcon,
+.claro .idxButtonDerived.dijitOpened .idxPreviousPageIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxPreviousPageIcon {
+   background-position: -32px -208px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxPreviousPageIcon {
+   background-position: -48px -208px;
+}
+
+.claro .idxLastPageIcon {
+	background-position: 0px -224px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxLastPageIcon {
+   background-position: -16px -224px;
+}
+.claro .idxButtonDerived.dijitActive .idxLastPageIcon,
+.claro .idxButtonDerived.dijitOpened .idxLastPageIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxLastPageIcon {
+   background-position: -32px -224px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxLastPageIcon {
+   background-position: -48px -224px;
+}
+
+.claro .idxFirstPageIcon {
+	background-position: 0px -240px;
+}
+
+.claro .idxButtonDerived.dijitHover .idxFirstPageIcon {
+   background-position: -16px -240px;
+}
+.claro .idxButtonDerived.dijitActive .idxFirstPageIcon,
+.claro .idxButtonDerived.dijitOpened .idxFirstPageIcon,
+.claro .idxButtonDerived.idxDropDownOpen .idxFirstPageIcon {
+   background-position: -32px -240px;
+}
+.claro .idxButtonDerived.dijitDisabled .idxFirstPageIcon {
+   background-position: -48px -240px;
+}
+
+.claro .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?profile=compact);
+}
+
+.claro .idxSecondaryButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=secondary);
+}
+
+.claro .idxSpecialButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=special);
+}
+
+.claro .idxToolbarButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=toolbar);
+}
+
+.claro .idxCompactButton.idxSecondaryButton .idxButtonDerived_idxDefaults,
+.claro .idxSecondaryButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.claro .idxCompactButton .idxSecondaryButton .idxButtonDerived_idxDefaults,
+.claro .idxSecondaryButton .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=secondary&profile=compact);
+}
+
+.claro .idxCompactButton.idxSpecialButton .idxButtonDerived_idxDefaults,
+.claro .idxSpecialButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.claro .idxCompactButton .idxSpecialButton .idxButtonDerived_idxDefaults,
+.claro .idxSpecialButton .idxCompactButton .idxButtonDerived_idxDefaults {
+  background-image: url(../images/blank.gif?placement=special&profile=compact);
+}
+
+.claro .idxCompactButton.idxToolbarButton .idxButtonDerived_idxDefaults,
+.claro .idxToolbarButton.idxCompactButton .idxButtonDerived_idxDefaults,
+.claro .idxCompactButton .idxToolbarButton .idxButtonDerived_idxDefaults,
+.claro .idxToolbarButton .idxCompactButton .idxButtonDerived_idxDefaults{
+  background-image: url(../images/blank.gif?placement=toolbar&profile=compact);
+}
+
+
+/***** 
+ ***** TOOLBAR BUTTONS
+ *****/
+.claro .idxButtonToolbar.dijitButton,
+.claro .idxButtonToolbar.dijitDropDownButton ,
+.claro .idxButtonToolbar.dijitComboButton,
+.claro .idxButtonToolbar.dijitToggleButton,
+.claro .dijitButton.idxButtonToolbar,
+.claro .dijitDropDownButton.idxButtonToolbar,
+.claro .dijitComboButton.idxButtonToolbar,
+.claro .dijitToggleButton.idxButtonToolbar {
+	background: none;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.claro .idxButtonToolbar.dijitButton .dijitButtonNode,
+.claro .idxButtonToolbar.dijitDropDownButton .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButton .dijitButtonNode,
+.claro .idxButtonToolbar.dijitToggleButton .dijitButtonNode,
+.claro .dijitButton.idxButtonToolbar .dijitButtonNode,
+.claro .dijitDropDownButton.idxButtonToolbar .dijitButtonNode,
+.claro .dijitComboButton.idxButtonToolbar .dijitButtonNode,
+.claro .dijitToggleButton.idxButtonToolbar .dijitButtonNode {
+	background: none;
+	border: none;
+	filter: none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .claro .idxButtonToolbar.dijitComboButton .dijitButtonNode,
+.dj_ie .claro .dijitComboButton.idxButtonToolbar .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .claro table.idxButtonToolbar.dijitComboButton,
+.dj_ie .claro table.dijitComboButton.idxButtonToolbar {
+	background: none;
+        filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.claro .idxButtonToolbar .dijitButtonText {
+	color:#000000;
+}
+
+/* hover text color */
+.claro .idxButtonToolbar.dijitButtonHover .dijitButtonText,
+.claro .idxButtonToolbar.dijitDropDownButtonHover .dijitButtonText,
+.claro .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover .dijitButtonText,
+.claro .idxButtonToolbar.dijitToggleButtonHover .dijitButtonText,
+.claro .dijitButtonHover.idxButtonToolbar .dijitButtonText,
+.claro .dijitDropDownButtonHover.idxButtonToolbar .dijitButtonText,
+.claro .dijitComboButton.idxButtonToolbar  .dijitButtonNodeHover .dijitButtonText,
+.claro .dijitToggleButtonHover.idxButtonToolbar .dijitButtonText
+ {
+	color:#000000;
+	text-decoration: underline;
+}
+
+/* disabled text color */
+.claro .dijitDisabled.idxButtonToolbar .dijitButtonText {
+	color: #8f8f8f;
+	text-decoration: none;
+}
+
+/* hover status */
+.claro .idxButtonToolbar.dijitButtonHover .dijitButtonNode,
+.claro .idxButtonToolbar.dijitDropDownButtonHover .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover, 
+.claro .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonHover,
+.claro .idxButtonToolbar.dijitToggleButtonHover .dijitButtonNode {
+	background: none;
+	filter: none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+/*
+    NOTE: We cheat a bit for "Hover" since the border and the background are so close in color.
+    Technically, the borders are not visible when we do this CSS on the ButtonNode cells, but 
+    they are replaced with the gradient which is just as dark on IE, and unnoticeable.  The
+    alternative would have been to hover-highlight the entire button instead of the parts
+*/
+.dj_ie .claro .idxButtonToolbar.dijitComboButton .dijitButtonNodeHover, 
+.dj_ie .claro .idxButtonToolbar.dijitComboButton .dijitDownArrowButtonHover {
+	background: none;
+	filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+/* checked status */
+.claro .idxButtonToolbar.dijitButtonActive .dijitButtonNode, 
+.claro .idxButtonToolbar.dijitDropDownButtonActive .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButtonActive .dijitButtonNode,
+.claro .idxButtonToolbar.dijitToggleButtonActive .dijitButtonNode,
+.claro .dijitButtonActive.idxButtonToolbar .dijitButtonNode, 
+.claro .dijitDropDownButtonActive.idxButtonToolbar .dijitButtonNode,
+.claro .dijitComboButtonActive.idxButtonToolbar .dijitButtonNode,
+.claro .dijitToggleButtonActive.idxButtonToolbar .dijitButtonNode {
+	background: none;
+    filter: none;
+    color: #000000;
+}
+
+.claro .idxButtonToolbar.dijitButtonActive .dijitButtonText,
+.claro .idxButtonToolbar.dijitDropDownButtonActive .dijitButtonText,
+.claro .idxButtonToolbar.dijitComboButton .dijitButtonNodeActive .dijitButtonText,
+.claro .idxButtonToolbar.dijitToggleButtonActive .dijitButtonText,
+.claro .dijitButtonActive.idxButtonToolbar .dijitButtonText,
+.claro .dijitDropDownButtonActive.idxButtonToolbar .dijitButtonText,
+.claro .dijitComboButton.idxButtonToolbar .dijitButtonNodeActive .dijitButtonText,
+.claro .dijitToggleButtonActive.idxButtonToolbar .dijitButtonText {
+	color:#000000;
+	text-decoration: underline;
+}
+
+.claro .idxButtonToolbar.dijitButtonDisabled .dijitButtonNode,
+.claro .idxButtonToolbar.dijitDropDownButtonDisabled .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButtonDisabled .dijitButtonNode,
+.claro .idxButtonToolbar.dijitToggleButtonDisabled .dijitButtonNode,
+.claro .dijitButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.claro .dijitDropDownButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.claro .dijitComboButtonDisabled.idxButtonToolbar .dijitButtonNode,
+.claro .dijitToggleButtonDisabled.idxButtonToolbar .dijitButtonNode { 
+	background: none;
+    filter: none;
+	border: none;
+	color: #696969;
+	box-shadow:none;
+ 	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .claro .idxButtonToolbar.dijitComboButtonDisabled .dijitButtonNode,
+.dj_ie .claro .dijitComboButtonDisabled.idxButtonToolbar .dijitButtonNode {
+	background: none;
+	filter: none;
+}
+
+.dj_ie .claro table.idxButtonToolbar.dijitComboButtonDisabled,
+.dj_ie .claro table.dijitComboButtonDisabled.idxButtonToolbar {
+	background: none;
+    filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.claro .idxButtonToolbar.dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 0px;
+
+}
+
+.claro .idxButtonToolbar.dijitDropDownButton.dijitOpened .dijitButtonText,
+.claro .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonText,
+.claro .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonText {
+   color: #000000;
+}
+
+.claro .idxButtonToolbar.dijitDropDownButton.dijitOpened .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonNode,
+.claro .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+    filter: none;
+    background: none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .claro .idxButtonToolbar.dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .claro .idxButtonToolbar.dijitComboButton.idxDropDownOpen .dijitButtonNode {
+	background: none;
+        filter: none;
+}
+
+.dj_ie .claro table.idxButtonToolbar.dijitComboButton.dijitOpened,
+.dj_ie .claro table.idxButtonToolbar.dijitComboButton.idxDropDownOpen {
+	background-color: none;
+    filter: none;
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+

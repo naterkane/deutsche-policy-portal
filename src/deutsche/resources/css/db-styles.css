@@ -1,0 +1,792 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+	 min-width: 1024px;
+}
+
+body {
+font-size: 14px;
+color: #1d1d1d;
+font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+color: #0018a8;
+}
+
+h1 {
+font-size: 21px;
+}
+
+h2 {
+font-size: 18px;
+}
+
+h3 {
+font-size: 16px;
+}
+
+h4 {
+font-size: 14px;
+}
+
+h5 {
+font-size: 12px;
+}
+
+a {
+color: #0098db;
+text-decoration: none;
+}
+
+a.backLink {
+font-size: 11px;
+}
+
+a.fileType, a.fileType:visited {
+display: inline-block;
+padding: 0px 5px 0px 22px;
+background: transparent url(images/db-icon-sprite.png) 0px -200px no-repeat;
+font-size: 12px;
+color: #1d1d1d;
+text-decoration: none;
+}
+
+a.fileType:hover, a.fileType:focus, a.fileType:active {
+color: #1d1d1d;
+text-decoration: underline;
+}
+
+.topMargin {
+margin-top: 10px;
+}
+
+.topMarginDbl {
+margin-top: 20px;
+}
+
+.bottomMargin {
+margin-bottom: 10px;
+}
+
+.bottomMarginDbl {
+margin-bottom: 20px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.clearfix:after {
+  clear: both;
+}
+
+table, th, td {
+font-size: 11px;
+}
+
+.table-plain {
+  width: 100%;
+  margin-bottom: 18px;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table-plain > thead > tr > th,
+.table-plain > tbody > tr > th,
+.table-plain > tfoot > tr > th,
+.table-plain > thead > tr > td,
+.table-plain > tbody > tr > td,
+.table-plain > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1; /* was 1.428571429; */
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+  font-size: 12px;
+}
+.table-plain > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.table-plain > caption + thead > tr:first-child > th,
+.table-plain > colgroup + thead > tr:first-child > th,
+.table-plain > thead:first-child > tr:first-child > th,
+.table-plain > caption + thead > tr:first-child > td,
+.table-plain > colgroup + thead > tr:first-child > td,
+.table-plain > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table-plain > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+.table-plain .table-plain {
+  background-color: #ffffff;
+}
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.table-bordered {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+	border: 1px solid #d2d6d9;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #f9f9f9;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+}
+
+td.table-label {
+width: 30%;
+}
+
+td.table-value {
+width: 70%;
+}
+
+/* dgrid styles db-dgrid need to overwrite default css */
+
+
+.dgrid.db-dgrid {
+    border: 1px solid #babdbf;
+}
+.db-dgrid  .dgrid-header, .db-dgrid  .dgrid-header-row, .db-dgrid .dgrid-footer {
+    background-color: #d2d6d9;
+}
+.db-dgrid  .dgrid-cell {
+	border: 1px solid #babdbf;
+}
+.dgrid-striped .dgrid-row-even {
+  background-color: #f9f9f9;
+}
+
+.dgrid-striped .dgrid-row-even.dgrid-selected, .dgrid-striped .dgrid-row-odd.dgrid-selected {
+    background-color: #cce6f2;
+	 border: 2px solid #0098db;
+}
+
+.db-dgrid .dgrid-row:hover {
+background-color: #cce6f2;
+}
+
+#docHistory_grid {
+width: 850px;
+}
+
+#docHistory_grid .field-desc {
+width: 250px;
+}
+
+
+/* END dgrid styles */
+
+/* toolbar stylee */
+
+.claro .dijitToolbar.db-toolbar {
+	background: #f7fcff; /* Old browsers */
+	background: -moz-linear-gradient(top, #f7fcff 0%, #d2d6d9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7fcff), color-stop(100%,#d2d6d9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f7fcff 0%,#d2d6d9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fcff', endColorstr='#d2d6d9',GradientType=0 ); /* IE6-9 */
+   border: 1px solid #babdbf;
+	margin-top: -1px; /* hides extra 1px to border that sometimes appears */
+	padding: 5px;
+}
+
+.claro .dijitToolbar.db-toolbar.db-toolbar-dict {
+	background: transparent;
+   border: 0px solid #babdbf;
+	border-top-width: 0px;
+	padding: 0px;
+}
+
+.db-toolbar-icon {
+    background-image:url(images/db-icon-sprite.png);
+    background-repeat: no-repeat;
+    height: 15px;
+    text-align: center;
+    width: 20px;
+	 padding: 3px;
+}
+
+.db-toolbar-icon.icon-read {
+background-position: center -295px;
+}
+
+.dijitButtonHover .db-toolbar-icon.icon-read, .dijitButtonActive .db-toolbar-icon.icon-read {
+background-position: center -345px;
+}
+
+.db-toolbar-icon.icon-info {
+background-position: center -97px;
+}
+
+.dijitButtonHover .db-toolbar-icon.icon-info, .dijitButtonActive .db-toolbar-icon.icon-info {
+background-position: center -147px;
+}
+
+.db-toolbar-icon.icon-download {
+background-position: center -397px;
+}
+
+.dijitButtonHover .db-toolbar-icon.icon-download, .dijitButtonActive .db-toolbar-icon.icon-download {
+background-position: center -447px;
+}
+
+.db-toolbar-icon.icon-favorite{
+background-position: center -497px;
+}
+
+.dijitButtonHover .db-toolbar-icon.icon-favorite, .dijitButtonActive .db-toolbar-icon.icon-favorite {
+background-position: center -547px;
+}
+
+.db-toolbar-icon.icon-edit{
+background-position: center -597px;
+}
+
+.dijitButtonHover .db-toolbar-icon.icon-edit, .dijitButtonActive .db-toolbar-icon.icon-edit {
+background-position: center -647px;
+}
+
+.dijitToolbar.db-toolbar .dijitButtonDisabled .db-toolbar-icon {
+opacity: 0.6; /* greys out disabled button icons */
+}
+
+
+.claro .dijitToolbar.db-toolbar .dijitButton .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitDropDownButton .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitComboButton .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitToggleButton .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitComboBox .dijitButtonNode {   
+	 background-color: transparent);
+    background-image: none;
+    border-radius: 0px;
+    border-width: 0;
+    box-shadow: none;
+    padding: 0px;
+	 filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+}
+
+.claro .dijitToolbar.db-toolbar .dijitButton.dijitButtonDisabled .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitDropDownButton.dijitButtonDisabled .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitComboButton.dijitButtonDisabled .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitToggleButton.dijitButtonDisabled .dijitButtonNode, .claro .dijitToolbar.db-toolbar .dijitComboBox.dijitButtonDisabled .dijitButtonNode {   
+	 background-color: transparent;
+}
+
+.claro .dijitToolbar.db-toolbar .dijitButtonHover .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitButtonNodeHover,
+.claro .dijitToolbar.db-toolbar .dijitToggleButtonHover .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitDropDownButtonHover .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitComboButton .dijitButtonContentsHover,
+.claro .dijitToolbar.db-toolbar .dijitComboButton .dijitDownArrowButtonHover {
+   padding: 0px;
+	background-color: #0098db;
+}
+
+.claro .dijitToolbar.db-toolbar .dijitButtonActive .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitToggleButtonActive .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitDropDownButtonActive .dijitButtonNode,
+.claro .dijitToolbar.db-toolbar .dijitButtonContentsActive {
+   padding: 0px;
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #3e3f40;
+	box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-webkit-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-moz-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-o-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+}
+
+.claro .dijitToolbar.db-toolbar  .dijitButtonHover,
+.claro .dijitToolbar.db-toolbar  .dijitToggleButtonHover,
+.claro .dijitToolbar.db-toolbar  .dijitDropDownButtonHover,
+.claro .dijitToolbar.db-toolbar  .dijitComboButton .dijitButtonContentsHover,
+.claro .dijitToolbar.db-toolbar  .dijitComboButton .dijitDownArrowButtonHover {
+	/* TODO: change this from Hover to Selected so that button is still highlighted while drop down is being used */
+	border: 0px;
+	background-color: transparent;
+}
+
+
+
+
+.dijitButtonActive .db-toolbar-icon {
+padding: 2px;
+}
+
+/* END toolbar stylee */
+
+
+.versionLink {
+display: block;
+float: right;
+}
+
+
+input.radio, input.checkbox, .formHelp {
+font-size: 11px;
+}
+
+label {
+font-size: 14px;
+}
+
+input, select, textarea {
+font-size: 12px;
+}
+
+ 
+#appLayout {
+    height: 100%;
+}
+#leftCol {
+    width: 195px;
+}
+ 
+.dbLayout-left .edgePanel {
+    background-color: transparent;
+	 border: 1px solid transparent;
+}
+
+.db-topNav {
+	background: #f7fcff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f7fcff 0%, #d2d6d9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7fcff), color-stop(100%,#d2d6d9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f7fcff 0%,#d2d6d9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f7fcff 0%,#d2d6d9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f7fcff 0%,#d2d6d9 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f7fcff 0%,#d2d6d9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fcff', endColorstr='#d2d6d9',GradientType=0 ); /* IE6-9 */
+	 border-bottom: 1px solid #babdbf;
+	 border-top: 1px solid #d7dbde;
+	 padding: 5px 10px;
+}
+
+.db-topNav .profileMenu {
+	float: right;
+}
+
+.db-topNav a.navLink, .db-topNav a.navLink:visited  {
+	display: inline-block;
+	margin-right: 5px;
+	border: 1px solid #c6cacc;
+	padding: 5px 10px;
+	color: #1d1d1d;
+	font-size: 11px;
+}
+
+.db-topNav a.navLink.active {
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #3e3f40;
+	box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-webkit-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-moz-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-o-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+}
+
+.db-topNav a.navLink:hover, .db-topNav a.navLink:active, .db-topNav a.navLink.active:hover, .db-topNav a.navLink.active:active  {
+	border: 1px solid #0098db;
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	text-decoration: none;
+}
+
+#db-banner {
+background: #ffffff;
+height: 53px;
+margin: 10px 5px;
+}
+
+.db-branding-left {
+float: left;
+width: 125px;
+}
+
+.db-branding-right {
+float: right;
+width: 53px;
+height: 53px;
+background: transparent url(images/logo-mark.png) 0 0 no-repeat;
+}
+
+.db-bannerLinks {
+float: left;
+margin-right: 60px;
+font-size: 11px;
+color: #666666;
+}
+
+.db-bannerLinks a:link, .db-bannerLinks a:active, .db-bannerLinks a:visited  {
+color: #666666;
+margin: 0px 10px;
+text-decoration: none;
+}
+
+.db-bannerLinks a:hover, .db-bannerLinks a:focus  {
+color: #666666;
+margin: 0px 10px;
+text-decoration: underline;
+}
+
+.db-name {
+font-size: 15px;
+color: #0018a8;
+}
+
+.db-portalTitle {
+font-size: 15px;
+color: #0098db;
+}
+
+/* tundra layout container overwrites */
+.claro .dijitBorderContainer {
+    background-color: #e1e6e9;
+}
+
+.claro .dijitSplitterH,
+.claro .dijitGutterH {
+	background:#e1e6e9;
+	border:0;
+	height:5px;
+}
+
+.claro .dijitSplitterV,
+.claro .dijitGutterV {
+	background:#e1e6e9;
+	border:0;
+	width:5px;
+}
+
+/* END tundra layout container overwrites */
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+
+/* button styles */
+
+
+.claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #6f7173;
+	border: 1px solid #6f7173;
+   padding: 5px 10px;
+	border-radius: 0px;
+	box-shadow: none;
+	color: #fefefe;
+}
+
+.oneui .dijitButton .dijitButtonNode, .oneui .dijitDropDownButton .dijitButtonNode, .oneui .dijitComboButton .dijitButtonNode, .oneui .dijitToggleButton .dijitButtonNode {
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.claro .dijitButtonText {
+    padding: 0;
+    font-size: 11px;
+}
+
+.claro .dijitButton.dijitButtonDisabled .dijitButtonNode {
+	background-color: #b7b8b9;
+	border: 1px solid #b7b8b9;
+}
+
+.claro .dijitButtonDisabled .dijitButtonNode, .claro .dijitDropDownButtonDisabled .dijitButtonNode, .claro .dijitComboButtonDisabled .dijitButtonNode, .claro .dijitToggleButtonDisabled .dijitButtonNode {
+    background-color: #b7b8b9;
+    border-color: #b7b8b9;
+	 color: #ddddde;
+}
+
+.claro .dijitButtonHover .dijitButtonNode,
+.claro .dijitButtonNodeHover,
+.claro .dijitToggleButtonHover .dijitButtonNode,
+.claro .dijitDropDownButtonHover .dijitButtonNode,
+.claro .dijitComboButton .dijitButtonContentsHover,
+.claro .dijitComboButton .dijitDownArrowButtonHover {
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #0098db;
+	font-size: 11px;
+   padding: 5px 10px;
+}
+
+.claro .dijitComboButton .dijitButtonContentsHover {
+	padding: 0px;
+	background-color: #6f7173;
+	border: 0px;
+}
+
+
+.claro .dijitUpArrowButtonActive,
+.claro .dijitDownArrowButtonActive,
+.claro .dijitButtonActive .dijitButtonNode,
+.claro .dijitToggleButtonActive .dijitButtonNode,
+.claro .dijitDropDownButtonActive .dijitButtonNode,
+.claro .dijitButtonContentsActive,
+.claro .dijitStackController .dijitToggleButtonChecked .dijitButtonNode {
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #3e3f40;
+	box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-webkit-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-moz-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-o-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+   padding: 5px 10px;
+}
+
+/* END button styles */
+
+
+/* top nav profile */
+.profileMenu .dijitDropDownButton {
+    margin: 0;
+
+}
+.claro .profileMenu .dijitButtonNode {
+	border: 1px solid #c6cacc;
+	color: #1d1d1d;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+   padding: 5px 10px;
+	font-size: 11px;
+	background-color: transparent;
+	border-radius: 0px;
+}
+
+
+.claro .profileMenu .dijitButtonText {
+    color: #1d1d1d;
+}
+
+.claro .profileMenu .dijitDropDownButtonHover .dijitButtonNode .dijitButtonText, .claro .profileMenu .dijitDropDownButtonOpenedFocused .dijitButtonNode .dijitButtonText {
+    color: #ffffff;
+}
+
+.claro .profileMenu .dijitDropDownButtonHover .dijitButtonNode {
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #0098db;
+	font-size: 11px;
+}
+
+.claro .profileMenu .dijitDropDownButtonOpenedFocused .dijitButtonNode {
+	color: #ffffff;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #0098db;
+	border: 1px solid #3e3f40;
+	box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-webkit-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-moz-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+	-o-box-shadow: inset 0px 0px 5px -1px #3E3F40;
+}
+
+.claro .dijitTooltipConnector {
+    background-image: none;  /* remove tooltip arrow connector */
+}
+
+.oneui .dijitTooltipAbove, .oneui .dijitTooltipBelow {
+    padding: 0; /* remove padding space between element and dialog since connector removed above  - was set to 5px */
+}
+
+.claro .dijitTooltipContainer {
+    border-radius: 0; 
+}
+
+dl.profileDialog {
+margin: 0px;
+}
+
+dl.profileDialog  dt {
+color: #0018a8;
+margin-bottom: 3px;
+}
+
+dl.profileDialog  dd {
+border-bottom: 1px solid #dfe3e5;
+font-size: 12px;
+padding-bottom: 10px;
+margin-bottom: 10px;
+}
+
+dl.profileDialog  dd.last {
+border-bottom: 0px solid #dfe3e5;
+padding-bottom: 0px;
+margin-bottom: 0px;
+}
+
+/* END top nav profile */
+
+/* dialog box styles */
+.claro .dijitDialog {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #d2d6d9;
+    padding: 0;
+	 border-radius: 0px;
+}
+
+.claro .dijitDialogTitleBar {
+    background-color: #d2d6d9;
+    background-image: none;
+    border-width: 0;
+}
+
+.claro .dijitDialogTitleBar {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); /* remove IE filter */
+	background-color: #d2d6d9;
+	border-width: 0;
+	font-size: 12px;
+	margin: 0px;
+}
+
+.oneui .dijitDialogCloseIcon {
+    display: inline-block; /* restore close button visibility */
+}
+
+.claro .dijitDialogPaneContent {
+    border-top: 1px solid #babdbf;
+}
+
+.dijitDialogUnderlay {
+background-color: #000000;
+} 
+
+.dijitDialogTitle {
+font-size: 12px;
+}
+
+.profileMenu span.name {
+    padding-left: 25px;
+    background: url(images/db-icon-sprite.png) 0px 0px no-repeat;
+}
+
+#docInfoDialog_title,  #docHistoryDialog_title, #commHistoryDialog_title{
+padding-left: 25px;
+background: url(images/db-icon-sprite.png) 0px -100px no-repeat;
+}
+
+#docInfoDialog .dijitDialogPaneContent {
+padding: 0px;
+}
+
+.dialog-rightCol {
+background-color: #e1e6e9;
+display: block;
+float: right;
+width: 200px;
+padding: 5px;
+height: 450px;
+overflow:auto;
+}
+
+.dialog-leftCol {
+margin-right: 210px;
+border-right: 1px solid #d2d6d9;
+padding: 5px;
+height: 450px;
+overflow:auto;
+min-width: 700px;
+}
+
+.dialog-dynamicTitle {
+padding: 0px 5px;
+border-bottom:1px solid #d2d6d9; 
+}
+
+.dialog-buttonRow {
+padding: 5px;
+border-top:1px solid #d2d6d9; 
+}
+
+h1 span.titleLinks {
+font-size: 12px;
+color: #1d1d1d;
+}
+
+h1 span.titleLinks a, h1 span.titleLinks a:visited {
+color: #1d1d1d;
+text-decoration: none;
+}
+
+h1 span.titleLinks a:hover, h1 span.titleLinks a:focus, h1 span.titleLinks a:active {
+color: #1d1d1d;
+text-decoration: underline;
+}
+
+/* END dialog box styles */
+ 
+.formCtrls-right {
+text-align: right;
+}
+
+
+.attachment-container {
+text-align: center;
+margin-bottom: 20px;
+}
+.attachment-title {
+	font-size: 11px;
+}
+.attachment-links {
+	color: #1d1d1d;
+	font-size: 12px;
+	text-align: center;
+}
+
+.attachment-links a, .attachment-links a:visited  { 
+color: #1d1d1d;
+text-decoration: none;
+}
+ 
+.attachment-links a:hover, .attachment-links a:focus, .attachment-links a:active   { 
+text-decoration: underline;
+} 

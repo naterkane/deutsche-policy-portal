@@ -1,0 +1,199 @@
+.claro .idxAppMarqueeOptions {
+  background-image: url(../../resources/blank.gif?app=leader&vendor=trailer&body=center&borderDesign=sidebar);
+}
+
+.claro div.idxAppMarquee {
+  background-color: #568ccc;
+  background-image: url(claro/header_swoosh.png);
+  background-repeat: repeat-x;
+  font-family: Tahoma,Sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  width: 100%;
+  height: 35px;
+  position: relative;
+}
+
+.claro .idxAppFrameMarquee div.idxAppMarquee {
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: none;
+  width: auto;
+  height: auto;
+  position: static;
+}
+
+.claro div.idxAppMarqueeUnused {
+	line-height: 0px;
+	font-size: 0px;
+}
+
+.claro div.idxAppMarqueeHeader {
+  overflow: hidden;
+  position: absolute;
+}
+
+.claro div.idxAppMarqueeLeft {
+  overflow: hidden;
+  position: absolute;
+  padding-left: 4px;
+}
+
+.claro .idxAppFrameMarquee div.idxAppMarqueeLeft {
+  padding-left: 0px;
+}
+
+.claro div.idxAppMarqueeRight {
+  overflow: hidden;
+  position: absolute;
+  padding-right: 4px;
+}
+
+.claro .idxAppFrameMarquee div.idxAppMarqueeRight {
+  padding-right: 0px;
+}
+
+.claro div.idxAppMarqueeFooter {
+  overflow: hidden;
+  position: absolute;
+  line-height: 0px;
+}
+
+.claro div.idxAppMarqueeCenter {
+  overflow: hidden;
+  position: absolute;
+  vertical-align: middle;
+}
+
+.claro div.idxAppMarqueeBody {
+  overflow: hidden;
+  position: absolute;
+  color: #ffffff;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: right;
+  top: auto;
+  bottom: 9px;
+  right: 12px;
+  left: 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.claro .idxAppMarquee .idxAppMarqueeAppLogo  {
+	display: none;
+	visibility: hidden;
+}
+
+.claro .idxAppMarquee .idxAppMarqueeAppName,
+.claro .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+	position: absolute;
+	top: -10000px;
+	width: 0px;
+	height: 0px;		
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+  	position: absolute;
+ 	bottom: 8px;
+  	left: 4px;
+	visibility: visible;
+	display: block;
+}
+
+.claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+	visibility: hidden;
+	display: none;
+}
+
+.claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppLogo {
+	left: 0px;
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName,
+.claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowAppLogo .idxAppMarqueeAppName {
+  top: auto;
+  width: auto;
+  height: auto;
+  display: block;
+  visibility: visible;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: absolute;	
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  left: 0px;
+  bottom: 7px;
+  padding: 0px;
+  padding-left: 4px;
+}
+
+.claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppName {
+  padding-left: 0px;
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowAppName .idxAppMarqueeAppLogo {
+	display: none;
+	visibility: hidden;
+}
+
+
+.claro .idxAppMarquee .idxAppMarqueeVendorLogo  {
+	display: none;
+	visibility: hidden;
+}
+
+.claro .idxAppMarquee .idxAppMarqueeVendorName,
+.claro .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorName {
+	position: absolute;
+	top: -10000px;
+	width: 0px;
+	height: 0px;		
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+	visibility: visible;
+	display: block;
+	position: absolute;
+	right: 4px;
+	bottom: 9px;
+}
+
+.claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+	visibility: hidden;
+	display: none;
+}
+
+.claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorLogo {
+	right: 0px;
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorName,
+.claro.dijit_a11y .idxAppMarquee.idxAppMarqueeShowVendorLogo .idxAppMarqueeVendorName {
+	top: auto;
+	width: auto;
+	height: auto;
+	display: block;
+	visibility: visible;
+	white-space: nowrap;
+	vertical-align: middle;
+	position: absolute;
+	font-size: 16px;
+	right: 0px;
+	bottom: 5px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+}
+
+.claro .idxAppFrameMarquee .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorName {
+	padding-right: 0px;
+}
+
+.claro .idxAppMarquee.idxAppMarqueeShowVendorName .idxAppMarqueeVendorLogo {
+	display: none;
+	visibility: hidden;
+}

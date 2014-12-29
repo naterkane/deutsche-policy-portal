@@ -1,0 +1,260 @@
+.vienna .dijitSplitterV.idxSplitterV {
+	width: 6px;
+}
+
+.vienna .dijitSplitterH.idxSplitterH {
+	height: 6px;
+}
+
+.vienna .idxSplitterH .dijitSplitterThumb {
+	height: 6px;
+	width: 55px;
+	left: 106px;
+	top: 0px;
+}
+
+.vienna .idxSplitterV .dijitSplitterThumb {
+	height: 55px;
+	width: 6px;
+	top: 106px;
+	left: 0px;
+}
+
+.vienna .idxSplitterNoResize {
+	cursor: default !important;
+}
+
+.vienna .idxBorderContainer .idxSplitter {
+	background-image: none;
+	position: absolute;
+}
+
+.vienna .idxBorderContainerToggle .dijitSplitContainer-dijitContentPane,
+.vienna .idxBorderContainerToggle .dijitBorderContainer-dijitContentPane,
+.vienna .idxBorderContainerToggle .dijitSplitContainerNoGutter-dijitContentPane,
+.vienna .idxBorderContainerToggle .dijitBorderContainerNoGutter-dijitContentPane {
+    padding: 0px;
+}
+
+.vienna .idxSplitter .dijitSplitterThumb {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	position: absolute;
+}
+
+/*.dj_ie .vienna .idxSplitter {
+	border: none;
+}*/
+
+.vienna .idxSplitter .idxSplitterThumbOuter {
+	position: relative;
+}
+
+.vienna .idxSplitterH .idxSplitterThumbOuter {
+	width: 268px;
+	height: 6px;
+}
+.vienna .idxSplitterV .idxSplitterThumbOuter {
+	height: 268px;
+	width: 6px;
+}
+
+.vienna .idxSplitter .idxSplitterBarTop,
+.vienna .idxSplitter .idxSplitterBarBottom {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: -5px;
+}
+
+.vienna .idxSplitterH .idxSplitterBarTop {
+	left: 0px;
+	top: 0px;
+	height: 6px;
+	width: 79px;
+	background-image: none;
+}
+.vienna .idxSplitterH .idxSplitterBarBottom {
+	top: 0px;
+	right: 0px;
+	height: 6px;
+	width: 79px;
+	background-image: none;
+}
+.vienna .idxSplitterV .idxSplitterBarTop {
+	top: 0px;
+	left: 0px;
+	height: 79px;
+	width: 6px;
+	background-image: none;
+	background-position: -4;
+}
+.vienna .idxSplitterV .idxSplitterBarBottom {
+	bottom: 0px;
+	left: 0px;
+	height: 79px;
+	width: 6px;
+	background-image: none;
+	background-position: -4;
+}
+
+/* down arrow */
+.vienna .idxSplitterBottomNormal .idxSplitterThumbCollapse,
+.vienna .idxSplitterTopNormal .idxSplitterThumbExpand,
+.vienna .idxSplitterTopCollapsed .idxSplitterThumbCollapse,
+.vienna .idxSplitterBottomExpanded .idxSplitterThumbExpand {
+		background-image: url("vienna/splitterh-open.png");
+}
+/* up arrow */
+.vienna .idxSplitterTopNormal .idxSplitterThumbCollapse,
+.vienna .idxSplitterBottomNormal .idxSplitterThumbExpand,
+.vienna .idxSplitterBottomCollapsed .idxSplitterThumbCollapse,
+.vienna .idxSplitterTopExpanded .idxSplitterThumbExpand {
+	background-image: url("vienna/splitterh-close.png");
+}
+/* left arrow */
+.vienna .idxSplitterLeftNormal .idxSplitterThumbCollapse,
+.vienna .idxSplitterRightNormal .idxSplitterThumbExpand,
+.vienna .idxSplitterRightCollapsed .idxSplitterThumbCollapse,
+.vienna .idxSplitterLeftExpanded .idxSplitterThumbExpand {
+	background-image: url("vienna/splitterv-open.png");
+}
+/* right arrow */
+.vienna .idxSplitterRightNormal .idxSplitterThumbCollapse,
+.vienna .idxSplitterLeftNormal .idxSplitterThumbExpand,
+.vienna .idxSplitterLeftCollapsed .idxSplitterThumbCollapse,
+.vienna .idxSplitterRightExpanded .idxSplitterThumbExpand {
+	background-image: url("vienna/splitterv-close.png");
+}
+/* left arrow hover */
+.vienna .idxSplitterLeftNormal .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterRightNormal .idxSplitterThumbExpandHover,
+.vienna .idxSplitterRightCollapsed .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterLeftExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterv-open-hover.png");
+}
+/* down arrow hover */
+.vienna .idxSplitterBottomNormal .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterTopNormal .idxSplitterThumbExpandHover,
+.vienna .idxSplitterTopCollapsed .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterBottomExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterh-open-hover.png");
+}
+/* up arrow hover */
+.vienna .idxSplitterTopNormal .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterBottomNormal .idxSplitterThumbExpandHover,
+.vienna .idxSplitterBottomCollapsed .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterTopExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterh-close-hover.png");
+}
+/* right arrow hover */
+.vienna .idxSplitterRightNormal .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterLeftNormal .idxSplitterThumbExpandHover,
+.vienna .idxSplitterLeftCollapsed .idxSplitterThumbCollapseHover,
+.vienna .idxSplitterRightExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterv-close-hover.png");
+}
+
+/* locked/hover arrows */
+.claro .idxBorderContainerLocked .idxSplitterBottomNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterTopNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterTopCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomExpanded .idxSplitterThumbExpandHover {
+		background-image: url("vienna/splitterh-open.png");
+}
+.claro .idxBorderContainerLocked .idxSplitterTopNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterBottomCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterTopExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterh-close.png");
+}
+.claro .idxBorderContainerLocked .idxSplitterLeftNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterRightNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterRightCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterv-open.png");
+}
+.claro .idxBorderContainerLocked .idxSplitterRightNormal .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftNormal .idxSplitterThumbExpandHover,
+.claro .idxBorderContainerLocked .idxSplitterLeftCollapsed .idxSplitterThumbCollapseHover,
+.claro .idxBorderContainerLocked .idxSplitterRightExpanded .idxSplitterThumbExpandHover {
+	background-image: url("vienna/splitterv-close.png");
+}
+
+/* double arrows -- don't use for vienna */
+.vienna .idxSplitterBottomExpanded .idxSplitterThumbCollapse,
+.vienna .idxSplitterTopCollapsed .idxSplitterThumbExpand {
+	background-image: none;
+}
+.vienna .idxSplitterBottomCollapsed .idxSplitterThumbExpand,
+.vienna .idxSplitterTopExpanded .idxSplitterThumbCollapse {
+	background-image: none;
+}
+.vienna .idxSplitterRightCollapsed .idxSplitterThumbExpand,
+.vienna .idxSplitterLeftExpanded .idxSplitterThumbCollapse {
+	background-image: none;
+}
+.vienna .idxSplitterLeftCollapsed .idxSplitterThumbExpand,
+.vienna .idxSplitterRightExpanded .idxSplitterThumbCollapse {
+	background-image: none;
+}
+.vienna .idxSplitterTopCollapsed .idxSplitterThumbExpandHover,
+.vienna .idxSplitterBottomExpanded .idxSplitterThumbCollapseHover {
+	background-image: none;
+}
+.vienna .idxSplitterBottomCollapsed .idxSplitterThumbExpandHover,
+.vienna .idxSplitterTopExpanded .idxSplitterThumbCollapseHover {
+	background-image: none;
+}
+.vienna .idxSplitterRightCollapsed .idxSplitterThumbExpandHover,
+.vienna .idxSplitterLeftExpanded .idxSplitterThumbCollapseHover {
+	background-image: none;
+}
+.vienna .idxSplitterLeftCollapsed .idxSplitterThumbExpandHover,
+.vienna .idxSplitterRightExpanded .idxSplitterThumbCollapseHover {
+	background-image: none;
+}
+
+
+/* bidirectional styles */
+.vienna .idxSplitterThumbExpand {
+	display: none;
+}
+
+.vienna .idxSplitterBidiToggleH .idxSplitterThumbCollapse {
+	left: 79px;
+}
+.vienna .idxSplitterBidiToggleH .idxSplitterThumbExpand {
+	display: block;
+	left: 134px;
+}
+
+.vienna .idxSplitterBidiToggleV .idxSplitterThumbCollapse {
+	top: 79px;
+}
+.vienna .idxSplitterBidiToggleV .idxSplitterThumbExpand {
+	display: block;
+	top: 134px;
+}
+
+/* locked style */
+.vienna .idxBorderContainerLocked .idxSplitter {
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.vienna .idxBorderContainerLocked .dijitSplitterThumb {
+	cursor: default;
+}
+
+.vienna .idxBorderContainerLocked .idxSplitter .idxSplitterBarTop,
+.vienna .idxBorderContainerLocked .idxSplitter .idxSplitterBarBottom,
+.vienna .idxSplitterNoResize .idxSplitterBarTop,
+.vienna .idxSplitterNoResize .idxSplitterBarBottom {
+	display: none;
+}
+
+

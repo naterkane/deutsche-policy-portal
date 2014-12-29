@@ -1,0 +1,26 @@
+<div class="dijitDialog" role="dialog" aria-labelledby="${id}_title" aria-describedby="${id}_desc" style="width:416px;">
+	<div dojoAttachPoint="titleBar" class="dijitDialogTitleBar">
+		<span dojoAttachPoint="titleNode" class="dijitDialogTitle" id="${id}_title"></span>
+		<span dojoAttachPoint="closeButtonNode" class="dijitDialogCloseIcon" dojoAttachEvent="ondijitclick: onCancel" title="${buttonCancel}" role="button" tabIndex="-1">
+			<span dojoAttachPoint="closeText" class="closeText" title="${buttonCancel}">x</span>
+		</span>
+	</div>
+	<div class="messageSummary">
+		<span class="imgSpan"><img dojoAttachPoint="icon" class="message${type}Icon" src="${_blankGif}" alt="${type}" /></span>
+		<span id="${id}_desc" role="document" dojoAttachPoint="description" class="messageDescription" tabindex="0">${text}</span>
+	</div>	
+	<div dojoAttachPoint="messageWrapper" class="messageWrapper compact">
+		<div dojoAttachPoint="containerNode" class="dijitDialogPaneContent" tabindex="0">
+		</div>
+	</div>
+	<div class="messageDialogFooter">
+		<span class="messageRef">
+			<a dojoAttachPoint="reference">${messageId}</a>
+		</span>
+		<span class="messageTimeStamp" dojoAttachPoint="timestamp">${messageTimeStamp}</span>
+		<span class="messageAction">
+			<input dojoAttachPoint="confirmAction"/>
+			<input dojoAttachPoint="closeAction"/>
+		</span>
+	</div>
+</div>

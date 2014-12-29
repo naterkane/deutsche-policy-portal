@@ -1,0 +1,15 @@
+.claro .idxAppMarquee .idxLinkDerived {
+  color: #ffffff;
+}
+
+.claro .idxLinkDerived {
+
+}
+
+.claro .idxLinkDerived.dijitDisabled {
+	color: #696969;
+}
+
+.claro .idxAppMarquee .idxLinkDerived.dijitDisabled {
+	color: #696969;
+}

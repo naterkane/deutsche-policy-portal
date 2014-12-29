@@ -1,0 +1,25 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxDateTextBoxWrap .dijitValidationContainer{
+	height: auto;
+}
+/*
+.oneui .idxDateTextBoxWrap .dijitDateTextBox .dijitInputField,
+.oneui .idxDateTextBoxWrap .dijitDateTextBox .dijitInputField .dijitInputInner,
+.oneui .idxDateTextBoxWrap .dijitDateTextBox .dijitInputField .dijitPlaceHolder {
+	padding: 0;
+	left: 0;
+	right: 0;
+}
+*/
+.dj_ie6 .oneui .idxDateTextBoxWrap .dijitDateTextBox .dijitInputField .dijitPlaceHolder{
+	padding-top: 3px;
+}
+.oneui .idxDateTextBoxWrap .dijitDateTextBoxHover {
+	border-color: #66d0e9;
+}

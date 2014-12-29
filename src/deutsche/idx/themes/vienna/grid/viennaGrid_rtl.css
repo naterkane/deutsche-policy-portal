@@ -1,0 +1,65 @@
+/* Vienna styles for DataGrid right-to-left */
+.dijitRtl .vienna .dojoxGridLoading, 
+.dijitRtl .vienna .dojoxGridError {
+	background-position:right center;
+	padding-left:0px;
+	padding-right:25px;
+}
+
+.dijitRtl .vienna .dojoxGridExpandoNode {
+	background-position: -11px 0px; /* for closed state */
+}
+
+.dijitRtl .vienna .dojoxGridRowOver .dojoxGridExpandoNode {
+	background-position: -11px 0px;
+}
+
+.dijitRtl .vienna .dojoxGridExpandoOpened .dojoxGridExpandoNode {
+	background-position: 0px 0px;
+}
+.dijitRtl .vienna .dojoxGridRowOver .dojoxGridExpandoOpened .dojoxGridExpandoNode {
+	background-position: 0px 0px;
+}
+
+
+.dijitRtl .vienna .dojoxGridHeader .dojoxGridCell { 
+    padding: 2px 8px 2px 4px;
+}
+
+.dijitRtl .vienna .dojoxGridHeader .dojoxGridCellFocus { 
+	padding: 2px 8px 2px 4px;
+}
+
+.dijitRtl .vienna .dojoxGridArrowButtonChar {
+	float:left;
+}
+
+.dijitRtl .vienna .dojoxGridArrowButtonNode {
+	background:transparent url(images/spriteArrows.png) no-repeat scroll right center;
+	float:left;
+	margin:2px 5px 0 4px;
+	padding-right:0;
+}
+
+/* rowbar - row headers */
+.dijitRtl .vienna .dojoxGridRowbar { 
+	border:none;
+	border-left:1px solid #B0BECF;
+}
+
+.dijitRtl .vienna .dojoxGridCellContent {
+	padding:5px 8px 4px 6px;
+}
+
+.dijitRtl .vienna .dojoxGridExpando {
+	float: right;
+}
+
+.dijitRtl .vienna .dojoxGridExpandoCell {
+	background-position: right top !important;
+}
+
+.dijitRtl .vienna .dojoxGridSummaryRow .dojoxGridCell {
+	padding: 1px 8px 2px 4px;
+}
+

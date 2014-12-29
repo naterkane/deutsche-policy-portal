@@ -1,0 +1,59 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxPropertyFormatter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.oneui .idxPropertyFormatterFormat {
+  display: inline;
+}
+
+.oneui .idxPropertyFormatterEdit {
+  display: none;
+  visibility: hidden;
+  vertical-align: middle;
+}
+
+.oneui .idxPropertyFormatter .idxEditController {
+  margin-left: 8px;
+  display: inline-block;
+  visbility: visible;
+  vertical-align: bottom;
+}
+
+.dj_ie7 .oneui .idxPropertyFormatter .idxEditController {
+	display: inline;
+}
+
+.dijitRtl .oneui .idxPropertyFormatter .idxEditController {
+	margin-left: 0px;
+	margin-right: 8px;
+}
+
+.oneui .idxPropertyFormatterNoEditors .idxEditController {
+  margin: 0px 0px 0px 0px;
+  display: none;
+  visibility: hidden;
+}
+
+.oneui .idxPropertyFormatter.idxPropertyFormatterEditMode {
+	white-space: nowrap;
+}
+
+.oneui .idxPropertyFormatterEditMode .idxPropertyFormatterEdit {
+  display: inline;
+  visibility: visible;
+  white-space: nowrap;
+}
+
+.oneui .idxPropertyFormatterEditMode .idxPropertyFormatterFormat {
+  display: none;
+  visibility: hidden;
+  white-space: nowrap;
+}

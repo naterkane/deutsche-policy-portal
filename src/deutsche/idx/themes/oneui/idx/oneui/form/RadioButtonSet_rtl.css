@@ -1,0 +1,41 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxRadioButtonSetItemRtl {
+	cursor: default;
+	padding: 4px 0 4px 4px;
+	white-space: nowrap;
+}
+
+.oneui .idxRadioButtonSetItemRtl label{
+	padding: 0 .2em 0 0;
+}
+
+.oneui .idxRadioButtonSetWrapRtl .idxLabel {
+	padding: 0 0 0 10px;
+}
+
+.oneui .idxRadioButtonSetWrapRtl .idxCompContainer {
+	padding: 2px 8px 3px 39px;
+	position: relative;
+}
+
+.oneui .idxRadioButtonSetWrapRtl .dijitValidationContainer {
+	display: none;
+}
+
+.oneui .idxRadioButtonSetWrapRtlError .idxCompContainer {
+	padding: 1px 7px 2px 38px;
+}
+
+.oneui .idxRadioButtonSetWrapRtlError .dijitValidationContainer{
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 6px;
+	right:auto;
+}

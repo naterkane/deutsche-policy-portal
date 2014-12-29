@@ -1,0 +1,22 @@
+.vienna .idxEditController {
+
+}
+
+.vienna .idxButtonBar.idxEditControllerButtonBar {
+ 
+}
+
+.vienna .idxEditControllerEditLink {
+
+}
+
+.vienna .idxEditControllerReadOnly .idxEditControllerEditLink,
+.vienna .idxEditControllerReadOnly .idxEditControllerEditLink.idxLink,
+.vienna .idxEditControllerEditMode .idxEditControllerEditLink,
+.vienna .idxEditControllerEditMode .idxEditControllerEditLink.idxLink {
+
+}
+
+.vienna .idxEditControllerEditMode .idxEditControllerButtonBar {
+
+}

@@ -1,0 +1,117 @@
+/*************************************************/
+/* TriStateCheckBox								 */
+/*************************************************/
+.vienna .idxTriStateCheckBoxOptions {
+  background-image: url("../../resources/blank.gif?theme=vienna");
+}
+
+.vienna .idxTriStateCheckBox,
+.vienna .dojoxTriStateCheckBox {
+	width: 14px;
+	height: 14px;
+	margin: 0 2px 0 0;
+	padding: 0;
+	background-position: 0 0;
+}
+
+.vienna .dojoxTriStateCheckBox,
+.vienna .dojoxTriStateCheckBoxChecked,
+.vienna .dojoxTriStateCheckBoxMixed,
+.vienna .dojoxTriStateCheckBoxDisabled,
+.vienna .dojoxTriStateCheckBoxCheckedDisabled,
+.vienna .dojoxTriStateCheckBoxMixedDisabled,
+.vienna .dojoxTriStateCheckBoxReadOnly,
+.vienna .dojoxTriStateCheckBoxCheckedReadOnly,
+.vienna .dojoxTriStateCheckBoxMixedReadOnly {
+}
+
+.idxTriStateCheckBox .idxHCImage {
+	display: none;
+}
+
+.dijit_a11y .idxTriStateCheckBox .idxHCImage {
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+
+.vienna .idxTriStateCheckBoxunchecked,
+.vienna .dojoxTriStateCheckBox {
+	background-image: url("vienna/check_unselected.png");
+}
+
+.vienna .idxTriStateCheckBoxchecked,
+.vienna .dojoxTriStateCheckBoxChecked {
+	background-image: url("vienna/check_selected.png");
+}
+
+.vienna .idxTriStateCheckBoxmixed,
+.vienna .dojoxTriStateCheckBoxMixed {
+	background-image: url("vienna/check_triselected.png");
+}
+
+.vienna .idxTriStateCheckBoxunchecked:hover,
+.vienna .dojoxTriStateCheckBox:hover {
+	background-image: url("vienna/check_unselected_h.png");
+}
+
+.vienna .idxTriStateCheckBoxchecked:hover,
+.vienna .dojoxTriStateCheckBoxChecked:hover {
+	background-image: url("vienna/check_selected_h.png");
+}
+
+
+.vienna .idxTriStateCheckBoxmixed:hover,
+.vienna .dojoxTriStateCheckBoxMixed:hover {
+	background-image: url("vienna/check_triselected_h.png");
+}
+
+.vienna .idxTriStateCheckBoxuncheckedDisabled,
+.vienna .dojoxTriStateCheckBoxDisabled,
+.vienna .idxTriStateCheckBoxuncheckedDisabled:hover,
+.vienna .dojoxTriStateCheckBoxDisabled:hover {
+	background-image: url("vienna/check_unselected_d.png");
+}
+
+.vienna .idxTriStateCheckBoxcheckedDisabled,
+.vienna .dojoxTriStateCheckBoxCheckedDisabled,
+.vienna .idxTriStateCheckBoxcheckedDisabled:hover,
+.vienna .dojoxTriStateCheckBoxCheckedDisabled:hover {
+	background-image: url("vienna/check_selected_d.png");
+}
+
+.vienna .idxTriStateCheckBoxmixedDisabled,
+.vienna .dojoxTriStateCheckBoxMixedDisabled,
+.vienna .idxTriStateCheckBoxmixedDisabled:hover,
+.vienna .dojoxTriStateCheckBoxMixedDisabled:hover {
+	background-image: url("vienna/check_triselected_d.png");
+}
+
+/* read only */
+.vienna .idxTriStateCheckBoxuncheckedReadOnly,
+.vienna .dojoxTriStateCheckBoxReadOnly,
+.vienna .idxTriStateCheckBoxuncheckedReadOnly:hover,
+.vienna .dojoxTriStateCheckBoxReadOnly:hover {
+	background-image: url("vienna/check_unselected_ro.png");
+}
+
+.vienna .idxTriStateCheckBoxcheckedReadOnly,
+.vienna .dojoxTriStateCheckBoxCheckedReadOnly,
+.vienna .idxTriStateCheckBoxcheckedReadOnly:hover,
+.vienna .dojoxTriStateCheckBoxCheckedReadOnly:hover {
+	background-image: url("vienna/check_selected_ro.png");
+}
+
+.vienna .idxTriStateCheckBoxmixedReadOnly,
+.vienna .dojoxTriStateCheckBoxMixedReadOnly,
+.vienna .idxTriStateCheckBoxmixedReadOnly:hover,
+.vienna .dojoxTriStateCheckBoxMixedReadOnly:hover {
+	background-image: url("vienna/check_triselected_ro.png");
+}
+
+
+/** ASK MASATO -- classes (sans-suffix) appear in dojo -- global override? **/
+.vienna .idxTriStateCheckBox .dijitCheckedFocused, 
+.vienna .idxTriStateCheckBox .dijitCheckBoxFocused {
+
+}

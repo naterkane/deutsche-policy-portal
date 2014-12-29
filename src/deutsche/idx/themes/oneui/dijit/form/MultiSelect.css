@@ -1,0 +1,36 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* 
+ * MultiSelect
+ */
+
+.oneui .dijitMultiSelect {
+  border: 1px solid #aaaaaa;
+  text-indent: 10px;
+}
+.oneui .dijitMultiSelect option {
+	/*padding-left: 10px;*/
+	text-indent: 10px;
+}
+/*
+.oneui .dijitMultiSelectFocused {
+  background-color: #ddf2f9;
+}
+.oneui .dijitMultiSelectHover,
+.oneui .dijitMultiSelectActive  {
+  background-color: #cce8f2;
+}
+.oneui .dijitMultiSelect option[selected]{
+	background-color: #ddf2f9;
+}
+.oneui .dijitMultiSelect div{
+	padding: 3px 0px 3px 10px;
+	line-height: 16px;
+	text-indent: 10px;
+}
+*/

@@ -1,0 +1,50 @@
+.vienna .idxTabMenu .idxConsoleLayoutTabs .dijitTabStripMenuIcon
+{
+}
+
+.vienna .idxTabMenu .tabStripButtonHover .dijitTabStripIcon,
+.vienna .idxTabMenu .dijitHasDropDownOpen .dijitTabStripIcon
+{
+}
+
+.vienna .idxTabMenu .dijitTabListContainer-top .tabStripButton
+{
+}
+
+.vienna  .idxTabMenu .tabStripButton .dijitButtonText
+{
+}
+
+.vienna  .idxTabMenu .tabStripButtonHover .dijitButtonText,
+.vienna  .idxTabMenu .dijitHasDropDownOpen .dijitButtonText
+{
+}
+
+.vienna .idxTabMenu .dijitTabListContainer-top .tabStripButton .dijitTabInnerDiv
+{
+}
+
+.vienna .idxTabMenu .dijitTabListContainer-top .tabStripButtonHover .dijitTabInnerDiv,
+.vienna .idxTabMenu .dijitTabListContainer-top .dijitHasDropDownOpen.dijitTabInnerDiv
+{
+}
+
+/* TODO generalize from #suiteadmin */
+.vienna .dijitMenuPopup[dijitpopupparent=suiteadmin_tablist_menuBtn]
+{
+}
+
+.vienna .dijitMenuPopup #suiteadmin_menu
+{
+}
+
+.vienna .dijitMenuPopup #suiteadmin_menu .dijitMenuItemLabel
+{
+}
+
+.vienna .dijitMenuPopup #suiteadmin_menu .dijitMenuSeparatorIconCell .dijitMenuSeparatorTop
+{
+}
+.vienna .dijitMenuPopup #suiteadmin_menu .dijitMenuSeparatorLabelCell .dijitMenuSeparatorTop
+{
+}

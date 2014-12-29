@@ -1,0 +1,465 @@
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div style="padding:20px;">
+	<h2>dijit.layout.TabContainer</h2>
+	<div data-dojo-type="dijit.layout.TabContainer"
+				data-dojo-props='persist:false, tabStrip:true, style:"width: 500px;height: 20em;"'>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='href:"../../oneui/layout/tests/tab1.html", title:"Tab 1",
+			tooltip:"Tooltip for tab #1"'></div>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='href:"../../oneui/layout/tests/tab2.html", refreshOnShow:true, title:"Tab 2"'></div>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 3",
+				iconClass:"dijitEditorIcon dijitEditorIconSave", closable:true'>
+			<h1>I am tab 3</h1>
+			<p>And I was already part of the page! That's cool, no?</p>
+			<div data-dojo-type="dijit.Tooltip" data-dojo-props='connectId:["foo"]'>I'm a tooltip!</div>
+			<button data-dojo-type="dijit.form.Button">I'm a button </button>
+			<br>
+			<button data-dojo-type="dijit.form.Button">So am I!</button>
+			<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+			semper sagittis velit. Cras in mi. Duis porta mauris ut ligula. Proin
+			porta rutrum lacus. Etiam consequat scelerisque quam. Nulla facilisi.
+			Maecenas luctus venenatis nulla. In sit amet dui non mi semper iaculis.
+			Sed molestie tortor at ipsum. Morbi dictum rutrum magna. Sed vitae
+			risus.
+			</p>
+			<p>Aliquam vitae enim. Duis scelerisque metus auctor est venenatis
+			imperdiet. Fusce dignissim porta augue. Nulla vestibulum. Integer lorem
+			nunc, ullamcorper a, commodo ac, malesuada sed, dolor. Aenean id mi in
+			massa bibendum suscipit. Integer eros. Nullam suscipit mauris. In
+			pellentesque. Mauris ipsum est, pharetra semper, pharetra in, viverra
+			quis, tellus. Etiam purus. Quisque egestas, tortor ac cursus lacinia,
+			felis leo adipiscing nisi, et rhoncus elit dolor eget eros. Fusce ut
+			quam. Suspendisse eleifend leo vitae ligula. Nulla facilisi. Nulla
+			rutrum, erat vitae lacinia dictum, pede purus imperdiet lacus, ut
+			semper velit ante id metus. Praesent massa dolor, porttitor sed,
+			pulvinar in, consequat ut, leo. Nullam nec est. Aenean id risus blandit
+			tortor pharetra congue. Suspendisse pulvinar.
+			</p>
+		</div>
+
+		<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='title:"Inlined Sub TabContainer", nested:true, selected: true'>
+			<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='href:"../../oneui/layout/tests/tab1.html", onLoad:function(){ console.log("load of SubTab 1"); }'>SubTab 1</a>
+			<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='href:"../../oneui/layout/tests/tab2.html",  onLoad:function(){ console.log("load of SubTab 2"); }, selected:true,  iconClass:"dijitEditorIcon dijitEditorIconSave"'>SubTab 2</a>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"SubTab 3",  iconClass:"dijitEditorIcon dijitEditorIconCut"'>
+				<h1>I am tab 3, inlined.</h1>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"SubTab 4", iconClass:"dijitEditorIcon dijitEditorIconCopy"'>
+				<h1>I am tab 4, inlined.</h1>
+			</div>
+		</div>
+
+		<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='href:"../../oneui/layout/tests/tab3.html", refreshOnShow:true, closable:true,
+				style:"padding: 0", iconClass:"dijitEditorIcon dijitEditorIconSave"'>Sub TabContainer from href</a>
+		<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='href:"../../oneui/layout/tests/tab4.html",
+				closable:true, iconClass:"dijitEditorIcon dijitEditorIconCut"'>SplitContainer from href</a>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Embedded layout widgets",
+				closable:true, iconClass:"dijitEditorIcon dijitEditorIconCopy"'>
+			<p>
+				The tab has some text, plus two embedded layout widgets, which should
+				appear correctly even though the tab is initially hidden.
+			</p>
+			<p>
+				Here's a BorderContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"left", style:"width:100px", splitter:true'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				And a TabContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 1"'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 2"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				Text after the widgets.
+			</p>
+		</div>
+	</div>
+	<br>
+	<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='tabPosition:"bottom",
+				persist:true, tabStrip:true, style:"width: 500px; height: 20em;"'>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='href:"../../oneui/layout/tests/tab1.html", title:"Tab 1"'></div>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='href:"../../oneui/layout/tests/tab2.html", refreshOnShow:true, title:"Tab 2", selected:true'></div>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='closable:true, title:"Tab 3"'>
+			<h1>I am tab 3</h1>
+			<p>And I was already part of the page! That's cool, no?</p>
+			<div data-dojo-type="dijit.Tooltip" data-dojo-props='connectId:["foo6"]'>I'm a tooltip!</div>
+			<button data-dojo-type="dijit.form.Button">I'm a button </button>
+			<br>
+			<button data-dojo-type="dijit.form.Button">So am I!</button>
+			<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+			semper sagittis velit. Cras in mi. Duis porta mauris ut ligula. Proin
+			porta rutrum lacus. Etiam consequat scelerisque quam. Nulla facilisi.
+			Maecenas luctus venenatis nulla. In sit amet dui non mi semper iaculis.
+			Sed molestie tortor at ipsum. Morbi dictum rutrum magna. Sed vitae
+			risus.
+			</p>
+			<p>Aliquam vitae enim. Duis scelerisque metus auctor est venenatis
+			imperdiet. Fusce dignissim porta augue. Nulla vestibulum. Integer lorem
+			nunc, ullamcorper a, commodo ac, malesuada sed, dolor. Aenean id mi in
+			massa bibendum suscipit. Integer eros. Nullam suscipit mauris. In
+			pellentesque. Mauris ipsum est, pharetra semper, pharetra in, viverra
+			quis, tellus. Etiam purus. Quisque egestas, tortor ac cursus lacinia,
+			felis leo adipiscing nisi, et rhoncus elit dolor eget eros. Fusce ut
+			quam. Suspendisse eleifend leo vitae ligula. Nulla facilisi. Nulla
+			rutrum, erat vitae lacinia dictum, pede purus imperdiet lacus, ut
+			semper velit ante id metus. Praesent massa dolor, porttitor sed,
+			pulvinar in, consequat ut, leo. Nullam nec est. Aenean id risus blandit
+			tortor pharetra congue. Suspendisse pulvinar.
+			</p>
+		</div>
+
+		<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='closable:true, title:"Inlined Sub TabContainer", nested:true'>
+			<a data-dojo-type="dijit.layout.LinkPane"  data-dojo-props='href:"../../oneui/layout/tests/tab1.html", onLoad:function(){ console.log("load of SubTab 1"); }'>SubTab 1</a>
+			<a data-dojo-type="dijit.layout.LinkPane"  data-dojo-props='href:"../../oneui/layout/tests/tab2.html",  onLoad:function(){ console.log("load of SubTab 2"); }, selected:true'>SubTab 2</a>
+			<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props='title:"SubTab 3"'>
+				<h1>I am tab 3, inlined.</h1>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props='title:"SubTab 4"'>
+				<h1>I am tab 4, inlined.</h1>
+			</div>
+		</div>
+
+		<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='closable:true, href:"../../oneui/layout/tests/tab3.html", refreshOnShow:true, style:"padding: 0"'>Sub TabContainer from href</a>
+
+		<a data-dojo-type="dijit.layout.LinkPane" data-dojo-props='closable:true, href:"../../oneui/layout/tests/tab4.html"'>SplitContainer from href</a>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='closable:true, title:"Embedded layout widgets"'>
+			<p>
+				The tab has some text, plus two embedded layout widgets, which should
+				appear correctly even though the tab is initially hidden.
+			</p>
+			<p>
+				Here's a BorderContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"left", style:"width:100px", splitter:true'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				And a TabContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 1"'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 2"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				Text after the widgets.
+			</p>
+		</div>
+	</div>
+	<br>
+	<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='tabStrip:true, style:"width:500px;height:150px", tabPosition:"right-h"'>
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Little Red Cap"'>
+			Once upon a time there was a dear little girl who was loved by
+			every one who looked at her, but most of all by her grandmother,
+			and there was nothing that she would not have given to the child.
+		</div>
+		<div data-dojo-type="dijit.layout.ContentPane"
+		     data-dojo-props='title:"Hansel and Gretel", closable:true, selected:true'>
+			Hard by a great forest dwelt a poor wood-cutter with his wife
+			and his two children. The boy was called Hansel and the girl Gretel.
+			He had little to bite and to break, and once when great dearth fell
+			on the land, he could no longer procure even daily bread.
+		</div>
+		<div data-dojo-type="dijit.layout.ContentPane"
+		 data-dojo-props='title:"The Three Green Twigs"'>
+			There was once upon a time a hermit who lived in a forest at the foot
+			of a mountain, and passed his time in prayer and good works,
+			and every evening he carried, to the glory of God, two pails of water
+			up the mountain.
+		</div>
+	</div>
+	<h2>dijit.layout.AccordionContainer</h2>
+	<div id="accordion" data-dojo-type="dijit.layout.AccordionContainer" data-dojo-props='style:"width: 400px; height: 300px; overflow: hidden"'>
+		<div id="pane1" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='selected:true,
+			title:"A Simple Pane", iconClass:"dijitEditorIcon dijitEditorIconSave", tooltip:"tooltip for simple pane" '>
+				<select>
+					<option>red</option>
+					<option>blue</option>
+					<option>green</option>
+				</select>
+				<p>
+				Nunc consequat nisi vitae quam. Suspendisse sed nunc. Proin
+				suscipit porta magna. Duis accumsan nunc in velit. Nam et nibh.
+				Nulla facilisi. Cras venenatis urna et magna. Aenean magna mauris,
+				bibendum sit amet, semper quis, aliquet nec, sapien.  Aliquam
+				aliquam odio quis erat. Etiam est nisi, condimentum non, lacinia
+				ac, vehicula laoreet, elit. Sed interdum augue sit amet quam
+				dapibus semper. Nulla facilisi. Pellentesque lobortis erat nec
+				quam.
+				</p>
+				<p>
+				Sed arcu magna, molestie at, <input value="fringilla in, sodales"/> fringilla in, sodales eu, elit.
+				Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+				vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+				augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+				metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+				ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+				euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+				risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+				porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+				faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+				consequat quis, varius interdum, nulla. Donec neque tortor,
+				sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+				ut eros sit amet ante pharetra interdum.
+				</p>
+		</div>
+
+		<!-- test lazy loading.   margin style for testing size calculations. -->
+		<div id="lazyLoadPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Lazy Load Pane", iconClass:"dijitEditorIcon dijitEditorIconCopy", href:"../../oneui/layout/tests/tab1.html",
+			style:"margin: 5px;"'></div>
+
+		<div id="borderContainerPane" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='title:"BorderContainer Pane", iconClass:"dijitEditorIcon dijitEditorIconPaste"'>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"left", style:"width:50%", splitter:true'>
+			1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+			Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+			vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+			augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+			metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+			ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+			euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+			risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+			porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+			faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+			consequat quis, varius interdum, nulla. Donec neque tortor,
+			sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+			ut eros sit amet ante pharetra interdum.
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"'>
+			2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+			Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+			vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+			augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+			metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+			ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+			euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+			risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+			porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+			faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+			consequat quis, varius interdum, nulla. Donec neque tortor,
+			sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+			ut eros sit amet ante pharetra interdum.
+			</div>
+		</div>
+
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Embedded layout widgets", iconClass:"dijitEditorIcon dijitEditorIconCut"'>
+			<p>
+				The pane has some text, plus two embedded layout widgets, which should
+				appear correctly even though the pane is initially hidden.
+			</p>
+			<p>
+				Here's a BorderContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"left", style:"width:100px", splitter:true'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				And a TabContainer:
+			</p>
+			<div data-dojo-type="dijit.layout.TabContainer" data-dojo-props='style:"height:200px; width:300px"'>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 1"'>
+					1Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props='title:"Tab 2"'>
+					2Sed arcu magna, molestie at, fringilla in, sodales eu, elit.
+					Curabitur mattis lorem et est. Quisque et tortor. Integer bibendum
+					vulputate odio. Nam nec ipsum. Vestibulum mollis eros feugiat
+					augue. Integer fermentum odio lobortis odio. Nullam mollis nisl non
+					metus. Maecenas nec nunc eget pede ultrices blandit. Ut non purus
+					ut elit convallis eleifend. Fusce tincidunt, justo quis tempus
+					euismod, magna nulla viverra libero, sit amet lacinia odio diam id
+					risus. Ut varius viverra turpis. Morbi urna elit, imperdiet eu,
+					porta ac, pharetra sed, nisi. Etiam ante libero, ultrices ac,
+					faucibus ac, cursus sodales, nisl. Praesent nisl sem, fermentum eu,
+					consequat quis, varius interdum, nulla. Donec neque tortor,
+					sollicitudin sed, consequat nec, facilisis sit amet, orci. Aenean
+					ut eros sit amet ante pharetra interdum.
+				</div>
+			</div>
+			<p>
+				Text after the widgets.
+			</p>
+		</div>
+	</div>
+	<h2>dijit.TitlePane</h2>
+	<div id="outer" data-dojo-type="dijit.TitlePane" data-dojo-props='title:"Outer pane", style:"width:300px;"'>
+		<p>This is a title pane, containing another title pane ...
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque iaculis, nulla id semper faucibus, pede tellus nonummy magna, vitae adipiscing orci arcu ut augue. Nunc condimentum, magna a vestibulum convallis, libero purus pulvinar orci, sed vestibulum urna sem ut pede.
+More Ipsum...
+
+		<div id="inner" data-dojo-type="dijit.TitlePane" data-dojo-props='title:"Inner pane", style:"width:250px;"'>
+			<p>And this is the inner title pane...
+			<p>Sed sollicitudin suscipit risus. Nam ullamcorper. Sed nisl lectus, pellentesque nec, malesuada eget, ornare a, libero. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+		</div>
+
+		<p>And this is the closing line for the outer title pane.
+	</div>
+</div>

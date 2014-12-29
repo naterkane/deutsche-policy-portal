@@ -1,0 +1,33 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxCheckBoxListItemRtl {
+	cursor: default;
+	padding: 4px 0 4px 4px;
+	white-space: nowrap;
+}
+.oneui .idxCheckBoxListItemRtl .dijitCheckBox{
+	margin-left: 5px;
+	margin-right: 0px;
+}
+.oneui .idxCheckBoxListItemRtl label{
+	padding: 0 .2em 0 0;
+}
+
+.oneui .idxCheckBoxListWrapRtl .idxCompContainer {
+	padding: 2px 8px 3px 39px;
+}
+
+.oneui .idxCheckBoxListWrapRtlError .idxCompContainer{
+	padding: 1px 7px 2px 38px;
+}
+
+.oneui .idxCheckBoxListWrapRtlError .dijitValidationContainer{
+	top: 7px;
+	left: 6px;
+	right: auto;
+}

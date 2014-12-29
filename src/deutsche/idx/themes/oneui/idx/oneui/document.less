@@ -1,0 +1,45 @@
+/* ======= Styling for the document itself (overriding dojo.css) ======== */
+
+@import "variables";
+@import url("../../../dojo/resources/dojo.css");
+
+.oneui {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: .688em;
+  color: @document-text-color;
+}
+
+/* Headings */
+.oneui h1 {
+	font-size: 1.545em; 
+	margin-bottom:0.727em;
+}
+.oneui h2 { 
+	font-size: 1.364em; 
+	line-height: 1.455em; 
+	margin-top:1em; 
+	margin-bottom:0.60em;
+	font-weight: normal;
+}
+.oneui h3, .oneui h4, .oneui h5, .oneui h6 {
+	font-size:1.091em; 
+	font-weight: normal; 
+}
+
+/* paragraphs, quotes and lists */
+.oneui p { 
+	line-height: 1.3em;
+}
+
+/* pre and code */
+.oneui pre, .oneui code { 
+	font-family:inherit; 
+	background-color: @document-shadedsection-background-color; 
+	border: 1px solid @document-border-color;
+}
+
+/* tables */
+.oneui table.dojoTabular thead, .oneui table.dojoTabular tfoot { 
+	background-color: @document-shadedsection-background-color; 
+	border: 1px solid @document-border-color; 
+}

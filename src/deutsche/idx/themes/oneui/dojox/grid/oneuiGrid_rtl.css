@@ -1,0 +1,48 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* RTL oneui styles for DataGrid */
+
+/* first load the dojox/Grid styles, in case they
+ * have not yet been loaded */
+@import url("Grid_rtl.css");
+
+/* Vienna styles for DataGrid right-to-left */
+.dijitRtl .oneui .dojoxGridLoading, 
+.dijitRtl .oneui .dojoxGridError {
+	background-position:right center;
+	padding-right:25px;
+	padding-left: 0px;
+}
+
+.dijitRtl .oneui .dojoxGridArrowButtonNode {
+	background:transparent url("images/grid_sort_down.png") no-repeat scroll right center;
+	padding-right: 0px;
+	float: left;
+}
+
+.dijitRtl .oneui .dojoxGridArrowButtonChar {
+	float:left;
+}
+
+.dijitRtl .oneui .dojoxGridRowbar { 
+	border:none;
+	border-left:1px solid #ccc;
+}
+
+.dijitRtl .oneui .dojoxGridRowbarSelected {
+	border-right: none;
+	border-left:1px solid #bbb;
+}
+
+.dijitRtl .oneui .dojoxGridExpando {
+	float: right;
+}
+
+.dijitRtl .oneui .dojoxGridExpandoCell {
+	background-position: right top !important;
+}

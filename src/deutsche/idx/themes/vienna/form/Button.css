@@ -1,0 +1,465 @@
+/* Button | DropDownButton | ComboButton | ToggleButton
+ * 
+ * Styling Buttons mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitButton
+ * 		.dijitDropDownButton
+ * 		.dijitComboButton
+ * 		.dijitButtonNode - common button/arrow wrapper shared across all three button types 
+ *
+ * 2. Button text
+ * 		.dijitButtonText
+ * 
+ * 3. Arrows - only for DropDownButton and ComboButton
+ * 	     There are total four diredtions arrows - down, left, right, up:
+ * 		.dijitArrowButtonInner - down arrow by default
+ *      .dijitLeftArrowButton .dijitArrowButtonInner - left arrow
+ *      .dijitRightArrowButton .dijitArrowButtonInner - right arrow
+ *      .dijitUpArrowButton .dijitArrowButtonInner - up arrow
+ * 
+ * 4. States - Hover, Active, Disabled, e.g.
+ * 		.dijitButtonHover .dijitButtonNode
+ * 		.dijitButtonActive .dijitButtonNode
+ * 		.dijitButtonDisabled .dijitButtonNode
+ *      
+ *      .dijitDisabled .dijitArrowButtonInner  - disabled arrow states 
+ */
+
+/***
+ ** NOTE ON dijitToolbar SELECTORS
+ ** -- Since Vienna is an override of Claro, each of the Button CSS definitions includes a selector for dijitToolbar
+ ** -- in order to set a baseline for Vienna.  At the end of this file some of these CSS properties are specifically
+ ** -- overridden to create the proper Toolbar styling.
+ **/
+.vienna .dijitButtonNode,
+.vienna .dijitToolbar .dijitButtonNode {
+	/* rules for dijit.form.*Button widgets and arrow nodes on ComboBox, Spinner etc. */
+	-webkit-transition-property:background-color;
+	-webkit-transition-duration:.3s;
+}
+
+.vienna .dijitButton .dijitButtonNode,
+.vienna .dijitDropDownButton .dijitButtonNode,
+.vienna .dijitComboButton .dijitButtonNode,
+.vienna .dijitToggleButton .dijitButtonNode,
+.vienna .dijitToolbar .dijitButton .dijitButtonNode,
+.vienna .dijitToolbar .dijitDropDownButton .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButton .dijitButtonNode,
+.vienna .dijitToolbar .dijitToggleButton .dijitButtonNode {
+	/* rules for the dijit.form.*Button widgets (see also ComboButton section below) */
+	border: 1px solid #7b92ab;
+	padding: 0px 4px 3px 4px;
+	background-color: #a8bed4;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#58799c', endColorstr='#3b5e88'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#58799c), to(#3b5e88)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #58799c,  #3b5e88); /* for firefox 3.6+ */
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow: none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .dijitComboButton .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .dijitComboButton .dijitButtonNode {
+	/* rules for the dijit.form.*Button widgets (see also ComboButton section below) */
+	background: none;
+        filter: none;
+}
+
+.dj_ie .vienna table.dijitComboButton,
+.dj_ie .vienna .dijitToolbar table.dijitComboButton {
+	background: none;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#58799c', endColorstr='#3b5e88'); /* for IE */
+}
+
+.dj_ie .vienna table.dijitComboButton.dijitComboButtonActive,
+.dj_ie .vienna .dijitToolbar table.dijitComboButton.dijitComboButtonActive {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+}
+
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .dijitComboButton .dijitArrowButton,
+.vienna .dijitToolbar .dijitComboButton .dijitArrowButton {
+	border-left-width: 0px;
+	padding: 0px 2px 0px 2px;	/* TODO: still needed? */
+}
+
+/*arrow styles for down/up/left/right directions*/
+.vienna .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitArrowButtonInner {
+	width: 15px;
+	height: 13px;
+	margin: 0 auto;
+	background-image:url("images/buttonArrows.png");
+	background-repeat:no-repeat;
+	background-position:-51px 0px;
+}
+.vienna .dijitLeftArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -77px 0px;
+}
+.vienna .dijitRightArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -26px 0px;
+}
+.vienna .dijitUpArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: 0px 0px;
+}
+.vienna .dijitDisabled .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 0px;
+}
+.vienna .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -177px 0px;
+}
+.vienna .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -126px 0px;
+}
+.vienna .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: -100px 0px;
+}
+
+.vienna .dijitButtonText,
+.vienna .dijitToolbar .dijitButtonText {
+/* padding: 0 0.3em; */
+/* text-align: center; */
+	color:#ffffff;
+}
+
+.vienna .dijitDisabled .dijitButtonText,
+.vienna .dijitToolbar .dijitDisabled .dijitButtonText {
+	color: #8f8f8f;
+}
+
+/* hover status */
+.vienna .dijitButtonHover .dijitButtonNode,
+.vienna .dijitDropDownButtonHover .dijitButtonNode,
+.vienna .dijitComboButton .dijitButtonNodeHover, 
+.vienna .dijitComboButton .dijitDownArrowButtonHover,
+.vienna .dijitToggleButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitDropDownButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButton .dijitButtonNodeHover, 
+.vienna .dijitToolbar .dijitComboButton .dijitDownArrowButtonHover,
+.vienna .dijitToolbar .dijitToggleButtonHover .dijitButtonNode {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#6a93b6), to(#49729f)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #6a93b6,  #49729f); /* for firefox 3.6+ */
+/* color:#000; */
+/* 	-webkit-transition-duration:.2s; */
+}
+
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+/*
+    NOTE: We cheat a bit for "Hover" since the border and the background are so close in color.
+    Technically, the borders are not visible when we do this CSS on the ButtonNode cells, but 
+    they are replaced with the gradient which is just as dark on IE, and unnoticeable.  The
+    alternative would have been to hover-highlight the entire button instead of the parts
+*/
+.dj_ie .vienna .dijitComboButton .dijitButtonNodeHover,
+.dj_ie .vienna .dijitComboButton .dijitDownArrowButtonHover,
+.dj_ie .vienna .dijitToolbar .dijitComboButton .dijitButtonNodeHover,
+.dj_ie .vienna .dijitToolbar .dijitComboButton .dijitDownArrowButtonHover {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .dijitDropDownButton.dijitOpened .dijitButtonText,
+.vienna .dijitComboButton.dijitOpened .dijitButtonText,
+.vienna .idxComboButtonOpen .dijitButtonText,
+.vienna .dijitToolbar .dijitDropDownButton.dijitOpened .dijitButtonText,
+.vienna .dijitToolbar .dijitComboButton.dijitOpened .dijitButtonText,
+.vienna .dijitToolbar .idxComboButtonOpen .dijitButtonText {
+   color: #ffffff;
+}
+
+.vienna .dijitDropDownButton.dijitOpened .dijitButtonNode,
+.vienna .dijitComboButton.dijitOpened .dijitButtonNode,
+.vienna .idxComboButtonOpen .dijitButtonNode,
+.vienna .dijitToolbar .dijitDropDownButton.dijitOpened .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButton.dijitOpened .dijitButtonNode,
+.vienna .dijitToolbar .idxComboButtonOpen .dijitButtonNode {
+	background-color: #6a93b6;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#6a93b6), to(#49729f)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #6a93b6,  #49729f); /* for firefox 3.6+ */
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .idxComboButtonOpen .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .dijitComboButton.dijitOpened .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .idxComboButtonOpen .dijitButtonNode
+ {
+	filter: none;
+        background: none;
+}
+
+.dj_ie .vienna table.dijitComboButton.dijitOpened,
+.dj_ie .vienna table.dijitComboButton.idxComboButtonOpen,
+.dj_ie .vienna .dijitToolbar table.dijitComboButton.dijitOpened,
+.dj_ie .vienna .dijitToolbar table.dijitComboButton.idxComboButtonOpen {
+        background: none;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+}
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+/* checked status */
+.vienna .dijitButtonActive .dijitButtonNode, 
+.vienna .dijitDropDownButtonActive .dijitButtonNode,
+.vienna .dijitComboButtonActive .dijitButtonNode,
+.vienna .dijitToggleButtonActive .dijitButtonNode,
+.vienna .dijitToolbar .dijitButtonActive .dijitButtonNode, 
+.vienna .dijitToolbar .dijitDropDownButtonActive .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButtonActive .dijitButtonNode,
+.vienna .dijitToolbar .dijitToggleButtonActive .dijitButtonNode {
+	background-color: #49729f;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+        background: -webkit-gradient(linear, left top, left bottom, from(#49729f), to(#6a93b6)); /* for webkit browsers */ 
+        background: -moz-linear-gradient(top,  #49729f,  #6a93b6); /* for firefox 3.6+ */
+	box-shadow:none;
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+/* 	-webkit-transition-duration:.1s; */
+}
+
+/* disabled status */
+.vienna .dijitButtonDisabled,
+.vienna .dijitDropDownButtonDisabled,
+.vienna .dijitComboButtonDisabled,
+.vienna .dijitToggleButtonDisabled,
+.vienna .dijitToolbar .dijitButtonDisabled,
+.vienna .dijitToolbar .dijitDropDownButtonDisabled,
+.vienna .dijitToolbar .dijitComboButtonDisabled,
+.vienna .dijitToolbar .dijitToggleButtonDisabled {
+	background: none;
+	outline: none;
+}
+
+.vienna .dijitButtonDisabled .dijitButtonNode,
+.vienna .dijitDropDownButtonDisabled .dijitButtonNode,
+.vienna .dijitComboButtonDisabled .dijitButtonNode,
+.vienna .dijitToggleButtonDisabled .dijitButtonNode,
+.vienna .dijitToolbar .dijitButtonDisabled .dijitButtonNode,
+.vienna .dijitToolbar .dijitDropDownButtonDisabled .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButtonDisabled .dijitButtonNode,
+.vienna .dijitToolbar .dijitToggleButtonDisabled .dijitButtonNode { 
+	background: none;
+	background-color: #d7d8da;
+        filter: none;
+	border: solid 1px #c6c9ca;
+	color: #696969;
+	box-shadow:none;
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+}
+
+/** BEGIN WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+.dj_ie .vienna .dijitComboButtonDisabled .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .dijitComboButtonDisabled .dijitButtonNode {
+        background: none;
+        filter: none;
+}
+
+.dj_ie .vienna table.dijitComboButtonDisabled,
+.dj_ie .vienna .dijitToolbar table.dijitComboButtonDisabled {
+	background: none;
+	background-color: #d7d8da;
+        filter: none;
+}
+
+/** END WORK AROUND FOR IE GRADIENT FILTER HIDING TABLE CELL BORDERS ON COMBO-BUTTON **/
+
+.vienna .dijitComboButtonDisabled .dijitArrowButton,
+.vienna .dijitToolbar .dijitComboButtonDisabled .dijitArrowButton{ 
+	border-left-width: 0px;
+}
+
+/* for ComboButton */
+.vienna table.dijitComboButton,
+.vienna .dijitToolbar table.dijitComboButton {
+ /* border-collapse: separate; */	/* override dijit.css so that ComboBox rounded corners work */
+}
+
+.dj_ie6 .vienna .dijitButtonNode,
+.dj_ie6 .vienna .dijitToolbar .dijitButtonNode {
+/* background-image: none; */
+}
+
+.vienna .dijitComboButton .dijitStretch,
+.vienna .dijitToolbar .dijitComboButton .dijitStretch {
+	-moz-border-radius: 3px 0px 0px 3px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 3px;
+}
+.vienna .dijitComboButton .dijitArrowButton,
+.vienna .dijitToolbar .dijitComboButton .dijitArrowButton {
+	-moz-border-radius: 0px 3px 3px 0px;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 0px;
+	border-left-width: 0px;
+}
+
+
+/*****
+  dijitToolbar overrides begin here
+  ***/
+
+.vienna .dijitToolbar .dijitButton .dijitButtonNode, 
+.vienna .dijitToolbar .dijitDropDownButton .dijitButtonNode, 
+.vienna .dijitToolbar .dijitComboButton .dijitButtonNode, 
+.vienna .dijitToolbar .dijitToggleButton .dijitButtonNode, 
+.vienna .dijitToolbar .dijitComboBox .dijitButtonNode,
+.vienna .dijitToolbar .dijitButtonNode {
+ 	border: 1px solid transparent;
+ 	padding: 2px; /* hover and non-hover border/padding same */
+ 	filter: none;
+    background: none;
+}
+
+.dj_ie .vienna .dijitToolbar table.dijitComboButton {
+	filter: none;
+}
+
+.dj_ie .vienna .dijitToolbar .dijitButton .dijitButtonNode, 
+.dj_ie .vienna .dijitToolbar .dijitDropDownButton .dijitButtonNode, 
+.dj_ie .vienna .dijitToolbar .dijitComboButton .dijitButtonNode, 
+.dj_ie .vienna .dijitToolbar .dijitToggleButton .dijitButtonNode, 
+.dj_ie .vienna .dijitToolbar .dijitComboBox .dijitButtonNode,
+.dj_ie .vienna .dijitToolbar .dijitButtonNode {
+   margin: 2px; /* IE padding doesnt work right for IE here */
+}
+
+.vienna .dijitToolbar .dijitButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitDropDownButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButton .dijitButtonNodeHover, 
+.vienna .dijitToolbar .dijitComboButton .dijitDownArrowButtonHover,
+.vienna .dijitToolbar .dijitToggleButtonHover .dijitButtonNode {
+	border: 1px solid #7b92ab;
+   	padding: 2px; /* hover and non-hover border/padding same */ 
+	background-color: #6a93b6;
+   	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6a93b6', endColorstr='#49729f'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#6a93b6), to(#49729f)); /* for webkit browsers */ 
+    background: -moz-linear-gradient(top,  #6a93b6,  #49729f); /* for firefox 3.6+ */
+}
+
+.vienna .dijitToolbar .dijitDropDownButton.idxDropDownOpen .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitDownArrowButton,
+.vienna .dijitToolbar .dijitComboButton.idxDropDownOpen .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButton.idxDropDownOpen .dijitDownArrowButton {
+	border: 1px solid #7b92ab;
+}
+
+.vienna .dijitToolbar .dijitComboButton .dijitArrowButton,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitArrowButton,
+.vienna .dijitToolbar .dijitComboButton .dijitDownArrowButton,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitDownArrowButton,
+.vienna .dijitToolbar .dijitComboButton.idxDropDownOpen .dijitDownArrowButton,
+.vienna .dijitToolbar .dijitComboButtonHover.idxDropDownOpen .dijitDownArrowButton {
+	border-left-width: 0px;
+}
+
+.vienna .dijitToolbar .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover .dijitArrowButtonInner {	
+	background-position:-150px 0px;
+}
+
+.vienna .dijitToolbar .dijitHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitDropDownButton.idxDropDownOpen .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonActive .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitActive .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover.dijitComboButtonActive .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover.dijitActive .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover .dijitArrowButtonHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover .dijitArrowButtonHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover .dijitDownArrowButtonHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitOpened .dijitArrowButtonInner,
+.vienna .dijitToolbar .idxComboButtonOpen .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover.dijitOpened .dijitArrowButtonInner,
+.vienna .dijitToolbar .idxComboButtonOpen.dijitHover .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover.dijitOpened .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover.dijitOpened .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.idxDropDownOpen .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover.idxDropDownOpen .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButtonHover.idxDropDownOpen .dijitArrowButtonInner,
+.vienna .dijitToolbar .dijitComboButton.dijitHover.idxDropDownOpen .dijitArrowButtonInner {	
+	background-position:-51px 0px;
+}
+
+.vienna .dijitToolbar .dijitHover .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -77px 0px;
+}
+.vienna .dijitToolbar .dijitHover .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -26px 0px;
+}
+.vienna .dijitToolbar .dijitHover .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: 0px 0px;
+}
+.vienna .dijitToolbar .dijitDisabled .dijitArrowButtonInner {
+	background-position: -151px 0px;
+}
+.vienna .dijitToolbar .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner {
+	background-position: -177px 0px;
+}
+.vienna .dijitToolbar .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner {
+	background-position: -126px 0px;
+}
+.vienna .dijitToolbar .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+	background-position: -100px 0px;
+}
+
+.vienna .dijitToolbar .dijitButtonText,
+.vienna .dijitToolbar .dijitButton .dijitButtonText, 
+.vienna .dijitToolbar .dijitDropDownButton .dijitButtonText, 
+.vienna .dijitToolbar .dijitComboButton .dijitButtonText, 
+.vienna .dijitToolbar .dijitToggleButton .dijitButtonText, 
+.vienna .dijitToolbar .dijitComboBox .dijitButtonText {
+	color:#464646;
+}
+
+.vienna .dijitToolbar .dijitButtonText,
+.vienna .dijitToolbar .dijitButtonHover .dijitButtonText, 
+.vienna .dijitToolbar .dijitButtonActive .dijitButtonText, 
+.vienna .dijitToolbar .dijitDropDownButtonHover .dijitButtonText, 
+.vienna .dijitToolbar .dijitDropDownButtonActive .dijitButtonText, 
+.vienna .dijitToolbar .dijitComboButtonActive .dijitButtonNode .dijitButtonText, 
+.vienna .dijitToolbar .dijitComboButtonHover .dijitButtonNodeHover .dijitButtonText, 
+.vienna .dijitToolbar .dijitToggleButtonHover .dijitButtonText, 
+.vienna .dijitToolbar .dijitToggleButtonActive .dijitButtonText, 
+.vienna .dijitToolbar .dijitComboBoxHover .dijitButtonText,
+.vienna .dijitToolbar .dijitComboBoxActive .dijitButtonText {
+	color:#ffffff;
+}
+
+/* active status */
+.vienna .dijitToolbar .dijitButtonActive .dijitButtonNode, 
+.vienna .dijitToolbar .dijitDropDownButtonActive .dijitButtonNode,
+.vienna .dijitToolbar .dijitComboButtonActive .dijitButtonNode,
+.vienna .dijitToolbar .dijitToggleButtonActive .dijitButtonNode {
+	border: 1px solid #7b92ab;
+	background-color: #49729f;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49729f', endColorstr='#6a93b6'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#49729f), to(#6a93b6)); /* for webkit browsers */ 
+    background: -moz-linear-gradient(top,  #49729f,  #6a93b6); /* for firefox 3.6+ */
+	padding: 2px; /* hover and non-hover border/padding same */
+}

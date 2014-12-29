@@ -1,0 +1,62 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+.oneui .idxEditController {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 0px;
+}
+
+.dj_ie7 .oneui .idxEditController {
+  display: inline;
+}
+
+.dj_webkit .oneui .idxEditController {
+  top: 0px;
+}
+
+.dj_ie7 .oneui .idxEditController {
+  top: 0px;
+}
+
+.dj_ie8 .oneui .idxEditController {
+  top: 0px;
+}
+
+.dj_ie9 .oneui .idxEditController {
+  top: 0px;
+}
+
+.oneui .idxButtonBar.idxEditControllerButtonBar {
+  display: none;
+  visibility: hidden;
+  vertical-align: middle;
+}
+
+.oneui .idxEditControllerEditLink {
+  display: inline;
+  visibility: visible;
+  vertical-align: middle;
+}
+
+.oneui .idxEditControllerReadOnly .idxEditControllerEditLink,
+.oneui .idxEditControllerEditMode .idxEditControllerEditLink {
+  display: none;
+  visibility: hidden;
+}
+
+.oneui .idxEditControllerEditMode .idxEditControllerButtonBar,
+.oneui .idxEditControllerEditMode .idxButtonBar.idxEditControllerButtonBar {
+  display: inline-block;
+  visibility: visible;
+}
+
+.dj_ie7 .oneui .idxEditControllerEditMode .idxEditControllerButtonBar,
+.dj_ie7 .oneui .idxEditControllerEditMode .idxButtonBar.idxEditControllerButtonBar {
+  display: inline;
+}

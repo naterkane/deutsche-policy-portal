@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<!--
+	Licensed Materials - Property of IBM
+	(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>One UI theme summary information</title>
+		
+	<script type="text/javascript" src="../../../tests/dojoVersion.js"></script>
+
+	<script type="text/javascript">
+	dojoCSSImport("../../../../../@dojopath@/dojo/resources/dojo.css", "idxStyles");
+	dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit.css", "idxStyles");
+	dojoCSSImport("../../../../../@dojopath@/dijit/themes/dijit_rtl.css", "idxStyles");
+	</script>
+
+    <style id="idxStyles" type="text/css">
+        @import "../../../themes/oneui/oneui.css";
+        @import "../../../themes/test.css";
+		
+		.text-semantic-name {}
+		.text-file-name {}
+
+		.hover-help-icon {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-image: url(../../../themes/oneui/idx/oneui/messaging/images/msgIcons_24bit.png);
+			background-position: -38px -1px;
+			vertical-align: top;
+		}
+		
+		.css-property {
+			font-weight: 400;
+			color: darkred;
+		}
+		
+		.sheet-note {
+			color: gray;
+			font-size: 0.85em;
+		}
+		
+		.sheet-duplicate {
+			display: inline-block;
+			background-color: #ffffec;
+			border: 2px solid rgba(221, 115, 28, 0.75);
+			padding: 1px 1em 1px 1em;
+		}
+		
+		.sheet-duplicate-icon {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-image: url(../../../themes/oneui/idx/oneui/messaging/images/msgIcons_24bit.png);
+			background-position: -20px -1px;
+			vertical-align: top;
+		}
+		
+		table.nonstandard-prefix {
+			background-color: #fff5f5;
+		}	
+			
+		.foldout {
+			border-top: 2px solid #002288;
+			border-bottom: 2px solid #002288;
+			padding: 0.5em 0;
+			background-color: #fbfbff;
+		}
+		
+		a.foldout-link:hover {
+			text-decoration: none;
+		}
+		
+		.report-table {
+			width: 804px;
+			border: 1px solid #a7a7a7;
+			border-bottom:none;
+			background-color:#f5f5f5;
+			box-shadow: 0px 2px 4px #e2e2e2;
+			-webkit-box-shadow: 0px 2px 4px #e2e2e2;
+			-moz-box-shadow: 0px 2px 4px #e2e2e2;
+			margin-top: 4px;
+			margin-bottom: 14px;
+			font-size: 11px;
+		}
+		
+		.report-table tr {
+			vertical-align: top;
+		}
+		
+		.report-table th {
+			padding: 4px;
+			vertical-align: middle;
+			border-bottom: solid 1px #a7a7a7;
+			border-left: solid 1px #a7a7a7;
+			box-shadow: inset 0px 1px 0px #E5E5E5;
+			-webkit-box-shadow: inset 0px 1px 0px #E5E5E5;
+			-moz-box-shadow: inset 0px 1px 0px #E5E5E5;
+			background-color:#b5b5b5;
+			background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+			filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8d8d8', endColorstr='#b6b6b6');
+		}
+		
+		.report-table td {
+			padding:4px;
+			border-bottom:solid 1px #a7a7a7;
+		}
+
+		.swatch-head {
+			float: left;
+			margin-right: 4px;			
+		}
+		
+		.color-swatch {
+			height: 30px;
+			width: 30px;
+			border: solid 1px #333;
+		}
+		
+		.color-name {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+		
+		.font-swatch-box {
+			display: block;
+			margin: 6px 0;
+		}
+
+		.font-swatch {
+			display: table-cell;
+			border: solid 1px #333;
+			color: gray;
+			font-size: 28px;
+			width: 120px;
+			max-width: 120px;
+			height: 30px;
+			overflow: hidden;
+		}
+		
+		.font-swatch:before {
+			content: 'xQygWs&k';
+		}
+		
+		.font-swatch-label {
+			display: table-cell;
+		}
+		
+		.font-name {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+
+		.image-swatch {
+			border: solid 1px #333;
+		}
+		
+		.image-url {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+
+		.class-name {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+
+    </style>
+
+	<script type="text/javascript">
+		var dojoConfig = currentDojoVersion.dojoConfig;
+		dojoScriptImport("../../../../../@dojopath@/dojo/dojo.js", "postDojo");
+	</script>
+
+	<script type="text/javascript" src="cssSummary.js"></script>
+	
+	<script type="text/javascript" id="postDojo">
+		var modules = [
+			"dojo/_base/connect",
+			"dojo/dom",
+			"dojo.store.Memory",
+			"dojo.data.ObjectStore",
+			"dojo.fx",
+			"dojo.fx.Toggler",
+			"dijit.Tooltip",
+			"dijit.tree.TreeStoreModel",
+			"dijit.Tree",
+			"idx.oneui.messaging.SingleMessage",
+			"idx.oneui.demos.themeSummary.ThemeReport"],
+			connect,
+			dom,
+			Memory,
+			ObjectStore,
+			fx,
+			Toggler,
+			Tooltip,
+			TreeStoreModel,
+			Tree,
+			SingleMessage,
+			ThemeReport,
+			openColorIndex,
+			closeColorIndex,
+			colorReportOpen = false,
+			openColorReport,
+			closeColorReport,
+			openFontIndex,
+			closeFontIndex,
+			fontReportOpen = false,
+			openFontReport,
+			closeFontReport,
+			openImageIndex,
+			closeImageIndex,
+			imageReportOpen = false,
+			openImageReport,
+			closeImageReport,
+			classReportOpen = false,
+			openClassReport,
+			closeClassReport;
+			
+		function preParse(modules){
+			connect = modules["dojo/_base/connect"] || dojo;
+			dom = modules["dojo/dom"] || dojo;
+			Memory = modules["dojo/store/Memory"];
+			ObjectStore = modules["dojo/data/ObjectStore"];
+			fx = modules["dojo/fx"];
+			Toggler = modules["dojo/fx/Toggler"];
+			Tooltip = modules["dijit/Tooltip"];
+			TreeStoreModel = modules["dijit/tree/TreeStoreModel"];
+			Tree = modules["dijit/Tree"];
+			SingleMessage = modules["idx/oneui/messaging/SingleMessage"];
+			ThemeReport = modules["idx/oneui/demos/themeSummary/ThemeReport"];
+		}
+		
+		function analyseTheme(semantic_name, rootfile, file_name){
+			var report_colorindex_toggler,
+				report_colors_toggler,
+				report_fontindex_toggler,
+				report_fonts_toggler,
+				report_imageindex_toggler,			
+				report_images_toggler,			
+				report_classes_toggler,
+				report = new ThemeReport();			
+			
+			openColorIndex = function(){
+				report_colorindex_toggler.show();
+				dom.byId('report_colorindex_show').style.display = 'none';
+				dom.byId('report_colorindex_hide').style.display = 'inline';
+			}
+			
+			closeColorIndex = function(){
+				report_colorindex_toggler.hide();
+				dom.byId('report_colorindex_show').style.display = 'inline';
+				dom.byId('report_colorindex_hide').style.display = 'none';
+			}
+			
+			openColorReport = function(jumpto){
+				if(!colorReportOpen){
+					var handler = connect.connect(report_colors_toggler.showAnim, "onEnd", function(){
+						colorReportOpen = true;
+						handler.remove();
+						jumpto && (window.location = jumpto);
+					});
+					report_colors_toggler.show();
+					dom.byId('report_colors_show').style.display = 'none';
+					dom.byId('report_colors_hide').style.display = 'inline';
+				}else if(jumpto){
+					window.location = jumpto;
+				}
+			}
+			
+			closeColorReport = function(){
+				colorReportOpen = false;
+				report_colors_toggler.hide();
+				dom.byId('report_colors_show').style.display = 'inline';
+				dom.byId('report_colors_hide').style.display = 'none';
+			}
+			
+			openFontIndex = function(){
+				report_fontindex_toggler.show();
+				dom.byId('report_fontindex_show').style.display = 'none';
+				dom.byId('report_fontindex_hide').style.display = 'inline';
+			}
+			
+			closeFontIndex = function(){
+				report_fontindex_toggler.hide();
+				dom.byId('report_fontindex_show').style.display = 'inline';
+				dom.byId('report_fontindex_hide').style.display = 'none';
+			}
+			
+			openFontReport = function(jumpto){
+				if(!fontReportOpen){
+					var handler = connect.connect(report_fonts_toggler.showAnim, "onEnd", function(){
+						fontReportOpen = true;
+						handler.remove();
+						jumpto && (window.location = jumpto);
+					});
+					report_fonts_toggler.show();
+					dom.byId('report_fonts_show').style.display = 'none';
+					dom.byId('report_fonts_hide').style.display = 'inline';
+				}else if(jumpto){
+					window.location = jumpto;
+				}
+			}
+			
+			closeFontReport = function(){
+				fontReportOpen = false;
+				report_fonts_toggler.hide();
+				dom.byId('report_fonts_show').style.display = 'inline';
+				dom.byId('report_fonts_hide').style.display = 'none';
+			}
+			
+			openImageIndex = function(){
+				report_imageindex_toggler.show();
+				dom.byId('report_imageindex_show').style.display = 'none';
+				dom.byId('report_imageindex_hide').style.display = 'inline';
+			}
+			
+			closeImageIndex = function(){
+				report_imageindex_toggler.hide();
+				dom.byId('report_imageindex_show').style.display = 'inline';
+				dom.byId('report_imageindex_hide').style.display = 'none';
+			}
+			
+			openImageReport = function(jumpto){
+				if(!imageReportOpen){
+					var handler = connect.connect(report_images_toggler.showAnim, "onEnd", function(){
+						imageReportOpen = true;
+						handler.remove();
+						jumpto && (window.location = jumpto);
+					});
+					report_images_toggler.show();
+					dom.byId('report_images_show').style.display = 'none';
+					dom.byId('report_images_hide').style.display = 'inline';
+				}else if(jumpto){
+					window.location = jumpto;
+				}
+			}
+			
+			closeImageReport = function(){
+				imageReportOpen = false;
+				report_images_toggler.hide();
+				dom.byId('report_images_show').style.display = 'inline';
+				dom.byId('report_images_hide').style.display = 'none';
+			}
+			
+			openClassReport = function(jumpto){
+				if(!classReportOpen){
+					var handler = connect.connect(report_classes_toggler.showAnim, "onEnd", function(){
+						classReportOpen = true;
+						handler.remove();
+						jumpto && (window.location = jumpto);
+					});
+					report_classes_toggler.show();
+					dom.byId('report_classes_show').style.display = 'none';
+					dom.byId('report_classes_hide').style.display = 'inline';
+				}else if(jumpto){
+					window.location = jumpto;
+				}
+			}
+			
+			closeClassReport = function(){
+				classReportOpen = false;
+				report_classes_toggler.hide();
+				dom.byId('report_classes_show').style.display = 'inline';
+				dom.byId('report_classes_hide').style.display = 'none';
+			}
+			
+			summarizeCSS(rootfile, {
+				colors: function(colors){
+					report.createColorReport(colors, dom.byId("report_colors_index"), dom.byId("report_colors"));
+					
+					report_colorindex_toggler = new Toggler({ node: dom.byId("report_colorindex_toggler"), showDuration: 400, showFunc: fx.wipeIn, hideDuration: 400, hideFunc: fx.wipeOut }),
+					report_colors_toggler = new Toggler({ node: dom.byId("report_colors_toggler"), showDuration: 1000, showFunc: fx.wipeIn, hideDuration: 500, hideFunc: fx.wipeOut }),
+					dom.byId("report_colors_section").style.display = "block";
+					
+					window.location.hash && (window.location.hash.indexOf("#report-color-") == 0) && openColorReport(window.location.hash);
+				},
+				fonts: function(fonts){
+					report.createFontReport(fonts, dom.byId("report_fonts_index"), dom.byId("report_fonts"));
+					
+					report_fontindex_toggler = new Toggler({ node: dom.byId("report_fontindex_toggler"), showDuration: 400, showFunc: fx.wipeIn, hideDuration: 400, hideFunc: fx.wipeOut }),
+					report_fonts_toggler = new Toggler({ node: dom.byId("report_fonts_toggler"), showDuration: 1000, showFunc: fx.wipeIn, hideDuration: 500, hideFunc: fx.wipeOut }),
+					dom.byId("report_fonts_section").style.display = "block";
+					
+					window.location.hash && (window.location.hash.indexOf("#report-font-") == 0) && openFontReport(window.location.hash);
+				},
+				images: function(images){
+					report.createImageReport(images, dom.byId("report_images_index"), dom.byId("report_images"));
+					
+					report_imageindex_toggler = new Toggler({ node: dom.byId("report_imageindex_toggler"), showDuration: 400, showFunc: fx.wipeIn, hideDuration: 400, hideFunc: fx.wipeOut }),
+					report_images_toggler = new Toggler({ node: dom.byId("report_images_toggler"), showDuration: 1000, showFunc: fx.wipeIn, hideDuration: 500, hideFunc: fx.wipeOut }),
+					dom.byId("report_images_section").style.display = "block";
+					
+					var errors = 0;
+					for(var img in images){
+						if(images[img][0].image.image == null){
+							errors++;
+						}
+					}
+					if(errors > 0){
+						new SingleMessage({
+							type: 'warning',
+							title: (errors > 1)
+									? ('NB There are ' + errors + ' images that have failed to load correctly.')
+									: 'NB There is one image that has failed to load correctly.'  
+						}, dom.byId("report_images_errors"));
+					}
+
+					window.location.hash && (window.location.hash.indexOf("#report-image-") == 0) && openImageReport(window.location.hash);
+				},
+				sheets: function(sheets){
+					var objectStore = new Memory({ data: sheets.imports }),
+						dataStore = new ObjectStore({ objectStore: objectStore }),
+						treeModel = new TreeStoreModel({ store: dataStore, childrenAttrs: ['imports'] }),
+						recurse = function(tree, node, expand){
+			            	expand ? tree._expandNode(node) : tree._collapseNode(node);
+				            dojo.forEach(node.getChildren() || [], function(node){
+								if(node.isExpandable){
+									recurse(tree, node, expand);
+								}
+							});
+			        	}
+					 
+					var tree = new Tree({
+						model: treeModel,
+						persist: false,
+						getLabel: function(item){
+					        return '<a href="' + item.sheet + '">' + item.sheetrel + '</a> <span class="sheet-note">(import depth: '
+								 + item.depth
+								 + ((item.maxdepth > item.depth) ? (', max depth within this file: ' + item.maxdepth) : '')
+								 + (item.importserror ? " &mdash; <b>unable to trace nested imports</b>)</span>" : ")</span>")
+								 + (item.duplicate ? ' <div class="sheet-duplicate"><div class="sheet-duplicate-icon"></div>This stylesheet is already loaded (duplicate)</span>' : '');
+					    },
+						_createTreeNode: function(args){
+							var tnode = new dijit._TreeNode(args);
+							tnode.labelNode.innerHTML = args.label;
+							return tnode;
+						},
+						expandAll: function() {
+					        return recurse(this, this.rootNode, true);
+						},
+						collapseAll: function() {
+					        return recurse(this, this.rootNode, false);
+					    },
+						onLoad: function() {
+							var me = this;
+							setTimeout(function(){
+								me._collapseNode(me.rootNode);
+								dom.byId("report_sheets_section").style.display = "block";
+							}, 0);
+						}						
+					}, 'report_sheets_tree');
+					
+					tree.startup();
+					
+					if(sheets.duplicates){
+						new SingleMessage({
+							type: 'warning',
+							title: (sheets.duplicates > 1)
+									? ('NB There are ' + sheets.duplicates + ' occurrences of @imports of stylesheets that are already loaded (duplicates).')
+									: 'NB There is one @import of a stylesheet that is already loaded (duplicate).'  
+						}, dom.byId("report_sheets_duplicates"));
+					}
+				},
+				classes: function(classes){
+					report.createClassReport(classes,
+											 dom.byId("report_classes_table_dojodijit"),
+											 dom.byId("report_classes_table_idxoneui"),
+											 dom.byId("report_classes_table_nonstandard"));
+
+					report_classes_toggler = new Toggler({ node: dom.byId("report_classes_toggler"), showDuration: 1000, showFunc: fx.wipeIn, hideDuration: 500, hideFunc: fx.wipeOut }),
+					dom.byId("report_classes_section").style.display = "block";
+					
+					window.location.hash && (window.location.hash.indexOf("#report-class-") == 0) && openClassReport(window.location.hash);
+				},
+				error: function(message){
+					new SingleMessage({ type: 'error', title: message }, dom.byId("report_error"));
+				}
+			});
+		}
+		
+		function postParse(){
+			analyseTheme("the 'oneui' theme", "../../../themes/oneui/oneui.css", "oneui.css");
+		}
+			
+		dojoRequireModules(modules, null, currentDojoVersion.async, preParse, postParse);
+	</script>
+	
+	<script type="text/javascript" src="../../../tests/commonTest.js"></script>
+</head>
+<body style="width: 100%; height: 100%; margin: 0; padding: 0px;">
+	<a class="navigationLink" href="#maincontent">Skip to main content</a>
+	<script type="text/javascript">applyThemeToBody("oneui");</script><!-- only oneui theme is supported -->
+	
+	<a name="maincontent"></a>
+	<div class="testMain">
+	<h1 class="testTitle">Summary of style definitions for the "oneui" theme</h1>
+	
+	<p>This page performs an analysis of the CSS rules and presents summaries of features of the stylesheets and the style rules they contain. The following sections are available:</p>
+	<ul>
+		<li><a href="#colors">Colors used in the "oneui" theme</a></li>
+		<li><a href="#images">Images used in the "oneui" theme</a></li>
+		<li><a href="#sheets">Stylesheet files loaded by "oneui.css"</a></li>
+		<li><a href="#classnames">Class names used in the "oneui" theme</a></li>
+	</ul>
+	
+	<div id="report_error"></div>
+		
+	<div id="report_colors_section" style="display: none;">
+		<h2><a name="colors">Colors used in the "oneui" theme</a></h2>
+		
+		<p>This section lists color definitions that appear in style rules
+		<span id="colors_help" class="hover-help-icon"></span>
+		in the "oneui" theme. If a color is defined with
+		an alpha value (opacity) it is shown after the hex value (and name, if applicable) for the color; if
+		no alpha value is shown, the color definition is opaque.</p>
+		
+		<div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId: 'colors_help', position:['above']">
+			Colors which are specified for the following style properties are included here:
+			<ul>
+				<li><span class="css-property">color</span></li>
+				<li><span class="css-property">background</span>
+				(or <span class="css-property">background-color</span>)</li>
+				<li><span class="css-property">border</span>
+				(or <span class="css-property">border-color</span>,
+				<span class="css-property">border-top-color</span>,
+				<span class="css-property">border-bottom-color</span>,
+				<span class="css-property">border-left-color</span>,
+				<span class="css-property">border-right-color</span>)</li>
+			</ul>
+			<p>Note that rules which assign values such as "inherited"
+			or "initial" are not included here. </p>
+		</div>		
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_colorindex_show" onclick="openColorIndex(); return false;">► show index of colors defined</a>
+		<a class="foldout-link" href="#" id="report_colorindex_hide" style="display: none;" onclick="closeColorIndex(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_colorindex_toggler" style="display: none;"><div class="foldout">
+			<h3>Index of colors defined</h3>
+			<div id="report_colors_index" style="width: 798px; border: 1px solid #a7a7a7; padding-left: 6px; padding-top: 6px; font-size: 0; line-height: 0;"></div>
+		</div></div>
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_colors_show" onclick="openColorReport(); return false;">► show color definitions in detail</a>
+		<a class="foldout-link" href="#" id="report_colors_hide" style="display: none;" onclick="closeColorReport(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_colors_toggler" style="display: none;"><div class="foldout">
+			<h3>Color definitions in detail</h3>
+			<div id="report_colors"></div>
+		</div></div>
+	</div>
+		
+	<div id="report_fonts_section" style="display: none;">
+		<h2><a name="fonts">Fonts used in the "oneui" theme</a></h2>
+		
+		<p>This section lists font family definitions that appear in style rules
+		<span id="fonts_help" class="hover-help-icon"></span>
+		in the "oneui" theme.</p>
+		
+		<div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId: 'fonts_help', position:['above']">
+			Fonts which are specified for the following style properties are included here:
+			<ul>
+				<li><span class="css-property">font-family</span></li>
+			</ul>
+			<p>Note that rules which assign values such as "inherited"
+			or "initial" are not included here.</p>
+		</div>		
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_fontindex_show" onclick="openFontIndex(); return false;">► show index of fonts defined</a>
+		<a class="foldout-link" href="#" id="report_fontindex_hide" style="display: none;" onclick="closeFontIndex(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_fontindex_toggler" style="display: none;"><div class="foldout">
+			<h3>Index of fonts defined</h3>
+			<div id="report_fonts_index" style="width: 798px; border: 1px solid #a7a7a7; padding: 0 6px;"></div>
+		</div></div>
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_fonts_show" onclick="openFontReport(); return false;">► show font definitions in detail</a>
+		<a class="foldout-link" href="#" id="report_fonts_hide" style="display: none;" onclick="closeFontReport(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_fonts_toggler" style="display: none;"><div class="foldout">
+			<h3>Font definitions in detail</h3>
+			<div id="report_fonts"></div>
+		</div></div>
+	</div>
+		
+	<div id="report_images_section" style="display: none;">
+		<h2><a name="images">Images used in the "oneui" theme</a></h2>
+		
+		<p>This section lists images that appear in style rules
+		<span id="images_help" class="hover-help-icon"></span>
+		in the "oneui" theme.</p>
+		
+		<div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId: 'images_help', position:['above']">
+			<p>Images which are specified by URL for the following style properties are included here:</p>
+			<ul>
+				<li><span class="css-property">background</span>
+				(or <span class="css-property">background-image</span>)</li>
+				<li><span class="css-property">border-image</span>
+				(or <span class="css-property">border-image-source</span>)</li>
+				<li><span class="css-property">content</span></li>
+				<li><span class="css-property">list-style</span>
+				(or <span class="css-property">list-style-image</span>)</li>
+			</ul>
+			<p>Note that rules which assign values such as "inherited",
+			"initial" or "none" are not included here.</p>
+		</div>
+		
+		<div id="report_images_errors"></div>
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_imageindex_show" onclick="openImageIndex(); return false;">► show index of images referenced</a>
+		<a class="foldout-link" href="#" id="report_imageindex_hide" style="display: none;" onclick="closeImageIndex(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_imageindex_toggler" style="display: none;"><div class="foldout">
+			<h3>Index of images referenced</h3>
+			<div id="report_images_index" style="width: 798px; border: 1px solid #a7a7a7; padding-left: 8px; padding-top: 8px; font-size: 0; line-height: 0;"></div>
+		</div></div>
+
+		<div>			
+		<a class="foldout-link" href="#" id="report_images_show" onclick="openImageReport(); return false;">► show image references in detail</a>
+		<a class="foldout-link" href="#" id="report_images_hide" style="display: none;" onclick="closeImageReport(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_images_toggler" style="display: none;"><div class="foldout">
+			<h3>Image references in detail</h3>
+			<div id="report_images"></div>
+		</div></div>
+	</div>
+		
+	<div id="report_sheets_section" style="display: none;">
+		<h2><a name="sheets">Stylesheet files loaded by "oneui.css"</a></h2>
+		
+		<p>This section shows the individual stylesheet files that are imported, directly or indirectly, by
+		the main "oneui" CSS file.</p>
+		
+		<div id="report_sheets_duplicates"></div>
+		
+		<a href="javascript:" onclick="dijit.byId('report_sheets_tree').expandAll();" style="margin-left: 16px;"> expand all</a>
+		|
+		<a href="javascript:" onclick="dijit.byId('report_sheets_tree').collapseAll();">collapse all</a>
+		<div id="report_sheets_tree"></div>
+	</div>
+			
+	<div id="report_classes_section" style="display: none;">
+		<h2><a name="classnames">Class names used in the "oneui" theme</a></h2>
+		
+		<p>This section lists class names that appear in selectors in style rules
+		<span id="sheets_help" class="hover-help-icon"></span>
+		in the "oneui" theme.
+		
+		<div data-dojo-type="dijit.Tooltip" data-dojo-props="connectId: 'sheets_help', position:['above']">
+			<p>All CSS style rules are included when making this list.</p>
+		</div>
+		
+		<div>			
+		<a class="foldout-link" href="#" id="report_classes_show" onclick="openClassReport(); return false;">► show class names used</a>
+		<a class="foldout-link" href="#" id="report_classes_hide" style="display: none;" onclick="closeClassReport(); return false;">▼ hide</a>
+		</div>
+		
+		<div id="report_classes_toggler" style="display: none;"><div class="foldout">
+			
+			<div style="display: none;">
+				<h3>Class names without a standard prefix</h3>
+				
+				<p>NB These class names pose a risk of conflict with class names used by applications or other toolkits.</p>
+				
+				<table cellpadding="0" cellspacing="0" class="report-table nonstandard-prefix" id="report_classes_table_nonstandard">				
+					<tr><th width="220">class name</th><th width="584">stylesheet(s)</th></tr>			
+				</table>
+			</div>
+			
+			<div style="display: none;">
+				<h3>Class names with an idx/oneui prefix</h3>
+				
+				<table cellpadding="0" cellspacing="0" class="report-table" id="report_classes_table_idxoneui">				
+					<tr><th width="220">class name</th><th width="584">stylesheet(s)</th></tr>			
+				</table>
+			</div>
+			
+			<div style="display: none;">
+				<h3>Class names with a dojo/dijit prefix</h3>
+				
+				<p>These class names are defined by Dojo/Dijit and are given additional or replacement styling
+				by the stylesheet.</p>
+				
+				<table cellpadding="0" cellspacing="0" class="report-table" id="report_classes_table_dojodijit">				
+					<tr><th width="220">class name</th><th width="584">stylesheet(s)</th></tr>			
+				</table>
+			</div>
+			
+			<div style="display: none;">
+				<h3>Other class names</h3>
+				
+				<table cellpadding="0" cellspacing="0" class="report-table" id="report_classes_table_idxoneui">				
+					<tr><th width="220">class name</th><th width="584">stylesheet(s)</th></tr>			
+				</table>
+			</div>
+			
+		</div></div>
+	</div>
+		
+	</div>		
+</body>
+</html>

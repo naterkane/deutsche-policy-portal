@@ -1,0 +1,29 @@
+.claro .idxDropDownLink.idxLinkDerived {
+	white-space: nowrap;
+	display: inline;
+} 
+
+.claro .idxDropDownLink .dijitArrowButtonInner {
+	cursor: pointer;
+}
+
+.claro .idxDropDownLink .idxDropDownLinkAnchor {
+	margin-right: 2px;
+}
+.dijitRtl .claro .idxDropDownLink .idxDropDownLinkAnchor {
+	margin-right: 0px;
+	margin-left: 4px;
+}
+
+.claro .idxAppMarquee .idxDropDownLinkAnchor {
+  color: #ffffff;
+}
+
+.claro .idxDropDownLinkDisabled .idxDropDownLinkAnchor,
+.claro .idxAppMarquee .idxDropDownLinkDisabled .idxDropDownLinkAnchor {
+  color: #696969;
+}
+
+.claro .idxDropDownLinkDisabled .dijitArrowButtonInner {
+	cursor: auto;
+}

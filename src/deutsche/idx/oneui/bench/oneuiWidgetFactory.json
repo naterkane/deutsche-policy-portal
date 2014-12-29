@@ -1,0 +1,315 @@
+{
+    identifier: "clazz",
+    label: "clazz",
+    items: [{
+        clazz: "idx.oneui.form.TextBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Empty TextBox",
+			props: {value: "One UI toolkit"}
+        }, {
+            _type: "widgetProps",
+            name: "Composite TextBox",
+            props: {
+                label: "Composite TextBox",
+                labelWidth: 120,
+                labelAlignment: "vertical",
+                hint: "One UI toolkit"
+            }
+        }, {
+            _type: "widgetProps",
+            name: "Composite TextBox with hint outside",
+            props: {
+                label: "Composite TextBox",
+                labelWidth: 120,
+                labelAlignment: "vertical",
+                hintPosition: "outside",
+                hint: "One UI toolkit"
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.CheckBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Empty CheckBox"
+        }, {
+            _type: "widgetProps",
+            name: "Composite CheckBox",
+            props: {
+                label: "Composite CheckBox",
+                checked: true
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.CheckBoxList",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Vertical CheckBoxList",
+            props: {
+                label: "Vertical CheckBoxList",
+                labelWidth: 170,
+                options: [
+						{value:"TN",selected:"selected",label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+				]
+            }
+        }, {
+            _type: "widgetProps",
+            name: "Horizontal CheckBoxList",
+            props: {
+                label: "Horizontal CheckBoxList",
+                labelWidth: 170,
+                groupAlignment: "horizontal",
+                options: [
+						{value:"TN",selected:"selected",label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+				]
+            }
+        }, {
+            _type: "widgetProps",
+            name: "CheckBoxList with data store",
+            props: {
+                label: "CheckBoxList with data store",
+                labelWidth: 170,
+                store: testStoreShort
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.CheckBoxSelect",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "CheckBoxSelect",
+            props: {
+                label: "CheckBoxSelect",
+                labelWidth: 170,
+                options: [
+						{value:"TN",selected:"selected",label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+				]
+            }
+        }, {
+            _type: "widgetProps",
+            name: "CheckBoxSelect with data store",
+            props: {
+                label: "CheckBoxSelect",
+                labelWidth: 170,
+                store: testStoreShort
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.ComboBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite ComboBox",
+            props: {
+                label: "Composite ComboBox",
+                labelAlignment: "vertical",
+                store: testStoreLong,
+                searchAttr: "name",
+				value: "New York"
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.CurrencyTextBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite CurrencyTextBox",
+            props: {
+                label: "Composite CurrencyTextBox",
+                labelAlignment: "vertical",
+                currency: "USD",
+                value: "100"
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.DateTextBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite DateTextBox",
+            props: {
+                label: "Composite DateTextBox",
+                labelAlignment: "vertical",
+				displayedValue: "4/1/2012"
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.FilteringSelect",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite FilteringSelect",
+            props: {
+                label: "Composite FilteringSelect",
+                labelAlignment: "vertical",
+                store: testStoreLong,
+                searchAttr: "name",
+				value: "New York"
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.NumberSpinner",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite NumberSpinner",
+            props: {
+                label: "Composite NumberSpinner",
+                labelAlignment: "vertical",
+				value: 100
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.NumberTextBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite NumberTextBox",
+            props: {
+                label: "Composite NumberTextBox",
+                labelAlignment: "vertical",
+				value: 100
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.RadioButtonSet",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "RadioButtonSet",
+            props: {
+                label: "RadioButtonSet",
+                labelWidth: 170,
+                options: [
+						{value:"TN",selected:"selected",label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+				]
+            }
+        }, {
+            _type: "widgetProps",
+            name: "RadioButtonSet with data store",
+            props: {
+                label: "RadioButtonSet with data store",
+                labelWidth: 170,
+                store: testStoreShort
+            }
+        }]
+    }, {
+        clazz: "idx.oneui.form.Select",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite Select",
+            props: {
+                label: "Composite Select",
+                labelAlignment: "vertical",
+                options: [
+						{value:"TN",selected:"selected",label:"Tennessee"},
+						{value:"VA",label:"Virginia"},
+						{value:"WA",label:"Washington"},
+						{value:"FL",label:"Florida"},
+						{value:"CA",label:"California"}
+				]
+            }
+        }, {
+            _type: "widgetProps",
+            name: "Composite Select with data store",
+            props: {
+                label: "Composite Select",
+                labelAlignment: "vertical",
+                store: testStoreShort
+            }
+        }]
+    }, {
+		clazz: "idx.oneui.form.Textarea",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite Textarea",
+            props: {
+                label: "Composite Textarea",
+                labelAlignment: "vertical",
+				value: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+            }
+        }]
+	}, {
+		clazz: "idx.oneui.form.TimeTextBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite TimeTextBox",
+            props: {
+                label: "Composite TimeTextBox",
+                labelAlignment: "vertical",
+				displayedValue: "12:00 PM"
+            }
+        }]
+	}, {
+		clazz: "idx.oneui.form.TriStateCheckBox",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Composite TriStateCheckBox",
+            props: {
+                label: "Composite TriStateCheckBox",
+				states: "mixed"
+            }
+        }]
+	}, {
+		clazz: "idx.oneui.CheckBoxTree",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "CheckBoxTree",
+            props: {
+				model:treeModel, 
+				autoExpand:true, 
+				openOnClick:true
+            }
+        }]
+	}, {
+		clazz: "idx.oneui.Dialog",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "Dialog",
+            props: {
+				title: "Dialog Title",
+				instruction: "Instructional information goes here.",
+				content: "<div style=\"height:80px\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean semper sagittis velit. Cras in mi. Duis porta mauris ut ligula. Proin porta rutrum lacus. Etiam consequat scelerisque quam. Nulla facilisi. Maecenas luctus venenatis nulla.</div>",
+				reference: {
+					name: "Link goes here",
+					link: "http://dojotoolkit.org/"
+				}
+            }
+        }]
+	}, {
+		clazz: "idx.oneui.HoverHelpTooltip",
+        group: "oneui",
+        templates: [{
+            _type: "widgetProps",
+            name: "HoverHelpTooltip",
+            props: {
+				
+            }
+        }]
+	}]
+}

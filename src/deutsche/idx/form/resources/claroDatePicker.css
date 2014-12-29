@@ -1,0 +1,30 @@
+@import url("claroIconPicker.css");
+
+/* popup */
+.claro .idxDatePickerYearLabel .dijitCalendarNextYear,
+.claro .idxDatePickerYearLabel .dijitCalendarPreviousYear {
+	margin: 0px;
+	padding: 1px 2px;
+}
+
+.claro .idxDatePickerYearLabel .dijitCalendarNextYearHover,
+.claro .idxDatePickerYearLabel .dijitCalendarPreviousYearHover {
+	margin: 0px;
+	padding: 0px 1px;
+}
+
+.claro .idxDatePickerYearLabel .dijitCalendarIncrementControl {
+	background-position: -5px 0px;
+	width: 8px;
+}
+.claro .idxDatePickerYearLabel .dijitCalendarIncrease {
+	background-position: -23px 0px;
+}
+
+.claro .idxCalendarIcon {
+	background-image: url('claro/datepicker16.png');
+}
+
+.claro .dijitDateTextBoxDisabled .idxCalendarIcon {
+	background-image: url('claro/datepicker16_d.png');
+}

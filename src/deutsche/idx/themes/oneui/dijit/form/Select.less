@@ -1,0 +1,124 @@
+/* Select
+ * 
+ * Styling Select mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitSelect - for border, background-color
+ * 		.dijitButtonContents - for border
+ *
+ * 2. Arrow
+ * 		.dijitArrowButton - for border, padding and background-color|image
+ * 		.dijitArrowButtonInner - for border, background-color|image, display and width|height
+ * 
+ * 3. Menu
+ * 		.dijitSelectMenu .* - for border, padding
+ * 
+ * 4. Various states
+ * 		.dijitSelectHover|.dijitSelectFocused|.dijitSelectDisabled .* - for border, padding and background-color|image 
+ */
+
+@import "../variables";
+
+.oneui .dijitSelect .dijitButtonText {
+	padding: @textbox-padding;
+}
+
+/* normal status */
+.oneui .dijitSelect {
+	border: 1px solid @border-color;
+	background-color: @textbox-background-color;
+	border-collapse: separate;
+}
+.dj_ie6 .oneui .dijitSelect,
+.dj_ie6 .oneui .dijitSelect .dijitButtonNode {
+	background-image:none;
+}
+
+.oneui .dijitSelect .dijitButtonContents {
+	border: 0 solid @border-color;
+	border-right-width: 1px;
+}
+
+.oneui .dijitSelect .dijitArrowButton {
+	padding: 0;
+	border: 1px solid @arrowbutton-inner-border-color;
+	border-top:none;
+	background-color: @arrowbutton-background-color;
+	background-image: url("images/formHighlight.png");
+	background-repeat:repeat-x;
+}
+
+.oneui .dijitSelect .dijitArrowButton .dijitArrowButtonInner {
+	background-image: url("images/commonFormArrows.png");
+	background-position:-35px 70%;
+	background-repeat: no-repeat;
+	width:16px;
+	height:16px;
+}
+
+/* hover status */
+.oneui .dijitSelectHover {
+	border: 1px solid @hovered-border-color;
+	background-color: @textbox-hovered-background-color;
+	background-image: url('images/textBox_back.png');
+	background-repeat: repeat-x;
+}
+
+.oneui .dijitSelectHover .dijitButtonContents {
+	border-color:@hovered-border-color;
+}
+
+.oneui .dijitSelectHover .dijitArrowButton {
+	background-color:@arrowbutton-hovered-background-color;
+}
+.oneui .dijitSelectHover .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 70%;
+}
+
+/* focused status */
+.oneui .dijitSelectFocused {
+	border: 1px solid @focused-border-color;
+}
+.oneui .dijitSelectFocused .dijitButtonContents {
+	border-color:@focused-border-color;
+}
+.oneui .dijitSelectFocused .dijitArrowButton {
+	background-color:#7dbefa;		// TODO.  Mailed Jason about inconsistent ComboBox/Spinner behavior.
+	background-position:0 -177px;
+	border: none;
+	padding: 0 1px;
+}
+.oneui .dijitSelectFocused .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 70%;
+	margin-bottom: 1px;
+}
+
+/* disable status */
+.oneui .dijitSelectDisabled {
+	border: 1px solid @disabled-border-color;
+	background-color: @disabled-background-color;
+	background-image: none;
+	color: @disabled-text-color;
+}
+.oneui .dijitSelectDisabled .dijitArrowButton { 
+	background-color: @disabled-background-color;
+}
+.oneui .dijitSelectDisabled .dijitArrowButton .dijitArrowButtonInner {
+	background-position:0 70%
+}
+
+/* Dropdown menu style for select */
+
+.oneui .dijitSelectMenu td.dijitMenuItemIconCell,
+.oneui .dijitSelectMenu td.dijitMenuArrowCell { 
+	/* so that arrow and icon cells from MenuItem are not displayed */
+	display: none;  
+}
+.oneui .dijitSelectMenu td.dijitMenuItemLabel {
+	/* line up menu text with text in select box (in LTR and RTL modes) */
+	padding: @textbox-padding;
+}
+
+.oneui .dijitSelectMenu .dijitMenuSeparatorTop {
+	border-bottom:1px solid @focused-border-color;
+}

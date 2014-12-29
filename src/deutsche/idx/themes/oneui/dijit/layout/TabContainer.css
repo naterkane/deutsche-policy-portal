@@ -1,0 +1,359 @@
+/*
+ * Licensed Materials - Property of IBM
+ * (C) Copyright IBM Corp. 2010, 2012 All Rights Reserved
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+
+/* TabContainer */
+/*** some common features ***/
+.oneui .dijitTabPaneWrapper {
+	background: #fff;
+}
+.oneui .dijitTabPaneWrapper, .oneui .dijitTabContainerTop-tabs, .oneui .dijitTabContainerBottom-tabs, .oneui .dijitTabContainerLeft-tabs, .oneui .dijitTabContainerRight-tabs {
+  border-color: #d2d2d2;
+}
+.oneui .dijitTabCloseButton {
+	background: url("images/tabClose.png") no-repeat;
+	width: 14px;
+	height: 14px;
+	margin-left: 2px;
+	margin-right: -4px;
+}
+.oneui .dijitTabCloseButtonHover {
+	background-position: -14px;
+}
+.oneui .dijitTabCloseButtonActive {
+	background-position: -28px;
+}
+.oneui .dijitTabSpacer {
+	display: none;
+}
+.oneui .dijitTabInnerDiv {
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	color:#222
+}
+.oneui .dijitTabChecked .dijitTabInnerDiv {
+	border-color: #d2d2d2;
+	font-weight:bold;
+}
+.oneui .tabStripButton .dijitTabContent {
+	border: none;
+}
+.oneui .dijitTab .dijitIcon{
+	height: 16px;
+	width: 16px;
+}
+.oneui .dijitTabContent .tabLabel{
+	height: 16px;
+}
+/*** end common ***/
+
+/*************** top tab ***************/
+.oneui .dijitTabContainerTop-tabs .dijitTab {
+	top: 1px;
+  	margin-right: 2px;
+	padding-top: 0px;
+}
+.dj_ie7 .oneui .dijitTabContainerTop-tabs .dijitTab {
+	top: 0px;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabContent {
+	padding: 9px 14px 7px;
+	text-align: center;
+}
+
+.oneui .dijitTabContainerTop-tabs .dijitTab .dijitTabInnerDiv {
+	border-bottom:none;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-top:2px solid #1a95c5;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabHover .dijitTabContent {
+	padding: 8px 14px 7px;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-top:2px solid #008abf;
+}
+.dj_ie7 .oneui .dijitTabContainerTop-tabs .dijitTabChecked{
+	top: 1px;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabChecked .dijitTabContent, 
+.oneui .dijitTabContainerTop-tabs .dijitTabCheckedHover .dijitTabContent, 
+.oneui .dijitTabContainerTop-tabs .dijitTabCheckedActive .dijitTabContent {
+	padding: 8px 14px 8px;
+}
+.oneui .dijitTabContainerTopStrip .dijitTabContainerTop-tabs{
+	padding-left:2px;
+}
+.oneui .dijitTabContainerTopStrip{
+	padding-right:2px;
+}
+
+.oneui .dijitTabContainerTop .tabStripButton .dijitTabInnerDiv{
+	border-bottom: 0 none;
+}
+.oneui .dijitTabContainerTop .tabStripButton{
+	border-bottom: 1px solid #d2d2d2;
+}
+
+/** end top tab **/
+/*************** bottom tab ***************/
+.oneui .dijitTabContainerBottom-tabs .dijitTab {
+	top: -1px;
+  	margin-right: 2px;
+	padding-top: 0px;
+}
+.dj_ie7 .oneui .dijitTabContainerBottom-tabs .dijitTab {
+	top: 0px;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabContent {
+	padding: 8px 14px 9px;
+	text-align: center;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTab .dijitTabInnerDiv {
+	border-top:none;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-bottom:2px solid #008abf;
+}
+.dj_ie7 .oneui .dijitTabContainerBottom-tabs .dijitTabChecked,
+.dj_ie7 .oneui .dijitTabContainerBottom-tabs .dijitTabHover{
+	top: -1px;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-bottom:2px solid #1a95c5;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabHover .dijitTabContent {
+	padding: 8px 14px 8px;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabChecked .dijitTabContent, 
+.oneui .dijitTabContainerBottom-tabs .dijitTabCheckedHover .dijitTabContent,
+.oneui .dijitTabContainerBottom-tabs .dijitTabCheckedActive .dijitTabContent {
+	padding: 9px 14px 8px;
+}
+.oneui .dijitTabContainerBottomStrip .dijitTabContainerBottom-tabs{
+	padding-left:2px;
+}
+.oneui .dijitTabContainerBottomStrip{
+	padding-right:2px;
+}
+.oneui .dijitTabContainerBottom .tabStripButton .dijitTabInnerDiv{
+	border-top: 0 none;
+}
+.oneui .dijitTabContainerBottom .tabStripButton{
+	border-top: 1px solid #d2d2d2;
+}
+
+/** end bottom tab **/
+/*************** left tab ***************/
+.oneui .dijitTabContainerLeft-tabs .dijitTab {
+	top: 0;
+	left:1px;
+  	margin-bottom: 2px;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabContent {
+	padding: 9px 14px 8px;
+	text-align: left;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-right:none;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabHover .dijitTabContent,
+.oneui .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabContent {
+	padding: 9px 14px 8px 13px;
+}
+.dj_webkit .oneui .dijitTabContainerLeft-tabs .dijitTabHover .dijitTabContent,
+.dj_webkit .oneui .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabContent {
+	padding: 9px 14px 8px 12px;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-left:2px solid #008abf;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-left:2px solid #1a95c5;
+}
+.dj_webkit .oneui .dijitTabContainerLeft-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-left:3px solid #008abf;
+}
+.dj_webkit .oneui .dijitTabContainerLeft-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-left:3px solid #1a95c5;
+}
+/** end left tab **/
+/*************** right tab ***************/
+.oneui .dijitTabContainerRight-tabs .dijitTab {
+	top: 0;
+	right:0;
+  	margin-bottom: 2px;
+}
+.oneui .dijitTabContainerRight-tabs .dijitTabContent {
+	padding: 8px 14px 9px;
+	text-align: left;
+}
+.oneui .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabContent,
+.oneui .dijitTabContainerRight-tabs .dijitTabHover .dijitTabContent {
+	padding: 8px 13px 9px 14px;
+}
+.dj_webkit .oneui .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabContent,
+.dj_webkit .oneui .dijitTabContainerRight-tabs .dijitTabHover .dijitTabContent {
+	padding: 8px 12px 9px 14px;
+}
+.oneui .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-left:none;
+	border-right:2px solid #008abf;
+}
+.oneui .dijitTabContainerRight-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-right:2px solid #1a95c5;
+}
+.dj_webkit .oneui .dijitTabContainerRight-tabs .dijitTabChecked .dijitTabInnerDiv {
+	border-right:3px solid #008abf;
+}
+.dj_webkit .oneui .dijitTabContainerRight-tabs .dijitTabHover .dijitTabInnerDiv {
+	border-right:3px solid #1a95c5;
+}
+
+/** end right tab **/
+/*************** round corners ***************/
+.oneui .dijitTabContainerTop-tabs .dijitTabInnerDiv, .oneui .dijitTabContainerTop-tabs .dijitTabContent {
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+}
+.oneui .dijitTabContainerBottom-tabs .dijitTabInnerDiv, .oneui .dijitTabContainerBottom-tabs .dijitTabContent {
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.oneui .dijitTabContainerLeft-tabs .dijitTabInnerDiv, .oneui .dijitTabContainerLeft-tabs .dijitTabContent {
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.oneui .dijitTabContainerRight-tabs .dijitTabInnerDiv, .oneui .dijitTabContainerRight-tabs .dijitTabContent {
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+/************ left/right scroll buttons + menu button ************/
+.oneui .tabStripButton {
+	width:23px;
+	height:39px;
+	-moz-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0 0;
+}
+.oneui .dijitTabContainerBottom .tabStripButton{
+	-moz-border-radius: 0 0 2px 2px;
+	border-radius: 0 0 2px 2px;
+}
+.oneui .tabStripButton .dijitTabInnerDiv {
+	background-color:#fff;
+	height:24px;
+	padding: 8px 7px 1px;
+	margin-top:1px;
+	border:solid 1px #e3e3e3;
+	border-bottom-color:#d2d2d2;
+}
+.oneui .dijitTabContainerBottom .tabStripButton .dijitTabInnerDiv{
+	margin-top: 0px;
+	margin-bottom: 1px;
+	border-top-color: #d2d2d2;
+	border-bottom-color: #e3e3e3;
+}
+.oneui .dijitTabContainerTop .tabStripButton .dijitbelow-altArrowButton,
+.oneui .dijitTabContainerBottom .tabStripButton .dijitbelow-altArrowButton{
+	margin-left: 2px;
+}
+.oneui .tabStripButtonHover .dijitTabInnerDiv {
+	border-color: #008abf #008abf #d2d2d2 #008abf;
+	background: #f4f4f4; /* Old browsers */
+	background: -moz-linear-gradient(top, #f4f4f4 0%, #dbdbdb 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #dbdbdb)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f4f4f4 0%, #dbdbdb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f4f4f4 0%, #dbdbdb 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f4f4f4 0%, #dbdbdb 100%); /* IE10+ */
+	background: linear-gradient(top, #f4f4f4 0%, #dbdbdb 100%); /* W3C */
+}
+.oneui .dijitTabContainerBottom .tabStripButtonHover .dijitTabInnerDiv {
+	border-color: #d2d2d2 #008abf #008abf #008abf;
+}
+.oneui .tabStripButton:active .dijitTabInnerDiv {
+	border-color: #008abf #008abf #d2d2d2 #008abf;
+	background: #dbdbdb; /* Old browsers */
+	background: -moz-linear-gradient(top, #dbdbdb 0%, #f4f4f4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(100%, #f4f4f4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #dbdbdb 0%, #f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #dbdbdb 0%, #f4f4f4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #dbdbdb 0%, #f4f4f4 100%); /* IE10+ */
+	background: linear-gradient(top, #dbdbdb 0%, #f4f4f4 100%); /* W3C */
+}
+.oneui .dijitTabContainerBottom .tabStripButton:active .dijitTabInnerDiv{
+	border-color: #d2d2d2 #008abf #008abf #008abf;
+}
+
+.oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripSlideRightIcon, .oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripSlideLeftIcon, .oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripMenuIcon {
+	width:7px;
+	height:7px;
+	background: url("../form/images/buttonArrows.png") no-repeat;
+}
+.oneui .tabStripButtonDisabled .dijitTabInnerDiv .dijitTabStripSlideLeftIcon {
+	background-position: -180px 50%;
+}
+.oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripSlideLeftIcon {
+	background-position: -80px 50%;
+}
+.oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripSlideRightIcon {
+	background-position: -28px 50%;
+}
+.oneui .tabStripButtonHover .dijitTabInnerDiv .dijitTabStripSlideRightIcon {
+	background-position: -28px 50%;
+}
+.oneui .tabStripButton:active .dijitTabInnerDiv .dijitTabStripSlideRightIcon {
+	background-position: -28px 50%;
+}
+.oneui .tabStripButton .dijitTabInnerDiv .dijitTabStripMenuIcon {
+	background-position: -55px 50%;
+}
+.oneui .tabStripButton:active .dijitTabInnerDiv .dijitTabStripMenuIcon {
+	background-position: -55px 50%;
+}
+/************ Nested  Tabs ************/
+.oneui .dijitTabContainerNested .dijitTabListWrapper {
+	height: auto;
+}
+.oneui .dijitTabContainerNested .dijitTabContainerTop-tabs {
+	padding: 5px 2px 0px;
+	border:none;
+}
+.oneui .dijitTabContainerTabListNested .dijitTabContent {
+	background: rgba(255, 255, 255, 0) none repeat scroll 0 0;
+	border: none;
+	padding: 2px 15px 2px 12px;
+}
+.oneui .dijitTabContainerTabListNested .dijitTab .dijitTabInnerDiv {
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border: none;
+	border-right:solid 1px #e3e3e3;
+	top: 0;
+	color:#8f8f8f;
+	margin-top:5px;
+}
+.oneui .dijitTabContainerTabListNested .dijitTab .dijitTabContent {
+	border: none;
+}
+.oneui .dijitTabContainerTabListNested .dijitTabHover .dijitTabInnerDiv,
+.oneui .dijitTabContainerTabListNested .dijitTabActive .dijitTabInnerDiv {
+	color:#454545;
+}
+.oneui .dijitTabContainerTabListNested .dijitTabHover .dijitTabContent {
+	padding: 2px 15px 2px 12px;
+}
+.oneui .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent {
+	padding: 0px 15px 0px 12px;
+	color:#454545;
+	text-decoration: none;
+}
+.oneui .dijitTabContainerTabListNested .dijitTabChecked .dijitTabInnerDiv {
+	border-top:none;
+	padding:2px 0px;
+}
+.oneui .dijitTabPaneWrapperNested {
+	border: none;/* prevent double border */
+}
