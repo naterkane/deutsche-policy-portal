@@ -17,3 +17,21 @@
     margin-left: 2px;
     margin-right: -4px;
 }
+.gridx {
+    width: 100%;
+    height: 100% !important;
+}
+#PPFGridContainer, #functionalApplicabilityGridContainer, #functionalApplicabilityDocumentsGridContainer {
+    width: 100%;
+    height: 80% !important;
+}
+.gridxRowHeaderBody, .gridxRowHeaderRow {
+    width: 0 !important;
+    border: none !important;
+}
+#SaveButtonNode {
+    float:left;
+}
+#CancelButtonNode, #NextButtonNode {
+    float:right;
+}

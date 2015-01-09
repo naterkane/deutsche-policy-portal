@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Demo: One Column Layout with Dijit</title>
+	<title>Deutsche Bank: Policy Portal</title>
 
 	<!--	<link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui-dojo.css">
 		<link rel="stylesheet" type="text/css" href="deutsche/resources/css/oneui.css">
 		<link rel="stylesheet" href="lib/dijit/themes/claro/claro.css" media="screen">
 		<link rel="stylesheet" href="deutsche/resources/css/db-styles.css" media="screen">-->
 	<link rel="stylesheet" type="text/css" href="deutsche/resources/main.css">
-	<style> .gridx {
-		width: 100%;
-		height: 80%;
-	}</style>
+
 	<!-- load dojo and provide config via data attribute -->
 	<script src="lib/dojo/dojo.js" data-dojo-config="async:true, parseOnLoad:true, isDebug: true"></script>
 	<script>
@@ -41,7 +38,15 @@
 				 cacheClass = Cache;*/
 			});
 		});
+
+		/**
+		 * PPF Grid
+		 *
+		 *
+		 */
+
 		require([
+			"dojo/dom-style",
 			"dojo/store/Memory",
 			"gridx/core/model/cache/Sync",
 			"gridx/Grid",
@@ -54,22 +59,48 @@
 			"gridx/modules/IndirectSelectColumn",
 			"gridx/modules/extendedSelect/Row",
 			"dijit/form/Button"
-		], function (Memory, Cache, Grid, /* Header, */RowHeader, SelectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, Button) {
+		], function (domStyle, Memory, Sync, Grid, /* Header, */RowHeader, SelectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, Button) {
 			var store = new Memory({
 				data: [
+
 					{id: 1, name: 'AMP & Anti Financial Crime'},
 					{id: 2, name: 'Asses Management - Active Equities'},
 					{id: 3, name: 'Asses Management - Americas Region'},
 					{id: 4, name: 'Asses Management - ARS'},
-					{id: 5, name: 'Asses Management - Asia Region'}
+					{id: 5, name: 'Asses Management - Asia Region'},
+					{id: 6, name: 'AMP & Anti Financial Crime'},
+					{id: 7, name: 'Asses Management - Active Equities'},
+					{id: 8, name: 'Asses Management - Americas Region'},
+					{id: 9, name: 'Asses Management - ARS'},
+					{id: 10, name: 'Asses Management - Asia Region'},
+					{id: 11, name: 'AMP & Anti Financial Crime'},
+					{id: 12, name: 'Asses Management - Active Equities'},
+					{id: 13, name: 'Asses Management - Americas Region'},
+					{id: 14, name: 'Asses Management - ARS'},
+					{id: 15, name: 'Asses Management - Asia Region'},
+					{id: 16, name: 'AMP & Anti Financial Crime'},
+					{id: 17, name: 'Asses Management - Active Equities'},
+					{id: 18, name: 'Asses Management - Americas Region'},
+					{id: 19, name: 'Asses Management - ARS'},
+					{id: 20, name: 'Asses Management - Asia Region'},
+					{id: 21, name: 'AMP & Anti Financial Crime'},
+					{id: 22, name: 'Asses Management - Active Equities'},
+					{id: 23, name: 'Asses Management - Americas Region'},
+					{id: 24, name: 'Asses Management - ARS'},
+					{id: 25, name: 'Asses Management - Asia Region'},
+					{id: 26, name: 'AMP & Anti Financial Crime'},
+					{id: 27, name: 'Asses Management - Active Equities'},
+					{id: 28, name: 'Asses Management - Americas Region'},
+					{id: 29, name: 'Asses Management - ARS'},
+					{id: 30, name: 'Asses Management - Asia Region'},
 				]
 			});
 			var structure = [
-				{ id: 'name', field: 'name', width: '360px', editable: true }
+				{ id: 'name', field: 'name', width: '100%', editable: true }
 			];
-			var grid = Grid({
+			var PPFGrid = Grid({
 				id:         'grid',
-				cacheClass: Cache,
+				cacheClass: Sync,
 				store:      store,
 				structure:  structure,
 				modules:    [
@@ -81,17 +112,16 @@
 				    "gridx/modules/IndirectSelectColumn",
 					"gridx/modules/extendedSelect/Row"
 				],
-				selectRowTriggerOnCell: false,
-				//header:{hidden:true}
+				selectRowTriggerOnCell: false
 			});
 			//Put it into the DOM tree. Let's assume there's a node with id "gridContainer".
 			//grid.headerProvider = function(){return ""};
-			grid.headerNode.hidden = true;
-			console.debug(grid);
-			grid.placeAt('gridContainer');
+			PPFGrid.headerNode.hidden = true;
+			console.debug(PPFGrid);
+			PPFGrid.placeAt('PPFGridContainer');
 
 			//Start it up.
-			grid.startup();
+			PPFGrid.startup();
 			var SaveButton = new Button({
 				label: "Save",
 				onClick: function(){
@@ -115,17 +145,183 @@
 			}, "NextButtonNode").startup();
 			var AddNewItemButton = new Button({
 				label: "<< Add new item",
+				width: "100%",
 				onClick: function(){}
 
 			}, "AddNewItemButtonNode").startup();
 			var DeleteItemButton = new Button({
 				label: "Delete item(s)",
+				width: "100%",
+				disabled: true,
 				onClick: function(){}
 
 			}, "DeleteItemButtonNode").startup();
+
+			domStyle.set("DeleteItemButtonNode","width","100%");
+			domStyle.set("AddNewItemButtonNode","width","100%");
 		});
 
-		//console.dir("dojo is" + dojo);
+		/**
+		 * Functional Applicability Tree Grid
+		 *
+		 *
+		 */
+
+		require([
+			"dojo/dom-style",
+			"dojo/store/Memory",
+			"gridx/core/model/cache/sync",
+			"gridx/Grid",
+			"gridx/modules/Tree",
+			"gridx/modules/RowHeader",
+			"gridx/modules/select/Row",
+			"gridx/modules/Edit",
+			"gridx/modules/CellWidget",
+			"gridx/modules/IndirectSelect",
+			"gridx/modules/IndirectSelectColumn",
+			"gridx/modules/extendedSelect/Row",
+			"dijit/form/Button"
+		], function(domStyle, Memory, Sync, Grid, /**/ Tree,/* */ RowHeader, selectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, Button) {
+			//console.debug("about to call define store");
+			var store = new Memory({
+				identifier: 'id',
+				label: 'id',
+				data: [
+					{ name:'Global', id: "G_2454", children: [
+						{ name:'First Child', id: "G_2834", children: [
+							{ name:'First Grandchild', id: "G_8356", children: [
+								{ name:'First Great Grandchild', id: "G_8556" },
+								{ name:'Second Great Grandchild', id: "G_3456", children: [
+									{ name:'Forst Great Great Grandchild', id: "G_3567"} ]
+								} ]
+							},
+							{ name:'Second Grandchild', id: "G_9567", children: [
+								{ name:'First Great Grandchild', id: "G_3568" } ]
+							} ]
+						 },
+						{ name:'Second Child', id: "G_3569", children:[
+							{ name:'First Grandchild', id: "G_3570" } ]
+						} ]
+					} ]
+			});
+			//console.debug("about to add hasChildren to store");
+			store.hasChildren = function(id, item){
+				// we should be very careful here, because hasChildren should not throw.
+				//console.debug(id);
+				//if (item.children && item.children.length){
+				//console.debug(item);
+				//console.debug(item.children);
+				//console.debug(item.children.length);
+
+				return item && item.children && item.children.length;
+				//} else {
+				//	return false;
+				//}
+			};
+			//console.debug("about to add getChildren to store");
+			store.getChildren = function(item){
+		        return item.children;
+			};
+			//console.debug("about to call define struction");
+			var structure = [
+				{name: "Name", field: "name", expandLevel: 'all'},
+				{name: "Id", field: "id"}
+			];
+			//console.debug("about to call define functionalApplicabilityGrid");
+			var functionalApplicabilityGrid = Grid({
+				id:         'grid2',
+				cacheClass: Sync,
+				store:      store,
+				structure:  structure,
+				modules:    [
+					"gridx/modules/CellWidget",
+					"gridx/modules/Edit",
+					"gridx/modules/RowHeader",
+					"gridx/modules/select/Row",
+					"gridx/modules/IndirectSelect",
+					"gridx/modules/IndirectSelectColumn",
+					"gridx/modules/extendedSelect/Row",
+				    "gridx/modules/Tree"
+				],
+				selectRowTriggerOnCell: false,
+				//type: columnar
+			}, "treeGrid");
+			//treeNested: true;
+			//Put it into the DOM tree. Let's assume there's a node with id "gridContainer".
+			//grid.headerProvider = function(){return ""};
+			//functionalApplicabilityGrid.headerNode.hidden = true;
+			console.debug(functionalApplicabilityGrid);
+			//console.debug("about to place functionalApplicabilityGrid");
+
+			functionalApplicabilityGrid.placeAt('functionalApplicabilityGridContainer');
+			//console.debug("about to startup functionalApplicabilityGrid");
+
+			functionalApplicabilityGrid.tree.expandRecursive("G_2454", true);
+			//Start it up.
+			functionalApplicabilityGrid.startup();
+		});
+
+		/**
+		 * Functional Applicability Documents Grid
+		 *
+		 *
+		 */
+
+		require([
+			"dojo/dom-style",
+			"dojo/store/Memory",
+			"gridx/core/model/cache/Sync",
+			"gridx/Grid",
+			//"gridx/modules/Header",
+			"gridx/modules/RowHeader",
+			"gridx/modules/select/Row",
+			"gridx/modules/Edit",
+			"gridx/modules/CellWidget",
+			"gridx/modules/IndirectSelect",
+			"gridx/modules/IndirectSelectColumn",
+			"gridx/modules/extendedSelect/Row",
+			"dijit/form/Button"
+		], function (domStyle, Memory, Sync, Grid, /* Header, */RowHeader, SelectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, Button) {
+			var store = new Memory({
+				data: [
+
+					{id: 1, name: 'Document 1', deletedAssignments: 'nfg', existingAssignments: 'sdfg', newAssignments: 'sfgj'},
+					{id: 2, name: 'Document 2', deletedAssignments: 'sdgh', existingAssignments: 'dfkdks', newAssignments: 'sdfh'},
+					{id: 3, name: 'Document 3', deletedAssignments: 'sfgjdf', existingAssignments: 'sfg', newAssignments: 'fghk'},
+					{id: 4, name: 'Document 4', deletedAssignments: 'sfgkfs', existingAssignments: 'dfgh', newAssignments: 'fgk'},
+					{id: 5, name: 'Document 5', deletedAssignments: 'adf', existingAssignments: 'fghj', newAssignments: 'kfg'}
+
+				]
+			});
+			var structure = [
+				{ field: 'name', name: 'Document Title', editable: false },
+				{ field: 'deletedAssignments', name: 'Deleted Assignments', editable: false },
+				{ field: 'existingAssignments', name: 'Existing Assignments', editable: false },
+				{ field: 'newAssignments', name: 'New Assignments', editable: false }
+			];
+			var functionalApplicabilityDocumentsGrid = Grid({
+				id:         'functionalApplicabilityDocuments',
+				cacheClass: Sync,
+				store:      store,
+				structure:  structure,
+				modules:    [
+					"gridx/modules/CellWidget",
+					"gridx/modules/Edit",
+					"gridx/modules/RowHeader",
+					"gridx/modules/select/Row",
+					"gridx/modules/IndirectSelect",
+					"gridx/modules/IndirectSelectColumn",
+					"gridx/modules/extendedSelect/Row"
+				],
+				selectRowTriggerOnCell: false
+			});
+			//Put it into the DOM tree. Let's assume there's a node with id "gridContainer".
+			//grid.headerProvider = function(){return ""};
+			//functionalApplicabilityDocumentsGrid.headerNode.hidden = true;
+			console.debug(functionalApplicabilityDocumentsGrid);
+			functionalApplicabilityDocumentsGrid.placeAt('functionalApplicabilityDocumentsGridContainer');
+		});
+		//console.dir("dojo is" + dojo); */
 	</script>
 </head>
 <!-- one column layout -->
@@ -182,34 +378,41 @@
 	     class="dbLayout-oneCol">
 		Please select a Data Dictionary to review or edit
 	</div>
-	<div id="appLayout" data-dojo-type="dijit/layout/TabContainer"
-	     data-dojo-props="region:'top', splitter: false, tabStrip: true">
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="PPF"
-		     selected="true">
-			<div data-dojo-type="dijit/layout/LayoutContainer">
-				<div data-dojo-type="dijit/layout/ContentPane" style="width: 45%" data-dojo-props="region: 'left'" >
+	<div id="appLayout" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center', splitter: false, tabStrip: true">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="PPF" >
+			<div data-dojo-type="dijit/layout/LayoutContainer" style="display:block" data-dojo-props="gutter: false">
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 40%" data-dojo-props="region: 'left'" >
 					<h2>Policy Producing Function</h2>
-					<div id="gridContainer"></div>
+					<div id="PPFGridContainer"></div>
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" style="width: 10%" data-dojo-props="region: 'center'" >
-					<a href="#">back</a>
-					<a href="#">forward</a>
-					<a href="#">lock</a>
-					<button id="AddNewItemButtonNode" type="button"><< Add new item</button>
-					<button id="DeleteItemButtonNode" type="button">Delete item(s)</button>
+				<div data-dojo-type="dijit/layout/ContentPane" style="width: 20%" data-dojo-props="region: 'center'" >
+					<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: true">
+						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
+							<a href="#">back</a>
+							<a href="#">forward</a>
+							<a href="#">lock</a>
+						</div>
+						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+							<button id="AddNewItemButtonNode" type="button" style="width: 100%"><< Add new term</button>
+						</div>
+						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" style="height: 30px;">
+							<button id="DeleteItemButtonNode" type="button" style="width: 100%">Delete term(s)</button>
+						</div>
+					</div>
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" style="width: 45%" data-dojo-props="region: 'right'" >
-					<h2>New Item</h2>
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 40%" data-dojo-props="region: 'right'" >
+					<h2>New Terms</h2>
+					<input type="text">
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" style="width: 100%" data-dojo-props="region:'bottom'"
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 100%" data-dojo-props="region:'bottom'"
 				     class="dbLayout-oneCol">
 					<!--<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'top', design: 'headline'"">-->
-						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'">
-							<button id="SaveButtonNode" type="button" data-dojo-props="region: 'left'">Save</button>
+						<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region:'left'" style="width: 30%; float:left;">
+							<button id="SaveButtonNode" type="button" >Save</button>
 						</div>
-						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'">
-							<button id="CancelButtonNode" type="button" data-dojo-props="region: 'right'">Cancel</button>
-							<button id="NextButtonNode" type="button" data-dojo-props="region: 'right'">Next</button>
+						<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region:'right'" style="width: 30%; float:right;">
+							<button id="CancelButtonNode" type="button"  data-dojo-props="region:'right'" >Cancel</button>
+							<button id="NextButtonNode" type="button"  data-dojo-props="region:'right'" >Next</button>
 						</div>
 
 
@@ -218,26 +421,64 @@
 				</div>
 			</div>
 		</div>
-
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Languages">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="Languages">
 			Lorem ipsum and all around - second...
 		</div>
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
-		     title="Key Policy Designation">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="Key Policy Designation">
 			Lorem ipsum and all around - last...
 		</div>
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Compliance">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="Compliance">
 			Lorem ipsum and all around - last...
 		</div>
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Decommissioning">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="Decommissioning">
 			Lorem ipsum and all around - last...
 		</div>
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="Key Policy Removal">
+		<div data-dojo-type="dijit/layout/ContentPane" style="height: 80%" data-dojo-props="region: 'center'" title="Key Policy Removal">
 			Lorem ipsum and all around - last...
 		</div>
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
-		     title="Functional Applicability">
-			Lorem ipsum and all around - last...
+		<div data-dojo-type="dijit/layout/ContentPane" selected="true" style="height: 80%" data-dojo-props="region: 'center'" title="Functional Applicability">
+
+			<div data-dojo-type="dijit/layout/LayoutContainer" style="display:block" data-dojo-props="gutter: false">
+
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 40%" data-dojo-props="region: 'left'" >
+					<h2>Functional Applicability</h2>
+					<div id="functionalApplicabilityGridContainer"></div>
+				</div>
+
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region: 'center'" >
+
+					<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: false">
+						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
+							<h2>Documents</h2>
+							<div>
+								<a href="#">back</a>
+								<a href="#">forward</a>
+								<button id="SaveButtonNode" type="button">Save</button>
+							</div>
+						</div>
+						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+							<div id="functionalApplicabilityDocumentsGridContainer"></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 100%" data-dojo-props="region:'bottom'"
+				     class="dbLayout-oneCol">
+					<!--<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'top', design: 'headline'"">-->
+					<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region:'left'" style="width: 30%; float:left;">
+						<button id="EditDictionaryuttonNode" type="button" >Edit Dictionary</button>
+					</div>
+					<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region:'right'" style="width: 30%; float:right;">
+						<button id="CancelButtonNode" type="button"  data-dojo-props="region:'right'" >Cancel</button>
+						<button id="CancelButtonNode" type="button"  data-dojo-props="region:'right'" >Commit</button>
+					</div>
+
+
+					<!--</div>-->
+
+				</div>
+			</div>
 		</div>
 		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
 		     title="Geographical Applicability">
