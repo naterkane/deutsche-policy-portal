@@ -74,10 +74,37 @@ h2.left {
     margin-right: 5px;
     border-radius: 0;
 }
-.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab.dijitTabChecked {
-    background: #fff;
+.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab.dijitTabChecked,
+.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab.dijitTabChecked.dijitTabHover{
+    color: rgb(34,34,34);
+    background: hsl(0,0%,100%);
+    border-left-color: hsl(204, 4%, 74%);
+    border-top-color: hsl(204, 4%, 74%);
+    border-right-color: hsl(204, 4%, 74%);
     border-bottom: none;
     margin-bottom: -1px;
     padding-bottom: 11px;
     font-weight: normal;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab.dijitTabHover {
+    color: hsl(0,0%,100%);
+    background: hsl(198,100%,42.9%);
+    border-color: hsl(198,100%,42.9%);
+}
+.claro .dijitButton .dijitButtonNode {
+    background: hsl(210 2% 45%);
+    border-color: hsl(210 2% 45%);
+}
+.claro .dijitButton .dijitButtonNode .dijitButtonText{
+    font-size: 12px;
+
+}
+.claro .dijitButtonHover .dijitButtonText,
+.claro .dijitButtonHover .dijitButtonNode>span{
+    font-size: 12px;
+}
+.claro .dijitButtonHover .dijitButtonNode {
+    height: 15px;
+    background-color: hsl(198,100%,42.9%);
+    border-color: hsl(198,100%,42.9%);
 }
