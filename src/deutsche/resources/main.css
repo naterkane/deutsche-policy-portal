@@ -1,8 +1,8 @@
 @import "../../lib/dijit/themes/claro/claro.css";
 @import "../../lib/dgrid/css/skins/claro.css";
 @import "../../lib/gridx/resources/claro/Gridx.css";
-@import "css/oneui.css";
-@import "css/oneui-dojo.css";
+/**/@import "css/oneui.css";
+@import "css/oneui-dojo.css";/**/
 @import "css/db-styles.css";
 
 #borderContainerMain {
@@ -34,4 +34,50 @@
 }
 #CancelButtonNode, #NextButtonNode {
     float:right;
+}
+h2.left {
+    float: left;
+    display: inline-block;
+}
+.right {
+    float: right;
+    display: inline-block;
+}
+.btn_glyph {
+    text-indent: -3000px;
+    background: url("css/images/db-icon-sprite.png") no-repeat;
+    height: 24px;
+    width: 24px;
+}
+.btn_forward {
+    background-position: 0px -698px;
+}
+.btn_back {
+    background-position: 0px -798px;
+}
+
+/* tab stuff */
+.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab {
+    padding-top: 7px;
+    padding-bottom: 5px;
+    background: #f7fcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #f7fcff 0%, #d2d6d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7fcff), color-stop(100%,#d2d6d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f7fcff 0%,#d2d6d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #f7fcff 0%,#d2d6d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fcff', endColorstr='#d2d6d9',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #babdbf;
+    margin-bottom: 5px;
+    margin-left: -1px;
+    margin-right: 5px;
+    border-radius: 0;
+}
+.oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab.dijitTabChecked {
+    background: #fff;
+    border-bottom: none;
+    margin-bottom: -1px;
+    padding-bottom: 11px;
+    font-weight: normal;
 }

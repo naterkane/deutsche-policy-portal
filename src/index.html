@@ -451,11 +451,12 @@
 
 					<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: false">
 						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
-							<h2>Documents</h2>
-							<div>
-								<a href="#">back</a>
-								<a href="#">forward</a>
-								<button id="SaveButtonNode" type="button">Save</button>
+
+							<h2 class="left">Documents</h2>
+							<div class="right">
+								<button id="BackButtonNode" type="button" class="btn_glyph btn_back">Back</button>
+								<button id="ForwardButtonNode" type="button" class="btn_glyph btn_forward">Forward</button>
+								<button id="SaveButtonNode" type="button" class="dijitButton">Save</button>
 							</div>
 						</div>
 						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
