@@ -1,0 +1,9 @@
+[
+
+  {id: 1, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Regional Management', existingAssignments: '-', newAssignments: 'sfsfgjdfsfgjdfsfgjdfsfgjdfgj', field1: '2345234', field2: '345346234626', field3: '262724572'},
+  {id: 2, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Regional Management', existingAssignments: '-', newAssignments: 'sdfh', field1: '2345234', field2: '345346234626', field3: '262724572'},
+  {id: 3, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: ['Regional Management','Central Areas and Support'], existingAssignments: '-', newAssignments: 'fghk', field1: '2345234', field2: '345346234626', field3: '262724572'},
+  {id: 4, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Central Areas and Support', existingAssignments: 'Audit', newAssignments: 'Audit', field1: '2345234', field2: '345346234626', field3: '262724572'},
+  {id: 5, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Central Areas and Support', existingAssignments: '-', newAssignments: '-', field1: '2345234', field2: '345346234626', field3: '262724572'}
+
+]

@@ -138,19 +138,20 @@
 			}, "CancelButtonNode").startup();
 			var NextButton = new Button({
 				label: "Next",
+				disabled: true,
 				onClick: function(){
 					// Do something:
 
 				}
 			}, "NextButtonNode").startup();
 			var AddNewItemButton = new Button({
-				label: "<< Add new item",
+				label: "<< Add new term",
 				width: "100%",
 				onClick: function(){}
 
 			}, "AddNewItemButtonNode").startup();
 			var DeleteItemButton = new Button({
-				label: "Delete item(s)",
+				label: "Delete term(s)",
 				width: "100%",
 				disabled: true,
 				onClick: function(){}
@@ -282,16 +283,17 @@
 			"gridx/modules/IndirectSelect",
 			"gridx/modules/IndirectSelectColumn",
 			"gridx/modules/extendedSelect/Row",
+			"gridx/modules/SingleSort",
 			"dijit/form/Button"
-		], function (domStyle, Memory, Sync, Grid, /* Header, */RowHeader, SelectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, Button) {
+		], function (domStyle, Memory, Sync, Grid, /* Header, */RowHeader, SelectRow, Edit, CellWidget, IndirectSelect, IndirectSelectColumn, ExtendedSelectRow, SingleSort, Button) {
 			var store = new Memory({
 				data: [
 
-					{id: 1, name: 'Document 1', deletedAssignments: 'nfg', existingAssignments: 'sdfg', newAssignments: 'sfgj'},
-					{id: 2, name: 'Document 2', deletedAssignments: 'sdgh', existingAssignments: 'dfkdks', newAssignments: 'sdfh'},
-					{id: 3, name: 'Document 3', deletedAssignments: 'sfgjdf', existingAssignments: 'sfg', newAssignments: 'fghk'},
-					{id: 4, name: 'Document 4', deletedAssignments: 'sfgkfs', existingAssignments: 'dfgh', newAssignments: 'fgk'},
-					{id: 5, name: 'Document 5', deletedAssignments: 'adf', existingAssignments: 'fghj', newAssignments: 'kfg'}
+					{id: 1, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Regional Management', existingAssignments: '-', newAssignments: 'sfsfgjdfsfgjdfsfgjdfsfgjdfgj', field1: '2345234', field2: '345346234626', field3: '262724572'},
+					{id: 2, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Regional Management', existingAssignments: '-', newAssignments: 'sdfh', field1: '2345234', field2: '345346234626', field3: '262724572'},
+					{id: 3, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: ['Regional Management','Central Areas and Support'], existingAssignments: '-', newAssignments: 'fghk', field1: '2345234', field2: '345346234626', field3: '262724572'},
+					{id: 4, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Central Areas and Support', existingAssignments: 'Audit', newAssignments: 'Audit', field1: '2345234', field2: '345346234626', field3: '262724572'},
+					{id: 5, name: 'Anti-Money Laundering Policy - Durtsche Bank Group', deletedAssignments: 'Central Areas and Support', existingAssignments: '-', newAssignments: '-', field1: '2345234', field2: '345346234626', field3: '262724572'}
 
 				]
 			});
@@ -299,13 +301,17 @@
 				{ field: 'name', name: 'Document Title', editable: false },
 				{ field: 'deletedAssignments', name: 'Deleted Assignments', editable: false },
 				{ field: 'existingAssignments', name: 'Existing Assignments', editable: false },
-				{ field: 'newAssignments', name: 'New Assignments', editable: false }
+				{ field: 'newAssignments', name: 'New Assignments', editable: false },
+				{ field: 'field1', name: 'Something else', editable: false },
+				{ field: 'field2', name: 'Yet Another Thing', editable: false },
+				{ field: 'field3', name: 'Are we there yet?', editable: false }
 			];
 			var functionalApplicabilityDocumentsGrid = Grid({
 				id:         'functionalApplicabilityDocuments',
 				cacheClass: Sync,
 				store:      store,
 				structure:  structure,
+				sortable: true,
 				modules:    [
 					"gridx/modules/CellWidget",
 					"gridx/modules/Edit",
@@ -313,7 +319,8 @@
 					"gridx/modules/select/Row",
 					"gridx/modules/IndirectSelect",
 					"gridx/modules/IndirectSelectColumn",
-					"gridx/modules/extendedSelect/Row"
+					"gridx/modules/extendedSelect/Row",
+					"gridx/modules/SingleSort"
 				],
 				selectRowTriggerOnCell: false
 			});
@@ -322,6 +329,7 @@
 			//functionalApplicabilityDocumentsGrid.headerNode.hidden = true;
 			console.debug(functionalApplicabilityDocumentsGrid);
 			functionalApplicabilityDocumentsGrid.placeAt('functionalApplicabilityDocumentsGridContainer');
+
 		});
 		//console.dir("dojo is" + dojo); */
 	</script>
@@ -377,7 +385,7 @@
 
 
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top',splitter:false"
-	     class="dbLayout-oneCol">
+	     class="dbLayout-oneCol notice">
 		Please select a Data Dictionary to review or edit
 	</div>
 	<div id="appLayout" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region:'center', splitter: false, tabStrip: true">
@@ -387,25 +395,37 @@
 					<h2>Policy Producing Function</h2>
 					<div id="PPFGridContainer"></div>
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" style="width: 20%" data-dojo-props="region: 'center'" >
-					<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: true">
-						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
-							<a href="#">back</a>
-							<a href="#">forward</a>
-							<a href="#">lock</a>
+				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+					<div data-dojo-type="dijit/layout/LayoutContainer" style="margin-top: -12px;" data-dojo-props="gutter: false">
+
+						<div data-dojo-type="dijit/layout/ContentPane" style="width: 150px; text-align: center;" data-dojo-props="region: 'left'">
+							<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: true">
+								<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
+									<button id="BackButtonNode" type="button" class="btn_glyph btn_back">Back</button>
+									<button id="ForwardButtonNode" type="button" class="btn_glyph btn_forward">Forward</button>
+									<button id="LockButtonNode" type="button" class="btn_glyph btn_lock">Lock</button>
+								</div>
+								<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+									<button id="AddNewItemButtonNode" type="button" style="width: 100%"><< Add new term</button>
+								</div>
+								<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" style="height: 30px;">
+									<button id="DeleteItemButtonNode" type="button" style="width: 100%">Delete term(s)</button>
+								</div>
+							</div>
 						</div>
-						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
-							<button id="AddNewItemButtonNode" type="button" style="width: 100%"><< Add new term</button>
-						</div>
-						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" style="height: 30px;">
-							<button id="DeleteItemButtonNode" type="button" style="width: 100%">Delete term(s)</button>
+						<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 40%" data-dojo-props="region: 'center'" >
+							<h2>New Terms</h2>
+							<div style="border: 1px hsl(0, 0%, 85%) solid; padding: 10px;">
+								<input type="text" placeholder="Enter a new item">
+							</div>
 						</div>
 					</div>
+
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 40%" data-dojo-props="region: 'right'" >
-					<h2>New Terms</h2>
-					<input type="text">
-				</div>
+
+
+
+
 				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" style="width: 100%" data-dojo-props="region:'bottom'"
 				     class="dbLayout-oneCol">
 					<!--<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="region:'top', design: 'headline'"">-->
@@ -449,7 +469,7 @@
 
 				<div data-dojo-type="dijit/layout/ContentPane" class="edgePanel" data-dojo-props="region: 'center'" >
 
-					<div data-dojo-type="dijit/layout/LayoutContainer" data-dojo-props="gutter: false">
+					<div data-dojo-type="dijit/layout/LayoutContainer" style="margin-top: -5px;" data-dojo-props="gutter: false">
 						<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style="height: 30px;">
 
 							<h2 class="left">Documents</h2>

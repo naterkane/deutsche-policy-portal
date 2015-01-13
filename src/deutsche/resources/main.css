@@ -43,19 +43,39 @@ h2.left {
     float: right;
     display: inline-block;
 }
+input[type=text]:hover, input[type=text]:active {
+    border-color: hsl(198,100%,42.9%);
+}
 .btn_glyph {
+    cursor: pointer;
     text-indent: -3000px;
     background: url("css/images/db-icon-sprite.png") no-repeat;
+    border: 0;
     height: 24px;
     width: 24px;
 }
+.btn_glyph:hover {
+
+}
 .btn_forward {
-    background-position: 0px -698px;
+    background-position: 0px -798px;
+
+}
+.btn_forward.dijitButtonDisabled {
+    background-position: 0px -849px;
 }
 .btn_back {
-    background-position: 0px -798px;
+    background-position: 0px -698px;
 }
-
+.btn_back.dijitButtonDisabled {
+    background-position: 0px -749px;
+}
+.btn_lock {
+    background-position: 0px -949px;
+}
+.btn_unlock {
+    background-position: 0px -898px;
+}
 /* tab stuff */
 .oneui .dijitTabContainerTop-tabs .dijitTabContent.dijitTab {
     padding-top: 7px;
@@ -107,4 +127,108 @@ h2.left {
     height: 15px;
     background-color: hsl(198,100%,42.9%);
     border-color: hsl(198,100%,42.9%);
+}
+
+/* Notification bars */
+.dbLayout-oneCol.notice,
+.dbLayout-oneCol.success,
+.dbLayout-oneCol.error {
+    font-size: 14px;
+}
+.dbLayout-oneCol.success,
+.dbLayout-oneCol.error {
+    /*padding-left: 20px*/
+}
+.dbLayout-oneCol.notice::after,
+.dbLayout-oneCol.success::before,
+.dbLayout-oneCol.error::before {
+    background-image: url("../../lib/gridx/resources/images/sprite.png");
+    background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 1px;
+}
+.dbLayout-oneCol.notice::after {
+    float: right;
+}
+.dbLayout-oneCol.success::before,
+.dbLayout-oneCol.error::before {
+    float: left;
+}
+.dbLayout-oneCol.notice {
+    border-color: hsl(197, 100%, 85%);
+    background-color: hsl(197, 100%, 85%);
+}
+.claro .gridxRow.gridxRowOdd .gridxCell{
+    background-color: hsl(203, 50%, 97%);
+}
+.claro .gridxBodyRowHoverEffect
+.gridxRowOver > .gridxRowTable .gridxCell,
+.claro .gridxRowSelected>.gridxRowTable,
+.claro .gridxRowSelected>.gridxRowTable .gridxCell,
+.claro .gridxRow .gridxColumnSelected,
+.claro .gridxRow .gridxCellSelected {
+    background: hsl(197, 100%, 85%);
+}
+
+.dbLayout-oneCol.success {
+    border-color: hsl(80, 64%, 65%);
+    background-color: hsl(80, 64%, 65%);
+}
+.dbLayout-oneCol.error {
+    border-color: hsl(346, 79%, 72%);
+    background-color: hsl(346, 79%, 72%);
+}
+/**
+ * @todo need source file to add image to sprite
+ */
+.dbLayout-oneCol.notice::after {
+    background-position: -146px -2px;
+}
+.dbLayout-oneCol.success::before {
+    background-position: -146px -2px;
+}
+.dbLayout-oneCol.error::before {
+    background-position: -165px -2px;;
+}
+
+/* Grid stuff */
+.gridxTreeExpandoIcon,
+.gridxTreeExpandoIcon:hover {
+    background-position: -122px -24px;
+}
+.gridxTreeExpandoCellOpen .gridxTreeExpandoIcon,
+.gridxTreeExpandoCellOpen .gridxTreeExpandoIcon:hover {
+    background-position: -24px -4px;
+}
+.gridxRowHeaderHeader {
+    display: none;
+}
+
+/* placeholder text for input elements, each declaration must be separate, even though it's counter-intuitive */
+::-webkit-input-placeholder{
+    font-style: italic !important;
+    padding-left: 2px;
+}
+:-moz-placeholder{
+    font-style: italic !important;
+    padding-left: 2px;
+}
+::-moz-placeholder {
+    font-style: italic !important;
+    padding-left: 2px;
+}
+:-ms-input-placeholder{
+    font-style: italic !important;
+    padding-left: 2px;
+}
+::input-placeholder{
+    font-style: italic !important;
+    padding-left: 2px;
+}
+::placeholder{
+    font-style: italic !important;
+    padding-left: 2px;
 }
